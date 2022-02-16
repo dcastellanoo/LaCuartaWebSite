@@ -26,6 +26,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/html5up-txt/index.html" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -47,6 +48,7 @@
       <option name="presentableId" value="Default" />
       <updated>1644916751497</updated>
       <workItem from="1644916752807" duration="4159000" />
+      <workItem from="1645029499217" duration="1514000" />
     </task>
     <servers />
   </component>
