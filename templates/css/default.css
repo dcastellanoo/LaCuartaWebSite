@@ -8,14 +8,6 @@ body {
     background-image: url('../images/background.jpg');
 }
 
-footer {
-    position: absolute;
-    width: 1440px;
-    height: 210px;
-    left: 0px;
-    top: 814px;
-}
-
 .header{
     position: absolute;
     width: 100%;
@@ -58,44 +50,71 @@ footer {
     color: black;
 }
 
-/*
-.header .sobre-nosotros{
+.footer {
+    width: 100%;
+    height: 210px;
+    display: flex;
+    justify-content: space-between;
     position: absolute;
-    width: 186px;
-    height: 56px;
-    left: 623px;
-    top: 7px;
-}
-.header .carta{
-    position: absolute;
-    width: 125px;
-    height: 56px;
-    left: 787px;
-    top: 7px;
+    left: 0px;
+    padding-top: 40px;
+
+    background: rgba(121, 91, 57, 0.5);
 }
 
-.header .reservas{
-    position: absolute;
-    width: 120px;
-    height: 56px;
-    left: 892px;
-    top: 7px;
+.footer .logo {
+    width: 248px;
+    height: 125px;
+    padding-left: 15%;
+}
+.footer .menu {
+    width: 224px;
+    height: 112px;
+    padding-left: 8%;
+    padding-top: 13px;
+}
+.footer .menu a {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 26px;
+
+    color: #FFFFFF;
+}
+.footer .menu a:hover{
+    color: black;
 }
 
-.header .pedidos{
-    position: absolute;
-    width: 125px;
-    height: 56px;
-    left: 1005px;
-    top: 7px;
+.footer .infoContainer {
+    width: 319px;
+    height: 166.04px;
+    padding-right: 15%;
 }
 
-.header .contacto{
-    position: absolute;
-    width: 125px;
-    height: 56px;
-    left: 1120px;
-    top: 7px;
+.footer .infoContainer .name {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #FFFFFF;
 }
 
-*/
+.footer .infoContainer .contact {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #FFFFFF;
+}
+
+.footer .infoContainer .socialMedia {
+    width: 258.55px;
+    height: 27.24px;
+    display: flex;
+    justify-content: space-between;
+}
