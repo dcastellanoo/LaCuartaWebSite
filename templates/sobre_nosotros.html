@@ -13,20 +13,58 @@
     <link rel="stylesheet" href="css/grid.css">
 
     <style>
-        #image-slideshow {
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+        }
+
+        .image-slide img {
             width: 100%;
             height: 300px;
-            position: relative;
             object-fit: cover;
         }
-        p {
+
+        /* Next and previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
             color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            user-select: none;
         }
+
+        .prev {
+            border-radius: 0 3px 3px 0;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, change to black color */
+        .prev:hover, .next:hover {
+            color: rgba(0,0,0,0.8);
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+        }
+
     </style>
 </head>
 
 
 <body>
+
 <div class="container">
     <!-- Header -->
     <header>
@@ -50,25 +88,25 @@
 
     <!-- Page content -->
     <main>
-        <div class="row">
-            <div class="col">
-                <img id="image-slideshow" src="images/terraza.jpg" alt="Restaurante La Cuarta image.">
+        <div class="slideshow-container">
+            <div class="image-slide">
+                <img id="image-slideshow" src="images/terraza.jpg" alt="Restaurante La Cuarta terraza.">
             </div>
 
-            <button type="button">Left</button>
-            <button type="button">Right</button>
-
+            <!-- Next and previous buttons -->
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
         </div>
 
 
         <div class="row">
-            <div class="col-9">
+            <div class="col-7">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate massa posuere, ornare ipsum ut, cursus nulla. Proin egestas, nisl vel lacinia iaculis, ligula libero commodo lacus, vitae vehicula nunc felis in quam. Mauris purus lorem, scelerisque ut lorem nec, tristique ornare est. Duis lacinia laoreet odio at faucibus. Nulla facilisi. Nunc tempor diam augue, ac consectetur nunc ullamcorper sit amet. Nulla facilisi. Phasellus pretium ultrices urna id consequat. Etiam ac velit quis massa faucibus fringilla ac quis turpis. Proin in tristique enim, in vestibulum neque. Maecenas enim mauris, interdum quis lectus in, molestie molestie massa. Pellentesque vestibulum magna in dui ullamcorper euismod. Pellentesque et nisi ac lorem aliquam condimentum. Aliquam erat volutpat. Duis erat urna, pharetra ullamcorper urna ut, gravida maximus dolor.
                 </p>
             </div>
 
-            <div class="col-3">
+            <div class="col-5 center">
                 <img src="images/cheers.png" alt="Restaurante La Cuarta nosotros.">
             </div>
         </div>

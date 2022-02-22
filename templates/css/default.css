@@ -1,7 +1,7 @@
 /* @import url(https://www.google.com/css/maia.css); */
 
-h1 {
-    color: black;
+h1, p {
+    color: white;
 }
 
 body {
