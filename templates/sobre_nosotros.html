@@ -8,6 +8,7 @@
 
     <link rel="icon" href="images/logo_header.png">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <!-- Styles -->
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/grid.css">
@@ -63,28 +64,14 @@
 <body>
 
 <div class="container">
+
     <!-- Header -->
-    <header>
-        <div id="header-logo">
-            <a href="index.html">
-                <img src="images/logo_header.png" alt="Restaurante La Cuarta logo.">
-            </a>
-        </div>
+    <div id="header">
 
-        <nav>
-            <ul>
-                <li><a href="sobre_nosotros.html"><strong>Sobre Nosotros</strong></a></li>
-                <li><a href="carta.html">Carta</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
-                <li><a href="pedidos.html">Pedidos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-
-    </header>
+    </div>
 
     <!-- Page content -->
-    <main>
+    <div id="content">
         <div class="slideshow-container">
             <div class="image-slide">
                 <img id="image-slideshow" src="images/terraza.jpg" alt="Restaurante La Cuarta terraza.">
@@ -107,47 +94,23 @@
                 <img src="images/cheers.png" alt="Restaurante La Cuarta nosotros.">
             </div>
         </div>
-    </main>
+    </div>
 
     <!-- Footer -->
-    <footer>
-        <div id="footer-left">
-            <a href="index.html">
-                <img src="images/logo_footer.png" alt="Restaurante La Cuarta logo.">
-            </a>
-        </div>
+    <div id="footer">
 
-        <div id="footer-mid">
-            <ul>
-                <li><a href="">Política de privacidad</a></li>
-                <li><a href="">Política de cookies</a></li>
-                <li><a href="">Aviso Legal</a></li>
-            </ul>
+    </div>
 
-            <div id="copyright">
-                <img src="images/copyright.png" alt="Copyright.">
-                <p>Restaurante La Cuarta. Todos los derechos reservados.</p>
-            </div>
-        </div>
-
-        <div id="footer-right">
-            <h3>Restaurante La Cuarta</h3>
-            <p>Pl. de Santiago, 9, Gáldar, Las Palmas</p>
-            <p>630 13 23 25</p>
-
-            <a href="">
-                <img src="images/instagram.png" alt="Instagram.">
-            </a>
-            <a href="https://www.facebook.com/La-Cuarta-G%C3%A1ldar-919397254765070/">
-                <img src="images/facebook.png" alt="Facebook.">
-            </a>
-            <a href="https://www.tripadvisor.es/Restaurant_Review-g1064347-d10120688-Reviews-Tasca_Restaurante_La_Cuarta-Galdar_Gran_Canaria_Canary_Islands.html">
-                <img src="images/tripadvisor.png" alt="TripAdvisor.">
-            </a>
-        </div>
-
-    </footer>
 </div>
+
+<script>
+    $(function () {
+        $('#header').load("./header.html");
+        $('#footer').load("./footer.html");
+    });
+</script>
+
 </body>
+
 </html>
 
