@@ -5,7 +5,7 @@
 /* Space between header and footer for content */
 #header, #footer, #content { position: absolute; left: 0; width: 100%; }
 #content { top: 70px; overflow: auto; height: 100% }
-#footer { bottom: 210px; }
+#footer { bottom: 175px; }
 
 /* Default text style across all pages */
 body {
