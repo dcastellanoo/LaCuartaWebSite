@@ -9,6 +9,13 @@
 /* Space between header and footer for content */
 #header, #footer, #content { left: 0; width: 100%; }
 #content { top: 70px; min-height: 100vh;}
+/*
+#header {
+    position: sticky;
+    top: 0;
+}
+ */
+
 #footer { margin-top: auto; }
 
 
@@ -145,6 +152,12 @@ footer .copyright {
     line-height: 21px;
 
     color: #FFFFFF;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
 }
 
 .mainPage {

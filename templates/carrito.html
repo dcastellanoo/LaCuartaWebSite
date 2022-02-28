@@ -14,7 +14,110 @@
     <link href="css/grid.css" rel="stylesheet">
 
     <style>
+        .carrito_container {
 
+
+        }
+
+        .carrito_container a {
+            text-decoration: none;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 20px;
+            color: #FFFFFF;
+        }
+
+        .carrito_table {
+            position: relative;
+            top: 26px;
+            width: 916px;
+            height: 550px;
+
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            color: black;
+            font-size: 24px;
+        }
+
+        .button_continuar {
+            position: relative;
+            width: 148px;
+            height: 57px;
+            top: 52px;
+
+            background: #67523A;
+            border-radius: 6px;
+            padding: 8px 16px;
+        }
+
+        .button_sequir_pedido {
+            position: relative;
+            width: 230px;
+            height: 57px;
+            top: 78px;
+
+            padding: 8px 16px;
+            background: #67523A;
+            border-radius: 6px;
+        }
+
+        .carrito_total {
+            position: relative;
+            width: 95px;
+            height: 95px;
+            left: 715px;
+            top: 125px;
+            font-size: 24px;
+            color: white;
+
+
+            background: #67523A;
+        }
+
+        .carrito_counter {
+            padding: 12px;
+            width: 120px;
+            height: 30px;
+
+            background: #FFFFFF;
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        .button_plus {
+            background: url(images/plus.png) no-repeat center;
+            cursor:pointer;
+            width: 20px;
+            height: 20px;
+            border-style: none;
+
+            right: 12px;
+            top: calc(50% - 20px/2);
+        }
+
+        .button_minus {
+            background: url(images/minus.png) no-repeat center;
+            cursor:pointer;
+            width: 20px;
+            height: 20px;
+
+            border-style: none;
+        }
+
+        .counter {
+            width: 60px;
+            height: 20px;
+            color: #ABA7AF;
+            border-style: none;
+
+        }
+
+        .carrito_table .row {
+            margin-top: 15px;
+        }
     </style>
 </head>
 
@@ -28,7 +131,89 @@
 
     <!-- Page content -->
     <div id="content">
-        TODO carrito
+        <div class="carrito_container">
+            <div class="center">
+                <div class="carrito_table text-center">
+                    <h1>TU PEDIDO</h1>
+
+
+                    <div class="row">
+                        <div class="col-4">
+                            <h3>Producto</h3>
+                        </div>
+
+                        <div class="col-4">
+                            <h3>Precio</h3>
+                        </div>
+
+                        <div class="col-4">
+                            <h3>Cantidad</h3>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                            Ensalada la cuarta
+                        </div>
+
+                        <div class="col-4">
+                            7,00 €
+                        </div>
+
+                        <div class="col-4">
+                            <div class="center">
+                                <div class="carrito_counter center">
+                                    <button class="button_minus" title="Plus"></button>
+
+                                    <input class="counter text-center" type="text" placeholder="..." value='0' />
+
+                                    <button class="button_plus" title="Plus"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-4">
+                            Crujientes de pollo
+                        </div>
+
+                        <div class="col-4">
+                            8,00 €
+                        </div>
+
+                        <div class="col-4">
+                            <div class="center">
+                                <div class="carrito_counter center">
+                                    <button class="button_minus" title="Plus"></button>
+
+                                    <input class="counter text-center" type="text" placeholder="..." value='0' />
+
+                                    <button class="button_plus" title="Plus"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carrito_total center dot">
+                        15 €
+                    </div>
+                </div>
+            </div>
+
+            <div class="center">
+                <div class="button_continuar center">
+                    <a href="">Continuar</a>
+                </div>
+            </div>
+
+            <div class="center">
+                <div class="button_sequir_pedido center">
+                    <a href="">Sequir con el pedido</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
