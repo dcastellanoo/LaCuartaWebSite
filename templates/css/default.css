@@ -144,3 +144,23 @@ footer .copyright {
 
     color: #FFFFFF;
 }
+
+
+.mainPage {
+    position: absolute;
+    width: 394px;
+    height: 84px;
+    left: 523px;
+    top: 455px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 84px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+}
