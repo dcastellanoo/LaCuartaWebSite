@@ -7,92 +7,103 @@
     <title>La Cuarta</title>
 
     <link rel="icon" href="images/placeholder-image.png">
-
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <!-- Styles -->
-    <link rel="stylesheet" href="css/default.css">
+    <link href="css/default.css" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/carta.css" rel="stylesheet">
 
     <style>
 
     </style>
 </head>
 <body>
-<div class="container">
+
     <!-- Header -->
-    <header>
-        <h1>TODO Headeer</h1>
+    <div id="header">
 
-        <div id="header-logo">
-            <a href="index.html">
-                <img src="images/placeholder-image.png" alt="Restaurante La Cuarta logo.">
-            </a>
-        </div>
-
-        <nav>
-            <ul>
-                <li><a href="sobre_nosotros.html">Sobre Nostros</a></li>
-                <li><a href="carta.html">Carta</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
-                <li><a href="pedidos.html">Pedidos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-
-    </header>
-
+    </div>
+    <div id="content">
     <!-- Page content -->
-    <section class="main">
-        <h1>Carta</h1>
-        <div>
-            <img src="images/logo_carta.png" alt="logo carta.">
-            <p>
-                <b>ENTRANTES</b>
-            </p>
-            <p>
-                <b>PRINCIPALES</b>
-            </p>
-            <p>
-                <b>SUGERENCIAS</b>
-            </p>
-            <p>
-                <b>POSTRES</b>
-            </p>
-        </div>
-    </section>
+        <section class="subheader_carta_background">
+            <h1 class="subheader_carta_text_title">Carta</h1>
+            <div class="subheader_carta_text_comidas">
+                <div class="subheader_posicion_text_comidas">
+                    <br>
+                        <b>Entrantes</b>
+                    </br>
+                    <br>
+                        <b>Principales</b>
+                    </br>
+                    <br>
+                        <b>Sugerencias</b>
+                    </br>
+                    <br>
+                        <b>Postres</b>
+                    </br>
+                </div>
+                <div class="subheader_posicion_logo_carta">
+                    <img src="images/logo_carta.png" alt="logo carta.">
+                </div>
 
-    <!-- Footer -->
-    <footer>
-        <div id="footer-left">
-            <h1>TODO Footer</h1>
-            <a href="index.html">
-                <img src="images/placeholder-image.png" alt="Restaurante La Cuarta logo.">
-            </a>
-        </div>
+            </div>
+        </section>
+        <section class="background_carta">
+            <div class="subheader_carta_background">
+                <h2>Entrantes</h2>
+                <div>
+                    <p>
+                        <b>Nombre del plato</b>
+                    </p>
+                    <div>
+                        <img src="images/imagen_plato.png" alt="Plato Comida.">
+                        <br>
+                            0,00 €
+                        </br>
+                    </div>
+                    <p>
+                        Descripcion
+                    </p>
+                    <p>
+                        Alergernos
+                    </p>
+                </div>
+            </div>
+            <div class="subheader_carta_background">
+                <h2>Principales</h2>
+                <div>
+                    <p>
+                        <b>Nombre del plato</b>
+                    </p>
+                    <div>
+                        <img src="images/imagen_plato.png" alt="Plato Comida.">
+                        <br>
+                            0,00 €
+                        </br>
+                    </div>
 
-        <div id="footer-mid">
-            <ul>
-                <li><a href="">Política de privacidad</a></li>
-                <li><a href="">Política de cookies</a></li>
-                <li><a href="">Aviso Legal</a></li>
-            </ul>
-        </div>
 
-        <div id="footer-right">
-            <h3>Restaurante La Cuarta</h3>
-            <p>Pl. de Santiago, 9, Gáldar, Las Palmas</p>
-            <p>630 13 23 25</p>
+                    <p>
+                        Descripcion
+                    </p>
+                    <p>
+                        Alergernos
+                    </p>
+                </div>
+            </div>
 
-            <a href="">
-                <img src="images/instagram.png" alt="Instagram.">
-            </a>
-            <a href="https://www.facebook.com/La-Cuarta-G%C3%A1ldar-919397254765070/">
-                <img src="images/facebook.png" alt="Facebook.">
-            </a>
-            <a href="https://www.tripadvisor.es/Restaurant_Review-g1064347-d10120688-Reviews-Tasca_Restaurante_La_Cuarta-Galdar_Gran_Canaria_Canary_Islands.html">
-                <img src="images/tripadvisor.png" alt="TripAdvisor.">
-            </a>
-        </div>
 
-    </footer>
-</div>
+        </section>
+    </div>>
+
+    <div id="footer">
+
+    </div>
+    <script>
+        $(function () {
+            $('#header').load("./header.html");
+            $('#footer').load("./footer.html");
+        });
+    </script>
 </body>
 </html>
