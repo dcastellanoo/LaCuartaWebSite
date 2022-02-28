@@ -1,11 +1,16 @@
 /* @import url(https://www.google.com/css/maia.css); */
 
-
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
 
 /* Space between header and footer for content */
-#header, #footer, #content { position: absolute; left: 0; width: 100%; }
-#content { top: 70px; overflow: auto; position: absolute; bottom: 210px; }
-#footer { bottom: 0px; }
+#header, #footer, #content { left: 0; width: 100%; }
+#content { top: 70px; min-height: 700px; }
+#footer { margin-top: auto; }
+
 
 /* Default text style across all pages */
 body {
@@ -142,11 +147,9 @@ footer .copyright {
     color: #FFFFFF;
 }
 
-
 .mainPage {
-    position: absolute;
-    left: 523px;
-    top: 455px;
+    left: 50%;
+    top: 50%;
 
     font-family: Roboto;
     font-style: normal;
@@ -159,3 +162,4 @@ footer .copyright {
 
     color: #FFFFFF;
 }
+
