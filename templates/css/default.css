@@ -4,8 +4,8 @@
 
 /* Space between header and footer for content */
 #header, #footer, #content { position: absolute; left: 0; width: 100%; }
-#content { top: 70px; overflow: auto; height: 100% }
-#footer { bottom: 210px; }
+#content { top: 70px; overflow: auto; position: absolute; bottom: 210px; }
+#footer { bottom: 0px; }
 
 /* Default text style across all pages */
 body {
@@ -69,10 +69,7 @@ footer {
     width: 100%;
     height: 210px;
     justify-content: space-between;
-    position: absolute;
     left: 0px;
-    /*top: 75%;       */
-    padding-top: 40px;
 
     background: rgba(121, 91, 57, 0.5);
 }
@@ -148,8 +145,6 @@ footer .copyright {
 
 .mainPage {
     position: absolute;
-    width: 394px;
-    height: 84px;
     left: 523px;
     top: 455px;
 
