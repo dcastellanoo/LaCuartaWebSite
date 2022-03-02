@@ -1,0 +1,89 @@
+.bookContainer1{
+    position: absolute;
+    width: 49.58%;
+    height: 579px;
+    left: 358px;
+    top: 96px;
+
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.bookContainer2{
+    position: absolute;
+    width: 49.58%;
+    height: 550px;
+    left: 358px;
+    top: 96px;
+
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.button1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+
+    position: absolute;
+    width: 148px;
+    height: 57px;
+    left: 646px;
+    top: 716px;
+
+    background: #67523A;
+    border-radius: 6px;
+}
+
+.button2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+
+    position: absolute;
+    width: 148px;
+    height: 57px;
+    left: 642px;
+    top: 665px;
+
+    background: #67523A;
+    border-radius: 6px;
+}
+
+.button3{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+
+    position: absolute;
+    width: 148px;
+    height: 57px;
+    left: 642px;
+    top: 758px;
+
+    background: #67523A;
+    border-radius: 6px;
+}
+
+.content{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+
+    color: #FFFFFF;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 4px;
+}
