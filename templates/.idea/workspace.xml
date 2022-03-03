@@ -4,6 +4,7 @@
     <list default="true" id="8deb984d-3001-40d1-932b-56b83ee904c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/reservas.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/reservas.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +50,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration name="carrito.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/templates/carrito.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/templates/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="reservas1.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/templates/reservas1.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="reservas2.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/templates/reservas2.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="sobre_nosotros.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/templates/sobre_nosotros.html" useBuiltInWebServerPort="true">
@@ -58,6 +68,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.carrito.html" />
+        <item itemvalue="JavaScript Debug.reservas2.html" />
+        <item itemvalue="JavaScript Debug.reservas1.html" />
         <item itemvalue="JavaScript Debug.sobre_nosotros.html" />
       </list>
     </recent_temporary>
@@ -81,7 +94,11 @@
       <workItem from="1645635027635" duration="2134000" />
       <workItem from="1645805654317" duration="8309000" />
       <workItem from="1645901135588" duration="3866000" />
-      <workItem from="1646044654415" duration="3599000" />
+      <workItem from="1646044654415" duration="6786000" />
+      <workItem from="1646062896905" duration="14729000" />
+      <workItem from="1646079025341" duration="115000" />
+      <workItem from="1646261097347" duration="599000" />
+      <workItem from="1646331851786" duration="995000" />
     </task>
     <servers />
   </component>
