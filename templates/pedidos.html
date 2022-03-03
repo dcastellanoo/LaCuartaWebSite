@@ -1,1 +1,235 @@
-<h1>Pedidos</h1>
+<!DOCTYPE html>
+<html lang="es">
+    
+	<head>
+		<meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	    <title>Pedidos</title>
+
+	    <link rel="icon" href="images/placeholder-image.png">
+
+	    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+	    <!-- Styles -->
+	    <link rel="stylesheet" href="css/default.css">
+	    <link href="css/grid.css" rel="stylesheet">
+
+	    <style type="text/css">
+	    	.row{
+	    		background-color:; 
+	    		display: -webkit-box; 
+	    		display: -ms-flexbox; 
+	    		display: flex; 
+	    		flex-wrap: wrap;
+
+	    	}
+
+	    	.header-pedido{
+	    		width: 100%;
+	    		margin-left: 10px;
+	    	}
+
+	    	.pedido{
+	    		width: 20%; 
+	    		margin: 10px; 
+	    		padding: 10px;
+	    		background-color: white;
+	    		color: #000000;
+	    		padding-bottom: 20px;
+	    		background-color:; 
+	    		text-align: center; 
+	    		border: 1px solid #DDD;
+	    		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	    	}
+
+	    	.pedido-info{
+	    		padding: 10px;
+	    	}
+
+	    	.spi-1{
+	    		float: left;
+	    	}
+
+	    	.spi-2{
+	    		float: center;
+	    	}
+
+	    	.spi-3{
+	    		float: right;
+	    	}
+
+	    	.pedido-quant{
+	    		padding: 10px;
+	    	}
+
+	    	.btn-pedido .btn {
+				 background-color: #E59C47; /* Green */
+				 border: none;
+				 color: white;
+				 padding: 5px 22px;
+				 text-align: center;
+				 text-decoration: none;
+				 font-size: 16px;
+				 cursor: pointer;
+				 margin: 10px;
+				 border-radius: 5px;
+	    	}
+
+    		.btn-pedido .btn:hover {
+			  background-color: #784b17;
+			}
+
+			.nav-menu-left{
+				width: 19%;
+				float: left;
+				margin-top: 23px;
+				margin-left: 40px; 	
+				padding-top: 40px;		
+			}
+
+			.menu-left{		
+				background: rgba(255, 255, 255, 0.6);
+				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+				padding-top: 3px;
+				padding-bottom: 3px;
+			}
+
+			.menu-left .menu-list{
+				list-style-type: none;
+			}
+
+			.menu-list li{
+				padding: 10px;
+				font-size: 14pt;
+				font-weight: bold;
+			}
+
+			.menu-list li a{
+				text-decoration: none;
+				color: #000000;
+			}
+
+			.menu-btn{
+                text-align: center;
+                padding: 5px;
+                padding-top: 20px;
+			}
+
+			.menu-btn button{
+				background-color: #67523A;
+				padding: 13px;
+				border: none;
+				color: white;
+				text-decoration: none;
+				font-size: 16px;
+				font-weight: bold;
+				cursor: pointer;
+				border-radius: 5px;
+				font-family: roboto;
+			}
+
+			#content{
+				background-color: #b8a791;
+				width: 100%;
+				font-family: roboto;
+			}
+
+			.c_main{
+                width: 76%; 
+                float: right;
+                padding-top: 40px;
+                padding-left: 6px;
+			}
+
+
+	    </style>
+
+	</head>
+
+
+	<body>
+        
+        <div id="header"></div>
+
+        <div id="content" style="">
+
+			<nav class="nav-menu-left">
+
+			    <div class="menu-left">
+		            <ul class="menu-list">
+		            	<li><a href="#"><div>Entrantes</div></a></li>
+		            	<li><a href="#"><div>Principale</div></a></li>
+		            	<li><a href="#"><div>Sugerencias</div></a></li>
+		            	<li><a href="#"><div>Postres</div></a></li>
+		            </ul>
+		        </div>
+
+		        <div class="menu-btn">
+		            <button>Tus pedidos</button>	
+		        </div>
+		        
+	    		
+	    	</nav>
+	    
+		    <main class="c_main">
+
+		    	<article>
+		    		<section>
+		    			<div class="row">
+		    				  
+		    			   <div class="header-pedido">
+		    			   	   <h1 style="font-size: 20pt;color: #000000">Entrantes</h1>
+		    			   </div>
+
+		    				<div class="pedido">
+
+		    					<div>
+		    						<img src="images/shop.jpg" width="180" height="180">
+		    				    </div>
+	                            <div class="pedido-info">
+	                            	<span class="spi-1">Pasta</span>
+				    				<span class="spi-2">
+				    					<img src="images/icone-star.png" width="13" height="13">
+			    					    <img src="images/icone-star.png" width="13" height="13">
+			    					    <img src="images/icone-star.png" width="13" height="13">
+			    					    <img src="images/icone-star.png" width="13" height="13">
+			    					    <img src="images/icone-star.png" width="13" height="13">
+				    				</span>
+				    				<span class="spi-3">100£</span>
+	                            </div>
+			    				<div class="pedido-quant">
+			    					<img src="images/icone-plus.png" width="14" height="14">
+			    					<input type="" name="" size="1" value="0" style="text-align: center;">
+			    					<img src="images/icone-minus.png" width="14" height="14">
+			    				</div>
+			    				<div class="btn-pedido">
+			    					<button class="btn" value=""><img src="images/icone-cart.png" width="15" height="15"> Compra</button>
+			    				</div>
+
+		    				</div>
+
+		    			</div> 
+		    			
+		    		</section>
+	   	    
+
+		    	</article>
+
+		    </main> 
+
+        </div>
+
+	    <div id="footer"></div> 
+
+
+        <script>
+		    $(function () {
+		        $('#header').load("./header.html");
+		        $('#footer').load("./footer.html");
+		        // $('#content').load("./mainpage_content.html")
+		    });
+		</script>
+
+	</body>
+</html>
