@@ -12,8 +12,7 @@
 /* Space between header and footer for content */
 #header, #footer, #content { left: 0; width: 100%; }
 #content { top: 70px; min-height: 100vh;}
-
-#footer { margin-top: auto; }
+#footer { top: 0px; }
 
 /* Default text style across all pages */
 body {
