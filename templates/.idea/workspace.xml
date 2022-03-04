@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8deb984d-3001-40d1-932b-56b83ee904c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/reservas.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/reservas.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservas1.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservas1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +46,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/LaCuartaWebSite-master" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -98,7 +99,8 @@
       <workItem from="1646062896905" duration="14729000" />
       <workItem from="1646079025341" duration="115000" />
       <workItem from="1646261097347" duration="599000" />
-      <workItem from="1646331851786" duration="2753000" />
+      <workItem from="1646331851786" duration="3365000" />
+      <workItem from="1646386319074" duration="204000" />
     </task>
     <servers />
   </component>
