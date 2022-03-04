@@ -26,17 +26,23 @@
             object-fit: cover;
         }
 
+
+        .image-slide figure {
+            padding: 0;
+            margin: 0;
+        }
+
         /* Next and previous buttons */
         .prev, .next {
             cursor: pointer;
             position: absolute;
             top: 50%;
             width: auto;
-            margin-top: -22px;
+            margin-top: -40px;
             padding: 16px;
             color: white;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 40px;
             transition: 0.6s ease;
             user-select: none;
         }
@@ -64,9 +70,16 @@
         }
 
 
+        .about_us {
+            position: relative;
+            top: 50px;
+        }
 
-
-
+        .about_us_text {
+            width: 640px;
+            font-size: 22px;
+            line-height: 26px;
+        }
     </style>
 </head>
 
@@ -76,18 +89,21 @@
 <div class="container">
 
     <!-- Header -->
-    <div id="header">
+    <header id="header">
 
-    </div>
+    </header>
 
     <!-- Page content -->
-    <div id="content">
+    <main id="content">
         <div class="slideshow-container">
             <div class="image-slide">
-                <img id="image-slideshow" src="images/terraza.jpg" alt="Restaurante La Cuarta terraza.">
+                <figure>
+                    <img id="image-slideshow" src="images/terraza.jpg" alt="Restaurante La Cuarta terraza.">
 
-                <div class="text-center">
-                    <span class="dot"></span>
+                </figure>
+
+                <div class="text-center" style="position: absolute; top: 90%; left: 50%;">
+                    <span class="dot" style="background-color: black"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>
                 </div>
@@ -99,24 +115,35 @@
         </div>
 
 
-        <div class="row">
-            <div class="col-7">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate massa posuere, ornare ipsum ut, cursus nulla. Proin egestas, nisl vel lacinia iaculis, ligula libero commodo lacus, vitae vehicula nunc felis in quam. Mauris purus lorem, scelerisque ut lorem nec, tristique ornare est. Duis lacinia laoreet odio at faucibus. Nulla facilisi. Nunc tempor diam augue, ac consectetur nunc ullamcorper sit amet. Nulla facilisi. Phasellus pretium ultrices urna id consequat. Etiam ac velit quis massa faucibus fringilla ac quis turpis. Proin in tristique enim, in vestibulum neque. Maecenas enim mauris, interdum quis lectus in, molestie molestie massa. Pellentesque vestibulum magna in dui ullamcorper euismod. Pellentesque et nisi ac lorem aliquam condimentum. Aliquam erat volutpat. Duis erat urna, pharetra ullamcorper urna ut, gravida maximus dolor.
-                </p>
-            </div>
+        <section class="about_us">
+            <div class="row">
+                <div class="col-7 center">
+                    <div class="about_us_text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate massa posuere, ornare ipsum ut,
+                        cursus nulla. Proin egestas, nisl vel lacinia iaculis, ligula libero commodo lacus, vitae vehicula nunc
+                        felis in quam. Mauris purus lorem, scelerisque ut lorem nec, tristique ornare est. Duis lacinia laoreet
+                        odio at faucibus. Nulla facilisi. Nunc tempor diam augue, ac consectetur nunc ullamcorper sit amet.
+                        Nulla facilisi.
+                        Phasellus pretium ultrices urna id consequat. Etiam ac velit quis massa faucibus fringilla ac quis turpis.
+                        Proin in tristique enim, in vestibulum neque.
+                        Maecenas enim mauris, interdum quis lectus in, molestie molestie massa.
+                        Pellentesque vestibulum magna in dui ullamcorper euismod. Pellentesque et nisi ac lorem aliquam condimentum.
+                        Aliquam erat volutpat.
+                        Duis erat urna, pharetra ullamcorper urna ut, gravida maximus dolor.
+                    </div>
+                </div>
 
-            <div class="col-5 center">
-                <img src="images/cheers.png" alt="Restaurante La Cuarta nosotros.">
+                <div class="col-4 center">
+                    <img src="images/cheers.png" alt="Restaurante La Cuarta nosotros.">
+                </div>
             </div>
-        </div>
-
-    </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <div id="footer">
+    <footer id="footer">
 
-    </div>
+    </footer>
 
 </div>
 
@@ -124,7 +151,6 @@
     $(function () {
         $('#header').load("./header.html");
         $('#footer').load("./footer.html");
-        $('#content').load("./sobre_nosotros_content.html")
     });
 </script>
 

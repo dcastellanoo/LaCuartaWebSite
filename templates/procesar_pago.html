@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>La Cuarta</title>
+
+    <link href="images/logo_header.png" rel="icon">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- Styles -->
+    <link href="css/default.css" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/dialog.css" rel="stylesheet">
+
+    <style>
+        .dialog_table{
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 140%;
+        }
+
+        .input_box {
+            padding: 12px;
+            position: relative;
+            width: 400px;
+            height: 44px;
+
+
+            background: #FFFFFF;
+            border: 1px solid #E5E0EB;
+            box-sizing: border-box;
+            box-shadow: inset 0px 4px 5px rgba(33, 1, 38, 0.03);
+            border-radius: 2px;
+            color: #ABA7AF;
+        }
+
+        .checkbox {
+            background: #FFFFFF;
+            border: 1px solid #DCDCDC;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        .checkbox_text {
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.2px;
+            color: #737373;
+        }
+
+        .dialog_column {
+            position: relative;
+            width: 400px;
+        }
+
+        input[id="full_name"] {
+            color: #1A141F;
+        }
+
+        .country_code {
+            width: 93px;
+            height: 44px;
+            background: rgba(196, 196, 196, 0.7);
+            color: #424242;
+        }
+
+
+
+        input[id="phone"] {
+            width: 307px;
+        }
+        input[id="tarjeta_expiracion"], input[id="tarjeta_CVC"]{
+            width: 190px;
+        }
+
+
+
+    </style>
+</head>
+
+
+<body>
+<div id="container">
+    <!-- Header -->
+    <header id="header">
+
+    </header>
+
+    <!-- Page content -->
+    <main id="content">
+
+        <section class="dialog_container">
+            <div class="center">
+                <article class="dialog_table">
+                    <div class="center">
+                        <div class="dialog_column">
+                            <input class="input_box" style="top: 40px;"
+                                   type="text" id="full_name"
+                                   name="full_name"
+                                   value="Diego Castellano Caballero">
+
+                            <input class="input_box" style="top: 53px;"
+                                   type="text" id="email"
+                                   name="email"
+                                   value="Correo electrónico">
+
+                            <div class="row" style="position: relative; top: 66px;">
+                                <div class="country_code">
+                                    <div class="row">
+                                        <div class="col-8 center">
+                                            <img alt="Bandera de Espana." src="images/flag_spain.png">
+
+                                        </div>
+                                        <div class="col-4">
+                                            <p>+34</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <input class="input_box"
+                                       type="text" id="phone"
+                                       name="phone"
+                                       value="Número de teléfono">
+                            </div>
+
+                            <div class="row" style="position: relative; top: 76px;">
+                                Número de tarjeta
+                            </div>
+
+                            <input class="input_box" style="top: 80px;"
+                                   type="text" id="tarjeta_credito"
+                                   name="tarjeta_credito"
+                                   value="Número de tarjeta">
+
+                            <div class="row" style="position: relative; top: 89px;">
+                                <div class="col-6">
+                                    Fecha de expiración
+                                </div>
+
+                                <div class="col-6" style="position: relative; left: 10px;">
+                                    CVC / CVV
+                                </div>
+                            </div>
+
+                            <div class="row" style="position: relative; top: 93px;">
+                                <div class="col-6">
+                                    <input class="input_box"
+                                           type="text" id="tarjeta_expiracion"
+                                           name="tarjeta_expiracion"
+                                           value="MM/AA">
+                                </div>
+
+                                <div class="col-6" style="position: relative; left: 10px;">
+                                    <input class="input_box"
+                                           type="text" id="tarjeta_CVC"
+                                           name="tarjeta_CVC"
+                                           value="XXX">
+                                </div>
+                            </div>
+
+                            <input class="input_box" style="top: 106px;"
+                                   type="text" id="comment_pedido"
+                                   name="comment_pedido"
+                                   value="Comentarios acerca del pedido">
+
+                            <div class="row" style="position:relative; top: 126px;">
+                                <div class="col-1">
+                                    <input class="checkbox" type="checkbox" id="conditions" name="conditions" value="Conditions">
+                                </div>
+
+                                <div class="col-11 checkbox_text">
+                                    Acepto las Condiciones de Uso y la Política de Privacidad
+                                </div>
+                            </div>
+
+                            <div class="row" style="position:relative; top: 140px;">
+                                <div class="col-1">
+                                    <input class="checkbox" type="checkbox" id="newsletter" name="newsletter" value="Newsletter">
+                                </div>
+
+                                <div class="col-11 checkbox_text">
+                                    Recordarme para la próxima reserva
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="center">
+                <div class="button_top center">
+                    <a href="">Procesar Pago</a>
+                </div>
+            </div>
+
+            <div class="center">
+                <div class="button_bottom center">
+                    <a href="">Mi Pedido</a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+
+    </footer>
+
+</div>
+
+
+<script>
+    $(function () {
+        $('#header').load("./header.html");
+        $('#footer').load("./footer.html");
+    });
+</script>
+
+</body>
+
+</html>
