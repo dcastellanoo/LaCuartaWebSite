@@ -12,57 +12,9 @@
     <!-- Styles -->
     <link href="css/default.css" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
+    <link href="css/dialog.css" rel="stylesheet">
 
     <style>
-        .carrito_container {
-
-
-        }
-
-        .carrito_container a {
-            text-decoration: none;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 20px;
-            color: #FFFFFF;
-        }
-
-        .carrito_table {
-            position: relative;
-            top: 26px;
-            width: 916px;
-            height: 550px;
-
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 10px;
-            color: black;
-            font-size: 24px;
-        }
-
-        .button_continuar {
-            position: relative;
-            width: 148px;
-            height: 57px;
-            top: 52px;
-
-            background: #67523A;
-            border-radius: 6px;
-            padding: 8px 16px;
-        }
-
-        .button_sequir_pedido {
-            position: relative;
-            width: 230px;
-            height: 57px;
-            top: 78px;
-
-            padding: 8px 16px;
-            background: #67523A;
-            border-radius: 6px;
-        }
-
         .carrito_total {
             position: relative;
             width: 95px;
@@ -115,7 +67,7 @@
 
         }
 
-        .carrito_table .row {
+        .dialog_table .row {
             margin-top: 15px;
         }
     </style>
@@ -130,10 +82,10 @@
     </div>
 
     <!-- Page content -->
-    <div id="content">
-        <div class="carrito_container">
+    <main id="content">
+        <section class="dialog_container">
             <div class="center">
-                <div class="carrito_table text-center">
+                <article class="dialog_table text-center">
                     <h1>TU PEDIDO</h1>
 
 
@@ -199,22 +151,22 @@
                     <div class="carrito_total center dot">
                         15 €
                     </div>
-                </div>
+                </article>
             </div>
 
             <div class="center">
-                <div class="button_continuar center">
+                <div class="button_top center">
                     <a href="">Continuar</a>
                 </div>
             </div>
 
             <div class="center">
-                <div class="button_sequir_pedido center">
+                <div class="button_bottom center">
                     <a href="">Sequir con el pedido</a>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <div id="footer">
