@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8deb984d-3001-40d1-932b-56b83ee904c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contacto.html" beforeDir="false" afterPath="$PROJECT_DIR$/contacto.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sobre_nosotros.html" beforeDir="false" afterPath="$PROJECT_DIR$/sobre_nosotros.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carrito.html" beforeDir="false" afterPath="$PROJECT_DIR$/carrito.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carta.html" beforeDir="false" afterPath="$PROJECT_DIR$/carta.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procesar_pago.html" beforeDir="false" afterPath="$PROJECT_DIR$/procesar_pago.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +102,7 @@
       <workItem from="1646261097347" duration="599000" />
       <workItem from="1646331851786" duration="3365000" />
       <workItem from="1646386319074" duration="5764000" />
-      <workItem from="1646401575560" duration="12179000" />
+      <workItem from="1646401575560" duration="12621000" />
     </task>
     <servers />
   </component>
