@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>La Cuarta</title>
+
+    <link rel="icon" href="images/placeholder-image.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- Styles -->
+    <link href="css/default.css" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/carta.css" rel="stylesheet">
+</head>
+<body>
+    <main class="carta">
+        <div id="header">
+        </div>
+
+        <section class="subheader_carta">
+            <h1 class="subheader_title_carta">Carta</h1>
+            <article class="container_subheader_carta">
+
+                <div class="subheader_text_carta">
+                    <br>
+                        <b>Entrantes</b>
+                    </br>
+                    <br>
+                        <b>Principales</b>
+                    </br>
+                    <br>
+                        <b>Sugerencias</b>
+                    </br>
+                    <br>
+                        <b>Postres</b>
+                    </br>
+                    <br>
+                        <b>Bebidas</b>
+                    </br>
+                    <br>
+                        <b>Carta de Vinos</b>
+                    </br>
+                </div>
+
+                <figure class="subheader_photo_carta">
+                    <img src="images/logo_carta.png" alt="logo carta.">
+                </figure>
+
+            </article>
+        </section>
+
+        <section class="body_bebidas">
+            <h1 class="align_opcion_plato_bebidas">Opción de la carta</h1>
+            <article class="background_text_bebidas">
+                <h1 class="body_title_bebidas">Tipo de vino</h1>
+                <div class="container_text_bebidas">
+                    <div class="nombre_bebidas">
+                        Nombre del vino
+                    </div>
+                    <div class="money_bebidas">
+                        0.00 €
+                    </div>
+                </div>
+                <div class="origen_text_bebidas">
+                    Origen, añada
+                </div>
+            </article>
+        </section>
+
+        <div id="footer">
+
+        </div>
+
+        <script>
+            $(function () {
+                $('#header').load("./header.html");
+                $('#footer').load("./footer.html");
+            });
+        </script>
+    </main>
+</body>
+</html>
