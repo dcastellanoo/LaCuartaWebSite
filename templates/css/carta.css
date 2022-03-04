@@ -1,10 +1,10 @@
 
-.text_carta{
+.carta{
     font-family: Roboto;
     color: black;
 }
 
-.subheader_carta{
+.carta .subheader_carta{
     background: #E7E7E7;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     margin-top: -1.5%;
@@ -37,9 +37,8 @@
 
 }
 
-.body_plato_carta{
+.carta .body_plato_carta{
     background: #B09F92;
-
     margin-left: -0.52%;
     margin-right: -0.5%;
     padding-bottom: 25%;
@@ -50,6 +49,7 @@
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     display: flex;
     justify-content: space-between;
+    padding-top: 1%;
     margin-right: 5%;
     margin-left: 5%;
 }
@@ -60,19 +60,27 @@
     padding-top: 2%;
 }
 
-.body_plato_carta .align_money_plato_carta{
+.background_plato_carta .align_money_plato_carta{
     text-align: center;
     padding-bottom: 1%;
     font-size: 26px;
 }
 
-.body_plato_carta .text_plato_carta{
+.background_plato_carta .text_plato_carta{
     font-size: 26px;
     margin-left: 5%;
     margin-bottom: 2%;
 }
 
-.body_plato_carta .text_title_plato_carta{
+.text_plato_carta .text_title_plato_carta{
     font-size: 36px;
+    padding-top: 2%;
 }
 
+.text_plato_carta .descripcion_plato_carta{
+    margin-top: 15%;
+}
+
+.body_plato_carta .alergenos_plato_carta{
+    margin-top: 50%;
+}
