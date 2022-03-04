@@ -14,24 +14,24 @@
     left: 0px;
 }
 
-.subheader_carta .subheader_title_carta{
+.carta .subheader_carta .subheader_title_carta{
     padding-top: 1%;
     text-align: center;
     font-size: 36px;
 }
 
-.subheader_carta .subheader_text_carta {
+.carta .subheader_carta .subheader_text_carta {
     font-size: 26px;
     margin-left: 10%;
     margin-bottom: 2%;
 }
 
-.subheader_carta .subheader_photo_carta{
+.carta .subheader_carta .subheader_photo_carta{
     text-align: right;
     margin-right: 7%;
 }
 
-.subheader_carta .container_subheader_carta{
+.carta .subheader_carta .container_subheader_carta{
     display: flex;
     justify-content: space-between;
 
@@ -44,7 +44,7 @@
     padding-bottom: 25%;
 }
 
-.body_plato_carta .background_plato_carta{
+.carta .body_plato_carta .background_plato_carta{
     background: #E7E7E7;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     display: flex;
@@ -54,33 +54,33 @@
     margin-left: 5%;
 }
 
-.body_plato_carta .align_opcion_plato_carta{
+.carta .body_plato_carta .align_opcion_plato_carta{
     text-align: center;
     font-size: 36px;
     padding-top: 2%;
 }
 
-.background_plato_carta .align_money_plato_carta{
+.carta .body_plato_carta .background_plato_carta .align_money_plato_carta{
     text-align: center;
     padding-bottom: 1%;
     font-size: 26px;
 }
 
-.background_plato_carta .text_plato_carta{
+.carta .body_plato_carta .background_plato_carta .text_plato_carta{
     font-size: 26px;
     margin-left: 5%;
     margin-bottom: 2%;
 }
 
-.text_plato_carta .text_title_plato_carta{
+.carta .body_plato_carta .background_plato_carta .text_plato_carta .text_title_plato_carta{
     font-size: 36px;
     padding-top: 2%;
 }
 
-.text_plato_carta .descripcion_plato_carta{
+.carta .body_plato_carta .background_plato_carta .text_plato_carta .descripcion_plato_carta{
     margin-top: 15%;
 }
 
-.body_plato_carta .alergenos_plato_carta{
+.body_plato_carta .background_plato_carta .text_plato_carta .alergenos_plato_carta{
     margin-top: 50%;
 }
