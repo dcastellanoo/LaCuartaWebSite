@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8deb984d-3001-40d1-932b-56b83ee904c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/css/dialog.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/procesar_pago.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carrito.html" beforeDir="false" afterPath="$PROJECT_DIR$/carrito.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contacto.html" beforeDir="false" afterPath="$PROJECT_DIR$/contacto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sobre_nosotros.html" beforeDir="false" afterPath="$PROJECT_DIR$/sobre_nosotros.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +54,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="JavaScript Debug.procesar_pago.html">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration name="carrito.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/templates/carrito.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -70,9 +72,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JavaScript Debug.procesar_pago.html" />
         <item itemvalue="JavaScript Debug.carrito.html" />
-        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JavaScript Debug.reservas2.html" />
         <item itemvalue="JavaScript Debug.reservas1.html" />
       </list>
@@ -103,7 +105,7 @@
       <workItem from="1646261097347" duration="599000" />
       <workItem from="1646331851786" duration="3365000" />
       <workItem from="1646386319074" duration="5764000" />
-      <workItem from="1646401575560" duration="10383000" />
+      <workItem from="1646401575560" duration="12179000" />
     </task>
     <servers />
   </component>
