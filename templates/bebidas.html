@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>La Cuarta</title>
 
     <link rel="icon" href="images/placeholder-image.png">
@@ -12,17 +10,11 @@
     <link href="css/default.css" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/carta.css" rel="stylesheet">
-
 </head>
 <body>
-
-    <!-- Header -->
-
     <main class="carta">
-    <!-- Page content -->
-         <div id="header">
-            </div>
-
+        <div id="header">
+        </div>
 
         <section class="subheader_carta">
             <h1 class="subheader_title_carta">Carta</h1>
@@ -55,41 +47,33 @@
 
             </article>
         </section>
-        <section class="body_plato_carta">
-            <h1 class="align_opcion_plato_carta">Opción de la carta</h1>
-            <article class="background_plato_carta">
-                <div class="text_plato_carta">
-                    <div class="text_title_plato_carta">
-                        <b>Nombre del plato</b>
-                    </div>
 
-                    <div class="descripcion_plato_carta">
-                        Descripción
+        <section class="body_bebidas">
+            <h1 class="align_opcion_plato_bebidas">Opción de la carta</h1>
+            <article class="background_text_bebidas">
+                <h1 class="body_title_bebidas">Tipo de bebida</h1>
+                <div class="container_text_bebidas">
+                    <div class="nombre_bebidas">
+                        Nombre de la bebida
                     </div>
-                    <div class="alergenos_plato_carta">
-                        Alérgernos
+                    <div class="money_bebidas">
+                        0.00 €
                     </div>
                 </div>
-
-                <figure>
-                    <img src="images/imagen_plato.png" alt="Plato Comida.">
-                    <figcaption class="align_money_plato_carta">
-                        0,00 €
-                    </figcaption>
-                </figure>
             </article>
         </section>
 
+        <div id="footer">
 
+        </div>
+
+        <script>
+            $(function () {
+                $('#header').load("./header.html");
+                $('#footer').load("./footer.html");
+            });
+        </script>
     </main>
-    <div id="footer">
 
-    </div>
-    <script>
-        $(function () {
-            $('#header').load("./header.html");
-            $('#footer').load("./footer.html");
-        });
-    </script>
 </body>
 </html>
