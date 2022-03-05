@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8deb984d-3001-40d1-932b-56b83ee904c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/reservas.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/reservas.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservas1.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservas1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/default.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -46,14 +45,18 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/LaCuartaWebSite-master" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager" selected="JavaScript Debug.procesar_pago.html">
     <configuration name="carrito.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/templates/carrito.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/templates/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="procesar_pago.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/templates/procesar_pago.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="reservas1.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/templates/reservas1.html" useBuiltInWebServerPort="true">
@@ -62,16 +65,13 @@
     <configuration name="reservas2.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/templates/reservas2.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="sobre_nosotros.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/templates/sobre_nosotros.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.procesar_pago.html" />
         <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JavaScript Debug.carrito.html" />
         <item itemvalue="JavaScript Debug.reservas2.html" />
         <item itemvalue="JavaScript Debug.reservas1.html" />
-        <item itemvalue="JavaScript Debug.sobre_nosotros.html" />
       </list>
     </recent_temporary>
   </component>
@@ -98,7 +98,11 @@
       <workItem from="1646062896905" duration="14729000" />
       <workItem from="1646079025341" duration="115000" />
       <workItem from="1646261097347" duration="599000" />
-      <workItem from="1646331851786" duration="2753000" />
+      <workItem from="1646331851786" duration="3365000" />
+      <workItem from="1646386319074" duration="5764000" />
+      <workItem from="1646401575560" duration="13902000" />
+      <workItem from="1646416673995" duration="228000" />
+      <workItem from="1646417144275" duration="1888000" />
     </task>
     <servers />
   </component>

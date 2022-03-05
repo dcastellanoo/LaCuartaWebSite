@@ -13,22 +13,23 @@
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/carta.css" rel="stylesheet">
 
-    <style>
-
-    </style>
 </head>
 <body>
 
     <!-- Header -->
-    <div id="header">
+    <header id="header">
+    </header>
 
-    </div>
-    <div id="content">
+    <main class="carta">
     <!-- Page content -->
-        <section>
-            <h1>Carta</h1>
-            <div>
-                <div>
+
+
+
+        <section class="subheader_carta">
+            <h1 class="subheader_title_carta">Carta</h1>
+            <article class="container_subheader_carta">
+
+                <div class="subheader_text_carta">
                     <br>
                         <b>Entrantes</b>
                     </br>
@@ -41,64 +42,51 @@
                     <br>
                         <b>Postres</b>
                     </br>
+                    <br>
+                        <b>Bebidas</b>
+                    </br>
+                    <br>
+                        <b>Carta de Vinos</b>
+                    </br>
                 </div>
-                <div>
+
+                <figure class="subheader_photo_carta">
                     <img src="images/logo_carta.png" alt="logo carta.">
-                </div>
+                </figure>
 
-            </div>
+            </article>
         </section>
-        <section>
-            <div>
-                <h2>Entrantes</h2>
-                <div>
-                    <p>
+        <section class="body_plato_carta">
+            <h1 class="align_opcion_plato_carta">Opción de la carta</h1>
+            <article class="background_plato_carta">
+                <div class="text_plato_carta">
+                    <div class="text_title_plato_carta">
                         <b>Nombre del plato</b>
-                    </p>
-                    <div>
-                        <img src="images/imagen_plato.png" alt="Plato Comida.">
-                        <br>
-                            0,00 €
-                        </br>
-                    </div>
-                    <p>
-                        Descripcion
-                    </p>
-                    <p>
-                        Alergernos
-                    </p>
-                </div>
-            </div>
-            <div>
-                <h2>Principales</h2>
-                <div>
-                    <p>
-                        <b>Nombre del plato</b>
-                    </p>
-                    <div>
-                        <img src="images/imagen_plato.png" alt="Plato Comida.">
-                        <br>
-                            0,00 €
-                        </br>
                     </div>
 
-
-                    <p>
-                        Descripcion
-                    </p>
-                    <p>
-                        Alergernos
-                    </p>
+                    <div class="descripcion_plato_carta">
+                        Descripción
+                    </div>
+                    <div class="alergenos_plato_carta">
+                        Alérgernos
+                    </div>
                 </div>
-            </div>
 
-
+                <figure>
+                    <img src="images/imagen_plato.png" alt="Plato Comida.">
+                    <figcaption class="align_money_plato_carta">
+                        0,00 €
+                    </figcaption>
+                </figure>
+            </article>
         </section>
-    </div>>
 
-    <div id="footer">
 
-    </div>
+    </main>
+
+    <footer id="footer">
+
+    </footer>
     <script>
         $(function () {
             $('#header').load("./header.html");
