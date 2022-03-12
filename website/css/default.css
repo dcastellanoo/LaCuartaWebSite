@@ -1,0 +1,32 @@
+/* Space between header and footer for content */
+#header, #footer, #content { left: 0; width: 100%; }
+#header {top: 0px;}
+#content { top: 70px; min-height: 100vh; padding-bottom: 210px; }
+#footer { bottom:0; }
+
+/* Default text style across all pages */
+body {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    color: #FFFFFF;
+    color: black;
+}
+
+/*
+body {
+    background: url('../images/background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+                  */
+
+header {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+
+    background: rgba(121, 91, 57, 0.5);
+}
