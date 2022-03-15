@@ -27,27 +27,27 @@ header {
     background: rgba(121, 91, 57, 0.5);
 }
 
-.navbar {
+#header .navbar {
 }
 
 
-.navbar-dark .navbar-nav .nav-link {
+#header .navbar-dark .navbar-nav .nav-link {
     color: rgba(255, 255, 255, 1);
 }
 
-.nav-item {
+#header .nav-item {
     margin-left: 0.5rem;
 }
 
-.navbar-dark .navbar-toggler {
+#header .navbar-dark .navbar-toggler {
         border: none;
 }
 
-.navbar-toggler:focus {
+#header .navbar-toggler:focus {
     box-shadow: none;
 }
 
-.navbar-brand {
+#header .navbar-brand {
     padding-left: 22.5%;
     padding-top: 5px;
 }
