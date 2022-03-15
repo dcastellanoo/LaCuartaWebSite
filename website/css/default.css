@@ -12,6 +12,18 @@ body {
     font-size: 22px;
     color: #FFFFFF;
 }
+@media (min-width: 679px) {
+    body {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 996px) {
+    body {
+        font-size: 16px;
+    }
+}
+
 
 
 body {
@@ -81,8 +93,8 @@ footer {
     min-height: 50vh;
 }
 
-.mainPage .title {
-    font-size: 6rem;
+.mainPage h1 {
+    font-size: 5rem;
 }
 
 /* _________________ Sobre Nosotros _________________ */
@@ -91,8 +103,8 @@ footer {
 }
 
 #carouselSobreNosotros .carousel-indicators button {
-    width: 10px !important;
-    height: 10px !important;
+    width: 0.5rem !important;
+    height: 0.5rem !important;
     border-radius: 100%;
 }
 
