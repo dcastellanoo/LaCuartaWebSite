@@ -58,15 +58,15 @@ footer {
     background: rgba(121, 91, 57, 0.5);
 }
 
-footer a {
+#footer a {
     text-decoration: None;
     color: #FFFFFF;
 }
-footer a:hover{
+#footer a:hover{
     color: black;
 }
 
-footer .name {
+#footer .name {
     font-size: 24px;
     line-height: 28px;
 }
