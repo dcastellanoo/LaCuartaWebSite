@@ -22,12 +22,12 @@ body {
     background-size: cover;
 }
 
+/* _________________ HEADER _________________ */
 header {
-
+    background: rgba(121, 91, 57, 0.5);
 }
 
 .navbar {
-    background: rgba(121, 91, 57, 0.5);
 }
 
 
@@ -51,3 +51,24 @@ header {
     padding-left: 22.5%;
     padding-top: 5px;
 }
+
+/* _________________ FOOTER _________________ */
+
+footer {
+    background: rgba(121, 91, 57, 0.5);
+}
+
+footer a {
+    text-decoration: None;
+    color: #FFFFFF;
+}
+footer a:hover{
+    color: black;
+}
+
+footer .name {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+
