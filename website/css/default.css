@@ -47,9 +47,11 @@ header {
     box-shadow: none;
 }
 
-#header .navbar-brand {
-    padding-left: 22.5%;
-    padding-top: 5px;
+@media (min-width: 992px) {
+    #header .navbar-brand {
+        padding-left: 22.5%;
+        padding-top: 5px;
+    }
 }
 
 /* _________________ FOOTER _________________ */
@@ -67,8 +69,11 @@ footer {
 }
 
 #footer .name {
-    font-size: 24px;
-    line-height: 28px;
+    font-size: 1.5rem;
+}
+
+#footer .logo img {
+
 }
 
 /* _________________ Main Page _________________ */
@@ -77,9 +82,18 @@ footer {
 }
 
 .mainPage .title {
-    font-weight: 500;
-    font-size: 72px;
-    line-height: 84px;
+    font-size: 6rem;
+}
+
+/* _________________ Sobre Nosotros _________________ */
+#carouselSobreNosotros .carousel-inner > .carousel-item > img {
+    height: 35vh;
+}
+
+#carouselSobreNosotros .carousel-indicators button {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 100%;
 }
 
 
