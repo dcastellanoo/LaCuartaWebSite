@@ -1,0 +1,40 @@
+.margin_body_top{
+    margin-top: 4%;
+}
+
+.margin_body_bottom{
+    margin-bottom: 5%;
+}
+
+.size_img_ubi{
+    height: 100%;
+    width: 95%;
+}
+
+.margin_telephone{
+    margin-left: 15%;
+    margin-top: 5%;
+}
+
+.margin_number{
+    margin-top: 7%;
+    margin-left: -8%;
+}
+.margin_dir{
+    margin-top: 7%;
+    margin-left: -17%;
+}
+.margin_ubi{
+    margin-top: 5%;
+}
+
+@media (max-width: 991px) {
+    body {
+        background: #B09F92;
+    }
+}
+@media (min-width: 992px) {
+    body {
+        background: url('../images/background.jpg') no-repeat center center fixed;
+    }
+}
