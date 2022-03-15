@@ -32,6 +32,9 @@
     body {
         background: #B09F92;
     }
+    .prueba {
+        background: url('../images/background.jpg') no-repeat center center fixed;
+    }
 }
 @media (min-width: 992px) {
     body {
