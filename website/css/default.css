@@ -1,7 +1,7 @@
 /* Space between header and footer for content */
 #header, #footer, #content { left: 0; width: 100%; }
 #header {top: 0px;}
-#content { top: 70px; min-height: 75vh; padding-bottom: 210px; }
+#content { top: 70px; min-height: 75vh;}
 #footer { bottom:0; }
 
 /* Default style across all pages */
@@ -9,9 +9,12 @@ body {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 22px;
     color: #FFFFFF;
+    font-size: 2vw;
+
 }
+/*
+font-size: 22px;
 
 @media (max-width: 768px) {
     body {
@@ -23,6 +26,17 @@ body {
     body {
         font-size: 18px;
     }
+}          */
+
+h1 {
+    font-size: 5.9vw;
+}
+h2 {
+    font-size: 3.0vw;
+}
+
+h3 {
+    font-size: 2.5vw;
 }
 
 body {
@@ -41,6 +55,9 @@ body {
 #header .navbar {
 }
 
+#header .navbar .navbar-brand {
+}
+
 
 #header .navbar-dark .navbar-nav .nav-link {
     color: rgba(255, 255, 255, 1);
@@ -51,18 +68,52 @@ body {
 }
 
 #header .navbar-dark .navbar-toggler {
-        border: none;
+    padding: 0;
+    margin-left: 1rem;
 }
 
 #header .navbar-toggler:focus {
     box-shadow: none;
 }
 
-@media (min-width: 992px) {
-    #header .navbar-brand {
-        padding-left: 22.5%;
-        padding-top: 5px;
+#header .navbar-toggler .navbar-toggler-icon {
+    font-size: 2vw;
+}
+
+
+#header .navbar-brand {
+    padding-left: 22.5%;
+    padding-bottom: 0;
+}
+
+#header .navbar-brand img {
+    max-width: 25vw;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    #header .navbar-brand img {
+        float: right;
+        padding-right: 1rem;
     }
+
+    #header .navbar-brand {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    #header .navbar-brand {
+        padding-left: 1rem;
+    }
+
+    #header .navbar-brand img {
+    }
+}
+
+.navbar.scrolled {
+    background-color: #604628 !important;
+    transition: background-color 200ms linear;
 }
 
 /* _________________ FOOTER _________________ */
@@ -85,12 +136,9 @@ body {
     color: black;
 }
 
-#footer .name {
-    font-size: 1.5rem;
-}
-
 #footer .logo img {
-
+    max-width: 35vw;
+    height: auto;
 }
 
 /* _________________ Main Page _________________ */
@@ -99,29 +147,27 @@ body {
 }
 
 .mainPage h1 {
-    font-size: 5rem;
 }
 
 .mainPage .mobileMainPage figure {
     margin: 0;
     padding: 0;
+    object-fit: cover;
 }
 
-@media (max-width: 768px) {
-    .mainPage h1 {
-        font-size: 3rem;
-    }
+.mainPage .mobileMainPage .carousel-caption {
+    top: 30vw
 }
 
-@media (max-width: 992px) {
-    .mainPage h1 {
-        font-size: 4rem;
-    }
-}
+
 
 /* _________________ Sobre Nosotros _________________ */
 #carouselSobreNosotros .carousel-inner > .carousel-item > img {
     height: 35vh;
+}
+
+#carouselSobreNosotros .carousel-inner {
+    margin: auto;
 }
 
 #carouselSobreNosotros .carousel-indicators button {

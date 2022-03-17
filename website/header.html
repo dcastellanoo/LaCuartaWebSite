@@ -33,3 +33,13 @@
     </div>
 
 </nav>
+
+<!-- Change transparency of header after scrolling -->
+<script>
+    $(function () {
+        $(document).scroll(function () {
+            var $nav = $(".navbar");
+            $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        });
+    });
+</script>
