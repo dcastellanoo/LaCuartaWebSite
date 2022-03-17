@@ -6,17 +6,30 @@
     margin-bottom: 5%;
 }
 
-.align_center_barra{
-    margin-left: 20%;
+
+
+.container_contact_txt{
+    position: relative;
+    display: inline-block;
+
 }
 
-.size_img_ubi{
-    height: 100%;
-    width: 95%;
+.text_contact{
+    text-align: center;
+    color: white;
+    font-size: calc(10vw);;
+    font-family: 'Roboto';
+    font-style: normal;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .size_terra-n{
-    max-width: 100%
+    margin-top: -4%;
+    width:100%;
+    height:auto;
 }
 
 .margin_telephone{
@@ -41,9 +54,17 @@
         background: #B09F92;
     }
 
+    .center_txt_hor {
+        margin-left: 87%;
+    }
+
+    .center_txt_hours {
+        margin-left: 30%;
+    }
 }
 @media (min-width: 992px) {
-    body {
-        background: url('../images/background.jpg') no-repeat center center fixed;
+    .size_img_ubi{
+        height: 100%;
+        width: 95%;
     }
 }
