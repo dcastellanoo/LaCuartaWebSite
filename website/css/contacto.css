@@ -6,9 +6,17 @@
     margin-bottom: 5%;
 }
 
+.align_center_barra{
+    margin-left: 20%;
+}
+
 .size_img_ubi{
     height: 100%;
     width: 95%;
+}
+
+.size_terra-n{
+    max-width: 100%
 }
 
 .margin_telephone{
@@ -32,9 +40,7 @@
     body {
         background: #B09F92;
     }
-    .prueba {
-        background: url('../images/background.jpg') no-repeat center center fixed;
-    }
+
 }
 @media (min-width: 992px) {
     body {
