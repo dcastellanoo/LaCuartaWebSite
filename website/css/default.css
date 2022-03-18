@@ -38,6 +38,10 @@ h3 {
     font-size: calc(12px + 2.0vw);
 }
 
+h4 {
+    font-size: calc(12px + 1.5vw);
+}
+
 body {
     background: url('../images/background.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
