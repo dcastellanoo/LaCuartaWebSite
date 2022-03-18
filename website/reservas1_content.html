@@ -1,9 +1,9 @@
-<article class="desktopForm container d-flex justify-content-center p-5">
-    <form class="text-center">
+<article class="reservas container-fluid d-flex justify-content-center p-5">
+    <form class="desktopForm text-center">
         <div class="formTable">
-            <div class="row">
+            <div class="row pt-4">
                 <div class="col-md-6">
-                    <fieldset class="mt-4">
+                    <fieldset class="">
                         <legend>Adultos</legend>
 
                         <div class="counter d-inline-flex justify-content-center">
@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <fieldset class="mt-4">
+                    <fieldset class="">
                         <legend>Niños</legend>
 
                         <div class="counter d-inline-flex justify-content-center">
@@ -26,31 +26,37 @@
                     </fieldset>
                 </div>
 
+            </div>
+
+            <div class="row d-inline-block pt-4">
                 <fieldset class="">
                     <legend>Fecha</legend>
 
                     <div class="datepicker">
-
+                        calendar
                     </div>
 
                 </fieldset>
+            </div>
 
 
+
+            <div class="row text-align:center py-4">
                 <fieldset class="">
                     <legend>Horario</legend>
 
-                    <div class="timeField selectedField text-center p-1">
+                    <div class="timeField selectedField text-center p-1 d-inline-block mx-2">
                         <strong>ALMUERZO</strong> <br>
                         13:00 - 16:30
                     </div>
 
-                    <div class="timeField text-center p-1">
+                    <div class="timeField text-center p-1 d-inline-block mx-2">
                         <strong>CENA</strong>  <br>
                         20:15 - 24:00
                     </div>
                 </fieldset>
-
             </div>
+
         </div>
 
         <input type="submit" class="button mt-5" value="Continuar">
