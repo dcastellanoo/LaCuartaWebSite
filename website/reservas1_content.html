@@ -1,7 +1,81 @@
-<section class="reservas">
-    <article class="row justify-content-center">
-        <div class="col-sm-6 row book">
-            Prueba
+<article class="desktopForm container d-flex justify-content-center p-5">
+    <form class="text-center">
+        <div class="formTable">
+            <div class="row">
+                <div class="col-md-6">
+                    <fieldset class="mt-4">
+                        <legend>Adultos</legend>
+
+                        <div class="counter d-inline-flex justify-content-center">
+                            <input type="button" class="buttonMinus" value="-" />
+                            <input type="text" class="text-center border-0 counterValue" value="2"/>
+                            <input type="button" class="buttonPlus" value="+" />
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="col-md-6">
+                    <fieldset class="mt-4">
+                        <legend>Niños</legend>
+
+                        <div class="counter d-inline-flex justify-content-center">
+                            <input type="button" class="buttonMinus" value="-" />
+                            <input type="text" class="text-center border-0 counterValue" value="0"/>
+                            <input type="button" class="buttonPlus" value="+" />
+                        </div>
+                    </fieldset>
+                </div>
+
+                <fieldset class="">
+                    <legend>Fecha</legend>
+
+                    <div class="datepicker">
+
+                    </div>
+
+                </fieldset>
+
+
+                <fieldset class="">
+                    <legend>Horario</legend>
+
+                    <div class="timeField selectedField text-center p-1">
+                        <strong>ALMUERZO</strong> <br>
+                        13:00 - 16:30
+                    </div>
+
+                    <div class="timeField text-center p-1">
+                        <strong>CENA</strong>  <br>
+                        20:15 - 24:00
+                    </div>
+                </fieldset>
+
+            </div>
         </div>
-    </article>
-</section>
+
+        <input type="submit" class="button mt-5" value="Continuar">
+    </form>
+
+
+
+</article>
+
+
+<script>
+    $(document).ready(function() {
+        $('.buttonMinus').click(function () {
+            var $input = $(this).parent().find('.counterValue');
+            var count = parseInt($input.val()) - 1;
+            count = count < 0 ? 0 : count;
+            $input.val(count);
+            $input.change();
+            return false;
+        });
+        $('.buttonPlus').click(function () {
+            var $input = $(this).parent().find('.counterValue');
+            $input.val(parseInt($input.val()) + 1);
+            $input.change();
+            return false;
+        });
+    });
+</script>
