@@ -1,0 +1,157 @@
+.carta{
+    font-family: Roboto;
+    color: black;
+}
+
+.subheader_carta{
+    background: #E7E7E7;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.subheader_title_carta{
+    padding-top: 1%;
+    text-align: center;
+    font-size: 36px;
+}
+
+.subheader_text_carta {
+    font-size: 26px;
+    margin-left: 10%;
+    margin-bottom: 2%;
+}
+
+.subheader_photo_carta{
+    text-align: right;
+    margin-right: 7%;
+}
+
+.container_subheader_carta{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+
+.background_plato_carta{
+    background: #E7E7E7;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.align_opcion_plato_carta{
+    text-align: center;
+    font-size: 36px;
+    padding-top: 2%;
+}
+
+.align_money_plato_carta{
+    text-align: center;
+    padding-bottom: 1%;
+    font-size: 26px;
+}
+
+.text_plato_carta{
+    font-size: 26px;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+
+.text_title_plato_carta{
+    font-size: 36px;
+    padding-top: 2%;
+}
+
+.descripcion_plato_carta{
+    margin-top: 15%;
+}
+
+.alergenos_plato_carta{
+    margin-top: 50%;
+}
+
+.align_photo_plato_carta{
+    margin-right: 5%;
+}
+
+.body_bebidas{
+    background: #B09F92;
+    margin-left: -0.52%;
+    margin-right: -0.5%;
+    padding-bottom: 8%;
+}
+
+.align_opcion_plato_bebidas{
+    text-align: center;
+    padding-top: 2%;
+    font-size: 36px;
+}
+
+.background_text_bebidas{
+    background: #E7E7E7;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    padding-top: 1%;
+    margin-right: 10%;
+    margin-left: 10%;
+    padding-bottom: 20%;
+}
+
+.container_text_bebidas{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.body_title_bebidas{
+    margin-left: 6.6%;
+    font-size: 28px;
+}
+
+.nombre_bebidas{
+    margin-left: 7%;
+}
+
+.money_bebidas{
+    margin-right: 7%;
+}
+
+.origen_text_bebidas{
+    margin-left: 7%;
+    padding-top: 1%;
+    font-size: 17px;
+}
+@media (max-width: 767px) {
+    .body_plato_carta{
+        background: #B09F92;
+        padding-bottom: 25%;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px){
+    .background_carta {
+        background: url('../images/background.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .text_opcion_plato_carta{
+        color: white;
+    }
+
+    .body_plato_carta{
+        padding-bottom: 25%;
+    }
+
+}
+
+@media (min-width: 992px) {
+    .body_plato_carta{
+        background: #B09F92;
+        padding-bottom: 25%;
+    }
+}
