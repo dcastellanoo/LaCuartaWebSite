@@ -208,21 +208,28 @@ body {
 }
 
 /* _________________ Reservas _________________ */
-.desktopForm {
+.reservas {
     color: black;
     font-size: 20px;
     line-height: 20px;
 }
 
-.desktopForm .formTable {
+/* Remove number tickers */
+.reservas input[type=number]::-webkit-inner-spin-button,
+.reservas input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.reservas form .formTable {
     background: rgba(255, 255, 255, 0.8);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 
     width: 50vw;
-    height: auto;
+    height: 70vh;
 }
-.desktopForm .button {
+.reservas form .button {
     font-style: normal;
     color: #FFFFFF;
     padding: 1rem 2rem;
@@ -234,7 +241,7 @@ body {
 
 
 
-.formTable .counter {
+.reservas form .formTable .counter {
     border: 1px solid rgba(0, 0, 0, 0.4);
     box-sizing: border-box;
     border-radius: 4px;
@@ -244,13 +251,13 @@ body {
     height: 40px;
 }
 
-.formTable .counter input {
+.reservas form .formTable .counter input {
     margin: 0;
     width: 90px;
     height: 38px;
 }
 
-.formTable .counter input[type="button"] {
+.reservas form .formTable .counter input[type="button"] {
     background-color: transparent;
     border-style: none;
 
@@ -260,14 +267,14 @@ body {
     font-size: 22px;
 }
 
-.formTable .counter input[type="button"]:hover {
+.reservas form .formTable .counter input[type="button"]:hover {
     background-color: gainsboro;
 }
 
 
 
 
-.formTable .timeField {
+.reservas form .formTable .timeField {
     width: 150px;
     height: 50px;
     border-radius: 4px;
@@ -275,14 +282,13 @@ body {
     background-color: #FFFFFF;
 }
 
-.formTable .selectedField {
+.reservas form .formTable .selectedField {
     color: #FFFFFF;
     background-color: rgba(0, 0, 0, 0.25);
 }
 
-.formTable .datepicker {
-    width: 337px;
-    height: 247.13px;
+.reservas form .formTable #datepicker {
+    color: black;
     border-style: dashed;
 }
 
@@ -305,9 +311,40 @@ body {
     color: #737373;
 }
 /*
+
 @media (max-width: 768px) {
     .reservas {
-        background: #998469;
+        background-color: #998469;
+    }
+
+    .reservas form {
+        color: #FFFFFF;
+    }
+
+    .reservas form  .formTable {
+        background-color: transparent;
+        box-shadow: none;
+        width: 100% !important;
+    }
+
+    .reservas form .button {
+        background: black;
+        padding: 1rem 7rem;
+    }
+
+    .reservas form .formTable .timeField {
+        color: #424242;
+    }
+
+    .reservas form .formTable .selectedField {
+        color: #FFFFFF;
+        background-color: rgba(0, 0, 0, 0.65);;
+    }
+}
+
+@media (max-width: 992px) {
+    .reservas form .formTable {
+        width: 75vw;
     }
 }         */
 

@@ -1,265 +1,344 @@
-   #wrapper {
-	    padding-left: 0;
-	    -webkit-transition: all 0.5s ease;
-	    -moz-transition: all 0.5s ease;
-	    -o-transition: all 0.5s ease;
-	    transition: all 0.5s ease;
-	}
+/* Space between header and footer for content */
+#header, #footer, #content { left: 0; width: 100%; }
+#header {top: 0px;}
+#content { top: 70px; min-height: 100vh; padding-bottom: 210px; }
+#footer { bottom:0; }
 
-	#wrapper.toggled {
-	    padding-left: 250px;
-	}
+/* Default style across all pages */
+body {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    color: #FFFFFF;
+    font-size: calc(12px + 1vw);
+}
+/*
+font-size: 22px;
 
-	#sidebar-wrapper {
-	    z-index: 1000;
-	    position: absolute;
-	    left: 270px;
-	    width: 0;
-	    height: auto;
-	    margin-left: -250px;
-	    overflow-y: auto;
-	    /*background: #000;*/
-	    -webkit-transition: all 0.5s ease;
-	    -moz-transition: all 0.5s ease;
-	    -o-transition: all 0.5s ease;
-	    transition: all 0.5s ease;
-	}
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+}
 
-	#wrapper.toggled #sidebar-wrapper {
-	    width: 250px;
-	}
+@media (max-width: 992px) {
+    body {
+        font-size: 18px;
+    }
+}          */
 
-	#page-content-wrapper {
-	    width: 100%;
-	    position: relative;
-	    padding: 15px;
-	}
+h1 {
+    font-size: calc(12px + 5.9vw);
+}
+h2 {
+    font-size: calc(12px + 3.0vw);
+}
 
-	#wrapper.toggled #page-content-wrapper {
-	    position: absolute;
-	    margin-right: -250px;
-	}
+h3 {
+    font-size: calc(12px + 2.0vw);
+}
 
-	.sidebar-nav {
-	    position: absolute;
-	    top: 0;
-	    width: 250px;
-	    margin: 0;
-	    padding: 0;
-	    list-style: none;
-	}
+h4 {
+    font-size: calc(12px + 1.5vw);
+}
 
-	.sidebar-nav li {
-	    text-indent: 20px;
-	    line-height: 40px;
-	}
+body {
+    background: url('../images/background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 
-	.sidebar-nav li a {
-	    display: block;
-	    text-decoration: none;
-	    color: #999999;
-	}
+/* _________________ HEADER _________________ */
+#header {
+    background: rgba(121, 91, 57, 0.5);
+}
 
-	.sidebar-nav li a:hover {
-	    text-decoration: none;
-	    color: #fff;
-	    background: rgba(255,255,255,0.2);
-	}
+#header .navbar {
+}
 
-	.sidebar-nav li a:active,
-	.sidebar-nav li a:focus {
-	    text-decoration: none;
-	}
-
-	.sidebar-nav > .sidebar-brand {
-	    height: 65px;
-	    font-size: 18px;
-	    line-height: 60px;
-	}
-
-	.sidebar-nav > .sidebar-brand a {
-	    color: #999999;
-	}
-
-	.sidebar-nav > .sidebar-brand a:hover {
-	    color: #fff;
-	    background: none;
-	}
-
-	@media(min-width:768px) {
-	    #wrapper {
-	        padding-left: 250px;
-	    }
-
-	    #wrapper.toggled {
-	        padding-left: 0;
-	    }
-
-	    #sidebar-wrapper {
-	        width: 250px;
-	    }
-
-	    #wrapper.toggled #sidebar-wrapper {
-	        width: 0;
-	    }
-
-	    #page-content-wrapper {
-	        padding: 20px;
-	        position: relative;
-	    }
-
-	    #wrapper.toggled #page-content-wrapper {
-	        position: relative;
-	        margin-right: 0;
-	    }
-	}
-
-	.product{
-		display: block;
-		width: 100%;
-		margin-bottom: 30px;
-		position: relative;
-		-moz-transition: all 0.3s ease;
-		-o-transition: all 0.3s ease;
-		-webkit-transition: all 0.3s ease;
-		-ms-transition: all 0.3s ease;
-		transition: all 0.3s ease;
-        
-        padding-bottom: 20px;
-		text-align: center;
-        color: #000000;
-        margin: 10px;
-		padding: 10px;
-        background-color: white;
-		border: 1px solid #DDD;
-		border-radius: 3px;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-	}
-
-	.nav-menu-left{
-	    width: 19%;
-	    float: left;
-	    margin-top: 23px;
-	    margin-left: 20px;
-	    padding-top: 40px;
-	}
-
-	.menu-left{
-	    background: rgba(255, 255, 255, 0.6);
-	    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	    padding-top: 3px;
-	    padding-bottom: 3px;
-	}
-
-	.background_pedido {
-	    background: #B09F92;
-	}
-
-	.header-pedido{
-	    width: 100%;
-	    margin-left: 10px;
-	}
-
-	.header-pedido h1{
-	    font-size: 14pt;
-	    color: #000000;
-	}
-
-	.pedido-info{
-	    padding: 10px;
-	}
-
-	.spi-1{
-	    float: left;
-	    font-size: 13pt;
-	}
-
-	.spi-2{
-	    float: center;
-	}
-
-	.spi-3{
-	    float: right;
-	}
-
-	.pedido-quant{
-	    padding: 10px;
-	}
-
-	.pedido-quant input{
-	    text-align: center;
-	    border: 1px solid #CCC;
-	    padding: 5px;
-	}
-
-	.btn-pedido .btn {
-	    background-color: #E59C47; /* Green */
-	    border: none;
-	    color: white;
-	    padding: 6px 22px;
-	    text-align: center;
-	    text-decoration: none;
-	    font-size: 16px;
-	    cursor: pointer;
-	    margin: 10px;
-	    border-radius: 5px;
-	}
-
-	.btn-pedido .btn:hover {
-	    background-color: #784b17;
-	}
-
-	.background_pedido {
-	    background: #B09F92;
-	}
+#header .navbar .navbar-brand {
+}
 
 
-	.nav-menu-left{
-	    width: 19%;
-	    float: left;
-	    margin-top: 23px;
-	    margin-left: 20px;
-	    padding-top: 40px;
-	}
+#header .navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 1);
+}
 
-	.menu-left{
-	    background: rgba(255, 255, 255, 0.6);
-	    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	    padding-top: 3px;
-	    padding-bottom: 3px;
-	}
+#header .nav-item {
+    margin-left: 0.5rem;
+}
 
-	.menu-left .menu-list{
-	    list-style-type: none;
-	}
+#header .navbar-dark .navbar-toggler {
+    padding: 0;
+    margin-left: 1rem;
+}
 
-	.menu-list li{
-	    padding: 10px;
-	    font-size: 14pt;
-	    font-weight: bold;
-	}
+#header .navbar-toggler:focus {
+    box-shadow: none;
+}
 
-	.menu-list li a{
-	    text-decoration: none;
-	    color: #000000;
-	}
+#header .navbar-toggler .navbar-toggler-icon {
+    font-size: 2vw;
+}
 
-	.menu-btn{
-	    text-align: center;
-	    padding: 5px;
-	    padding-top: 20px;
-	}
 
-	.menu-btn button{
-	    background-color: #67523A;
-	    padding: 13px;
-	    border: none;
-	    color: white;
-	    text-decoration: none;
-	    font-size: 16px;
-	    font-weight: bold;
-	    cursor: pointer;
-	    border-radius: 5px;
-	    font-family: roboto;
-	}
+#header .navbar-brand {
+    padding-left: 20%;
+    padding-bottom: 0;
+}
+
+#header .navbar-brand img {
+    max-width: 25vw;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    #header .navbar-brand img {
+        float: right;
+        padding-right: 1rem;
+    }
+
+    #header .navbar-brand {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 1100px) {
+    #header .navbar-brand {
+        padding-left: 1rem;
+    }
+
+    #header .navbar-brand img {
+    }
+}
+
+.navbar.scrolled {
+    background-color: #604628 !important;
+    transition: background-color 200ms linear;
+}
+
+/* _________________ FOOTER _________________ */
+
+#footer {
+    background: rgba(121, 91, 57, 0.5);
+}
+
+@media (max-width: 768px) {
+    #footer {
+        background: #604628;
+    }
+}
+
+#footer a {
+    text-decoration: None;
+    color: #FFFFFF;
+}
+#footer a:hover{
+    color: black;
+}
+
+#footer .logo img {
+    max-width: 35vw;
+    height: auto;
+}
+
+/*vnskjdnfvsjndfvnsdkvjn*/
+
+.c_main{
+    width: 75%;
+    float: right;
+    padding-top: 40px;
+    padding-left: 0px;
+}
+
+.btn-pedido .btn:hover {
+    background-color: #784b17;
+}
+
+.background_pedido {
+    background: #B09F92;
+}
+
+.header-pedido{
+    width: 100%;
+    margin-top: 40px;
+    padding-bottom: 10px;
+}
+
+.header-pedido h1{
+    font-size: 20pt;
+    color: #000000;
+}
+
+.menu-left .menu-list{
+    list-style-type: none;
+}
+
+.menu-list li{
+    padding: 5px;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.menu-list li a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.menu-btn{
+    text-align: center;
+    padding: 5px;
+    padding-top: 20px;
+}
+
+.menu-btn button{
+    background-color: #67523A;
+    padding: 13px;
+    border: none;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: roboto;
+}
+
+
+
+.c_main{
+    width: 76%;
+    float: right;
+    padding-top: 40px;
+    padding-left: 6px;
+}
+            
+.nav-menu-left{
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.menu-left{
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 20px 0px 5px 0px;
+}
+
+.pedido{
+    width: 20%;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    color: #000000;
+    padding-bottom: 20px;
+    text-align: center;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /*box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);*/
+}
+
+.pedido-info{
+    padding: 10px;
+}
+
+.spi-1{
+    float: left;
+    font-size: 13pt;
+}
+
+.spi-2{
+    float: center;
+}
+
+.spi-3{
+    float: right;
+}
+
+.pedido-quant{
+    padding: 10px;
+}
+
+.pedido-quant input{
+    text-align: center;
+    border: 1px solid #CCC;
+    padding: 5px;
+}
+
+.btn-pedido .btn {
+    background-color: #E59C47; /* Green */
+    border: none;
+    color: white;
+    padding: 6px 22px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.cart-resp{
+    background-color: #67523A;
+    border-radius: 6px;
+    width: 75px;
+    height: 63px;
+    float: right;
+    margin-right: 105px;
+    margin-top: 45px;
+    padding: 5px;
+    padding-top: 10px;
+}
+
+
+#ped_resp{
+    position: relative;
+    width: 620px;
+    height: 140px;
+    background: #F9F5F1;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    padding-top: 25px;
+    padding-left: 35px;
+    margin-bottom: 20px;
+}
+
+#ped_resp label{
+    position: relative;
+    height: 13px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    color: #000000;
+    padding-bottom: 42px;
+
+}
+
+.pedido-q-resp{
+    width: 100px;
+    border: 1px solid #CCC;
+    padding: 5px;
+}
+
+.pedido-q-resp input{
+    text-align: center;
+    border: none;
+    padding: 3px;
+}
+
+#ped_resp .rounded-circle{
+    background: red;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    padding-top: 19px;
+    position: relative;
+    float: right;
+    top: -70px;
+    right: 50px;
+    background: #67523A;
+    color: #FFFFFF;
+    font-size: 14pt;
+}
