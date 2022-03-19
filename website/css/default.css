@@ -286,6 +286,24 @@ body {
     border-style: dashed;
 }
 
+.formTable .summaryTable {
+    height: auto;
+    width: 50vm;
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+.px-6 {
+    padding-right: 5rem !important;
+    padding-left: 5rem !important;
+}
+
+.checkFont {
+    font-family: 'Montserrat';
+    font-style: normal;
+    color: #737373;
+}
 /*
 @media (max-width: 768px) {
     .reservas {
