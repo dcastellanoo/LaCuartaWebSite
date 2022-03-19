@@ -14,6 +14,8 @@
 
 }
 
+
+
 .text_contact{
     text-align: center;
     color: white;
@@ -32,15 +34,24 @@
     height:auto;
 }
 
+#exampleImage {
+    min-width: 25px;
+    min-width: 25px;
+}
 
-
-@media (max-width: 991px) {
-    body {
+@media (max-width: 767px) {
+    .background_cont {
         background: #B09F92;
     }
     .center_ubi {
         margin-left: 25%;
 
+    }
+
+    .text_hor{
+        font-size: calc(4vw);
+        font-family: 'Roboto';
+        font-style: normal;
     }
 
     .pru1 {
@@ -61,19 +72,35 @@
         margin-left: 87%;
     }
 
+    .margin_telephone{
+        margin-left: 30%;
+    }
+
     .center_txt_hours {
         margin-left: 30%;
     }
 }
+
+@media (min-width: 768px) and (max-width: 991px){
+    .margin_body_top_mv {
+        margin-top: 5%;
+    }
+}
+
 @media (min-width: 992px) {
     .size_img_ubi{
         height: 100%;
         width: 95%;
     }
 
+    .text_hor{
+        font-size: calc(1.3vw);
+        font-family: 'Roboto';
+        font-style: normal;
+    }
+
     .margin_telephone{
         margin-left: 15%;
-        margin-top: 5%;
     }
 
     .margin_number{
