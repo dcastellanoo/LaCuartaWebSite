@@ -14,6 +14,167 @@
         <!-- Styles -->
         <link rel="stylesheet" href="css/pedido.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="css/ionicons.css">
+
+        <style type="text/css">
+
+            .c_main{
+                width: 75%;
+                float: right;
+                padding-top: 40px;
+                padding-left: 0px;
+            }
+
+            .nav-menu-left{
+                margin-top: 40px;
+                margin-left: 20px;
+            }
+
+            .menu-left{
+                background: rgba(255, 255, 255, 0.6);
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                padding: 20px 0px 5px 0px;
+            }
+
+            .header-pedido{
+                width: 100%;
+                margin-top: 40px;
+                padding-bottom: 10px;
+            }
+
+            .header-pedido h1{
+                font-size: 20pt;
+                color: #000000;
+            }
+
+            .menu-left .menu-list{
+                list-style-type: none;
+            }
+
+            .menu-list li{
+                padding: 5px;
+                font-size: 14pt;
+                font-weight: bold;
+            }
+
+            .menu-list li a{
+                text-decoration: none;
+                color: #000000;
+            }
+
+            .menu-btn{
+                text-align: center;
+                padding: 5px;
+                padding-top: 20px;
+            }
+
+            .cart-resp{
+                background-color: #67523A;
+                border-radius: 6px;
+                width: 75px;
+                height: 63px;
+                float: right;
+                margin-right: 105px;
+                margin-top: 45px;
+                padding: 5px;
+                padding-top: 10px;
+            }
+                        
+            @media (max-width:991px){
+
+                .nav-menu-left{
+                    margin-top: 0px;
+                    margin-left: 0px;
+                    background: #FFFFFF;
+                    mix-blend-mode: normal;
+                    opacity: 0.7;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                }
+
+                .row>* {
+                  width: 100%;
+                  padding-right: var(--bs-gutter-y);
+                  padding-left: var(--bs-gutter-y);
+                  margin-right: auto;
+                  margin-left: auto;
+                }
+
+                .header-pedido h1{
+                    color: white;
+                    font-size: 26pt;
+                    font-family: Times New Roman;
+                }
+
+            }
+
+            @media(min-width:768px) and (max-width:991px){
+
+                .background_pedido{
+                    background: none;
+                }
+
+                .header-pedido h1{
+                    text-align: center;
+                    font-size: 36pt;
+                    padding-bottom: 15px;
+                }
+
+            }
+
+            .ped_resp{
+                position: relative;
+                width: 620px;
+                height: 140px;
+                background: #F9F5F1;
+                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                padding-top: 25px;
+                padding-left: 35px;
+                margin-bottom: 20px;
+            }
+
+            .ped_resp label{
+                position: relative;
+                height: 13px;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: bold;
+                font-size: 18px;
+                color: #000000;
+                padding-bottom: 42px;
+
+            }
+
+            .pedido-q-resp{
+                width: 100px;
+                border: 1px solid #CCC;
+                padding: 5px;
+            }
+
+            .pedido-q-resp input{
+                text-align: center;
+                border: none;
+                padding: 3px;
+            }
+
+            .ped_resp .rounded-circle{
+                background: red;
+                width: 70px;
+                height: 70px;
+                text-align: center;
+                padding-top: 19px;
+                position: relative;
+                float: right;
+                top: -70px;
+                right: 50px;
+                background: #67523A;
+                color: #FFFFFF;
+                font-size: 14pt;
+            }
+
+            
+
+        </style>
 
     </head>
 
@@ -61,9 +222,9 @@
                     
                     <div class="col-lg-9">
                     
-                        <div class="container">
+                        <!-- <div class="container"> -->
 
-                            <div class="row">
+                            <!-- <div class="row"> -->
                                      
                                <div class="col-12">
                                     <div class="header-pedido">
@@ -130,9 +291,9 @@
 
                                 </div>
                                 
-                            </div>
+                            <!-- </div> -->
 
-                        </div> 
+                        <!-- </div>  -->
                     </div>
 
                 </div>
