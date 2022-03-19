@@ -1,26 +1,29 @@
-<article class="reservas container-fluid d-flex justify-content-center p-5">
-    <form class="desktopForm text-center">
-        <div class="formTable">
-            <div class="row pt-4">
-                <div class="col-md-6">
-                    <fieldset class="">
-                        <legend>Adultos</legend>
+<link href="css/datepicker.css" rel="stylesheet">
+<script src="js/bootstrap-datepicker.js"></script>
 
+
+<article class="reservas container-fluid d-flex justify-content-center py-5">
+    <form class="text-center">
+        <div class="formTable ">
+            <div class="row pt-0 py-md-4">
+                <div class="col-md-6">
+                    <fieldset class="pb-3 p-md-0">
+                        <legend>Adultos</legend>
                         <div class="counter d-inline-flex justify-content-center">
                             <input type="button" class="buttonMinus" value="-" />
-                            <input type="text" class="text-center border-0 counterValue" value="2"/>
+                            <input type="number" class="text-center border-0 counterValue" value="2" min="1"/>
                             <input type="button" class="buttonPlus" value="+" />
                         </div>
                     </fieldset>
                 </div>
 
                 <div class="col-md-6">
-                    <fieldset class="">
+                    <fieldset class="py-3 p-md-0">
                         <legend>Niños</legend>
 
                         <div class="counter d-inline-flex justify-content-center">
                             <input type="button" class="buttonMinus" value="-" />
-                            <input type="text" class="text-center border-0 counterValue" value="0"/>
+                            <input type="number" class="text-center border-0 counterValue" value="0"/>
                             <input type="button" class="buttonPlus" value="+" />
                         </div>
                     </fieldset>
@@ -28,29 +31,35 @@
 
             </div>
 
-            <div class="row d-inline-block pt-4">
+            <div class="row d-inline-block py-5">
                 <fieldset class="">
                     <legend>Fecha</legend>
 
-                    <div class="datepicker">
-                        calendar
-                    </div>
+                    <div id="datepicker"></div>
+
+
+                    <script>
+                        $('#datepicker').datepicker({
+                            startDate: '0d',
+                            todayHighlight: true
+                        });
+                    </script>
 
                 </fieldset>
             </div>
 
 
 
-            <div class="row text-align:center py-4">
+            <div class="row text-align:center py-5">
                 <fieldset class="">
                     <legend>Horario</legend>
 
-                    <div class="timeField selectedField text-center p-1 d-inline-block mx-2">
+                    <div class="timeField selectedField text-center p-1 d-inline-block me-3">
                         <strong>ALMUERZO</strong> <br>
                         13:00 - 16:30
                     </div>
 
-                    <div class="timeField text-center p-1 d-inline-block mx-2">
+                    <div class="timeField text-center p-1 d-inline-block ms-3">
                         <strong>CENA</strong>  <br>
                         20:15 - 24:00
                     </div>
@@ -67,6 +76,7 @@
 </article>
 
 
+<!-- counter values -->
 <script>
     $(document).ready(function() {
         $('.buttonMinus').click(function () {
@@ -83,5 +93,17 @@
             $input.change();
             return false;
         });
+
+        $('.timeField').click(function () {
+            var $other = $(this).parent().find('.selectedField');
+            $(this).addClass("selectedField");
+            $other.removeClass("selectedField");
+
+            return false;
+        });
     });
+</script>
+
+<script>
+
 </script>
