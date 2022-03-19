@@ -10,7 +10,7 @@ body {
     font-style: normal;
     font-weight: normal;
     color: #FFFFFF;
-    font-size:calc(12px + 1vw);
+    font-size: calc(12px + 1vw);
 }
 /*
 font-size: 22px;
@@ -28,14 +28,18 @@ font-size: 22px;
 }          */
 
 h1 {
-    font-size: 5.9vw;
+    font-size: calc(12px + 5.9vw);
 }
 h2 {
-    font-size: 3.0vw;
+    font-size: calc(12px + 3.0vw);
 }
 
 h3 {
-    font-size: 2vw;
+    font-size: calc(12px + 2.0vw);
+}
+
+h4 {
+    font-size: calc(12px + 1.5vw);
 }
 
 body {
@@ -202,6 +206,110 @@ body {
     max-width: 50vw;
     height: auto;
 }
+
+/* _________________ Reservas _________________ */
+.desktopForm {
+    color: black;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.desktopForm .formTable {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    width: 50vw;
+    height: auto;
+}
+.desktopForm .button {
+    font-style: normal;
+    color: #FFFFFF;
+    padding: 1rem 2rem;
+
+    background: #67523A;
+    border: none;
+    border-radius: 6px;
+}
+
+
+
+.formTable .counter {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+
+    width: 180px;
+    height: 40px;
+}
+
+.formTable .counter input {
+    margin: 0;
+    width: 90px;
+    height: 38px;
+}
+
+.formTable .counter input[type="button"] {
+    background-color: transparent;
+    border-style: none;
+
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 22px;
+}
+
+.formTable .counter input[type="button"]:hover {
+    background-color: gainsboro;
+}
+
+
+
+
+.formTable .timeField {
+    width: 150px;
+    height: 50px;
+    border-radius: 4px;
+    color: black;
+    background-color: #FFFFFF;
+}
+
+.formTable .selectedField {
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.formTable .datepicker {
+    width: 337px;
+    height: 247.13px;
+    border-style: dashed;
+}
+
+.formTable .summaryTable {
+    height: auto;
+    width: 50vm;
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+.px-6 {
+    padding-right: 5rem !important;
+    padding-left: 5rem !important;
+}
+
+.checkFont {
+    font-family: 'Montserrat';
+    font-style: normal;
+    color: #737373;
+}
+/*
+@media (max-width: 768px) {
+    .reservas {
+        background: #998469;
+    }
+}         */
 
 
 

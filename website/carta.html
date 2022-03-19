@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>La Cuarta</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="images/logo_header.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Styles -->
+    <link href="css/default.css" rel="stylesheet">
+    <link href="css/carta.css" rel="stylesheet">
+</head>
+<body class="background_carta">
+
+<!-- Header -->
+<header id="header">
+</header>
+
+<main class="carta">
+
+    <!-- Page content -->
+    <section class="subheader_carta">
+        <h1 class="subheader_title_carta">Carta</h1>
+        <article class="container_subheader_carta">
+
+            <div class="subheader_text_carta">
+                <br>
+                <b>Entrantes</b>
+                </br>
+                <br>
+                <b>Principales</b>
+                </br>
+                <br>
+                <b>Sugerencias</b>
+                </br>
+                <br>
+                <b>Postres</b>
+                </br>
+                <br>
+                <b>Bebidas</b>
+                </br>
+                <br>
+                <b>Carta de Vinos</b>
+                </br>
+            </div>
+
+            <figure class="subheader_photo_carta">
+                <img src="images/logo_carta.png" alt="logo carta.">
+            </figure>
+        </article>
+    </section>
+
+    <section class="body_plato_carta">
+        <h1 class="align_opcion_plato_carta text_opcion_plato_carta">Opción de la carta</h1>
+        <article class="background_plato_carta">
+            <div class="text_plato_carta">
+                <div class="text_title_plato_carta">
+                    <b>Nombre del plato</b>
+                </div>
+
+                <div class="descripcion_plato_carta">
+                    Descripción
+                </div>
+                <div class="alergenos_plato_carta">
+                    Alérgernos
+                </div>
+            </div>
+            <figure class="align_photo_plato_carta">
+                <img src="images/imagen_plato.png" alt="Plato Comida.">
+                <figcaption class="align_money_plato_carta">
+                    0,00 €
+                </figcaption>
+            </figure>
+        </article>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer">
+</footer>
+
+<script>
+    $(function () {
+        $('#header').load("./header.html");
+        $('#footer').load("./footer.html");
+    });
+</script>
+</body>
+</html>
