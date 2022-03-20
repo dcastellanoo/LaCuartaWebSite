@@ -11,12 +11,18 @@
 .subheader_title_carta{
     padding-top: 1%;
     text-align: center;
-    font-size: 36px;
+    /*font-size: 36px;*/
+    font-size: calc(10px + 2vw);
+    font-weight: bold;
 }
 
+
+
 .subheader_text_carta {
-    font-size: 26px;
-    margin-left: 10%;
+    /*font-size: 26px;*/
+    font-size: calc(3px + 2vw);
+    font-weight: bold;
+    margin-left: 7%;
     margin-bottom: 2%;
 }
 
@@ -50,7 +56,7 @@
 }
 
 .align_money_plato_carta{
-    text-align: center;
+    margin-right: 10%;
     padding-bottom: 1%;
     font-size: 26px;
 }
@@ -67,15 +73,16 @@
 }
 
 .descripcion_plato_carta{
-    margin-top: 15%;
+    margin-top: 5%;
 }
 
 .alergenos_plato_carta{
-    margin-top: 50%;
+    margin-top: 20%;
 }
 
 .align_photo_plato_carta{
-    margin-right: 5%;
+    margin-top: 3%;
+    margin-right: -30%;
 }
 
 .body_bebidas{
@@ -129,6 +136,13 @@
         background: #B09F92;
         padding-bottom: 25%;
     }
+
+    .size_photo_header{
+        max-width: 50%;
+        height: auto;
+    }
+
+
 }
 @media (min-width: 768px) and (max-width: 991px){
     .background_carta {
@@ -143,6 +157,11 @@
         color: white;
     }
 
+    .size_photo_header{
+        max-width: 60%;
+        height: auto;
+    }
+
     .body_plato_carta{
         padding-bottom: 25%;
     }
@@ -153,5 +172,10 @@
     .body_plato_carta{
         background: #B09F92;
         padding-bottom: 25%;
+    }
+
+    .size_photo_header{
+        max-width: 70%;
+        height: auto;
     }
 }
