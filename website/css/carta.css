@@ -56,28 +56,14 @@
 }
 
 .align_money_plato_carta{
-    margin-right: 10%;
+    margin-left: 20%;
     padding-bottom: 1%;
     font-size: 26px;
 }
 
 .text_plato_carta{
-    font-size: 26px;
     margin-left: 5%;
     margin-bottom: 2%;
-}
-
-.text_title_plato_carta{
-    font-size: 36px;
-    padding-top: 2%;
-}
-
-.descripcion_plato_carta{
-    margin-top: 5%;
-}
-
-.alergenos_plato_carta{
-    margin-top: 20%;
 }
 
 .align_photo_plato_carta{
@@ -95,7 +81,6 @@
 .align_opcion_plato_bebidas{
     text-align: center;
     padding-top: 2%;
-    font-size: 36px;
 }
 
 .background_text_bebidas{
@@ -137,12 +122,47 @@
         padding-bottom: 25%;
     }
 
+    .text_title_plato_carta{
+        margin-bottom: 2%;
+    }
+
     .size_photo_header{
         max-width: 50%;
         height: auto;
     }
 
+    .text_opcion_plato_carta{
+        color: white;
+        font-size: calc(9px + 2.2vw);
+        font-weight: bold;
+    }
 
+    .descripcion_plato_carta{
+        margin-top: 5%;
+        font-size: calc(2px + 2vw);
+    }
+
+    .alergenos_plato_carta{
+        margin-top: 20%;
+        font-size: calc(2px + 2vw);
+    }
+    .size_photo_comida{
+        max-width: 70%;
+        height: auto;
+    }
+
+    .background_money{
+        color: white;
+        background: #67523A;
+        border-radius: 50px;
+        max-width:20%;
+        margin:0 auto 3% auto;
+        text-align: center;
+    }
+
+    .text_money_plato_carta{
+        font-size: calc(2px + 2vw);
+    }
 }
 @media (min-width: 768px) and (max-width: 991px){
     .background_carta {
@@ -153,8 +173,16 @@
         background-size: cover;
     }
 
+    .text_title_plato_carta{
+        font-size: calc(10px + 2.1vw);
+        margin-bottom: 2%;
+        font-weight: bold;
+    }
+
     .text_opcion_plato_carta{
         color: white;
+        font-size: calc(11px + 2.2vw);
+        font-weight: bold;
     }
 
     .size_photo_header{
@@ -166,16 +194,74 @@
         padding-bottom: 25%;
     }
 
+    .descripcion_plato_carta{
+        margin-top: 5%;
+        font-size: calc(4px + 2vw);
+    }
+
+    .alergenos_plato_carta{
+        margin-top: 20%;
+        font-size: calc(4px + 2vw);
+    }
+
+    .size_photo_comida{
+        max-width: 70%;
+        height: auto;
+    }
+
+    .background_money{
+        color: white;
+        background: #67523A;
+        border-radius: 50px;
+        max-width:20%;
+        margin:0 auto 3% auto;
+        text-align: center;
+    }
+
+    .text_money_plato_carta{
+        font-size: calc(2px + 2vw);
+    }
 }
 
 @media (min-width: 992px) {
+    .text_title_plato_carta{
+        margin-right: 30%;
+        padding-top: 2%;
+        font-size: calc(10px + 2vw);
+        font-weight: bold;
+    }
+
+    .descripcion_plato_carta{
+        margin-top: 5%;
+        font-size: calc(2px + 2vw);
+    }
+
     .body_plato_carta{
         background: #B09F92;
         padding-bottom: 25%;
     }
 
+    .text_opcion_plato_carta{
+        font-size: calc(11px + 2vw);
+        font-weight: bold;
+    }
+
+    .alergenos_plato_carta{
+        margin-top: 20%;
+        font-size: calc(2px + 2vw);
+    }
+
     .size_photo_header{
         max-width: 70%;
         height: auto;
+    }
+
+    .size_photo_comida{
+        max-width: 70%;
+        height: auto;
+    }
+
+    .text_money_plato_carta{
+        font-size: calc(5px + 2vw);
     }
 }
