@@ -315,20 +315,10 @@ body {
     font-style: normal;
     color: #737373;
 }
-/*
+
 
 @media (max-width: 768px) {
-    .reservas {
-        background-color: #998469;
-    }
-
-    .reservas form {
-        color: #FFFFFF;
-    }
-
     .reservas form  .formTable {
-        background-color: transparent;
-        box-shadow: none;
         width: 100% !important;
     }
 
@@ -351,24 +341,19 @@ body {
     .reservas form .formTable {
         width: 75vw;
     }
-}         */
+}
 
 /* _________________ Carrito _________________ */
-.ps-md-7 {
-    padding-left: 5rem !important;
-}
+.carrito_total {
+    width: 4rem;
+    height: 4rem;
+    color: white;
 
-.pt-md-7 {
-    padding-top: 5rem !important;
-}
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4rem;
 
-.pb-md-7 {
-    padding-bottom: 5rem !important;
+    background: #67523A;
 }
-
-.pe-md-7 {
-    padding-right: 5rem !important;
-}
-
 
 
