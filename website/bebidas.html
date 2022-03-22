@@ -1,29 +1,21 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>La Cuarta</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="icon" href="images/logo_header.png">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-
     <script src="js/bootstrap.min.js"></script>
-
     <!-- Styles -->
     <link href="css/default.css" rel="stylesheet">
     <link href="css/carta.css" rel="stylesheet">
 </head>
-<body class="background_carta">
-
-<!-- Header -->
+<body>
 <header id="header">
 </header>
-
 <main class="carta">
-
-    <!-- Page content -->
     <section class="subheader_carta">
         <h1 class="subheader_title_carta">Carta</h1>
         <article class="container_subheader_carta row">
@@ -55,48 +47,21 @@
         </article>
     </section>
 
-    <section class="body_plato_carta">
+    <section class="body_bebidas">
         <h1 class="align_opcion_plato_carta text_opcion_plato_carta">Opción de la carta</h1>
-        <article class="background_plato_carta row">
-            <div class="col-12 text-center text_title_plato_carta d-lg-none">
-                <b>Nombre del plato</b>
-            </div>
-
-            <div class="text_plato_carta col">
-                <div class="text_title_plato_carta row d-lg-block d-none">
-                    Nombre del plato
+        <article class="background_text_bebidas">
+            <h1 class="body_title_bebidas">Tipo de bebida</h1>
+            <div class="container_text_bebidas">
+                <div class="nombre_bebidas">
+                    Nombre de la bebida
                 </div>
-
-                <div class="descripcion_plato_carta row">
-                    Descripción
-                </div>
-                <div class="alergenos_plato_carta row">
-                    Alérgernos
+                <div class="money_bebidas">
+                    0.00 €
                 </div>
             </div>
-            <div class="col text-center align_money_plato_carta">
-                <figure>
-                    <img src="images/imagen_plato.png" class="size_photo_comida" alt="Plato Comida.">
-                    <p class="text_money_plato_carta background_money d-lg-block d-none">
-                        0,00 €
-                    </p>
-                </figure>
-            </div>
-
-            <div class="col-12 d-lg-none d-block text-center">
-                <p class="background_money text_money_plato_carta">
-                    0,00 €
-                </p>
-            </div>
-
         </article>
     </section>
-
 </main>
-
-<!-- Footer -->
-<footer id="footer">
-</footer>
 
 <script>
     $(function () {
@@ -104,5 +69,9 @@
         $('#footer').load("./footer.html");
     });
 </script>
+
+<footer id="footer">
+</footer>
+
 </body>
 </html>
