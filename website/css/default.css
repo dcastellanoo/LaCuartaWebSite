@@ -120,7 +120,7 @@ body {
 }
 
 .navbar.scrolled {
-    background-color: #604628 !important;
+    background-color: #67523A !important;
     transition: background-color 200ms linear;
 }
 
@@ -132,7 +132,7 @@ body {
 
 @media (max-width: 768px) {
     #footer {
-        background: #604628;
+        background: #67523A;
     }
 }
 
@@ -232,7 +232,7 @@ body {
     border-radius: 10px;
 
     width: 50vw;
-    height: 70vh;
+    height: auto;
 }
 .reservas form .button {
     font-style: normal;
@@ -280,11 +280,12 @@ body {
 
 
 .reservas form .formTable .timeField {
-    width: 150px;
+    width: 6rem;
     height: 50px;
     border-radius: 4px;
     color: black;
     background-color: #FFFFFF;
+    align-content: center;
 }
 
 .reservas form .formTable .selectedField {
@@ -310,25 +311,40 @@ body {
     padding-left: 5rem !important;
 }
 
+.px-7 {
+    padding-right: 9rem !important;
+    padding-left: 9rem !important;
+}
+
 .checkFont {
     font-family: 'Montserrat';
     font-style: normal;
     color: #737373;
+    font-size: calc(10px + 0.5vw);
+    font-max-size: 14px;
 }
-/*
+
+.fuentePrueba {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #000000;
+}
+
+
 
 @media (max-width: 768px) {
     .reservas {
-        background-color: #998469;
+        color: black;
     }
 
     .reservas form {
-        color: #FFFFFF;
     }
 
     .reservas form  .formTable {
-        background-color: transparent;
-        box-shadow: none;
         width: 100% !important;
     }
 
@@ -345,30 +361,47 @@ body {
         color: #FFFFFF;
         background-color: rgba(0, 0, 0, 0.65);;
     }
+
+    .px-6 {
+        padding-right: 3rem !important;
+        padding-left: 3rem !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .reservas{
+        color: black;
+        font-size: 19px;
+        line-height: 19px;
+    }
+
+    .reservas form .formTable {
+        width: 70vw;
+    }
 }
 
 @media (max-width: 992px) {
+    .reservas{
+        color: black;
+        font-size: 18px;
+        line-height: 18px;
+    }
     .reservas form .formTable {
         width: 75vw;
     }
 }         */
 
 /* _________________ Carrito _________________ */
-.ps-md-7 {
-    padding-left: 5rem !important;
-}
+.carrito_total {
+    width: 4rem;
+    height: 4rem;
+    color: white;
 
-.pt-md-7 {
-    padding-top: 5rem !important;
-}
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4rem;
 
-.pb-md-7 {
-    padding-bottom: 5rem !important;
+    background: #67523A;
 }
-
-.pe-md-7 {
-    padding-right: 5rem !important;
-}
-
 
 
