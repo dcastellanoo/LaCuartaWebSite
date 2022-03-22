@@ -1,8 +1,8 @@
 <article class="reservas container-fluid d-flex justify-content-center p-5">
-    <form class="desktopForm text-center">
+    <form class="desktopForm text-center" name="reservas3">
         <div class="formTable">
             <div class="row pt-4 px-6 justify-content-center">
-                <div class="row summaryTable pt-3 justify-content-center">
+                <div class="row summaryTable pt-3">
                     <div class="col-md-4">
                         <img alt="Calendar." src="images/Calendar.png" style="width: 40px"> Calendar
                     </div>
@@ -26,10 +26,13 @@
                     <input type="text" class="form-control" id="nameInput1" placeholder="Nombre completo">
                 </div>
                 <div class="pt-4">
-                    <input type="email" class="form-control " id="emailInput1" placeholder="example@gmail.com">
+                    <input type="email" class="form-control" id="emailInput1" placeholder="Correo electrónico">
+                </div>
+                <div class="pt-4 d-flex input-group">
+                    <input type="tel" class="form-control" id="phoneInput1" placeholder="Número de teléfono" maxlength="9">
                 </div>
                 <div class="pt-4">
-                    <input type="text" class="form-control" id="emailInput1" placeholder="example@gmail.com">
+                    <textarea rows="2" class="form-control" id="commentsInput1" placeholder="Comentarios acerca de la reserva"></textarea>
                 </div>
                 <div class="form-check pt-4 ps-5 text-start">
                     <input type="checkbox" class="form-check-input" id="ConditionsCheck1">
@@ -46,7 +49,7 @@
             </div>
         </div>
 
-        <input type="submit" class="button mt-5" value="Continuar">
-        <input type="submit" class="button mt-5" value="Retroceder">
+        <input type="submit" class="button mt-5" value="Confirmar reserva" onclick="capturaDatosReserva()"> <br>
+        <input type="submit" class="button mt-3" value="Retroceder">
     </form>
 </article>
