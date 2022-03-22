@@ -254,22 +254,22 @@ body {
 
     width: 180px;
     height: 40px;
+
+    align-items: center;
+    vertical-align: middle;
+    display: inline-flex;
 }
 
 .reservas form .formTable .counter input {
     margin: 0;
     width: 90px;
-    height: 38px;
+    height: 38px    ;
 }
 
 .reservas form .formTable .counter input[type="button"] {
     background-color: transparent;
     border-style: none;
-
-    display: inline-block;
-    vertical-align: middle;
-    text-align: center;
-    font-size: 22px;
+    font-size: 30px;
 }
 
 .reservas form .formTable .counter input[type="button"]:hover {
@@ -389,7 +389,7 @@ body {
     .reservas form .formTable {
         width: 75vw;
     }
-}         */
+}
 
 /* _________________ Carrito _________________ */
 .carrito_total {
@@ -404,4 +404,52 @@ body {
     background: #67523A;
 }
 
+.text-bolder {
+    font-weight: 700;
+}
+
+.carrito form .formTable .counter {
+    width: 150px;
+    height: 32px;
+    align-items: center;
+    vertical-align: middle;
+    display: inline-flex;
+}
+
+.carrito form .formTable .counter input {
+    margin: 0;
+    width: 90px;
+    height: 30px;
+}
+
+.carrito form .formTable {
+    height: 65vh;
+}
+
+@media (max-width: 768px) {
+    .carrito {
+        color: black;
+    }
+
+    .carrito_item {
+        background: #F9F5F1;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    .carrito form .formTable .counter {
+        width: 100px;
+        height: 32px;
+        align-items: center;
+        vertical-align: middle;
+        display: inline-flex;
+    }
+
+    .carrito form .formTable .counter input {
+        margin: 0;
+        width: 45px;
+        height: 30px;
+    }
+
+
+}
 
