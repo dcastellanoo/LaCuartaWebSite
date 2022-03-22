@@ -58,9 +58,13 @@
     <section class="body_plato_carta">
         <h1 class="align_opcion_plato_carta text_opcion_plato_carta">Opción de la carta</h1>
         <article class="background_plato_carta row">
+            <div class="col-12 text-center text_title_plato_carta d-lg-none">
+                <b>Nombre del plato</b>
+            </div>
+
             <div class="text_plato_carta col">
-                <div class="text_title_plato_carta row">
-                    <b>Nombre del plato</b>
+                <div class="text_title_plato_carta row d-lg-block d-none">
+                    Nombre del plato
                 </div>
 
                 <div class="descripcion_plato_carta row">
@@ -70,12 +74,21 @@
                     Alérgernos
                 </div>
             </div>
-            <figure class="align_photo_plato_carta col">
-                <img src="images/imagen_plato.png" alt="Plato Comida.">
-                <figcaption class="align_money_plato_carta row-12">
+            <div class="col text-center align_money_plato_carta">
+                <figure>
+                    <img src="images/imagen_plato.png" class="size_photo_comida" alt="Plato Comida.">
+                    <p class="text_money_plato_carta d-lg-block d-none">
+                        0,00 €
+                    </p>
+                </figure>
+            </div>
+
+            <div class="col-12 d-lg-none d-block text-center">
+                <p class="background_money text_money_plato_carta">
                     0,00 €
-                </figcaption>
-            </figure>
+                </p>
+            </div>
+
         </article>
     </section>
 
