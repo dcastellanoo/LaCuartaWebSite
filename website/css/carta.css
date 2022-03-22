@@ -135,6 +135,7 @@
         color: white;
         font-size: calc(9px + 2.2vw);
         font-weight: bold;
+        padding-bottom: 2%;
     }
 
     .descripcion_plato_carta{
@@ -183,6 +184,7 @@
         color: white;
         font-size: calc(11px + 2.2vw);
         font-weight: bold;
+        padding-bottom: 2%;
     }
 
     .size_photo_header{
@@ -244,6 +246,7 @@
     .text_opcion_plato_carta{
         font-size: calc(11px + 2vw);
         font-weight: bold;
+        padding-bottom: 2%;
     }
 
     .alergenos_plato_carta{
