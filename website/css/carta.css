@@ -35,7 +35,6 @@
 .container_subheader_carta{
     display: flex;
     justify-content: space-between;
-
 }
 
 .background_plato_carta{
@@ -50,15 +49,9 @@
 
 .align_opcion_plato_carta{
     text-align: center;
-    font-size: 36px;
     padding-top: 2%;
 }
 
-.align_money_plato_carta{
-    margin-left: 20%;
-    padding-bottom: 1%;
-    font-size: 26px;
-}
 
 .text_plato_carta{
     margin-left: 5%;
@@ -82,26 +75,16 @@
 .background_text_bebidas{
     background: #E7E7E7;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
     padding-top: 1%;
     margin-right: 15%;
     margin-left: 15%;
     padding-bottom: 20%;
 }
 
-.margin_text_bebidas{
-    margin-left: 10%;
-}
-
-.body_title_bebidas{
-
-}
-
-.nombre_bebidas{
+.text_nombre_bebidas{
     /*margin-left: 2%;*/
-}
-
-.money_bebidas{
-
+    font-size: calc(9px + 1vw);
 }
 
 .origen_text_bebidas{
@@ -119,7 +102,7 @@
     }
 
     .size_photo_header{
-        max-width: 50%;
+        max-width: 60%;
         height: auto;
     }
 
@@ -157,7 +140,33 @@
         font-size: calc(2px + 2vw);
     }
 
+    .text_title_bebidas{
+        font-size: calc(7px + 2.3vw);
+    }
 
+    .margin_nombre_bebidas{
+        margin-left: 6%;
+    }
+
+    .margin_title_bebidas{
+        margin-left: 6%;
+    }
+
+    .text_nombre_bebidas{
+        /*margin-left: 2%;*/
+        font-size: calc(7px + 1vw);
+    }
+    .margin_money_bebidas{
+        margin-right: 7%;
+    }
+
+    .margin_text_bebidas{
+        margin-left: 0.1%;
+    }
+
+    .text_money_bebidas{
+        font-size: calc(6px + 1vw);
+    }
 }
 @media (min-width: 768px) and (max-width: 991px){
 
@@ -210,6 +219,27 @@
 
     .text_money_plato_carta{
         font-size: calc(2px + 2vw);
+    }
+
+    .text_title_bebidas{
+        font-size: calc(9px + 2.2vw);
+    }
+
+    .margin_nombre_bebidas{
+        margin-left: 8.5%;
+    }
+
+    .margin_title_bebidas{
+        margin-left: 6%;
+    }
+
+    .text_nombre_bebidas{
+        /*margin-left: 2%;*/
+        font-size: calc(9px + 1vw);
+    }
+
+    .text_money_bebidas{
+        font-size: calc(6px + 1vw);
     }
 }
 
@@ -265,5 +295,24 @@
         font-size: calc(5px + 2vw);
     }
 
+    .text_title_bebidas{
+        font-size: calc(9px + 2.2vw);
+    }
 
+    .margin_nombre_bebidas{
+        margin-left: 8%;
+    }
+
+    .margin_title_bebidas{
+        margin-left: 6%;
+    }
+
+    .text_nombre_bebidas{
+        /*margin-left: 2%;*/
+        font-size: calc(9px + 1vw);
+    }
+
+    .text_money_bebidas{
+        font-size: calc(6px + 1vw);
+    }
 }

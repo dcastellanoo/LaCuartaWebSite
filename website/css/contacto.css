@@ -6,16 +6,6 @@
     margin-bottom: 5%;
 }
 
-
-
-.container_contact_txt{
-    position: relative;
-    display: inline-block;
-
-}
-
-
-
 .text_contact{
     text-align: center;
     color: white;
@@ -150,12 +140,6 @@
     .size_img_logo_telephone{
         max-width: 30%;
         height: auto;
-    }
-
-    .container_txt_telephone{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
     }
 
     .margin_telephone{
