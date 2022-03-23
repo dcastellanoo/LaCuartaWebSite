@@ -1,34 +1,40 @@
-<article class="reservas container-fluid d-flex justify-content-center py-5">
+<article class="reservas carrito container-fluid d-flex justify-content-center py-5">
     <form class="text-center">
         <div class="formTable ">
-            <h3>TU PEDIDO</h3>
+            <div class="">
+                <figure class="d-md-none d-inline">
+                    <img alt="Shopping cart." src="images/shopping_cart.png">
+                </figure>
+                <h3 class="text-bolder d-inline">TU PEDIDO</h3>
+            </div>
 
-            <div class="row">
+
+            <div class="row pb-2 d-none d-md-flex">
                 <div class="col-md-4 ps-md-5 text-md-start">
-                    <h5>Producto</h5>
+                    <h5 class="text-bolder">Producto</h5>
                 </div>
 
                 <div class="col-md-4">
-                    <h5>Precio</h5>
+                    <h5 class="text-bolder">Precio</h5>
                 </div>
 
                 <div class="col-md-4 pe-md-5">
-                    <h5>Cantidad</h5>
+                    <h5 class="text-bolder">Cantidad</h5>
                 </div>
             </div>
 
 
-            <div class="row">
-                <div class="col-md-4 ps-md-5 text-md-start">
+            <div class="row my-3 pb-3 carrito_item">
+                <div class="col-12 col-md-4 text-start order-md-0 order-0 pt-3 pt-md-0 ps-md-5">
                     Ensalada la cuarta
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-6 col-md-4 order-md-1 order-2 ">
                     7,00 €
                 </div>
 
-                <div class="col-md-4 pe-md-5">
-                    <div class="counter d-inline-flex justify-content-center">
+                <div class="col-6 col-md-4 text-start text-md-center order-md-2 order-1 pt-3 pt-md-0 pe-md-5">
+                    <div class="counter">
                         <input type="button" class="buttonMinus" value="-" />
                         <input type="number" class="text-center border-0 counterValue" value="1" min="0"/>
                         <input type="button" class="buttonPlus" value="+" />
@@ -37,17 +43,17 @@
             </div>
 
 
-            <div class="row">
-                <div class="col-md-4 ps-md-5 text-md-start">
+            <div class="row my-3 pb-3 carrito_item">
+                <div class="col-12 col-md-4 text-start order-md-0 order-0 pt-3 pt-md-0 ps-md-5">
                     Crujientes de pollo
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-6 col-md-4 order-md-1 order-2 ">
                     8,00 €
                 </div>
 
-                <div class="col-md-4 pe-md-5">
-                    <div class="counter d-inline-flex justify-content-center">
+                <div class="col-6 col-md-4 text-start text-md-center order-md-2 order-1 pt-3 pt-md-0 pe-md-5">
+                    <div class="counter">
                         <input type="button" class="buttonMinus" value="-" />
                         <input type="number" class="text-center border-0 counterValue" value="1" min="0"/>
                         <input type="button" class="buttonPlus" value="+" />
@@ -55,12 +61,17 @@
                 </div>
             </div>
 
-            <div class="position-relative top-50">
-                <div class="carrito_total rounded-circle position-absolute bottom-0 end-0 m-md-5">
-                    15 €
+
+
+            <div class="row mt-md-5 justify-content-end">
+                <div class="col-md-4 d-flex justify-content-center pe-md-5 align-self-end">
+                    <h3 class="text-bolder d-inline d-md-none">TOTAL:</h3>
+
+                    <div class="carrito_total rounded-circle">
+                        15 €
+                    </div>
                 </div>
             </div>
-
 
 
         </div>
@@ -92,100 +103,8 @@
             $input.change();
             return false;
         });
-
-        $('.timeField').click(function () {
-            var $other = $(this).parent().find('.selectedField');
-            $(this).addClass("selectedField");
-            $other.removeClass("selectedField");
-
-            return false;
-        });
     });
 </script>
 
 
 
-
-<section class="dialog_container">
-    <div class="center">
-        <article class="dialog_table text-center">
-            <h1>TU PEDIDO</h1>
-
-
-            <div class="row">
-                <div class="col-4">
-                    <h3>Producto</h3>
-                </div>
-
-                <div class="col-4">
-                    <h3>Precio</h3>
-                </div>
-
-                <div class="col-4">
-                    <h3>Cantidad</h3>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-4">
-                    Ensalada la cuarta
-                </div>
-
-                <div class="col-4">
-                    7,00 €
-                </div>
-
-                <div class="col-4">
-                    <div class="center">
-                        <div class="carrito_counter center">
-                            <button class="button_minus" title="Plus"></button>
-
-                            <input class="counter text-center" type="text" placeholder="..." value='0' />
-
-                            <button class="button_plus" title="Plus"></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-4">
-                    Crujientes de pollo
-                </div>
-
-                <div class="col-4">
-                    8,00 €
-                </div>
-
-                <div class="col-4">
-                    <div class="center">
-                        <div class="carrito_counter center">
-                            <button class="button_minus" title="Plus"></button>
-
-                            <input class="counter text-center" type="text" placeholder="..." value='0' />
-
-                            <button class="button_plus" title="Plus"></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carrito_total center dot">
-                15 €
-            </div>
-        </article>
-    </div>
-
-    <div class="center">
-        <div class="button_top center">
-            <a href="">Continuar</a>
-        </div>
-    </div>
-
-    <div class="center">
-        <div class="button_bottom center">
-            <a href="">Sequir con el pedido</a>
-        </div>
-    </div>
-</section>
