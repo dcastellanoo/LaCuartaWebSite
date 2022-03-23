@@ -392,14 +392,19 @@ body {
 }
 
 /* _________________ Carrito _________________ */
-.carrito_total {
+.carrito .title img {
+    width: calc(30px + 2.0vw);
+    height: auto
+}
+.carrito_money_circle {
     width: 4rem;
     height: 4rem;
     color: white;
 
     text-align: center;
-    vertical-align: middle;
+    vertical-align: center;
     line-height: 4rem;
+    border-radius: 50%;
 
     background: #67523A;
 }
@@ -427,9 +432,18 @@ body {
 }
 
 @media (max-width: 768px) {
-    .carrito {
-        color: black;
+    .carrito h3{
+        color: #FFFFFF;
     }
+
+    .carrito form .formTable {
+        width: 100vw;
+        height: auto;
+        background: transparent;
+        border-style: none;
+        box-shadow: none;
+    }
+
 
     .carrito_item {
         background: #F9F5F1;
@@ -450,6 +464,14 @@ body {
         height: 30px;
     }
 
-
+    .carrito .carrito_item .carrito_money_circle {
+        margin: 0 auto 3% auto;
+        height: 3.8rem;
+        width: 3.8rem;
+        line-height: 3.8rem;
+        padding-left: 4px;
+        padding-right: 0;
+    }
 }
+
 

@@ -1,11 +1,11 @@
 <article class="reservas carrito container-fluid d-flex justify-content-center py-5">
     <form class="text-center">
         <div class="formTable ">
-            <div class="">
-                <figure class="d-md-none d-inline">
+            <div class="title d-inline-flex">
+                <figure class="d-md-none me-3">
                     <img alt="Shopping cart." src="images/shopping_cart.png">
                 </figure>
-                <h3 class="text-bolder d-inline">TU PEDIDO</h3>
+                <h3 class="text-bolder pt-2">TU PEDIDO</h3>
             </div>
 
 
@@ -29,9 +29,16 @@
                     Ensalada la cuarta
                 </div>
 
-                <div class="col-6 col-md-4 order-md-1 order-2 ">
-                    7,00 €
+                <div class="col-6 col-md-4 order-md-1 order-2">
+                    <div class="d-none d-md-block">
+                        7,00 €
+                    </div>
+                    <div class="d-md-none carrito_money_circle">
+                        7,00 €
+                    </div>
                 </div>
+
+
 
                 <div class="col-6 col-md-4 text-start text-md-center order-md-2 order-1 pt-3 pt-md-0 pe-md-5">
                     <div class="counter">
@@ -48,8 +55,13 @@
                     Crujientes de pollo
                 </div>
 
-                <div class="col-6 col-md-4 order-md-1 order-2 ">
-                    8,00 €
+                <div class="col-6 col-md-4 order-md-1 order-2">
+                    <div class="d-none d-md-block">
+                        8,00 €
+                    </div>
+                    <div class="d-md-none carrito_money_circle">
+                        8,00 €
+                    </div>
                 </div>
 
                 <div class="col-6 col-md-4 text-start text-md-center order-md-2 order-1 pt-3 pt-md-0 pe-md-5">
@@ -65,9 +77,9 @@
 
             <div class="row mt-md-5 justify-content-end">
                 <div class="col-md-4 d-flex justify-content-center pe-md-5 align-self-end">
-                    <h3 class="text-bolder d-inline d-md-none">TOTAL:</h3>
+                    <h3 class="text-bolder d-inline d-md-none mt-3 me-2">TOTAL:</h3>
 
-                    <div class="carrito_total rounded-circle">
+                    <div class="carrito_money_circle">
                         15 €
                     </div>
                 </div>
