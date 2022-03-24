@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "type": "Entrantes",
     "name": "Nachos con queso y guacamole",
     "description":  "Una completa comida mexicana, ideal para invitados o cenas informales con amigos",
@@ -9,6 +10,7 @@
   },
 
   {
+    "id": 1,
     "type": "Entrantes",
     "name": "Tequeños con queso",
     "description": "Esta receta tan sencilla es una institución gastronómica en todas las fiestas y celebraciones venezolanas, los famosos tequeños, sencilla, barata y muy rica",
@@ -18,6 +20,7 @@
   },
 
   {
+    "id": 2,
     "type": "Principales",
     "name": "Espaguetis a la carbonara",
     "description": "Espaguetis a la carbonara receta italiana original con panceta, yema de huevo y parmesano",
@@ -27,6 +30,7 @@
   },
 
   {
+    "id": 2,
     "type": "Principales",
     "name": "Calamares fritos",
     "description": "Calamares muy frescos y fritos acompañados de rodajas de limón",
@@ -36,6 +40,7 @@
   },
 
   {
+    "id": 3,
     "type": "Sugerencias",
     "name": "Papas arrugadas con mojo picón",
     "description": "Si hay un plato que representa a las Islas Canarias en el mundo entero, son las papas arrugadas con mojo picón, una receta muy sencilla, pero a la vez deliciosa.",
@@ -45,6 +50,7 @@
   },
 
   {
+    "id": 3,
     "type": "Sugerencias",
     "name": "Queso frito con mermelada",
     "description": "El queso Camembert frito con mermelada de tomate es una tapa y/o aperitivo ideal, se sirve caliente cuando todavía el queso esta derretido en el interior",
@@ -54,6 +60,7 @@
   },
 
   {
+    "id": 4,
     "type": "Postres",
     "name": "Tiramisú",
     "description": "El tiramisú es una de las recetas de postres más famosas de la cocina italiana. Sólo se emplean 5 ingredientes: huevos y azúcar batidos, bizcochos Savoiardi mojados en café expresso y cacao en polvo",
@@ -63,6 +70,7 @@
   },
 
   {
+    "id": 4,
     "type": "Postres",
     "name": "Polvito uruguayo",
     "description": "El polvito es un delicioso postre uruguayo que se ha popularizado mucho internacionalmente, sobre todo en Gran Canaria",
