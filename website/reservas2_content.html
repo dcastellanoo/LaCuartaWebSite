@@ -1,7 +1,7 @@
 <article class="reservas container-fluid d-flex justify-content-center p-5">
-    <form class="desktopForm text-center">
-        <div class="formTable">
-            <div class="row pt-4 px-6">
+    <form class="desktopForm text-center" action="reservas3.html" method="post" name="reservas2">
+        <div class="formTable justify-content-center px-6">
+            <div class="row pt-4">
                 <div class="row summaryTable py-3 justify-content-center">
                     <div class="col-md-4">
                         <img alt="Calendar." src="images/Calendar.png" style="width: 40px"> Calendar
@@ -70,9 +70,10 @@
                     16:00
                 </div>
             </div>
+            <div class="d-flex py-4 justify-content-between">
+                <input type="button" class="button" value="Retroceder" onclick="goToReservas1()">
+                <input type="submit" class="button" value="Confirmar reserva">
+            </div>
         </div>
-
-        <input type="submit" class="button mt-5" value="Confirmar reserva"> <br>
-        <input type="submit" class="button mt-3" value="Retroceder">
     </form>
 </article>
