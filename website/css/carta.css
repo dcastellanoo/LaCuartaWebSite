@@ -22,9 +22,13 @@
 .subheader_text_carta {
     /*font-size: 26px;*/
     font-size: calc(3px + 2vw);
-    font-weight: bold;
     margin-left: 7%;
     margin-bottom: 2%;
+    text-decoration: none;
+}
+
+.color_txt_subheader_carta{
+    color: black;
 }
 
 .subheader_photo_carta{
