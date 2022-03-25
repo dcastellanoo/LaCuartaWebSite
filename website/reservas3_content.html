@@ -1,16 +1,16 @@
 <article class="reservas container-fluid d-flex justify-content-center p-5">
-    <form class="desktopForm text-center">
+    <form action="reservas4.html" class="desktopForm text-center" name="reservas3" onsubmit="rellenarReservas4()">
         <div class="formTable">
             <div class="row pt-4 px-6 justify-content-center">
-                <div class="row summaryTable pt-3 justify-content-center">
+                <div class="row summaryTable pt-3">
                     <div class="col-md-4">
-                        <img alt="Calendar." src="images/Calendar.png" style="width: 40px"> Calendar
+                        <img class="imgReserva" alt="Calendar." src="images/Calendar.png"> Calendar
                     </div>
                     <div class="col-md-4">
-                        <img alt="Watch." src="images/Watch.png"> Watch
+                        <img class="imgReserva" ="Watch." src="images/Watch.png"> Watch
                     </div>
                     <div class="col-md-4">
-                        <img alt="User." src="images/User.png"> User
+                        <img class="imgReserva" alt="User." src="images/User.png"> User
                     </div>
                     <div class="row justify-content-center pt-3" style="font-size: 16px">
                         ZONA
@@ -21,32 +21,49 @@
                 </div>
             </div>
 
-            <div class="row pt-4 px-6">
+            <div class="row pt-4 px-6 justify-content-center">
                 <div>
-                    <input type="text" class="form-control" id="nameInput1" placeholder="Nombre completo">
+                    <input type="text" class="form-control" id="nameInput1" placeholder="Nombre completo" maxlength="80"
+                    required>
                 </div>
                 <div class="pt-4">
-                    <input type="email" class="form-control " id="emailInput1" placeholder="example@gmail.com">
+                    <input type="email" class="form-control" id="emailInput1" placeholder="Correo electrónico"
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Introduzca una dirección de correo válida. Ej: example@gmail.com"
+                           maxlength="40"required>
+                </div>
+                <div class="pt-4 d-flex">
+                    <div class="input-group">
+                        <select class="form-select">
+                            <option selected>+34</option>
+                            <option>+43</option>
+                            <option>+46</option>
+                        </select>
+                        <input type="tel" class="form-control" pattern="[0-9]{9}" id="phoneInput1"
+                               placeholder="Número de teléfono" maxlength="9" title="Introduzca un número de teléfono válido" required>
+                    </div>
                 </div>
                 <div class="pt-4">
-                    <input type="text" class="form-control" id="emailInput1" placeholder="example@gmail.com">
+                    <textarea rows="2" class="form-control" id="commentsInput1" placeholder="Comentarios acerca de la reserva"></textarea>
                 </div>
                 <div class="form-check pt-4 ps-5 text-start">
-                    <input type="checkbox" class="form-check-input" id="ConditionsCheck1">
+                    <input type="checkbox" class="form-check-input" id="ConditionsCheck1" required>
                     <label class="form-check-label checkFont" for="ConditionsCheck1">
                         Acepto las Condiciones de Uso y la Política de Privacidad
                     </label>
                 </div>
-                <div class="form-check pt-4 pb-4 ps-5 text-start">
+                <div class="form-check pt-4 ps-5 text-start">
                     <input type="checkbox" class="form-check-input" id="RememberCheck1">
                     <label class="form-check-label checkFont" for="RememberCheck1">
                         Recordarme para la próxima reserva
                     </label>
                 </div>
+
+                <div class="d-flex py-4 justify-content-between">
+                    <input type="button" id="Retroceder2" class="button" value="Retroceder" onclick="goToReservas2()">
+                    <input type="submit" class="button" value="Confirmar reserva">
+                </div>
             </div>
         </div>
 
-        <input type="submit" class="button mt-5" value="Continuar">
-        <input type="submit" class="button mt-5" value="Retroceder">
     </form>
 </article>
