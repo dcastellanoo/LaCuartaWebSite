@@ -1,0 +1,21 @@
+[
+  {
+    "id": 3,
+    "type": "Sugerencias",
+    "name": "Papas arrugadas con mojo picón",
+    "description": "Si hay un plato que representa a las Islas Canarias en el mundo entero, son las papas arrugadas con mojo picón, una receta muy sencilla, pero a la vez deliciosa.",
+    "alergenos": "Sin alérgenos",
+    "price": 3.25,
+    "url": "https://diariodegastronomia.com/wp-content/uploads/2020/11/Papas-arrugadas-con-mojo-de-chorizo-759x500.png"
+  },
+
+  {
+    "id": 3,
+    "type": "Sugerencias",
+    "name": "Queso frito con mermelada",
+    "description": "El queso Camembert frito con mermelada de tomate es una tapa y/o aperitivo ideal, se sirve caliente cuando todavía el queso esta derretido en el interior",
+    "alergenos": "Sin alérgenos",
+    "price": 3.25,
+    "url": "https://i.blogs.es/6ae33b/camembert-20frito-20con-20mermelada-20de-20tomate/450_1000.jpg"
+  }
+]
