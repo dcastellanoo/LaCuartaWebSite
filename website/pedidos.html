@@ -15,129 +15,9 @@
     <link rel="stylesheet" href="css/pedido.css">
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/exm.css">
 
-    <link href="css/default.css" rel="stylesheet">
-
-
-    <style type="text/css">
-
-       @media (max-width:991px){
-
-        .nav-menu-left{
-            margin-top: 0px;
-            margin-left: 0px;
-            background: #FFFFFF;
-            mix-blend-mode: normal;
-            opacity: 0.7;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        }
-
-        .pedido{
-            position: relative;
-            width: 620px;
-            height: 150px;
-            background: #F9F5F1;
-            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-            padding-top: 25px;
-            padding-left: 35px;
-            margin-bottom: 20px;
-        }
-
-        .pedido-quant{
-            padding: 6px;
-            text-align: center;
-            border: 1px solid #CCC;
-            width: 105px;
-            margin-top: 15px;
-            margin-left: 40px;
-        }
-
-        .pedido-quant input{
-            text-align: center;
-            border: none;
-            padding: 3px;
-        }
-
-        .pedido-info{
-            height: 30px;
-            margin-left: 40px;
-            text-align: left;
-        }
-
-        .pedido-info .spi-1{
-            height: 13px;
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: bold;
-            font-size: 16pt;
-            color: #000000;
-            padding-bottom: 42px;
-
-        }
-
-        .pedido-info .spi-3{
-            background: red;
-            width: 70px;
-            height: 70px;
-            padding-top: 19px;
-            position: relative;
-            float: right;
-            top: 15px;
-            right: 50px;
-            background: #67523A;
-            color: #FFFFFF;
-            font-size: 14pt;
-            text-align: center;
-            border-radius: 50%!important;
-
-        }
-
-        .row>* {
-          width: 100%;
-          padding-right: var(--bs-gutter-y);
-          padding-left: var(--bs-gutter-y);
-          margin-right: auto;
-          margin-left: auto;
-        }
-
-        .header-pedido h1{
-            color: white;
-            font-size: 26pt;
-            font-family: Times New Roman;
-        }
-
-        #content{padding-bottom: 75px;}
-
-    }
-
-    @media(min-width:768px) and (max-width:991px){
-
-        .background_pedido{
-            background: none;
-        }
-
-        .header-pedido h1{
-            text-align: center;
-            font-size: 36pt;
-            padding-bottom: 15px;
-        }
-
-    }
-
-    .cart-resp{
-        background-color: #67523A;
-        border-radius: 6px;
-        width: 75px;
-        height: 63px;
-        float: right;
-        margin-right: 105px;
-        margin-top: 45px;
-        padding: 5px;
-        padding-top: 10px;
-    }          
-
-
-    </style>
+    <style type="text/css"></style>
 
 </head>
 
@@ -189,11 +69,11 @@
 
                             <div class="row">
                                      
-                               <div class="col-12">
-                                    <div class="header-pedido">
+                               <div id="myHeader"></div>
+                                    <!-- <div class="header-pedido">
                                         <h1>Opción de la carta</h1>
                                     </div>
-                               </div>
+                               </div> -->
                                <div id="myData" class="row"></div>
                                 
                             </div>
@@ -210,11 +90,12 @@
         <footer id="footer"></footer>
 
 
-        <script>
-            $(function () {
-                $('#header').load("./header.html");
-                $('#footer').load("./footer.html");
-            });
+<script>
+
+    $(function () {
+        $('#header').load("./header.html");
+        $('#footer').load("./footer.html");
+    });
 
 
     fetch('carta_comida.json')
@@ -229,8 +110,54 @@
         });
 
     function appendData(data) {
-        let mainContainer = document.getElementById("myData");
-        for (let i = 0; i < data.length; i++) {
+        
+        let ent = "Entrante";
+        let out = "Outris";
+
+        if (ent == "Entrante") {
+
+            headHtml(ent);
+
+            for (let i = 0; i < data.length; i++) {
+
+                divHtml(data[i].url, data[i].name, data[i].price);
+
+            }
+
+        }else if(out = "Outris"){
+
+            headHtml(out);
+
+            for (let i = 0; i < data.length; i++) {
+
+                divHtml(data[i].url, data[i].name, data[i].price);
+
+            }
+
+        }
+
+    }
+
+    function headHtml(type){
+
+        let headerConteiner = document.getElementById("myHeader");
+
+        let divCol = document.createElement("div");
+        divCol.className = "col-12";
+        let divHeader = document.createElement("div");
+        divHeader.className = "header-pedido";
+        let h1 = document.createElement("h1");
+        h1.innerHTML = type;
+         
+        divHeader.appendChild(h1);
+        divCol.appendChild(divHeader);
+
+        headerConteiner.appendChild(divCol);
+
+    }
+
+    function divHtml(url, name, price){
+            let mainContainer = document.getElementById("myData");
             // div dos pedidos
             let divPedido = document.createElement("div");
             divPedido.className = "col-3 pedido";
@@ -239,7 +166,7 @@
             let divImage = document.createElement("div");
             divImage.className = "d-none d-lg-block";
             let image = document.createElement('img');
-            image.src = data[i].url;
+            image.src = url;
             image.className = "pedido_image";
             image.setAttribute("width", "160");
             image.setAttribute("heigth", "140");
@@ -250,11 +177,11 @@
 
             let span1 = document.createElement("span");
             span1.className = "spi-1";
-            span1.innerHTML = data[i].name;
+            span1.innerHTML = name;
 
             let span3 = document.createElement("span");
             span3.className = "spi-3";
-            span3.innerHTML = data[i].price + "€";
+            span3.innerHTML = price + "€";
 
             divInfo.appendChild(span1);
             divInfo.appendChild(span3);
@@ -304,10 +231,9 @@
             divPedido.appendChild(divButton);
 
             mainContainer.appendChild(divPedido);
-        }
     }
 
-        </script>
+</script>
 
     </body>
 </html>
