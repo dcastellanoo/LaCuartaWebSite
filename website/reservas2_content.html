@@ -1,28 +1,16 @@
 <article class="reservas container-fluid d-flex justify-content-center p-5">
-<<<<<<< HEAD
     <form id="reservas_form" class="text-center" action="javascript:submitForm()" name="reservas2">
-        <div class="formTable justify-content-center px-6">
-            <div class="row pt-4">
+        <div class="formTable">
+            <div class="row pt-4 px-6 justify-content-center">
                 <div class="row summaryTable py-3 justify-content-center">
                     <div class="col-md-4">
                         <img alt="Calendar." src="images/Calendar.png" style="width: 40px"> <span id="reservation_date">Calendar</span>
                     </div>
                     <div class="col-md-4">
                         <img alt="Watch." src="images/Watch.png"> <span id="reservation_time">Watch</span>
-=======
-    <form class="desktopForm text-center" action="reservas3.html" method="post" name="reservas2">
-        <div class="formTable">
-            <div class="row pt-4 px-6 justify-content-center">
-                <div class="row summaryTable py-3 justify-content-center">
-                    <div class="col-md-4">
-                        <img class="imgReserva" alt="Calendar." src="images/Calendar.png"> Calendar
                     </div>
                     <div class="col-md-4">
-                        <img class="imgReserva" alt="Watch." src="images/Watch.png"> Watch
->>>>>>> d8449d9e9171137a582820645615973ce20a505f
-                    </div>
-                    <div class="col-md-4">
-                        <img class="imgReserva" alt="User." src="images/User.png"> User
+                        <img class="imgReserva" alt="User." src="images/User.png"> <span id="num_persons">User</span>
                     </div>
                 </div>
             </div>
@@ -84,17 +72,10 @@
                     </div>
                 </div>
                 <div class="d-flex py-4 justify-content-between">
-                    <input type="button" class="button" value="Retroceder" onclick="goToReservas1()">
+                    <input type="button" class="button" value="Retroceder" onclick="prevTab(1)">
                     <input type="submit" class="button" value="Confirmar reserva">
                 </div>
             </div>
-<<<<<<< HEAD
-            <div class="d-flex py-4 justify-content-between">
-                <input type="button" class="button" value="Retroceder" onclick="prevTab(1)">
-                <input type="submit" class="button" value="Confirmar reserva">
-            </div>
-=======
->>>>>>> d8449d9e9171137a582820645615973ce20a505f
         </div>
     </form>
 </article>
@@ -108,6 +89,7 @@
 
         // Set header values
         document.getElementById("reservation_date").innerHTML = RESERVATION_PARAMS["reservation_date"].toLocaleDateString("es-US", dateFormat);
+        document.getElementById("num_persons").innerHTML = RESERVATION_PARAMS["num_adults"] + " + " + RESERVATION_PARAMS["num_childs"];
 
     });
 </script>

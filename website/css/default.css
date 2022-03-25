@@ -292,12 +292,10 @@ body {
     background-color: #AAAAAA;
 }
 
-<<<<<<< HEAD
 .reservas form .formTable .timeField:hover {
     cursor: pointer;
 }
 
-=======
 .reservas form .formTable .hourRow1 {
     display: flex;
     justify-content: space-between;
@@ -329,7 +327,6 @@ body {
     background-color: #AAAAAA;
     align-content: center;
 }
->>>>>>> d8449d9e9171137a582820645615973ce20a505f
 
 .reservas form .formTable #datepicker {
     color: black;

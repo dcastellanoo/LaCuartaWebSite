@@ -10,7 +10,7 @@
                         <img alt="Watch." src="images/Watch.png"> <span id="reservation_time">Watch</span>
                     </div>
                     <div class="col-md-4">
-                        <img alt="User." src="images/User.png"> User
+                        <img class="imgReserva" alt="User." src="images/User.png"> <span id="num_persons">User</span>
                     </div>
                     <div class="row justify-content-center pt-3" style="font-size: 16px">
                         ZONA
@@ -19,12 +19,8 @@
                         TERRAZA
                     </b>
                     <p class="row justify-content-start pt-4 ms-md-5">Nombre de la reserva</p>
-<<<<<<< HEAD
                     <b class="row justify-content-start ms-md-5" id="contact_name">
                         Diego Castellano
-=======
-                    <b class="row justify-content-start ms-md-5" id="nameCollected">
->>>>>>> d8449d9e9171137a582820645615973ce20a505f
                     </b>
                     <p class="row justify-content-start pt-4 ms-md-5">Email de la reserva</p>
                     <b class="row justify-content-start ms-md-5" id="contact_email">
@@ -44,7 +40,6 @@
         </div>
     </form>
 </article>
-<<<<<<< HEAD
 
 <!-- document ready function set form values -->
 <script>
@@ -56,6 +51,8 @@
         // Set header values
         document.getElementById("reservation_date").innerHTML = RESERVATION_PARAMS["reservation_date"].toLocaleDateString("es-US", dateFormat);
         document.getElementById("reservation_time").innerHTML = RESERVATION_PARAMS["reservation_time"];
+        document.getElementById("num_persons").innerHTML = RESERVATION_PARAMS["num_adults"] + " + " + RESERVATION_PARAMS["num_childs"];
+
 
         if ( RESERVATION_PARAMS["dinning_hall"] )
             document.getElementById("reservation_place").innerHTML = "COMEDOR";
@@ -69,5 +66,3 @@
     });
 </script>
 
-=======
->>>>>>> d8449d9e9171137a582820645615973ce20a505f
