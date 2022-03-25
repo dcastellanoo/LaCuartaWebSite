@@ -280,9 +280,20 @@ body {
     font-size: calc(14px + 0.4vw);
 }
 
+.reservas2 form .formTable .timeField {
+    width: 6rem;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+}
+
 .reservas form .formTable .selectedField {
     color: #FFFFFF;
     background-color: #AAAAAA;
+}
+
+.reservas form .formTable .timeField:hover {
+    cursor: pointer;
 }
 
 .reservas form .formTable .hourRow1 {
@@ -362,7 +373,6 @@ body {
     width: calc(30px + 0.2vw);
 }
 
-
 @media (max-width: 768px) {
     .reservas {
     }
@@ -412,11 +422,17 @@ body {
 
 }
 
-@media (min-width: 768px) and (max-width: 1200px) {
+@media (max-width: 992px) {
     .reservas{
         color: black;
     }
 
+    .reservas2 form .formTable .timeField {
+        border: 1px solid #000000;
+        box-sizing: border-box;
+    }
+}
+@media (max-width: 1200px) {
     .reservas form .formTable {
         width: 70vw;
     }
