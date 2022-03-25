@@ -1,13 +1,13 @@
 <article class="reservas container-fluid d-flex justify-content-center p-5">
-    <form class="desktopForm text-center" name="reservas4">
+    <form id="reservas_form" class="text-center" name="reservas4">
         <div class="formTable">
             <div class="row pt-4 pb-1 px-6 justify-content-center">
                 <div class="row summaryTable py-3 justify-content-center">
                     <div class="col-md-4">
-                        <img alt="Calendar." src="images/Calendar.png" style="width: 40px"> Calendar
+                        <img alt="Calendar." src="images/Calendar.png" style="width: 40px"> <span id="reservation_date">Calendar</span>
                     </div>
                     <div class="col-md-4">
-                        <img alt="Watch." src="images/Watch.png"> Watch
+                        <img alt="Watch." src="images/Watch.png"> <span id="reservation_time">Watch</span>
                     </div>
                     <div class="col-md-4">
                         <img alt="User." src="images/User.png"> User
@@ -15,28 +15,52 @@
                     <div class="row justify-content-center pt-3" style="font-size: 16px">
                         ZONA
                     </div>
-                    <b class="row justify-content-center pt-1 pb-3">
+                    <b id="reservation_place" class="row justify-content-center pt-1 pb-3">
                         TERRAZA
                     </b>
                     <p class="row justify-content-start pt-4 ms-md-5">Nombre de la reserva</p>
-                    <b class="row justify-content-start ms-md-5" id="name">
+                    <b class="row justify-content-start ms-md-5" id="contact_name">
                         Diego Castellano
                     </b>
                     <p class="row justify-content-start pt-4 ms-md-5">Email de la reserva</p>
-                    <b class="row justify-content-start ms-md-5">
+                    <b class="row justify-content-start ms-md-5" id="contact_email">
                         example@gmail.com
                     </b>
                     <p class="row justify-content-start pt-4 ms-md-5">Teléfono de la reserva</p>
-                    <b class="row justify-content-start ms-md-5">
+                    <b class="row justify-content-start ms-md-5" id="contact_phone">
                         000000000
                     </b>
                 </div>
                 <p class="row justify-content-start fuentePrueba pb-5">*Si no puede asistir o desea cancelar la reserva, contacte con el restaurante</p>
                 <h2 class="row justify-content-center pb-5"> ¡Gracias por su reserva! </h2>
                 <div class="pb-4">
-                    <input type="button" class="button" value="Volver" onclick="goToMainPage()">
+                    <input type="button" class="button" value="Volver" onclick="location.href = 'index.html';">
                 </div>
             </div>
         </div>
     </form>
 </article>
+
+<!-- document ready function set form values -->
+<script>
+    $(document).ready(function() {
+        console.log("Setting up form for reservas 3...");
+
+        var myForm = document.getElementById("reservas_form");
+
+        // Set header values
+        document.getElementById("reservation_date").innerHTML = RESERVATION_PARAMS["reservation_date"].toLocaleDateString("es-US", dateFormat);
+        document.getElementById("reservation_time").innerHTML = RESERVATION_PARAMS["reservation_time"];
+
+        if ( RESERVATION_PARAMS["dinning_hall"] )
+            document.getElementById("reservation_place").innerHTML = "COMEDOR";
+        else
+            document.getElementById("reservation_place").innerHTML = "TERRAZA";
+
+        // Set form field
+        document.getElementById("contact_name").innerHTML = RESERVATION_PARAMS["full_name"];
+        document.getElementById("contact_email").innerHTML = RESERVATION_PARAMS["email"];
+        document.getElementById("contact_phone").innerHTML = RESERVATION_PARAMS["country_code"] + " " + RESERVATION_PARAMS["phone_number"];
+    });
+</script>
+
