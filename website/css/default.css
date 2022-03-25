@@ -12,20 +12,6 @@ body {
     color: #FFFFFF;
     font-size: calc(12px + 1vw);
 }
-/*
-font-size: 22px;
-
-@media (max-width: 768px) {
-    body {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 992px) {
-    body {
-        font-size: 18px;
-    }
-}          */
 
 legend {
     font-size: calc(14px + 0.6vw);
@@ -242,6 +228,7 @@ body {
     font-style: normal;
     color: #FFFFFF;
     padding: 1rem 2rem;
+    font-size: calc(14px + 0.4vw);
 
     background: #67523A;
     border: none;
@@ -290,11 +277,12 @@ body {
     color: black;
     background-color: #FFFFFF;
     align-content: center;
+    font-size: calc(14px + 0.4vw);
 }
 
 .reservas form .formTable .selectedField {
     color: #FFFFFF;
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: #AAAAAA;
 }
 
 .reservas form .formTable .hourRow1 {
@@ -388,8 +376,7 @@ body {
 
     .reservas form .button {
         background: black;
-        padding: 1rem;
-        font-size: 16px;
+        padding: 0.8rem 0.8rem;
     }
 
     .reservas form .formTable .timeField {
