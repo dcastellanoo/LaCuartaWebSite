@@ -126,7 +126,7 @@
 
 
 
-<!-- counter values -->
+<!-- Counter changes -->
 <script>
     $(document).ready(function() {
         $('.buttonMinus').click(function () {
@@ -143,11 +143,16 @@
             $input.change();
             return false;
         });
+    });
+</script>
 
+<!-- Timefield change -->
+<script>
+    $(document).ready(function() {
         $('.timeField').click(function () {
-            var $other = $(this).parent().find('.selectedField');
-            $(this).addClass("selectedField");
+            let $other = $(this).parent().find('.selectedField');
             $other.removeClass("selectedField");
+            $(this).addClass("selectedField");
             return false;
         });
 

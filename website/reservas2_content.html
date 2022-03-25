@@ -14,39 +14,61 @@
                     </div>
                 </div>
             </div>
-            <div class= "row pt-4 px-6 justify-content-center">
+            <div id="timeSchedule" class= "row pt-4 px-6 justify-content-center">
                 <div class="pt-5">
                     <b style="font-family: 'Times New Roman'">TERRAZA</b>
                 </div>
-                <div class="pt-4 hourRow1">
-                    <div class="hourFieldSelected">
-                        13:00
-                    </div>
-                    <div class="hourField">
-                        13:30
-                    </div>
-                    <div class="hourField">
-                        14:00
-                    </div>
-                    <div class="hourField">
-                        14:30
-                    </div>
+                <div id="terrazaContainer" class="justify-content-between">
+
                 </div>
-                <div class="py-4 hourRow2">
-                    <div class="hourField">
-                        15:00
-                    </div>
-                    <div class="hourField">
-                        15:30
-                    </div>
-                    <div class="hourField">
-                        16:00
-                    </div>
-                </div>
+
                 <div class="pt-5">
                     <b style="font-family: 'Times New Roman'">COMEDOR</b>
                 </div>
-                <div class="pt-4 hourRow1">
+
+                <div id="comedorContainer" class="justify-content-between">
+
+                </div>
+
+                <div class="d-flex py-4 justify-content-between">
+                    <input type="button" class="button" value="Retroceder" onclick="prevTab(1)">
+                    <input type="submit" class="button" value="Confirmar reserva">
+                </div>
+            </div>
+        </div>
+    </form>
+</article>
+
+<!--
+<div class="pt-4 hourRow1">
+                        <div class="hourField hourFieldSelected">
+                            13:00
+                        </div>
+                        <div class="hourField">
+                            13:30
+                        </div>
+                        <div class="hourField">
+                            14:00
+                        </div>
+                        <div class="hourField">
+                            14:30
+                        </div>
+                    </div>
+                    <div class="py-4 hourRow2">
+                        <div class="hourField">
+                            15:00
+                        </div>
+                        <div class="hourField">
+                            15:30
+                        </div>
+                        <div class="hourField">
+                            16:00
+                        </div>
+                    </div>
+
+
+
+                    <div class="pt-4 hourRow1">
                     <div class="hourField">
                         13:00
                     </div>
@@ -71,14 +93,91 @@
                         16:00
                     </div>
                 </div>
-                <div class="d-flex py-4 justify-content-between">
-                    <input type="button" class="button" value="Retroceder" onclick="prevTab(1)">
-                    <input type="submit" class="button" value="Confirmar reserva">
-                </div>
-            </div>
-        </div>
-    </form>
-</article>
+-->
+
+<!-- Load JSON -->
+<script>
+    fetch('reservation_times.json')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            appendData(data);
+        })
+        .catch(function (err) {
+            console.log('error: ' + err);
+        });
+
+    function appendData(data) {
+
+        let timeSchedule = [];
+        if (RESERVATION_PARAMS["time_lunch"]) {
+            timeSchedule = data.find(item => item.name == "ALMUERZO")["open_times"];
+        } else {
+            timeSchedule = data.find(item => item.name == "CENA")["open_times"];
+        }
+
+        let terrazaContainer = document.getElementById("terrazaContainer");
+        populateContainer(terrazaContainer, timeSchedule);
+
+        let comedorContainer = document.getElementById("comedorContainer");
+        populateContainer(comedorContainer, timeSchedule);
+
+
+        // Set reservation hour
+        let parentContainer;
+        if ( RESERVATION_PARAMS["terrace"] ) {
+            parentContainer = document.querySelector("#terrazaContainer")
+        } else {
+            parentContainer = document.querySelector("#comedorContainer")
+        }
+
+        let field = parentContainer.getElementsByClassName(RESERVATION_PARAMS["reservation_time"].replace(":", "-"))[0];
+        if ( field === undefined ) {
+            field = parentContainer.getElementsByClassName("hourField")[0];
+        }
+        field.classList.add("hourFieldSelected");
+
+
+
+    }
+
+
+    function populateContainer(container, timeSchedule) {
+        let rowContainer = document.createElement("div");
+        rowContainer.className = "pt-4 hourRow1";
+
+        for (let i = 0; i < timeSchedule.length; ++i) {
+            if ( (i > 0) && (i % 4) === 0 ) {
+                container.appendChild(rowContainer);
+                rowContainer = document.createElement("div");
+                rowContainer.className = "pt-4 hourRow2";
+            }
+
+            rowContainer.appendChild(createHourField("hourField", timeSchedule[i].hour));
+        }
+        container.appendChild(rowContainer);
+    }
+
+    function createHourField(classList, content) {
+        let newDiv = document.createElement("div");
+        newDiv.className = classList + " " + content.replace(":", "-");
+        newDiv.setAttribute("name", content.replace(":", "-"));
+        newDiv.innerHTML = content;
+        newDiv.onclick = function () {
+            let $other = $("#timeSchedule").find(".hourFieldSelected");
+            $other.removeClass("hourFieldSelected");
+            $(this).addClass("hourFieldSelected");
+            document.getElementById("reservation_time").innerHTML = this.textContent;
+        };
+
+        return newDiv;
+    }
+
+
+
+</script>
+
 
 <!-- document ready function set form values -->
 <script>
@@ -89,16 +188,33 @@
 
         // Set header values
         document.getElementById("reservation_date").innerHTML = RESERVATION_PARAMS["reservation_date"].toLocaleDateString("es-US", dateFormat);
+        document.getElementById("reservation_time").innerHTML = RESERVATION_PARAMS["reservation_time"];
         document.getElementById("num_persons").innerHTML = RESERVATION_PARAMS["num_adults"] + " + " + RESERVATION_PARAMS["num_childs"];
-
     });
 </script>
 
 <!-- submit form function -->
 <script>
     function submitForm() {
-        // TODO load time and place from the form
+        // Find time and place from the form
+        let selectedField = document.querySelector("#terrazaContainer").getElementsByClassName("hourFieldSelected")[0];
+        if ( selectedField != undefined ) {
+            RESERVATION_PARAMS["terrace"] = true;
+            RESERVATION_PARAMS["dinning_hall"] = false;
+            RESERVATION_PARAMS["reservation_time"] = selectedField.innerHTML;
+        } else {
+            selectedField = document.getElementsByClassName("hourFieldSelected")[0];
+            if ( selectedField != undefined) {
+                RESERVATION_PARAMS["dinning_hall"] = true;
+                RESERVATION_PARAMS["terrace"] = false;
+
+                RESERVATION_PARAMS["reservation_time"] = selectedField.innerHTML;
+            } else {
+                console.warn("No hourFieldSelected found on reservation2 form...");
+            }
+        }
 
         nextTab(1);
     }
 </script>
+

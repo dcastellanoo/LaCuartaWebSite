@@ -7,14 +7,14 @@ var dateFormat = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeri
 
 
 var RESERVATION_PARAMS = {
-    num_adults: 4,
-    num_childs: 2,
+    num_adults: 2,
+    num_childs: 0,
     time_lunch: false,
     time_dinner: true,
     reservation_date: new Date(),
-    dinning_hall: true,
-    terrace: false,
-    reservation_time: "14:30",
+    dinning_hall: false,
+    terrace: true,
+    reservation_time: "21:15",
     full_name: "John Doe",
     email: "example@example.com",
     country_code: "+46",

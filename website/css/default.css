@@ -302,6 +302,7 @@ body {
     padding-left: 15%;
     padding-right: 15%;
 }
+
 .reservas form .formTable .hourRow2 {
     display: flex;
     justify-content: space-between;
@@ -319,13 +320,13 @@ body {
     font-size: calc(14px + 0.3vw);
 }
 
+.reservas form .formTable .hourField:hover {
+    cursor: pointer;
+}
+
 .reservas form .formTable .hourFieldSelected {
-    padding: 1rem 1rem;
-    border: 1px solid #000000;
-    border-radius: 4px;
     color: white;
     background-color: #AAAAAA;
-    align-content: center;
 }
 
 .reservas form .formTable #datepicker {
