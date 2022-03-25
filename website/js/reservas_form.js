@@ -14,14 +14,14 @@ var RESERVATION_PARAMS = {
     reservation_date: new Date(),
     dinning_hall: false,
     terrace: true,
-    reservation_time: "21:15",
-    full_name: "John Doe",
-    email: "example@example.com",
-    country_code: "+46",
-    phone_number: "123456789",
-    comment: "test comment",
-    conditions_accepted: true,
-    remember_user: true,
+    reservation_time: "",
+    full_name: "",
+    email: "",
+    country_code: "",
+    phone_number: "",
+    comment: "",
+    conditions_accepted: false,
+    remember_user: false,
 };
 
 console.log(RESERVATION_PARAMS["reservation_date"]);

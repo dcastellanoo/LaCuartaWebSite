@@ -105,7 +105,14 @@
 <!-- submit form function -->
 <script>
     function submitForm() {
-        // TODO load time and place from the form
+        RESERVATION_PARAMS["full_name"] = document.getElementById("full_name").value;
+        RESERVATION_PARAMS["email"] = document.getElementById("email_input").value;
+        RESERVATION_PARAMS["country_code"] = document.getElementById("country_code").value;
+        RESERVATION_PARAMS["phone_number"] = document.getElementById("phone_number").value;
+        RESERVATION_PARAMS["comment"] = document.getElementById("comment_input").value;
+
+        RESERVATION_PARAMS["conditions_accepted"] = document.getElementById("conditions_check").checked;
+        RESERVATION_PARAMS["remember_user"] = document.getElementById("remember_check").checked;
 
         nextTab(1);
     }
