@@ -1,0 +1,21 @@
+[
+  {
+    "id": 2,
+    "type": "Principales",
+    "name": "Espaguetis a la carbonara",
+    "description": "Espaguetis a la carbonara receta italiana original con panceta, yema de huevo y parmesano",
+    "alergenos": "No apto para intolerantes a la lactosa",
+    "price": 6.50,
+    "url": "https://recetaland.com/wp-content/uploads/2020/12/R5.jpg"
+  },
+
+  {
+    "id": 2,
+    "type": "Principales",
+    "name": "Calamares fritos",
+    "description": "Calamares muy frescos y fritos acompañados de rodajas de limón",
+    "alergenos": "Sin alérgenos",
+    "price": 8.50,
+    "url": "https://placeralplato.com/files/2016/01/Calamares-fritos.jpg"
+  }
+]

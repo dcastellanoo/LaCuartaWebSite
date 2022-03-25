@@ -1,9 +1,5 @@
-<link href="css/datepicker.css" rel="stylesheet">
-<script src="js/bootstrap-datepicker.js"></script>
-
-
 <article class="reservas container-fluid d-flex justify-content-center py-5">
-    <form class="text-center" action="reservas2.html" method="post" name="reservas1">
+    <form id="reservas_form" class="text-center" action="javascript:submitForm()" name="reservas1">
         <div class="formTable ">
             <div class="row pt-5 py-md-4">
                 <div class="col-md-6">
@@ -11,7 +7,7 @@
                         <legend>Adultos</legend>
                         <div class="counter">
                             <input type="button" class="buttonMinus" value="-" />
-                            <input type="number" class="text-center border-0 counterValue" value="2" min="1"/>
+                            <input type="number" class="text-center border-0 counterValue" value="" min="1" id="counter_adults" name="num_adults" />
                             <input type="button" class="buttonPlus" value="+" />
                         </div>
                     </fieldset>
@@ -23,7 +19,7 @@
 
                         <div class="counter">
                             <input type="button" class="buttonMinus" value="-" />
-                            <input type="number" class="text-center border-0 counterValue" value="0"/>
+                            <input type="number" class="text-center border-0 counterValue" value="0" id="counter_children" name="num_childs" />
                             <input type="button" class="buttonPlus" value="+" />
                         </div>
                     </fieldset>
@@ -33,17 +29,10 @@
 
             <div class="row d-inline-block py-5">
                 <fieldset class="">
-                    <legend>Fecha</legend>
+                    <legend class="pb-2">Fecha</legend>
+
 
                     <div id="datepicker"></div>
-
-
-                    <script>
-                        $('#datepicker').datepicker({
-                            startDate: '0d',
-                            todayHighlight: true
-                        });
-                    </script>
 
                 </fieldset>
             </div>
@@ -52,31 +41,90 @@
 
             <div class="row text-align:center py-4">
                 <fieldset class="">
-                    <legend>Horario</legend>
+                    <legend class="pb-2">Horario</legend>
 
-                    <div class="timeField selectedField text-center p-1 d-inline-block me-md-3">
+                    <div id="time_lunch" class="timeField text-center p-1 d-inline-block me-md-3">
                         <strong>ALMUERZO</strong> <br>
                         13:00 - 16:30
                     </div>
 
-                    <div class="timeField text-center p-1 d-inline-block ms-md-3">
+                    <div id="time_dinner" class="timeField text-center p-1 d-inline-block ms-md-3">
                         <strong>CENA</strong>  <br>
                         20:15 - 24:00
                     </div>
                 </fieldset>
             </div>
             <div class="pb-4">
-                <input type="submit" class="button mt-5" value="Continuar" href="reservas2.html">
+                <input id="button_next" type="submit" class="button mt-5" value="Continuar">
             </div>
+
         </div>
     </form>
-
 
 
 </article>
 
 
-<!-- counter values -->
+<!--
+<p>Date: <input type="text" id="datepicker">&#xA0;<input type="text" id="alternate" size="30"></p>
+-->
+
+<!-- DatePicker -->
+<script>
+    $("#datepicker").datepicker({
+        inline: true,
+        dateFormat: "yyyy-dd-mm",
+        todayHighlight: true,
+        altField: "#alternate",
+        minDate: 0,
+        maxDate: "+3M"
+    });
+</script>
+
+<!-- document ready function set form values -->
+<script>
+    $(document).ready(function() {
+        console.log("Setting up form for reservas 1...");
+        var myForm = document.getElementById("reservas_form");
+
+        // Set counter values
+        document.getElementById("counter_adults").value = RESERVATION_PARAMS["num_adults"];
+        document.getElementById("counter_children").value = RESERVATION_PARAMS["num_childs"];
+
+        // Set calendar-datepicker value
+        $("#datepicker").datepicker("setDate", RESERVATION_PARAMS["reservation_date"]);
+
+        // Set lunch and dinner time class
+        if ( RESERVATION_PARAMS["time_lunch"] ) {
+            $("#time_lunch").addClass("selectedField");
+        } else {
+            $("#time_dinner").addClass("selectedField");
+        }
+    });
+</script>
+
+<!-- submit form function -->
+<script>
+    function submitForm() {
+        // Get counter values
+        RESERVATION_PARAMS["num_adults"] = document.getElementById("counter_adults").value;
+        RESERVATION_PARAMS["num_childs"] = document.getElementById("counter_children").value;
+
+        // Get calendar-datepicker value
+        RESERVATION_PARAMS["reservation_date"] = $("#datepicker").datepicker("getDate");
+
+
+        // Get lunch and dinner time class
+        RESERVATION_PARAMS["time_lunch"] = $("#time_lunch").hasClass("selectedField");
+        RESERVATION_PARAMS["time_dinner"] = $("#time_dinner").hasClass("selectedField");
+
+        nextTab(1);
+    }
+</script>
+
+
+
+<!-- Counter changes -->
 <script>
     $(document).ready(function() {
         $('.buttonMinus').click(function () {
@@ -93,17 +141,32 @@
             $input.change();
             return false;
         });
-
-        $('.timeField').click(function () {
-            var $other = $(this).parent().find('.selectedField');
-            $(this).addClass("selectedField");
-            $other.removeClass("selectedField");
-
-            return false;
-        });
     });
 </script>
 
+<!-- Timefield change -->
 <script>
+    $(document).ready(function() {
+        $('.timeField').click(function () {
+            let $other = $(this).parent().find('.selectedField');
+            $other.removeClass("selectedField");
+            $(this).addClass("selectedField");
+            return false;
+        });
 
+        /*
+
+        let params = new URL(window.location).searchParams;
+        console.log("Params:" + params);
+
+        document.getElementById('reservas_form').addEventListener('submit', function(e) {
+            //e.preventDefault(); //to prevent form submission
+
+            alert('click');
+        });
+        */
+
+
+    });
 </script>
+

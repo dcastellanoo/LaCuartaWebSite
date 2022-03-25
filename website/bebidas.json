@@ -1,0 +1,22 @@
+[
+  {
+    "type": "Refrescos",
+    "name": "Fanta de naranja",
+    "price": 0.95
+  },
+  {
+    "type": "Refrescos",
+    "name": "Clipper de fresa",
+    "price": 0.95
+  },
+  {
+    "type": "Cervezas",
+    "name": "Tropical",
+    "price": 1.10
+  },
+  {
+    "type": "Cervezas",
+    "name": "Dorada Especial",
+    "price": 1.20
+  }
+]

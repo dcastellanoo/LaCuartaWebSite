@@ -1,21 +1,21 @@
 <article class="reservas container-fluid d-flex justify-content-center p-5">
-    <form action="reservas4.html" class="desktopForm text-center" name="reservas3" onsubmit="rellenarReservas4()">
+    <form id="reservas_form" class="text-center" action="javascript:submitForm()" name="reservas3">
         <div class="formTable">
             <div class="row pt-4 px-6 justify-content-center">
                 <div class="row summaryTable pt-3">
                     <div class="col-md-4">
-                        <img class="imgReserva" alt="Calendar." src="images/Calendar.png"> Calendar
+                        <img class="imgReserva" alt="Calendar." src="images/Calendar.png"> <span id="reservation_date">Calendar</span>
                     </div>
                     <div class="col-md-4">
-                        <img class="imgReserva" ="Watch." src="images/Watch.png"> Watch
+                        <img class="imgReserva" alt="Watch." src="images/Watch.png"> <span id="reservation_time">Watch</span>
                     </div>
                     <div class="col-md-4">
-                        <img class="imgReserva" alt="User." src="images/User.png"> User
+                        <img class="imgReserva" alt="User." src="images/User.png"> <span id="num_persons">User</span>
                     </div>
                     <div class="row justify-content-center pt-3" style="font-size: 16px">
                         ZONA
                     </div>
-                    <b class="row justify-content-center pt-1 pb-3">
+                    <b id="reservation_place" class="row justify-content-center pt-1 pb-3">
                         TERRAZA
                     </b>
                 </div>
@@ -23,43 +23,43 @@
 
             <div class="row pt-4 px-6 justify-content-center">
                 <div>
-                    <input type="text" class="form-control" id="nameInput1" placeholder="Nombre completo" maxlength="80"
+                    <input type="text" class="form-control" id="full_name" placeholder="Nombre completo" maxlength="80"
                     required>
                 </div>
                 <div class="pt-4">
-                    <input type="email" class="form-control" id="emailInput1" placeholder="Correo electrónico"
+                    <input type="email" class="form-control" id="email_input" placeholder="Correo electrónico"
                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Introduzca una dirección de correo válida. Ej: example@gmail.com"
                            maxlength="40"required>
                 </div>
                 <div class="pt-4 d-flex">
-                    <div class="input-group">
-                        <select class="form-select">
+                    <div class="col-auto">
+                        <select id="country_code" class="form-select">
                             <option selected>+34</option>
                             <option>+43</option>
                             <option>+46</option>
                         </select>
-                        <input type="tel" class="form-control" pattern="[0-9]{9}" id="phoneInput1"
+                        <input type="tel" class="form-control" pattern="[0-9]{9}" id="phone_number"
                                placeholder="Número de teléfono" maxlength="9" title="Introduzca un número de teléfono válido" required>
                     </div>
                 </div>
                 <div class="pt-4">
-                    <textarea rows="2" class="form-control" id="commentsInput1" placeholder="Comentarios acerca de la reserva"></textarea>
+                    <textarea rows="2" class="form-control" id="comment_input" placeholder="Comentarios acerca de la reserva"></textarea>
                 </div>
                 <div class="form-check pt-4 ps-5 text-start">
-                    <input type="checkbox" class="form-check-input" id="ConditionsCheck1" required>
-                    <label class="form-check-label checkFont" for="ConditionsCheck1">
+                    <input type="checkbox" class="form-check-input" id="conditions_check" required>
+                    <label class="form-check-label checkFont" for="conditions_check">
                         Acepto las Condiciones de Uso y la Política de Privacidad
                     </label>
                 </div>
                 <div class="form-check pt-4 ps-5 text-start">
-                    <input type="checkbox" class="form-check-input" id="RememberCheck1">
-                    <label class="form-check-label checkFont" for="RememberCheck1">
+                    <input type="checkbox" class="form-check-input" id="remember_check" >
+                    <label class="form-check-label checkFont" for="remember_check">
                         Recordarme para la próxima reserva
                     </label>
                 </div>
 
                 <div class="d-flex py-4 justify-content-between">
-                    <input type="button" id="Retroceder2" class="button" value="Retroceder" onclick="goToReservas2()">
+                    <input type="button" id="Retroceder2" class="button" value="Retroceder" onclick="prevTab(1)">
                     <input type="submit" class="button" value="Confirmar reserva">
                 </div>
             </div>
@@ -67,3 +67,54 @@
 
     </form>
 </article>
+
+<!-- document ready function set form values -->
+<script>
+    $(document).ready(function() {
+        console.log("Setting up form for reservas 3...");
+
+        var myForm = document.getElementById("reservas_form");
+
+        // Set header values
+        document.getElementById("reservation_date").innerHTML = RESERVATION_PARAMS["reservation_date"].toLocaleDateString("es-US", dateFormat);
+        document.getElementById("reservation_time").innerHTML = RESERVATION_PARAMS["reservation_time"];
+        document.getElementById("num_persons").innerHTML = RESERVATION_PARAMS["num_adults"] + " + " + RESERVATION_PARAMS["num_childs"];
+
+
+        if ( RESERVATION_PARAMS["dinning_hall"] )
+            document.getElementById("reservation_place").innerHTML = "COMEDOR";
+        else
+            document.getElementById("reservation_place").innerHTML = "TERRAZA";
+
+        // Set form field
+        document.getElementById("full_name").value = RESERVATION_PARAMS["full_name"];
+        document.getElementById("email_input").value = RESERVATION_PARAMS["email"];
+        document.getElementById("country_code").value = RESERVATION_PARAMS["country_code"];
+        document.getElementById("phone_number").value = RESERVATION_PARAMS["phone_number"];
+        document.getElementById("comment_input").value = RESERVATION_PARAMS["comment"];
+
+        document.getElementById("conditions_check").checked = RESERVATION_PARAMS["conditions_accepted"];
+        document.getElementById("remember_check").checked = RESERVATION_PARAMS["remember_user"];
+
+
+
+
+    });
+</script>
+
+<!-- submit form function -->
+<script>
+    function submitForm() {
+        RESERVATION_PARAMS["full_name"] = document.getElementById("full_name").value;
+        RESERVATION_PARAMS["email"] = document.getElementById("email_input").value;
+        RESERVATION_PARAMS["country_code"] = document.getElementById("country_code").value;
+        RESERVATION_PARAMS["phone_number"] = document.getElementById("phone_number").value;
+        RESERVATION_PARAMS["comment"] = document.getElementById("comment_input").value;
+
+        RESERVATION_PARAMS["conditions_accepted"] = document.getElementById("conditions_check").checked;
+        RESERVATION_PARAMS["remember_user"] = document.getElementById("remember_check").checked;
+
+        nextTab(1);
+    }
+</script>
+

@@ -7,13 +7,23 @@
     <title>La Cuarta</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="images/logo_header.png">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
     <!-- Styles -->
     <link href="css/default.css" rel="stylesheet">
     <link href="css/carta.css" rel="stylesheet">
+
+    <script>
+        $(document).ready(function () {
+            $("#entrantes").fadeIn();
+            $("#linkEntrantes").click(function () {
+                $("#entrantes").fadeIn();
+            });
+            $("#linkPrincipales").click(function () {
+                $("#entrantes").fadeOut();
+            });
+        });
+    </script>
 </head>
 <body class="background_carta">
 
@@ -30,33 +40,33 @@
 
             <div class="subheader_text_carta col-4">
                 <div class="row">
-                    <a class="nav-link color_txt_subheader_carta py-0" href="carta.html">
+                    <a value="1" onclick="prueba()" class="nav-link color_txt_subheader_carta py-0" href="carta.html">
                         <b>Entrantes</b>
                     </a>
                 </div>
                 <div class="row">
-                    <a class="nav-link color_txt_subheader_carta py-0" href="carta.html">
+                    <a value="2" class="nav-link color_txt_subheader_carta py-0" href="carta.html">
                         <b>Principales</b>
                     </a>
                 </div>
                 <div class="row">
-                    <a class="nav-link color_txt_subheader_carta py-0" href="carta.html">
+                    <a value="3" class="nav-link color_txt_subheader_carta py-0" href="carta.html">
                         <b>Sugerencias</b>
                     </a>
                 </div>
                 <div class="row">
-                    <a class="nav-link color_txt_subheader_carta py-0" href="carta.html">
+                    <a value="4" class="nav-link color_txt_subheader_carta py-0" href="carta.html">
                         <b>Postres</b>
                     </a>
                 </div>
 
                 <div class="row">
-                    <a class="nav-link color_txt_subheader_carta py-0" href="bebidas.html">
+                    <a value="5" class="nav-link color_txt_subheader_carta py-0" href="bebidas.html">
                         <b>Bebidas</b>
                     </a>
                 </div>
                 <div class="row">
-                    <a class="nav-link color_txt_subheader_carta py-0" href="vinos.html">
+                    <a value="6" class="nav-link color_txt_subheader_carta py-0" href="vinos.html">
                         <b>Carta de Vinos</b>
                     </a>
                 </div>
@@ -69,40 +79,9 @@
     </section>
 
     <section class="body_plato_carta">
-        <h1 class="align_opcion_plato_carta text_opcion_plato_carta">Opción de la carta</h1>
-        <article class="background_plato_carta row">
-            <div class="col-12 text-center text_title_plato_carta d-lg-none">
-                <b>Nombre del plato</b>
-            </div>
+        <div id="load_en">
 
-            <div class="text_plato_carta col">
-                <div class="text_title_plato_carta row d-lg-block d-none">
-                    Nombre del plato
-                </div>
-
-                <div class="descripcion_plato_carta row">
-                    Descripción
-                </div>
-                <div class="alergenos_plato_carta row">
-                    Alérgernos
-                </div>
-            </div>
-            <div class="col text-center align_money_plato_carta">
-                <figure>
-                    <img src="images/imagen_plato.png" class="size_photo_comida" alt="Plato Comida.">
-                    <p class="text_money_plato_carta background_money d-lg-block d-none">
-                        0,00 €
-                    </p>
-                </figure>
-            </div>
-
-            <div class="col-12 d-lg-none d-block text-center">
-                <p class="background_money text_money_plato_carta">
-                    0,00 €
-                </p>
-            </div>
-
-        </article>
+        </div>
     </section>
 
 </main>
@@ -110,12 +89,13 @@
 <!-- Footer -->
 <footer id="footer">
 </footer>
-
+<script src="js/carta.js"></script>
 <script>
     $(function () {
         $('#header').load("./header.html");
         $('#footer').load("./footer.html");
     });
 </script>
+
 </body>
 </html>
