@@ -42,6 +42,11 @@ h4 {
     font-size: calc(12px + 1.5vw);
 }
 
+h5 {
+    font-size: calc(12px + 1.2vw);
+}
+
+
 body {
     background: url('../images/background.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -348,6 +353,22 @@ body {
     }
 }         */
 
+/* _________________ Carrito _________________ */
+.ps-md-7 {
+    padding-left: 5rem !important;
+}
+
+.pt-md-7 {
+    padding-top: 5rem !important;
+}
+
+.pb-md-7 {
+    padding-bottom: 5rem !important;
+}
+
+.pe-md-7 {
+    padding-right: 5rem !important;
+}
 
 
 

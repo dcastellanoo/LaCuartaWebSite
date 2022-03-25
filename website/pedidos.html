@@ -15,51 +15,111 @@
     <link rel="stylesheet" href="css/pedido.css">
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="css/ionicons.css">
 
     <style type="text/css">
 
        @media (max-width:991px){
 
-	    .nav-menu-left{
-	        margin-top: 0px;
-	        margin-left: 0px;
-	        background: #FFFFFF;
-	        mix-blend-mode: normal;
-	        opacity: 0.7;
-	        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	    }
+        .nav-menu-left{
+            margin-top: 0px;
+            margin-left: 0px;
+            background: #FFFFFF;
+            mix-blend-mode: normal;
+            opacity: 0.7;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
 
-	    .row>* {
-	      width: 100%;
-	      padding-right: var(--bs-gutter-y);
-	      padding-left: var(--bs-gutter-y);
-	      margin-right: auto;
-	      margin-left: auto;
-	    }
+        .pedido{
+            position: relative;
+            width: 620px;
+            height: 150px;
+            background: #F9F5F1;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            padding-top: 25px;
+            padding-left: 35px;
+            margin-bottom: 20px;
+        }
 
-	    .header-pedido h1{
-	        color: white;
-	        font-size: 26pt;
-	        font-family: Times New Roman;
-	    }
+        .pedido-quant{
+            padding: 6px;
+            text-align: center;
+            border: 1px solid #CCC;
+            width: 105px;
+            margin-top: 15px;
+            margin-left: 40px;
+        }
 
-	}
+        .pedido-quant input{
+            text-align: center;
+            border: none;
+            padding: 3px;
+        }
 
-	@media(min-width:768px) and (max-width:991px){
+        .pedido-info{
+            height: 30px;
+            margin-left: 40px;
+            text-align: left;
+        }
 
-		.background_pedido{
-		    background: none;
-		}
+        .pedido-info .spi-1{
+            height: 13px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16pt;
+            color: #000000;
+            padding-bottom: 42px;
 
-		.header-pedido h1{
-		    text-align: center;
-		    font-size: 36pt;
-		    padding-bottom: 15px;
-		}
+        }
 
-	}
+        .pedido-info .spi-3{
+            background: red;
+            width: 70px;
+            height: 70px;
+            padding-top: 19px;
+            position: relative;
+            float: right;
+            top: 15px;
+            right: 50px;
+            background: #67523A;
+            color: #FFFFFF;
+            font-size: 14pt;
+            text-align: center;
+            border-radius: 50%!important;
+
+        }
+
+        .row>* {
+          width: 100%;
+          padding-right: var(--bs-gutter-y);
+          padding-left: var(--bs-gutter-y);
+          margin-right: auto;
+          margin-left: auto;
+        }
+
+        .header-pedido h1{
+            color: white;
+            font-size: 26pt;
+            font-family: Times New Roman;
+        }
+
+        #content{padding-bottom: 75px;}
+
+    }
+
+    @media(min-width:768px) and (max-width:991px){
+
+        .background_pedido{
+            background: none;
+        }
+
+        .header-pedido h1{
+            text-align: center;
+            font-size: 36pt;
+            padding-bottom: 15px;
+        }
+
+    }
 
     .cart-resp{
         background-color: #67523A;
@@ -131,65 +191,7 @@
                                         <h1>Opción de la carta</h1>
                                     </div>
                                </div>
-                            
-                                <div class="col-3 pedido d-none d-lg-block">
-
-                                    <div>
-                                        <img src="images/shop.jpg" width="160" height="140">
-                                    </div>
-                                    <div class="pedido-info">
-                                        <span class="spi-1">Pasta</span>
-                                        <span class="spi-2">
-                                            <img src="images/icone-star.png" width="13" height="13">
-                                            <img src="images/icone-star.png" width="13" height="13">
-                                            <img src="images/icone-star.png" width="13" height="13">
-                                            <img src="images/icone-star.png" width="13" height="13">
-                                            <img src="images/icone-star.png" width="13" height="13">
-                                        </span>
-                                        <span class="spi-3">100£</span>
-                                    </div>
-                                    <div class="pedido-quant">
-                                        <img src="images/icone-plus.png" width="14" height="14">
-                                        <input type="text" name="" size="1" value="0">
-                                        <img src="images/icone-minus.png" width="14" height="14">
-                                    </div>
-                                    <div class="btn-pedido">
-                                        <button class="btn" value=""><img src="images/icone-cart.png" width="15" height="15"> Compra</button>
-                                    </div>
-
-                                </div>
-
-                                <div class="row d-lg-none d-xl-block d-xl-none">
-
-                                    <div class="col-9" id="ped_resp">
-                                        <label>Nombre del Plato</label>
-                                        <div class="pedido-q-resp">
-                                            <img src="images/icone-plus.png" width="14" height="14">
-                                            <input type="text" name="" size="1" value="0">
-                                            <img src="images/icone-minus.png" width="14" height="14">
-                                        </div>
-
-                                        <div class="rounded-circle">
-                                            0.0£
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-9" id="ped_resp">
-                                        <label>Nombre del Plato</label>
-                                        <div class="pedido-q-resp">
-                                            <img src="images/icone-plus.png" width="14" height="14">
-                                            <input type="text" name="" size="1" value="0">
-                                            <img src="images/icone-minus.png" width="14" height="14">
-                                        </div>
-
-                                        <div class="rounded-circle">
-                                            0.0£
-                                        </div>
-
-                                    </div>
-
-                                </div>
+                               <div id="myData" class="row"></div>
                                 
                             </div>
 
@@ -210,6 +212,98 @@
                 $('#header').load("./header.html");
                 $('#footer').load("./footer.html");
             });
+
+
+    fetch('pedido.json')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            appendData(data);
+        })
+        .catch(function (err) {
+            console.log('error: ' + err);
+        });
+
+    function appendData(data) {
+        let mainContainer = document.getElementById("myData");
+        for (let i = 0; i < data.length; i++) {
+            // div dos pedidos
+            let divPedido = document.createElement("div");
+            divPedido.className = "col-3 pedido";
+
+            // div com a imagem
+            let divImage = document.createElement("div");
+            divImage.className = "d-none d-lg-block";
+            let image = document.createElement('img');
+            image.src = data[i].url;
+            image.className = "pedido_image";
+            image.setAttribute("width", "160");
+            image.setAttribute("heigth", "140");
+            divImage.appendChild(image);
+
+            let divInfo = document.createElement("div");
+            divInfo.className = "pedido-info";
+
+            let span1 = document.createElement("span");
+            span1.className = "spi-1";
+            span1.innerHTML = data[i].name;
+
+            let span3 = document.createElement("span");
+            span3.className = "spi-3";
+            span3.innerHTML = data[i].price + "€";
+
+            divInfo.appendChild(span1);
+            divInfo.appendChild(span3);
+
+            // div para quantidade
+            let divQuant = document.createElement("div");
+            divQuant.className = "pedido-quant";
+
+            let input = document.createElement("input");
+            input.setAttribute("type", "text");
+            input.setAttribute("size", "1");
+            input.setAttribute("value", "0");
+
+            let imagePlus = document.createElement("img");
+            imagePlus.src = "images/icone-plus.png";
+            imagePlus.setAttribute("width", "14");
+            imagePlus.setAttribute("heigth", "14");
+
+            let imageMnius = document.createElement("img");
+            imageMnius.src = "images/icone-minus.png";
+            imageMnius.setAttribute("width", "14");
+            imageMnius.setAttribute("heigth", "14");
+
+            divQuant.appendChild(imagePlus);
+            divQuant.appendChild(input);
+            divQuant.appendChild(imageMnius);
+
+            let divButton = document.createElement("div");
+            divButton.className = "btn-pedido d-none d-lg-block";
+
+            let icon = document.createElement("img");
+            icon.src = "images/icone-cart.png";
+            icon.setAttribute("width", "15");
+            icon.setAttribute("heigth", "15");
+            
+
+            let button = document.createElement("button");
+            button.className = "btn";
+            button.innerHTML = "Compra";
+            button.appendChild(icon);
+
+            divButton.appendChild(button);
+
+            divPedido.appendChild(divImage);
+            divPedido.appendChild(divInfo);
+            divPedido.appendChild(divQuant);
+            divPedido.appendChild(divButton);
+
+            mainContainer.appendChild(divPedido);
+        }
+    }
+
         </script>
 
     </body>

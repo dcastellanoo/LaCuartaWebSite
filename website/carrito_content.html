@@ -1,0 +1,184 @@
+<article class="reservas container-fluid d-flex justify-content-center py-5">
+    <form class="text-center">
+        <div class="formTable ">
+            <h3>TU PEDIDO</h3>
+
+            <div class="row">
+                <div class="col-md-4 text-md-start ps-md-7">
+                    <h5>Producto</h5>
+                </div>
+
+                <div class="col-md-4">
+                    <h5>Precio</h5>
+                </div>
+
+                <div class="col-md-4 pe-md-7">
+                    <h5>Cantidad</h5>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-4 text-md-start ps-md-7">
+                    Ensalada la cuarta
+                </div>
+
+                <div class="col-md-4">
+                    7,00 €
+                </div>
+
+                <div class="col-md-4 pe-md-7">
+                    <div class="counter d-inline-flex justify-content-center">
+                        <input type="button" class="buttonMinus" value="-" />
+                        <input type="number" class="text-center border-0 counterValue" value="1" min="0"/>
+                        <input type="button" class="buttonPlus" value="+" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-4 text-md-start ps-md-7">
+                    Crujientes de pollo
+                </div>
+
+                <div class="col-md-4">
+                    8,00 €
+                </div>
+
+                <div class="col-md-4 pe-md-7">
+                    <div class="counter d-inline-flex justify-content-center">
+                        <input type="button" class="buttonMinus" value="-" />
+                        <input type="number" class="text-center border-0 counterValue" value="1" min="0"/>
+                        <input type="button" class="buttonPlus" value="+" />
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <input type="submit" class="button mt-5" value="Continuar">
+        <input type="button" class="button mt-5" value="Sequir con el pedido">
+
+    </form>
+
+
+
+</article>
+
+
+<!-- counter values -->
+<script>
+    $(document).ready(function() {
+        $('.buttonMinus').click(function () {
+            var $input = $(this).parent().find('.counterValue');
+            var count = parseInt($input.val()) - 1;
+            count = count < 0 ? 0 : count;
+            $input.val(count);
+            $input.change();
+            return false;
+        });
+        $('.buttonPlus').click(function () {
+            var $input = $(this).parent().find('.counterValue');
+            $input.val(parseInt($input.val()) + 1);
+            $input.change();
+            return false;
+        });
+
+        $('.timeField').click(function () {
+            var $other = $(this).parent().find('.selectedField');
+            $(this).addClass("selectedField");
+            $other.removeClass("selectedField");
+
+            return false;
+        });
+    });
+</script>
+
+
+
+
+<section class="dialog_container">
+    <div class="center">
+        <article class="dialog_table text-center">
+            <h1>TU PEDIDO</h1>
+
+
+            <div class="row">
+                <div class="col-4">
+                    <h3>Producto</h3>
+                </div>
+
+                <div class="col-4">
+                    <h3>Precio</h3>
+                </div>
+
+                <div class="col-4">
+                    <h3>Cantidad</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    Ensalada la cuarta
+                </div>
+
+                <div class="col-4">
+                    7,00 €
+                </div>
+
+                <div class="col-4">
+                    <div class="center">
+                        <div class="carrito_counter center">
+                            <button class="button_minus" title="Plus"></button>
+
+                            <input class="counter text-center" type="text" placeholder="..." value='0' />
+
+                            <button class="button_plus" title="Plus"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-4">
+                    Crujientes de pollo
+                </div>
+
+                <div class="col-4">
+                    8,00 €
+                </div>
+
+                <div class="col-4">
+                    <div class="center">
+                        <div class="carrito_counter center">
+                            <button class="button_minus" title="Plus"></button>
+
+                            <input class="counter text-center" type="text" placeholder="..." value='0' />
+
+                            <button class="button_plus" title="Plus"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carrito_total center dot">
+                15 €
+            </div>
+        </article>
+    </div>
+
+    <div class="center">
+        <div class="button_top center">
+            <a href="">Continuar</a>
+        </div>
+    </div>
+
+    <div class="center">
+        <div class="button_bottom center">
+            <a href="">Sequir con el pedido</a>
+        </div>
+    </div>
+</section>
