@@ -70,16 +70,6 @@
     padding-top: 2%;
 }
 
-.background_text_bebidas{
-    background: #E7E7E7;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
-    padding-top: 1%;
-    margin-right: 15%;
-    margin-left: 15%;
-    padding-bottom: 20%;
-}
-
 
 @media (max-width: 767px) {
     .background_plato_carta{
@@ -90,6 +80,17 @@
         margin-right: 15%;
         margin-left: 15%;
     }
+
+    .background_text_bebidas{
+        background: #E7E7E7;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+        padding-top: 1%;
+        margin-right: 15%;
+        margin-left: 15%;
+        padding-bottom: 2%;
+    }
+
 
     .body_plato_carta{
         padding-bottom: 25%;
@@ -145,7 +146,8 @@
     }
 
     .text_title_bebidas{
-        font-size: calc(7px + 2.3vw);
+        font-size: calc(4px + 1.5vw);
+        font-weight: bold;
     }
 
     .margin_nombre_bebidas{
@@ -158,7 +160,7 @@
 
     .text_nombre_bebidas{
         /*margin-left: 2%;*/
-        font-size: calc(7px + 1vw);
+        font-size: calc(2px + 1.3vw);
     }
     .margin_money_bebidas{
         margin-right: 7%;
@@ -169,7 +171,7 @@
     }
 
     .text_money_bebidas{
-        font-size: calc(6px + 1vw);
+        font-size: calc(2px + 1.3vw);
     }
 
     .margin_origen_bebidas{
@@ -178,7 +180,7 @@
     }
 
     .text_origen_bebidas{
-        font-size: calc(4px + 1vw);
+        font-size: calc(2px + 1.1vw);
     }
 }
 @media (min-width: 768px) and (max-width: 991px){
@@ -244,12 +246,23 @@
         margin-left: 45%
     }
 
+    .background_text_bebidas{
+        background: #E7E7E7;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+        padding-top: 1%;
+        margin-right: 15%;
+        margin-left: 15%;
+        padding-bottom: 2%;
+    }
+
     .text_title_bebidas{
-        font-size: calc(9px + 2.2vw);
+        font-size: calc(5px + 1.5vw);
+        font-weight: bold;
     }
 
     .margin_nombre_bebidas{
-        margin-left: 8.5%;
+        margin-left: 8%;
     }
 
     .margin_title_bebidas{
@@ -258,20 +271,20 @@
 
     .text_nombre_bebidas{
         /*margin-left: 2%;*/
-        font-size: calc(9px + 1vw);
+        font-size: calc(3px + 1vw);
     }
 
     .text_money_bebidas{
-        font-size: calc(6px + 1vw);
+        font-size: calc(3px + 1vw);
     }
 
     .margin_origen_bebidas{
-        margin-left: 8.5%;
+        margin-left: 8%;
         padding-top: 1%;
     }
 
     .text_origen_bebidas{
-        font-size: calc(4px + 1vw);
+        font-size: calc(2px + 1vw);
     }
 }
 
@@ -341,12 +354,23 @@
         margin-left: 35%
     }
 
+    .background_text_bebidas{
+        background: #E7E7E7;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+        padding-top: 1%;
+        margin-right: 15%;
+        margin-left: 15%;
+        padding-bottom: 2%;
+    }
+
     .text_title_bebidas{
-        font-size: calc(9px + 2.2vw);
+        font-size: calc(5px + 1.3vw);
+        font-weight: bold;
     }
 
     .margin_nombre_bebidas{
-        margin-left: 8%;
+        margin-left: 7.5%;
     }
 
     .margin_title_bebidas{
@@ -355,19 +379,19 @@
 
     .text_nombre_bebidas{
         /*margin-left: 2%;*/
-        font-size: calc(9px + 1vw);
+        font-size: calc(2px + 1vw);
     }
 
     .text_money_bebidas{
-        font-size: calc(6px + 1vw);
+        font-size: calc(2px + 1vw);
     }
 
     .margin_origen_bebidas{
-        margin-left: 8%;
+        margin-left: 7.5%;
         padding-top: 1%;
     }
 
     .text_origen_bebidas{
-        font-size: calc(4px + 1vw);
+        font-size: calc(2px + 0.8vw);
     }
 }
