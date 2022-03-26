@@ -4,6 +4,66 @@
 
 }
 
+.button_carta{
+    outline:none;
+    border: none;
+    background: #E7E7E7;
+    text-align: left;
+
+}
+
+#linkPostres{
+
+}
+
+#linkSugerencias{
+
+}
+
+#linkEntrantes{
+
+}
+
+#linkPrincipales{
+
+}
+
+#linkEntrantes_bebidas{
+
+}
+
+#linkPrincipales_bebidas{
+
+}
+
+#linkPrincipales_sugerencias{
+
+}
+
+#load_entrantes{
+
+}
+
+#load_principales{
+
+}
+
+#load_sugerencias{
+
+}
+
+#load_postres{
+
+}
+
+#load_bebidas{
+
+}
+
+#load_vinos{
+
+}
+
 .subheader_carta{
     background: #E7E7E7;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -79,6 +139,7 @@
         justify-content: space-between;
         margin-right: 15%;
         margin-left: 15%;
+        padding-bottom: 5%;
     }
 
     .background_text_bebidas{
@@ -296,6 +357,7 @@
         justify-content: space-between;
         margin-right: 15%;
         margin-left: 15%;
+        margin-bottom: 5%;
     }
 
     .text_title_plato_carta{
@@ -311,7 +373,7 @@
     }
 
     .body_plato_carta{
-        padding-bottom: 25%;
+        padding-bottom: 10%;
     }
 
     .text_opcion_plato_carta{

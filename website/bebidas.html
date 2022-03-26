@@ -11,6 +11,7 @@
     <!-- Styles -->
     <link href="css/default.css" rel="stylesheet">
     <link href="css/carta.css" rel="stylesheet">
+    <script src="js/bebidas.js"></script>
 </head>
 <body>
 <header id="header">
@@ -22,22 +23,37 @@
 
             <div class="subheader_text_carta col-4">
                 <div class="row">
-                    <b>Entrantes</b>
+                    <a id="linkEntrantes_bebidas" class="nav-link color_txt_subheader_carta py-0" href="carta.html?mostrar=entrantes">
+                        <b>Entrantes</b>
+                    </a>
+                </div>
+
+                <div class="row">
+                    <a id="linkPrincipales_bebidas" class="nav-link color_txt_subheader_carta py-0" href="carta.html?mostrar=principales">
+                        <b>Principales</b>
+                    </a>
+                </div>
+
+                <div class="row">
+                    <a id="linkPrincipales_sugerencias" class="nav-link color_txt_subheader_carta py-0" href="carta.html?mostrar=sugerencias">
+                        <b>Sugerencias</b>
+                    </a>
+                </div>
+
+                <div class="row">
+                    <a id="linkPrincipales_postres" class="nav-link color_txt_subheader_carta py-0" href="carta.html?mostrar=postres">
+                        <b>Postres</b>
+                    </a>
                 </div>
                 <div class="row">
-                    <b>Principales</b>
+                    <a class="nav-link color_txt_subheader_carta py-0" href="bebidas.html">
+                        <b>Bebidas</b>
+                    </a>
                 </div>
                 <div class="row">
-                    <b>Sugerencias</b>
-                </div>
-                <div class="row">
-                    <b>Postres</b>
-                </div>
-                <div class="row">
-                    <b>Bebidas</b>
-                </div>
-                <div class="row">
-                    <b>Carta de Vinos</b>
+                    <a class="nav-link color_txt_subheader_carta py-0" href="vinos.html">
+                        <b>Carta de Vinos</b>
+                    </a>
                 </div>
             </div>
 
@@ -47,24 +63,9 @@
         </article>
     </section>
 
-    <section class="body_bebidas">
-        <h1 class="align_opcion_plato_carta text_opcion_plato_carta">Opción de la carta</h1>
-        <article class="background_text_bebidas col">
-            <div class="text_title_bebidas margin_title_bebidas row">
-                <b>
-                    Tipo de bebida
-                </b>
-            </div>
-            <div class="row margin_text_bebidas">
-                <div class="text_nombre_bebidas margin_nombre_bebidas col me-auto">
-                    Nombre de la bebida
-                </div>
-                <div class="text_money_bebidas col-md-2 col-auto margin_money_bebidas">
-                    0.00 €
-                </div>
-            </div>
-        </article>
-    </section>
+    <div id="load_bebidas">
+
+    </div>
 </main>
 
 <script>

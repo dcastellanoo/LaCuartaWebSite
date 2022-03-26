@@ -5,7 +5,7 @@
     "name": "Nachos con queso y guacamole",
     "description":  "Una completa comida mexicana, ideal para invitados o cenas informales con amigos",
     "allergens": "No apto para intolerantes a la lactosa",
-    "price": 5.00,
+    "price": "5.00 €",
     "url": "https://www.highgrossery.com/wp-content/uploads/2015/06/nachos_jalos.jpg"
   },
 
@@ -13,10 +13,10 @@
     "id": 1,
     "type": "Entrantes",
     "name": "Tequeños con queso",
-    "description": "Esta receta tan sencilla es una institución gastronómica en todas las fiestas y celebraciones venezolanas, los famosos tequeños, sencilla, barata y muy rica",
+    "description": "Este plato tan sencillo es una institución gastronómica en todas las fiestas y celebraciones venezolanas",
     "allergens": "No apto para intolerantes a la lactosa",
-    "price": 4.50,
-    "url": "https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2018/07/receta-de-tequenos.jpg"
+    "price": "4.50 €",
+    "url": "https://antojosaraguaney.com/wp-content/uploads/2019/10/taquenos-2.jpg"
   },
 
   {
@@ -25,7 +25,7 @@
     "name": "Espaguetis a la carbonara",
     "description": "Espaguetis a la carbonara receta italiana original con panceta, yema de huevo y parmesano",
     "allergens": "No apto para intolerantes a la lactosa",
-    "price": 6.50,
+    "price": "6.50 €",
     "url": "https://recetaland.com/wp-content/uploads/2020/12/R5.jpg"
   },
 
@@ -35,7 +35,7 @@
     "name": "Calamares fritos",
     "description": "Calamares muy frescos y fritos acompañados de rodajas de limón",
     "allergens": "Sin alérgenos",
-    "price": 8.50,
+    "price": "8.50 €",
     "url": "https://placeralplato.com/files/2016/01/Calamares-fritos.jpg"
   },
 
@@ -45,7 +45,7 @@
     "name": "Papas arrugadas con mojo picón",
     "description": "Si hay un plato que representa a las Islas Canarias en el mundo entero, son las papas arrugadas con mojo picón, una receta muy sencilla, pero a la vez deliciosa.",
     "allergens": "Sin alérgenos",
-    "price": 3.25,
+    "price": "3.25 €",
     "url": "https://diariodegastronomia.com/wp-content/uploads/2020/11/Papas-arrugadas-con-mojo-de-chorizo-759x500.png"
   },
 
@@ -55,7 +55,7 @@
     "name": "Queso frito con mermelada",
     "description": "El queso Camembert frito con mermelada de tomate es una tapa y/o aperitivo ideal, se sirve caliente cuando todavía el queso esta derretido en el interior",
     "allergens": "Sin alérgenos",
-    "price": 3.25,
+    "price": "3.25 €",
     "url": "https://i.blogs.es/6ae33b/camembert-20frito-20con-20mermelada-20de-20tomate/450_1000.jpg"
   },
 
@@ -65,8 +65,8 @@
     "name": "Tiramisú",
     "description": "El tiramisú es una de las recetas de postres más famosas de la cocina italiana. Sólo se emplean 5 ingredientes: huevos y azúcar batidos, bizcochos Savoiardi mojados en café expresso y cacao en polvo",
     "allergens": "No apto para intolerantes a la lactosa",
-    "price": 4.25,
-    "url": "https://www.recetasderechupete.com/wp-content/uploads/2020/05/Tiramis%C3%BA-italiano-768x530.jpg",
+    "price": "4.25 €",
+    "url": "https://www.recetasderechupete.com/wp-content/uploads/2020/05/Tiramis%C3%BA-italiano-768x530.jpg"
   },
 
   {
@@ -75,7 +75,7 @@
     "name": "Polvito uruguayo",
     "description": "El polvito es un delicioso postre uruguayo que se ha popularizado mucho internacionalmente, sobre todo en Gran Canaria",
     "allergens": "No apto para intolerantes a la lactosa",
-    "price": 4.75,
+    "price": "4.75 €",
     "url": "https://www.cocina-uruguaya.com/base/stock/Recipe/24-image/24-image_web.jpg"
   }
 ]
