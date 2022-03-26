@@ -1,0 +1,114 @@
+@media (max-width:991px){
+
+        .nav-menu-left{
+            margin-top: 0px;
+            margin-left: 0px;
+            background: #FFFFFF;
+            mix-blend-mode: normal;
+            opacity: 0.7;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .pedido{
+            position: relative;
+            width: 620px;
+            height: 150px;
+            background: #F9F5F1;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            padding-top: 25px;
+            padding-left: 35px;
+            margin-bottom: 20px;
+        }
+
+        .pedido-quant{
+            padding: 6px;
+            text-align: center;
+            border: 1px solid #CCC;
+            width: 105px;
+            margin-top: 15px;
+            margin-left: 40px;
+        }
+
+        .pedido-quant input{
+            text-align: center;
+            border: none;
+            padding: 3px;
+        }
+
+        .pedido-info{
+            height: 30px;
+            margin-left: 40px;
+            text-align: left;
+        }
+
+        .pedido-info .spi-1{
+            height: 13px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16pt;
+            color: #000000;
+            padding-bottom: 42px;
+
+        }
+
+        .pedido-info .spi-3{
+            background: red;
+            width: 70px;
+            height: 70px;
+            padding-top: 19px;
+            position: relative;
+            float: right;
+            top: -10px;
+            right: 50px;
+            background: #67523A;
+            color: #FFFFFF;
+            font-size: 14pt;
+            text-align: center;
+            border-radius: 50%!important;
+
+        }
+
+        .row>* {
+          width: 100%;
+          padding-right: var(--bs-gutter-y);
+          padding-left: var(--bs-gutter-y);
+          margin-right: auto;
+          margin-left: auto;
+        }
+
+        .header-pedido h1{
+            color: white;
+            font-size: 26pt;
+            font-family: Times New Roman;
+        }
+
+        #content{padding-bottom: 75px;}
+
+    }
+
+    @media(min-width:768px) and (max-width:991px){
+
+        .background_pedido{
+            background: none;
+        }
+
+        .header-pedido h1{
+            text-align: center;
+            font-size: 36pt;
+            padding-bottom: 15px;
+        }
+
+    }
+
+    .cart-resp{
+        background-color: #67523A;
+        border-radius: 6px;
+        width: 75px;
+        height: 63px;
+        float: right;
+        margin-right: 105px;
+        margin-top: 45px;
+        padding: 5px;
+        padding-top: 10px;
+    }          
