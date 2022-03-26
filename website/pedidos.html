@@ -10,12 +10,13 @@
     <link rel="icon" href="images/placeholder-image.png">
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/pedido.css">
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/exm.css">
+    <link rel="stylesheet" type="text/css" href="css/pedido-response.css">
 
     <style type="text/css"></style>
 
@@ -54,7 +55,7 @@
                                 
                                 <div class="col-12">
                                     <div class="menu-btn d-none d-lg-block">
-                                        <button>Tus pedidos</button>    
+                                        <a href="carrito.html"><button>Tus pedidos</button></a>    
                                     </div>
                                 </div>
                             <!-- </div> -->
@@ -98,7 +99,7 @@
     });
 
 
-    fetch('carta_comida.json')
+    fetch('pedidos.json')
         .then(function (response) {
             return response.json();
         })
@@ -111,31 +112,13 @@
 
     function appendData(data) {
         
-        let ent = "Entrante";
-        let out = "Outris";
+        let ent = "Opcione de la quarta";
+        headHtml(ent);
+        
+        for (let i = 0; i < data.length; i++) {
 
-        if (ent == "Entrante") {
-
-            headHtml(ent);
-
-            for (let i = 0; i < data.length; i++) {
-
-                divHtml(data[i].url, data[i].name, data[i].price);
-
-            }
-
-        }else if(out = "Outris"){
-
-            headHtml(out);
-
-            for (let i = 0; i < data.length; i++) {
-
-                divHtml(data[i].url, data[i].name, data[i].price);
-
-            }
-
+            divHtml(data[i].url, data[i].name, data[i].price);
         }
-
     }
 
     function headHtml(type){
@@ -168,22 +151,34 @@
             let image = document.createElement('img');
             image.src = url;
             image.className = "pedido_image";
-            image.setAttribute("width", "160");
-            image.setAttribute("heigth", "140");
             divImage.appendChild(image);
 
             let divInfo = document.createElement("div");
             divInfo.className = "pedido-info";
 
-            let span1 = document.createElement("span");
-            span1.className = "spi-1";
-            span1.innerHTML = name;
+            let label1 = document.createElement("label");
+            label1.className = "spi-1";
+            label1.innerHTML = name;
 
-            let span3 = document.createElement("span");
+            let label2 = document.createElement("label");
+            label2.className = "spi-2 d-none d-lg-block";
+            
+            for (var i = 0; i < 5; i++) {
+
+                let imageStar = document.createElement('img');
+                imageStar.src = "images/icone-star.png";
+                imageStar.setAttribute("width", "18");
+                imageStar.setAttribute("heigth", "18");
+                label2.appendChild(imageStar);
+
+            }
+            
+            let span3 = document.createElement("label");
             span3.className = "spi-3";
             span3.innerHTML = price + "€";
 
-            divInfo.appendChild(span1);
+            divInfo.appendChild(label1);
+            divInfo.appendChild(label2);
             divInfo.appendChild(span3);
 
             // div para quantidade
