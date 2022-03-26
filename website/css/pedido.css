@@ -1,150 +1,4 @@
-/* Space between header and footer for content */
-#header, #footer, #content { left: 0; width: 100%; }
-#header {top: 0px;}
-#content { top: 70px; min-height: 100vh; padding-bottom: 210px; }
-#footer { bottom:0; }
-
-/* Default style across all pages */
-body {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    color: #FFFFFF;
-    font-size: calc(12px + 1vw);
-}
-/*
-font-size: 22px;
-
-@media (max-width: 768px) {
-    body {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 992px) {
-    body {
-        font-size: 18px;
-    }
-}          */
-
-h1 {
-    font-size: calc(12px + 5.9vw);
-}
-h2 {
-    font-size: calc(12px + 3.0vw);
-}
-
-h3 {
-    font-size: calc(12px + 2.0vw);
-}
-
-h4 {
-    font-size: calc(12px + 1.5vw);
-}
-
-body {
-    background: url('../images/background.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-/* _________________ HEADER _________________ */
-#header {
-    background: rgba(121, 91, 57, 0.5);
-}
-
-#header .navbar {
-}
-
-#header .navbar .navbar-brand {
-}
-
-
-#header .navbar-dark .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, 1);
-}
-
-#header .nav-item {
-    margin-left: 0.5rem;
-}
-
-#header .navbar-dark .navbar-toggler {
-    padding: 0;
-    margin-left: 1rem;
-}
-
-#header .navbar-toggler:focus {
-    box-shadow: none;
-}
-
-#header .navbar-toggler .navbar-toggler-icon {
-    font-size: 2vw;
-}
-
-
-#header .navbar-brand {
-    padding-left: 20%;
-    padding-bottom: 0;
-}
-
-#header .navbar-brand img {
-    max-width: 25vw;
-    height: auto;
-}
-
-@media (max-width: 768px) {
-    #header .navbar-brand img {
-        float: right;
-        padding-right: 1rem;
-    }
-
-    #header .navbar-brand {
-        margin-right: 0;
-    }
-}
-
-@media (max-width: 1100px) {
-    #header .navbar-brand {
-        padding-left: 1rem;
-    }
-
-    #header .navbar-brand img {
-    }
-}
-
-.navbar.scrolled {
-    background-color: #604628 !important;
-    transition: background-color 200ms linear;
-}
-
-/* _________________ FOOTER _________________ */
-
-#footer {
-    background: rgba(121, 91, 57, 0.5);
-}
-
-@media (max-width: 768px) {
-    #footer {
-        background: #604628;
-    }
-}
-
-#footer a {
-    text-decoration: None;
-    color: #FFFFFF;
-}
-#footer a:hover{
-    color: black;
-}
-
-#footer .logo img {
-    max-width: 35vw;
-    height: auto;
-}
-
-/*vnskjdnfvsjndfvnsdkvjn*/
+#content{min-height: 100vh;}
 
 .c_main{
     width: 75%;
@@ -164,7 +18,7 @@ body {
 .header-pedido{
     width: 100%;
     margin-top: 40px;
-    padding-bottom: 10px;
+    padding-bottom: 25px;
 }
 
 .header-pedido h1{
@@ -228,7 +82,7 @@ body {
 
 .pedido{
     width: 20%;
-    margin: 10px;
+    margin: 20px;
     padding: 10px;
     background-color: white;
     color: #000000;
@@ -237,24 +91,31 @@ body {
     border: 1px solid #DDD;
     border-radius: 3px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    /*box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);*/
 }
 
 .pedido-info{
-    padding: 10px;
+    position: relative;
+
 }
 
 .spi-1{
-    float: left;
-    font-size: 13pt;
+    font-size: 9.8pt;
+    font-weight: bold;
+    width: 100%;
+    height: 25px;
+    text-align: center;
 }
 
 .spi-2{
-    float: center;
+    width: 100%;
+    height: 25px;
+    text-align: center;
 }
 
 .spi-3{
-    float: right;
+    text-align: center;
+    font-size: 11pt;
+    font-weight: bold;
 }
 
 .pedido-quant{
@@ -280,65 +141,13 @@ body {
     border-radius: 5px;
 }
 
-.cart-resp{
-    background-color: #67523A;
-    border-radius: 6px;
-    width: 75px;
-    height: 63px;
-    float: right;
-    margin-right: 105px;
-    margin-top: 45px;
-    padding: 5px;
-    padding-top: 10px;
-}
-
-
-#ped_resp{
-    position: relative;
-    width: 620px;
-    height: 140px;
-    background: #F9F5F1;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    padding-top: 25px;
-    padding-left: 35px;
-    margin-bottom: 20px;
-}
-
-#ped_resp label{
-    position: relative;
-    height: 13px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    color: #000000;
-    padding-bottom: 42px;
-
-}
-
-.pedido-q-resp{
-    width: 100px;
-    border: 1px solid #CCC;
-    padding: 5px;
-}
-
-.pedido-q-resp input{
+.pedido_image{
+    max-width: 100%;
+    width: 190px;
+    height: 150px;
     text-align: center;
-    border: none;
-    padding: 3px;
+    border-radius: 3px;
+    margin-top: 6px;
+    padding-bottom: 8px; 
 }
 
-#ped_resp .rounded-circle{
-    background: red;
-    width: 70px;
-    height: 70px;
-    text-align: center;
-    padding-top: 19px;
-    position: relative;
-    float: right;
-    top: -70px;
-    right: 50px;
-    background: #67523A;
-    color: #FFFFFF;
-    font-size: 14pt;
-}
