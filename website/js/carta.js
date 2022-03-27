@@ -18,7 +18,7 @@ $.getJSON('json/carta_comida.json', function (carta) {
                         <b>${plato.name}</b>
                     </div>
 
-                    <div class="text_plato_carta col">
+                    <div class="text_plato_carta col-6">
                         <div class="text_title_plato_carta row d-lg-block d-none">
                             ${plato.name}
                         </div>
@@ -30,7 +30,7 @@ $.getJSON('json/carta_comida.json', function (carta) {
                             ${plato.allergens}
                         </div>
                     </div>
-                    <div class="col text-center align_money_plato_carta">
+                    <div class="col-lg-2 col-5 text-center align_money_plato_carta">
                         <figure>
                             <img src="${plato.url}" class="size_photo_comida" alt="Plato Comida.">
                             <p class="text_money_plato_carta background_money d-lg-block d-none">
@@ -69,7 +69,7 @@ $.getJSON('json/carta_comida.json', function (carta) {
                         <b>${plato.name}</b>
                     </div>
 
-                    <div class="text_plato_carta col">
+                    <div class="text_plato_carta col-6">
                         <div class="text_title_plato_carta row d-lg-block d-none">
                             ${plato.name}
                         </div>
@@ -81,7 +81,7 @@ $.getJSON('json/carta_comida.json', function (carta) {
                             ${plato.allergens}
                         </div>
                     </div>
-                    <div class="col text-center align_money_plato_carta">
+                    <div class="col-lg-2 col-5 text-center align_money_plato_carta">
                         <figure>
                             <img src="${plato.url}" class="size_photo_comida" alt="Plato Comida.">
                             <p class="text_money_plato_carta background_money d-lg-block d-none">
@@ -121,7 +121,7 @@ $.getJSON('json/carta_comida.json', function (carta) {
                         <b>${plato.name}</b>
                     </div>
 
-                    <div class="text_plato_carta col">
+                    <div class="text_plato_carta col-6">
                         <div class="text_title_plato_carta row d-lg-block d-none">
                             ${plato.name}
                         </div>
@@ -133,7 +133,7 @@ $.getJSON('json/carta_comida.json', function (carta) {
                             ${plato.allergens}
                         </div>
                     </div>
-                    <div class="col text-center align_money_plato_carta">
+                    <div class="col-lg-2 col-5 text-center align_money_plato_carta">
                         <figure>
                             <img src="${plato.url}" class="size_photo_comida" alt="Plato Comida.">
                             <p class="text_money_plato_carta background_money d-lg-block d-none">
@@ -173,7 +173,7 @@ $.getJSON('json/carta_comida.json', function (carta) {
                         <b>${plato.name}</b>
                     </div>
 
-                    <div class="text_plato_carta col">
+                    <div class="text_plato_carta col-6">
                         <div class="text_title_plato_carta row d-lg-block d-none">
                             ${plato.name}
                         </div>
@@ -185,7 +185,7 @@ $.getJSON('json/carta_comida.json', function (carta) {
                             ${plato.allergens}
                         </div>
                     </div>
-                    <div class="col text-center align_money_plato_carta">
+                    <div class="col-lg-2 col-5 text-center align_money_plato_carta">
                         <figure>
                             <img src="${plato.url}" class="size_photo_comida" alt="Plato Comida.">
                             <p class="text_money_plato_carta background_money d-lg-block d-none">

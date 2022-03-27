@@ -12,7 +12,7 @@ $.getJSON('json/vinos.json', function (vinos) {
         if(type_bebida === vino.type){
             aux +=
                 `
-                <div class="row margin_text_bebidas">
+                <div class="row margin_text_bebidas margin_top_bebidas">
                     <div class="text_nombre_bebidas margin_nombre_bebidas col me-auto">
                         ${vino.name}
                     </div>
@@ -56,7 +56,7 @@ $.getJSON('json/vinos.json', function (vinos) {
                             ${vino.type}
                         </b>
                     </div>
-                    <div class="row margin_text_bebidas">
+                    <div class="row margin_text_bebidas margin_top_bebidas">
                         <div class="text_nombre_bebidas margin_nombre_bebidas col me-auto">
                             ${vino.name}
                         </div>
