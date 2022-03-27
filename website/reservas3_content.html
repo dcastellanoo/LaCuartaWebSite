@@ -33,14 +33,15 @@
                 </div>
                 <div class="pt-4 d-flex">
                     <div class="col-auto">
-                        <select id="country_code" class="form-select">
+                        <select id="country_code" class="form-select" required>
                             <option selected>+34</option>
                             <option>+43</option>
                             <option>+46</option>
                         </select>
+                    </div>
                         <input type="tel" class="form-control" pattern="[0-9]{9}" id="phone_number"
                                placeholder="Número de teléfono" maxlength="9" title="Introduzca un número de teléfono válido" required>
-                    </div>
+
                 </div>
                 <div class="pt-4">
                     <textarea rows="2" class="form-control" id="comment_input" placeholder="Comentarios acerca de la reserva"></textarea>
@@ -76,9 +77,10 @@
         var myForm = document.getElementById("reservas_form");
 
         // Set header values
-        document.getElementById("reservation_date").innerHTML = RESERVATION_PARAMS["reservation_date"].toLocaleDateString("es-US", dateFormat);
+        document.getElementById("reservation_date").innerHTML = RESERVATION_PARAMS["reservation_date"].toLocaleDateString();
         document.getElementById("reservation_time").innerHTML = RESERVATION_PARAMS["reservation_time"];
-        document.getElementById("num_persons").innerHTML = RESERVATION_PARAMS["num_adults"] + " + " + RESERVATION_PARAMS["num_childs"];
+        var people = parseInt(RESERVATION_PARAMS["num_adults"]) + parseInt(RESERVATION_PARAMS["num_childs"]);
+        document.getElementById("num_persons").innerHTML = people;
 
 
         if ( RESERVATION_PARAMS["dinning_hall"] )
