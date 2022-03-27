@@ -11,6 +11,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/pedido.js"></script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/pedido.css">
@@ -49,7 +50,6 @@
                                             <li><a href="#"><div>Sugerencias</div></a></li>
                                             <li><a href="#"><div>Postres</div></a></li>
                                         </ul>
-                                        
                                     </div>
                                 </div>
                                 
@@ -70,12 +70,33 @@
 
                             <div class="row">
                                      
-                               <div id="myHeader"></div>
-                                    <!-- <div class="header-pedido">
-                                        <h1>Opción de la carta</h1>
+                               <div class="col-12">
+                                    <div class="header-pedido">
+                                        <h1>Entrantes</h1>
                                     </div>
-                               </div> -->
+                               </div>
                                <div id="myData" class="row"></div>
+
+                               <div class="col-12">
+                                    <div class="header-pedido">
+                                        <h1>Principales</h1>
+                                    </div>
+                               </div>
+                               <div id="myData1" class="row"></div>
+
+                               <div class="col-12">
+                                    <div class="header-pedido">
+                                        <h1>Sugerencias</h1>
+                                    </div>
+                               </div>
+                               <div id="myData2" class="row"></div>
+
+                               <div class="col-12">
+                                    <div class="header-pedido">
+                                        <h1>Postres</h1>
+                                    </div>
+                               </div>
+                               <div id="myData3" class="row"></div>
                                 
                             </div>
 
@@ -97,136 +118,6 @@
         $('#header').load("./header.html");
         $('#footer').load("./footer.html");
     });
-
-
-    fetch('pedidos.json')
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            appendData(data);
-        })
-        .catch(function (err) {
-            console.log('error: ' + err);
-        });
-
-    function appendData(data) {
-        
-        let ent = "Opcione de la quarta";
-        headHtml(ent);
-        
-        for (let i = 0; i < data.length; i++) {
-
-            divHtml(data[i].url, data[i].name, data[i].price);
-        }
-    }
-
-    function headHtml(type){
-
-        let headerConteiner = document.getElementById("myHeader");
-
-        let divCol = document.createElement("div");
-        divCol.className = "col-12";
-        let divHeader = document.createElement("div");
-        divHeader.className = "header-pedido";
-        let h1 = document.createElement("h1");
-        h1.innerHTML = type;
-         
-        divHeader.appendChild(h1);
-        divCol.appendChild(divHeader);
-
-        headerConteiner.appendChild(divCol);
-
-    }
-
-    function divHtml(url, name, price){
-            let mainContainer = document.getElementById("myData");
-            // div dos pedidos
-            let divPedido = document.createElement("div");
-            divPedido.className = "col-3 pedido";
-
-            // div com a imagem
-            let divImage = document.createElement("div");
-            divImage.className = "d-none d-lg-block";
-            let image = document.createElement('img');
-            image.src = url;
-            image.className = "pedido_image";
-            divImage.appendChild(image);
-
-            let divInfo = document.createElement("div");
-            divInfo.className = "pedido-info";
-
-            let label1 = document.createElement("label");
-            label1.className = "spi-1";
-            label1.innerHTML = name;
-
-            let label2 = document.createElement("label");
-            label2.className = "spi-2 d-none d-lg-block";
-            
-            for (var i = 0; i < 5; i++) {
-
-                let imageStar = document.createElement('img');
-                imageStar.src = "images/icone-star.png";
-                imageStar.setAttribute("width", "18");
-                imageStar.setAttribute("heigth", "18");
-                label2.appendChild(imageStar);
-
-            }
-            
-            let span3 = document.createElement("label");
-            span3.className = "spi-3";
-            span3.innerHTML = price + "€";
-
-            divInfo.appendChild(label1);
-            divInfo.appendChild(label2);
-            divInfo.appendChild(span3);
-
-            // div para quantidade
-            let divQuant = document.createElement("div");
-            divQuant.className = "pedido-quant";
-
-            let input = document.createElement("input");
-            input.setAttribute("type", "text");
-            input.setAttribute("size", "1");
-            input.setAttribute("value", "0");
-
-            let imagePlus = document.createElement("img");
-            imagePlus.src = "images/icone-plus.png";
-            imagePlus.setAttribute("width", "14");
-            imagePlus.setAttribute("heigth", "14");
-
-            let imageMnius = document.createElement("img");
-            imageMnius.src = "images/icone-minus.png";
-            imageMnius.setAttribute("width", "14");
-            imageMnius.setAttribute("heigth", "14");
-
-            divQuant.appendChild(imagePlus);
-            divQuant.appendChild(input);
-            divQuant.appendChild(imageMnius);
-
-            let divButton = document.createElement("div");
-            divButton.className = "btn-pedido d-none d-lg-block";
-
-            let icon = document.createElement("img");
-            icon.src = "images/icone-cart.png";
-            icon.setAttribute("width", "15");
-            icon.setAttribute("heigth", "15");
-            
-
-            let button = document.createElement("button");
-            button.className = "btn";
-            button.innerHTML = "Compra";
-            button.appendChild(icon);
-
-            divButton.appendChild(button);
-
-            divPedido.appendChild(divImage);
-            divPedido.appendChild(divInfo);
-            divPedido.appendChild(divQuant);
-            divPedido.appendChild(divButton);
-
-            mainContainer.appendChild(divPedido);
-    }
 
 </script>
 
