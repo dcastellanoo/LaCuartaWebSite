@@ -7,28 +7,90 @@
 
     <title>La Cuarta</title>
 
-    <link rel="icon" href="images/placeholder-image.png">
+    <link rel="icon" href="images/logo_header.png">
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/pedido.js"></script>
-
+    
     <!-- Styles -->
+    
     <link rel="stylesheet" href="css/pedido.css">
-    <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/pedido-response.css">
+    <link rel="stylesheet" type="text/css" href="css/default.css">
 
     <style type="text/css"></style>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const mostrar = urlParams.get('mostrar');
+
+        $(document).ready(function () {
+
+            $("#myDataP").hide();
+            $("#myDataS").hide();
+            $("#myDataPS").hide();
+            if(mostrar === "principales"){
+                $("#myDataP").fadeIn();
+                $("#myDataE").hide();
+                $("#myDataS").hide();
+                $("#myDataPS").hide();
+            }
+            if(mostrar === "entrantes"){
+                $("#myDataE").fadeIn();
+                $("#myDataP").hide();
+                $("#myDataS").hide();
+                $("#myDataPS").hide();
+            }
+            if(mostrar === "sugerencias"){
+                $("#myDataE").hide();
+                $("#myDataP").hide();
+                $("#myDataS").fadeIn();
+                $("#myDataPS").hide();
+            }
+            if(mostrar === "postres") {
+                $("#myDataE").hide();
+                $("#myDataP").hide();
+                $("#myDataS").hide();
+                $("#myDataPS").fadeIn();
+            }
+            $("#linkEntrantes").click(function () {
+                $("#myDataE").fadeIn();
+                $("#myDataP").fadeOut();
+                $("#myDataS").fadeOut();
+                $("#myDataPS").fadeOut();
+            });
+            $("#linkPrincipales").click(function () {
+                $("#myDataP").fadeIn();
+                $("#myDataE").fadeOut();
+                $("#myDataS").fadeOut();
+                $("#myDataPS").fadeOut();
+            });
+            $("#linkSugerencias").click(function () {
+                $("#myDataS").fadeIn();
+                $("#myDataE").fadeOut();
+                $("#myDataP").fadeOut();
+                $("#myDataPS").fadeOut();
+            });
+            $("#linkPostres").click(function () {
+                $("#myDataE").fadeOut();
+                $("#myDataP").fadeOut();
+                $("#myDataS").fadeOut();
+                $("#myDataPS").fadeIn();
+            });
+        });
+    </script>
 
 </head>
 
 
     <body>
         
-        <header id="header"></header>
+        <header id="header">
 
-        <div id="content" class="background_pedido">
+        </header>
+
+        <div id="content">
 
             <div class="container-fluid">
             
@@ -43,19 +105,19 @@
                                     <div class="menu-left"> 
                                         <ul class="menu-list">
                                             <li>
-                                                <a class="btn d-lg-none d-xl-block d-xl-none cart-resp"><img src="images/icone-cart.png" width="40" height="40"></a>
+                                                <a href="carrito.html" class="btn d-lg-none d-xl-block d-xl-none cart-resp"><img src="images/icone-cart.png" width="40" height="40"></a>
                                             </li>
-                                            <li><a href="#"><div>Entrantes</div></a></li>
-                                            <li><a href="#"><div>Principales</div></a></li>
-                                            <li><a href="#"><div>Sugerencias</div></a></li>
-                                            <li><a href="#"><div>Postres</div></a></li>
+                                            <li><a id="linkEntrantes" href="#"><div>Entrantes</div></a></li>
+                                            <li><a id="linkPrincipales" href="#"><div>Principales</div></a></li>
+                                            <li><a id="linkSugerencias" href="#"><div>Sugerencias</div></a></li>
+                                            <li><a id="linkPostres" href="#"><div>Postres</div></a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 
                                 <div class="col-12">
                                     <div class="menu-btn d-none d-lg-block">
-                                        <a href="carrito.html"><button>Tus pedidos</button></a>    
+                                        <a href="carrito.html"><button>Tu pedido</button></a>    
                                     </div>
                                 </div>
                             <!-- </div> -->
@@ -69,35 +131,10 @@
                         <div class="container">
 
                             <div class="row">
-                                     
-                               <div class="col-12">
-                                    <div class="header-pedido">
-                                        <h1>Entrantes</h1>
-                                    </div>
-                               </div>
-                               <div id="myData" class="row"></div>
-
-                               <div class="col-12">
-                                    <div class="header-pedido">
-                                        <h1>Principales</h1>
-                                    </div>
-                               </div>
-                               <div id="myData1" class="row"></div>
-
-                               <div class="col-12">
-                                    <div class="header-pedido">
-                                        <h1>Sugerencias</h1>
-                                    </div>
-                               </div>
-                               <div id="myData2" class="row"></div>
-
-                               <div class="col-12">
-                                    <div class="header-pedido">
-                                        <h1>Postres</h1>
-                                    </div>
-                               </div>
-                               <div id="myData3" class="row"></div>
-                                
+                               <div id="myDataE" class="row"></div>
+                               <div id="myDataP" class="row"></div>
+                               <div id="myDataS" class="row"></div>
+                               <div id="myDataPS" class="row"></div>
                             </div>
 
                         </div> 
