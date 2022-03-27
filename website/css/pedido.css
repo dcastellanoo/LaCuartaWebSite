@@ -11,10 +11,6 @@
     background-color: #784b17;
 }
 
-.background_pedido {
-    background: #B09F92;
-}
-
 .header-pedido{
     width: 100%;
     margin-top: 40px;
@@ -22,7 +18,8 @@
 }
 
 .header-pedido h1{
-    font-size: 20pt;
+    font-size: 24pt;
+    font-weight: bolder;
     color: #000000;
 }
 
@@ -128,6 +125,7 @@
     padding: 2px;
     margin-left: 8px;
     margin-right: 8px;
+    font-size: 10pt;
 }
 
 .btn-pedido .btn {

@@ -1,9 +1,25 @@
 $.getJSON('json/carta_comida.json', function (data) {
+
+        let mainContainer = document.getElementById("myDataE");
+
+        let col = document.createElement("div");
+        col.className = "col-12";
+
+        let headerP = document.createElement("div");
+        headerP.className = "header-pedido";
+        col.appendChild(headerP);
+
+        let h1 = document.createElement("h1");
+        h1.className = "header-pedido";
+        h1.innerHTML = "Entrantes";
+        headerP.appendChild(h1);
+
+        mainContainer.appendChild(col);
         
         for (let i = 0; i < data.length; i++) {
 
             if (data[i].type == "Entrantes") {
-                let mainContainer = document.getElementById("myData");
+                
                 // div dos pedidos
                 let divPedido = document.createElement("div");
                 divPedido.className = "col-3 pedido";
@@ -74,12 +90,15 @@ $.getJSON('json/carta_comida.json', function (data) {
                 icon.src = "images/icone-cart.png";
                 icon.setAttribute("width", "15");
                 icon.setAttribute("heigth", "15");
+
+                let lbutton = document.createElement("label");
+                lbutton.innerHTML = "&nbsp;&nbsp;Compra";
                 
 
                 let button = document.createElement("button");
                 button.className = "btn";
-                button.innerHTML = "Compra";
                 button.appendChild(icon);
+                button.appendChild(lbutton);
 
                 divButton.appendChild(button);
 
@@ -89,17 +108,33 @@ $.getJSON('json/carta_comida.json', function (data) {
                 divPedido.appendChild(divButton);
 
                 mainContainer.appendChild(divPedido);
+
             }
         }
     });
 
 
 $.getJSON('json/carta_comida.json', function (data) {
+
+        let mainContainer = document.getElementById("myDataP");
+        
+        let col = document.createElement("div");
+        col.className = "col-12";
+
+        let headerP = document.createElement("div");
+        headerP.className = "header-pedido";
+        col.appendChild(headerP);
+
+        let h1 = document.createElement("h1");
+        h1.className = "header-pedido";
+        h1.innerHTML = "Principales";
+        headerP.appendChild(h1);
+
+        mainContainer.appendChild(col);
         
         for (let i = 0; i < data.length; i++) {
 
             if (data[i].type == "Principales") {
-                let mainContainer = document.getElementById("myData1");
                 // div dos pedidos
                 let divPedido = document.createElement("div");
                 divPedido.className = "col-3 pedido";
@@ -170,12 +205,16 @@ $.getJSON('json/carta_comida.json', function (data) {
                 icon.src = "images/icone-cart.png";
                 icon.setAttribute("width", "15");
                 icon.setAttribute("heigth", "15");
+
                 
+                let lbutton = document.createElement("label");
+                lbutton.innerHTML = "&nbsp;&nbsp;Compra";
 
                 let button = document.createElement("button");
                 button.className = "btn";
-                button.innerHTML = "Compra";
                 button.appendChild(icon);
+                button.appendChild(lbutton);
+
 
                 divButton.appendChild(button);
 
@@ -190,11 +229,26 @@ $.getJSON('json/carta_comida.json', function (data) {
     });
 
 $.getJSON('json/carta_comida.json', function (data) {
+
+        let mainContainer = document.getElementById("myDataS");
+        
+        let col = document.createElement("div");
+        col.className = "col-12";
+
+        let headerP = document.createElement("div");
+        headerP.className = "header-pedido";
+        col.appendChild(headerP);
+
+        let h1 = document.createElement("h1");
+        h1.className = "header-pedido";
+        h1.innerHTML = "Sugerencias";
+        headerP.appendChild(h1);
+
+        mainContainer.appendChild(col);
         
         for (let i = 0; i < data.length; i++) {
 
             if (data[i].type == "Sugerencias") {
-                let mainContainer = document.getElementById("myData2");
                 // div dos pedidos
                 let divPedido = document.createElement("div");
                 divPedido.className = "col-3 pedido";
@@ -265,12 +319,14 @@ $.getJSON('json/carta_comida.json', function (data) {
                 icon.src = "images/icone-cart.png";
                 icon.setAttribute("width", "15");
                 icon.setAttribute("heigth", "15");
-                
+
+                let lbutton = document.createElement("label");
+                lbutton.innerHTML = "&nbsp;&nbsp;Compra";
 
                 let button = document.createElement("button");
                 button.className = "btn";
-                button.innerHTML = "Compra";
                 button.appendChild(icon);
+                button.appendChild(lbutton);
 
                 divButton.appendChild(button);
 
@@ -285,11 +341,26 @@ $.getJSON('json/carta_comida.json', function (data) {
     });
 
 $.getJSON('json/carta_comida.json', function (data) {
+
+        let mainContainer = document.getElementById("myDataPS");
+        
+        let col = document.createElement("div");
+        col.className = "col-12";
+
+        let headerP = document.createElement("div");
+        headerP.className = "header-pedido";
+        col.appendChild(headerP);
+
+        let h1 = document.createElement("h1");
+        h1.className = "header-pedido";
+        h1.innerHTML = "Postres";
+        headerP.appendChild(h1);
+
+        mainContainer.appendChild(col);
         
         for (let i = 0; i < data.length; i++) {
 
             if (data[i].type == "Postres") {
-                let mainContainer = document.getElementById("myData3");
                 // div dos pedidos
                 let divPedido = document.createElement("div");
                 divPedido.className = "col-3 pedido";
@@ -360,12 +431,14 @@ $.getJSON('json/carta_comida.json', function (data) {
                 icon.src = "images/icone-cart.png";
                 icon.setAttribute("width", "15");
                 icon.setAttribute("heigth", "15");
-                
+
+                let lbutton = document.createElement("label");
+                lbutton.innerHTML = "&nbsp;&nbsp;Compra";           
 
                 let button = document.createElement("button");
                 button.className = "btn";
-                button.innerHTML = "Compra";
                 button.appendChild(icon);
+                button.appendChild(lbutton);
 
                 divButton.appendChild(button);
 
