@@ -24,33 +24,6 @@ var RESERVATION_PARAMS = {
     remember_user: false,
 };
 
-console.log(RESERVATION_PARAMS["reservation_date"]);
-
-console.log(RESERVATION_PARAMS["test"]);
-
-
-
-
-/*
-document.getElementById("reservas_form").addEventListener('submit', function(e) {
-    e.preventDefault(); //to prevent form submission
-
-    alert("working");
-    var $myForm = $("#reservas_form");
-
-    if ( $myForm[0].checkValidity() ) {
-        nextTab(1);
-        alert('sucess');
-    } else {
-        //Validate Form
-        $myForm[0].reportValidity()
-    }
-
-    alert('click');
-});
-*/
-
-
 
 function showTab(n) {
     console.log("Loading tab.." + n);
