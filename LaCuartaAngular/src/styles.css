@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+/* Space between header and footer for content */
+#header, #footer, #content { left: 0; width: 100%; }
+#header {top: 0px;}
+#content { top: 70px; }
+#footer { bottom:0; }
+
+/* Default style across all pages */
+body {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  color: #FFFFFF;
+  font-size: calc(12px + 1vw);
+}
+
+legend {
+  font-size: calc(14px + 0.6vw);
+}
+h1 {
+  font-size: calc(12px + 5.9vw);
+}
+h2 {
+  font-size: calc(10px + 2.0vw);
+}
+
+h3 {
+  font-size: calc(10px + 2.0vw);
+}
+
+h4 {
+  font-size: calc(10px + 1.5vw);
+}
+
+h5 {
+  font-size: calc(10px + 1.2vw);
+}
+
+
+body {
+  background: url('./assets/images/background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
