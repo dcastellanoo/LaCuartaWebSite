@@ -1,0 +1,40 @@
+.sobreNosotros {
+  min-height: 100%;
+  height: 100%;
+}
+
+#carouselSobreNosotros .carousel-inner > .carousel-item > img {
+  height: 25vw;
+}
+
+#carouselSobreNosotros .carousel-inner {
+  margin: auto;
+}
+
+#carouselSobreNosotros .carousel-indicators button {
+  width: 0.5rem !important;
+  height: 0.5rem !important;
+  border-radius: 100%;
+}
+
+@media (min-width: 768px) {
+  .sobreNosotros .aboutUs .text {
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .sobreNosotros {
+  }
+
+  .sobreNosotros .aboutUs img {
+    max-width: 20px;
+    height: auto;
+  }
+}
+
+.sobreNosotros .aboutUs img {
+  max-width: 50vw;
+  height: auto;
+}

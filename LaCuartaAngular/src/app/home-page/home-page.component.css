@@ -1,0 +1,16 @@
+.mainPage {
+  min-height: 75vw;
+}
+
+.mainPage h1 {
+}
+
+.mainPage .mobileMainPage figure {
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+}
+
+.mainPage .mobileMainPage .carousel-caption {
+  top: 30vw
+}
