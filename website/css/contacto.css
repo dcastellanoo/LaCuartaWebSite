@@ -6,6 +6,10 @@
     margin-bottom: 5%;
 }
 
+.container_contact_txt{
+    display: flex;
+}
+
 .text_contact{
     text-align: center;
     color: white;
