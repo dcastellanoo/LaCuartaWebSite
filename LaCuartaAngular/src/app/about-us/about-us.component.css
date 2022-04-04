@@ -3,18 +3,12 @@
   height: 100%;
 }
 
-#carouselSobreNosotros .carousel-inner > .carousel-item > img {
+ngb-carousel img {
   height: 25vw;
 }
 
-#carouselSobreNosotros .carousel-inner {
+.carousel-inner {
   margin: auto;
-}
-
-#carouselSobreNosotros .carousel-indicators button {
-  width: 0.5rem !important;
-  height: 0.5rem !important;
-  border-radius: 100%;
 }
 
 @media (min-width: 768px) {
