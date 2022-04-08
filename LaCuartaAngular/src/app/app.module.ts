@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageHeaderComponent } from './page-header/page-header.component';
@@ -15,12 +16,13 @@ import { FoodMenuComponent } from './food-menu/food-menu.component';
 import { FoodOrdersComponent } from './food-orders/food-orders.component';
 import { TodoPdfComponent } from './todo-pdf/todo-pdf.component';
 
+import { FoodOrdersModule } from "./food-orders/food-orders.module";
 
 const routes: Routes = [
   { path: '', component: HomePageComponent, pathMatch: 'full' },
   { path: 'sobre-nosotros', component: AboutUsComponent },
   { path: 'carta', component: FoodMenuComponent },
-  { path: 'reservas', component: ReservationsComponent},
+  { path: 'reservas', component: ReservationsComponent },
   { path: 'pedidos', component: FoodOrdersComponent },
   { path: 'contacto', component: ContactComponent },
   { path: 'politica-de-privacidad', component: TodoPdfComponent },
@@ -39,7 +41,6 @@ const routes: Routes = [
     ReservationsComponent,
     ContactComponent,
     FoodMenuComponent,
-    FoodOrdersComponent,
     TodoPdfComponent,
   ],
   imports: [
