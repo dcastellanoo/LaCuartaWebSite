@@ -2,15 +2,18 @@
   <small>
     Your cart:
     <span *ngIf="cart.itemCount > 0">
-{{ cart.itemCount }} item(s)
+      {{ cart.itemCount }} item(s)
       {{ cart.cartPrice | currency:"USD":"symbol":"2.2-2" }}
-</span>
+    </span>
     <span *ngIf="cart.itemCount == 0">
-(empty)
-</span>
+      (empty)
+    </span>
   </small>
-  <button class="btn btn-sm bg-dark text-white"
-          [disabled]="cart.itemCount == 0">
-    <i class="fa fa-shopping-cart"></i>
+
+  <button
+    class="btn btn-sm text-white"
+    [disabled]="cart.itemCount == 0"
+    routerLink="/carrito">       Carrito
+    <i style="background-image: url('./assets/images/icone-cart.png')"></i>
   </button>
 </div>
