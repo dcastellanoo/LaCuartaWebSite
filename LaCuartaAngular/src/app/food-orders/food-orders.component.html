@@ -20,14 +20,14 @@
     </div>
 
     <div class="col-9 p-2">
-      <div *ngFor="let product of products" class="card m-1 p-1 bg-light">
+      <div *ngFor="let product of products" class="card m-1 p-1 bg-dark">
         <h4>
           {{product.name}}
           <span class="badge badge-pill badge-primary float-right">
             {{ product.price | currency:"EUR":"symbol":"2.2-2" }}
           </span>
         </h4>
-        <div class="card-text bg-white p-1">
+        <div class="card-text bg-black p-1">
           {{product.description}}
           <button class="btn btn-success btn-sm float-right"
                   (click)="addProductToCart(product)">
