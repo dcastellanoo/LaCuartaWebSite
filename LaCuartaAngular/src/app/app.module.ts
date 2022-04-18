@@ -28,9 +28,13 @@ import { VinosMenuComponent } from './vinos-menu/vinos-menu.component';
 const routes: Routes = [
   { path: '', component: HomePageComponent, pathMatch: 'full' },
   { path: 'sobre-nosotros', component: AboutUsComponent },
-  { path: 'carta', component: FoodMenuComponent },
+  { path: 'carta', component: FoodMenuComponent,
+    children: [
+      { path: 'bebidas', component: BebidasMenuComponent },
+      { path: 'vinos', component: VinosMenuComponent }
+    ]
+    },
   { path: 'reservas', component: ReservationsComponent },
-
   { path: 'pedidos',
     component: FoodOrdersComponent,
     children: [
@@ -52,7 +56,8 @@ const routes: Routes = [
     loadChildren: () => import("./admin/admin.module")
       .then(m => m.AdminModule),
   },
-  { path: '**', redirectTo: '/' }
+
+  { path: '**', redirectTo: '/' },
 ]
 
 
