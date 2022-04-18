@@ -22,6 +22,9 @@ import { CartDetailComponent } from './cart-detail/cart-detail.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { FoodOrdersFirstGuard } from "./foodOrdersFirst.guard";
 
+FoodOrdersModule
+CartSummaryComponent
+FoodOrdersFirstGuard
 
 const routes: Routes = [
   { path: '', component: HomePageComponent, pathMatch: 'full' },
