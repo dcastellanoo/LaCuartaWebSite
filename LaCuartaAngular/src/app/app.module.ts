@@ -21,6 +21,8 @@ import { CartSummaryComponent } from "./cart-summary/cart-summary.component";
 import { CartDetailComponent } from './cart-detail/cart-detail.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { FoodOrdersFirstGuard } from "./foodOrdersFirst.guard";
+import { BebidasMenuComponent } from './bebidas-menu/bebidas-menu.component';
+import { VinosMenuComponent } from './vinos-menu/vinos-menu.component';
 
 
 const routes: Routes = [
@@ -65,6 +67,8 @@ const routes: Routes = [
     ContactComponent,
     FoodMenuComponent,
     TodoPdfComponent,
+    BebidasMenuComponent,
+    VinosMenuComponent,
   ],
   imports: [
     BrowserModule,
