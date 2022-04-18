@@ -1,14 +1,17 @@
 # LaCuartaAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
-                      
-## Run JSON server
-
-Run `npm run json` for a JSON server. Navigate to `http://localhost:3500/db`
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## Run JSON server
+
+Run `npm run json` for a JSON server. Navigate to `http://localhost:3500/db`
+
+## La Cuarta Admin
+Navigate to `http://localhost:4200/admin`. Use name `admin` and password `secret`.
 
 ## Code scaffolding
 
