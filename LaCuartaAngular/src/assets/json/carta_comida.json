@@ -1,81 +1,81 @@
 [
   {
     "id": 1,
-    "type": "Entrantes",
     "name": "Nachos con guacamole",
+    "category": "Entrantes",
     "description":  "Una completa comida mexicana, ideal para invitados o cenas informales con amigos",
     "allergens": "No apto para intolerantes a la lactosa",
-    "price": "5.00 €",
+    "price": 5.00,
     "url": "https://quecarta.com/uploads/2020/12/14/225013013268.256x256.jpg"
   },
 
   {
-    "id": 1,
-    "type": "Entrantes",
+    "id": 2,
     "name": "Tequeños con queso",
+    "category": "Entrantes",
     "description": "Este plato tan sencillo es una institución gastronómica en todas las fiestas y celebraciones venezolanas",
     "allergens": "No apto para intolerantes a la lactosa",
-    "price": "4.50 €",
+    "price": 4.50,
     "url": "https://lapajara.coopcycle.org/media/cache/product_thumbnail/62/0d/620d5ccde9c37.jpeg"
   },
 
   {
-    "id": 2,
-    "type": "Principales",
+    "id": 3,
     "name": "Espaguetis a la carbonara",
+    "category": "Principales",
     "description": "Espaguetis a la carbonara receta italiana original con panceta, yema de huevo y parmesano",
     "allergens": "No apto para intolerantes a la lactosa",
-    "price": "6.50 €",
+    "price": 6.50,
     "url": "https://i-ticketing.iwos.com/256x256-th/products/182/products_182_54.jpg"
   },
 
   {
-    "id": 2,
-    "type": "Principales",
+    "id": 4,
     "name": "Calamares fritos",
+    "category": "Principales",
     "description": "Calamares frescos acompañados de rodajas de limón, plato típico español",
     "allergens": "Sin alérgenos",
-    "price": "8.50 €",
+    "price": 8.50,
     "url": "https://quecarta.com/uploads/2020/06/18/171232874879.256x256.jpg"
   },
 
   {
-    "id": 3,
-    "type": "Sugerencias",
+    "id": 5,
     "name": "Papas arrugadas con mojo",
+    "category": "Sugerencias",
     "description": "Si hay un plato que representa a las Islas Canarias, son las papas arrugadas con mojo picón",
     "allergens": "Sin alérgenos",
-    "price": "3.25 €",
+    "price": 3.25,
     "url": "https://quecarta.com/uploads/2020/05/25/095545851335.256x256.jpg"
   },
 
   {
-    "id": 3,
-    "type": "Sugerencias",
+    "id": 6,
     "name": "Queso frito con mermelada",
+    "category": "Sugerencias",
     "description": "El queso Camembert frito con mermelada de tomate es una tapa y/o aperitivo ideal",
     "allergens": "No apto para intolerantes a la lactosa",
-    "price": "3.25 €",
+    "price": 3.25,
     "url": "https://quecarta.com/uploads/2020/08/29/204854258850.256x256.jpg"
   },
 
   {
-    "id": 4,
-    "type": "Postres",
+    "id": 7,
     "name": "Tiramisú",
+    "category": "Postres",
     "description": "El tiramisú es uno de los postres más famosos y deliciosos de la cocina italiana",
     "allergens": "No apto para intolerantes a la lactosa",
-    "price": "4.25 €",
+    "price": 4.25,
     "url": "https://photos.bigoven.com/recipe/hero/tiramisu-94.jpg?h=300&w=300"
   },
 
   {
-    "id": 4,
-    "type": "Postres",
+    "id": 8,
     "name": "Polvito uruguayo",
+    "category": "Postres",
     "description": "El polvito es un delicioso postre uruguayo que se ha popularizado sobre todo en Gran Canaria",
     "allergens": "No apto para intolerantes a la lactosa",
-    "price": "4.75 €",
+    "price": 4.75,
     "url": "images/polvito.jpg"
   }
 ]

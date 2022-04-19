@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Product } from "./product.model";
 // import { StaticDataSource } from "./static.datasource";
 import { RestDataSource } from "./rest.datasource";
+import {Comida} from "./comida.model";
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +14,19 @@ export class ProductRepository {
 
   constructor(private dataSource: RestDataSource) {
     dataSource.getProducts().subscribe(data => {
-      this.products = data;
-      this.categories = data.map(p => p.category as string)
+      this.products = this.products.concat(data);
+      var categories = data.map(p => p.category as string)
         .filter((c, index, array) => array.indexOf(c) == index).sort();
+      this.categories = this.categories.concat(categories);
     });
   }
+
   getProducts(category?: string): Product[] {
+    return this.products
+      .filter(p => category == undefined || category == p.category);
+  }
+
+  getComidas(category?: string): Comida[] {
     return this.products
       .filter(p => category == undefined || category == p.category);
   }

@@ -39,7 +39,7 @@ const routes: Routes = [
     ]
     },
   { path: 'reservas', component: ReservationsComponent },
-  { path: 'pedidos',
+  { path: 'pedidos2',
     component: FoodOrdersComponent,
     children: [
     ],
