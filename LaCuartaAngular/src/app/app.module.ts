@@ -14,6 +14,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
 import { FoodOrdersComponent } from './food-orders/food-orders.component';
 import { TodoPdfComponent } from './todo-pdf/todo-pdf.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,7 @@ const routes: Routes = [
   { path: 'sobre-nosotros', component: AboutUsComponent },
   { path: 'carta', component: FoodMenuComponent },
   { path: 'reservas', component: ReservationsComponent},
-  { path: 'pedidos', component: FoodOrdersComponent },
+  { path: 'pedidos', component: PedidosComponent },
   { path: 'contacto', component: ContactComponent },
   { path: 'politica-de-privacidad', component: TodoPdfComponent },
   { path: 'politica-de-cookies', component: TodoPdfComponent },
@@ -41,6 +42,7 @@ const routes: Routes = [
     FoodMenuComponent,
     FoodOrdersComponent,
     TodoPdfComponent,
+    PedidosComponent,
   ],
   imports: [
     BrowserModule,
