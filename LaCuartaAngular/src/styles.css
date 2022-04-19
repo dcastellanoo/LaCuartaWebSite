@@ -44,3 +44,9 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+
+.sobreNosotros .carousel-indicators button {
+  width: 0.5rem !important;
+  height: 0.5rem !important;
+  border-radius: 100% !important;
+}
