@@ -20,9 +20,15 @@ export class FoodOrdersComponent {
               private router: Router ) { }
 
   get products(): Product[] {
-    let pageIndex = (this.selectedPage - 1) * this.productsPerPage
-    return this.repository.getProducts(this.selectedCategory)
-      .slice(pageIndex, pageIndex + this.productsPerPage);
+    let pageIndex = (this.selectedPage - 1) * this.productsPerPage;
+
+    let food: Product[];
+    if ( !!this.selectedCategory )
+      food = this.repository.getProducts(this.selectedCategory);
+    else
+      food = this.repository.getProductsByType("comida");
+
+    return food.slice(pageIndex, pageIndex + this.productsPerPage);
   }
 
   get categories(): string[] {

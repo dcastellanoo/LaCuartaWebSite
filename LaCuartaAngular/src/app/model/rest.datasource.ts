@@ -6,8 +6,6 @@ import { Cart } from "./cart.model";
 import { Order } from "./order.model";
 import { map } from "rxjs/operators";
 import { HttpHeaders } from '@angular/common/http';
-import {Comida} from "./comida.model";
-import {concat} from "rxjs";
 
 const PROTOCOL = "http";
 const PORT = 3500;
@@ -27,14 +25,7 @@ export class RestDataSource {
 
   getProducts(): Observable<Product[]> {
     console.log("Reading products from rest datasource");
-
-    var comidas  = this.http.get<Comida[]>(this.baseUrl + "comidas");
-    var bebidas = this.http.get<Product[]>(this.baseUrl + "bebidas");
-
-    console.log("Comidas:", comidas);
-    var all_products: Observable<Product[]> = concat(comidas, bebidas);
-    console.log("Products:", all_products);
-    return all_products;
+    return this.http.get<Product[]>(this.baseUrl + "products");;
   }
 
   saveOrder(order: Order): Observable<Order> {

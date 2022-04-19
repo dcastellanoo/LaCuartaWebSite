@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Product } from "./product.model";
 // import { StaticDataSource } from "./static.datasource";
 import { RestDataSource } from "./rest.datasource";
-import {Comida} from "./comida.model";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +14,11 @@ export class ProductRepository {
 
   constructor(private dataSource: RestDataSource) {
     dataSource.getProducts().subscribe(data => {
-      this.products = this.products.concat(data);
-      var categories = data.map(p => p.category as string)
+      // TODO filter each type to separate field in dictionary and determine it's categories
+      this.products = data;
+
+      this.categories = data.map(p => p.category as string)
         .filter((c, index, array) => array.indexOf(c) == index).sort();
-      this.categories = this.categories.concat(categories);
     });
   }
 
@@ -26,16 +27,16 @@ export class ProductRepository {
       .filter(p => category == undefined || category == p.category);
   }
 
-  getComidas(category?: string): Comida[] {
+  getProductsByType(type?: string): Product[] {
     return this.products
-      .filter(p => category == undefined || category == p.category);
+      .filter(p => p.type == type);
   }
 
   getProduct(id: number): Product {
     return this.products.find(p => p.id == id) as Product;
   }
 
-  getCategories(): string[] {
+  getCategories(type?: string): string[] {
     return this.categories;
   }
 
