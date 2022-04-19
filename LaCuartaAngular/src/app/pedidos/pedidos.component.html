@@ -10,7 +10,7 @@
 
                     <input type="hidden" #selection>
 
-                    <!-- <div class="row"> -->
+                    <div class="row">
                         <div class="col-12">
                             <div class="menu-left"> 
                                 <ul class="menu-list">
@@ -30,7 +30,7 @@
                                 <a href="carrito.html"><button>Tu pedido</button></a>    
                             </div>
                         </div>
-                    <!-- </div> -->
+                    </div>
 
                 </nav>
 
@@ -41,7 +41,8 @@
                 <div class="container">
 
                     <div class="row" [ngSwitch]="selection.value">
-                        <div *ngSwitchDefault> 
+
+                        <div class="row" *ngSwitchDefault> 
                             <div class="col-12">
                                 <div class="header-pedido">
                                     <h1>Entrantes</h1> 
