@@ -22,17 +22,13 @@ export class FoodOrdersComponent {
   get products(): Product[] {
     let pageIndex = (this.selectedPage - 1) * this.productsPerPage;
 
-    let food: Product[];
-    if ( !!this.selectedCategory )
-      food = this.repository.getProducts(this.selectedCategory);
-    else
-      food = this.repository.getProductsByType("comida");
+    let food: Product[] = this.repository.getProducts(this.selectedCategory, "comida");
 
     return food.slice(pageIndex, pageIndex + this.productsPerPage);
   }
 
   get categories(): string[] {
-    return this.repository.getCategories();
+    return this.repository.getCategories("comida");
   }
 
   changeCategory(newCategory?: string) {
@@ -44,14 +40,13 @@ export class FoodOrdersComponent {
   }
 
   changePageSize(newSize: number) {
-    console.log("called");
     this.productsPerPage = Number(newSize);
     this.changePage(1);
   }
 
   get pageCount(): number {
     return Math.ceil(this.repository
-      .getProducts(this.selectedCategory).length / this.productsPerPage)
+      .getProducts(this.selectedCategory, "comida").length / this.productsPerPage)
   }
 
   addProductToCart(product: Product) {

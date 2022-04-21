@@ -10,21 +10,43 @@ import {Observable} from "rxjs";
 
 export class ProductRepository {
   private products: Product[] = [];
-  private categories: string[] = [];
+  //private categories: string[] = [];
+  private categories: Map<string, Set<string>> = new Map<string, Set<string>>();
 
   constructor(private dataSource: RestDataSource) {
     dataSource.getProducts().subscribe(data => {
-      // TODO filter each type to separate field in dictionary and determine it's categories
       this.products = data;
 
-      this.categories = data.map(p => p.category as string)
-        .filter((c, index, array) => array.indexOf(c) == index).sort();
+      //this.categories = data.map(p => p.category as string)
+      //  .filter((c, index, array) => array.indexOf(c) == index).sort();
+
+
+      data.forEach((p) => {
+        if ( this.categories.get(p.type!) == undefined )
+          this.categories.set(p.type!, new Set<string>([p.category!]));
+        else
+          this.categories.get(p.type!)!.add(p.category!);
+      })
+      console.log("Extracted categories:", this.categories);
+
+      console.log(Array.from(this.categories.get("comida")!.values()));
     });
   }
 
-  getProducts(category?: string): Product[] {
-    return this.products
-      .filter(p => category == undefined || category == p.category);
+  /**
+   * Get products by category or type
+   * @param category
+   * @param type
+   */
+  getProducts(category?: string, type?: string): Product[] {
+    if ( category )
+      return this.products.filter(p => p.category == category );
+    else if ( type )
+      return this.products.filter(p => p.type == type);
+    else
+      return this.products;
+    //return this.products
+    //  .filter(p => category == undefined || category == p.category);
   }
 
   getProductsByType(type?: string): Product[] {
@@ -36,8 +58,21 @@ export class ProductRepository {
     return this.products.find(p => p.id == id) as Product;
   }
 
+  /**
+   * Get list of categories by type if provided, else every product category
+   * @param type product type
+   */
   getCategories(type?: string): string[] {
-    return this.categories;
+    if ( type && this.categories.has(type) )
+        return Array.from(this.categories.get(type)!.values());
+    else {
+      let categories: string[] = [];
+
+      this.categories.forEach((value: Set<string>, key: string) => {
+        categories = [...categories, ...Array.from(value.values())];
+      });
+      return categories
+    }
   }
 
   deleteProduct(id: number) {
