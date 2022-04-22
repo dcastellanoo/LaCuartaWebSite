@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from "@angular/common/http";
+import { environment } from "../environments/environment";
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -85,7 +88,9 @@ const routes: Routes = [
     AppRoutingModule,
     NgbModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

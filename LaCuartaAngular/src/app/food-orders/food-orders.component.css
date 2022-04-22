@@ -1,0 +1,261 @@
+
+.c_main{
+  width: 75%;
+  float: right;
+  padding-top: 40px;
+  padding-left: 0px;
+}
+
+.btn-pedido .btn:hover {
+  background-color: #784b17;
+}
+
+.header-pedido{
+  width: 100%;
+  margin-top: 40px;
+  padding-bottom: 25px;
+}
+
+.header-pedido h1{
+  font-size: 24pt;
+  font-weight: bolder;
+  color: #000000;
+}
+
+.menu-left .menu-list{
+  list-style-type: none;
+}
+
+.menu-list button{
+  padding: 5px;
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+.menu-list li a{
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+}
+
+.menu-btn{
+  text-align: center;
+  padding: 5px;
+  padding-top: 20px;
+}
+
+.menu-btn button{
+  background-color: #67523A;
+  padding: 13px;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: roboto;
+}
+
+
+
+.c_main{
+  width: 76%;
+  float: right;
+  padding-top: 40px;
+  padding-left: 6px;
+}
+
+.nav-menu-left{
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.menu-left{
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 20px 0px 5px 0px;
+}
+
+.pedido{
+  width: 20%;
+  margin: 20px;
+  padding: 10px;
+  background-color: white;
+  color: #000000;
+  padding-bottom: 20px;
+  text-align: center;
+  border: 1px solid #DDD;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.pedido-info{
+  position: relative;
+
+}
+
+.spi-1{
+  font-size: 9.8pt;
+  font-weight: bold;
+  width: 100%;
+  height: 25px;
+  text-align: center;
+}
+
+.spi-2{
+  width: 100%;
+  height: 25px;
+  text-align: center;
+}
+
+.spi-3{
+  text-align: center;
+  font-size: 11pt;
+  font-weight: bold;
+}
+
+.pedido-quant{
+  padding: 10px;
+}
+
+.pedido-quant input{
+  text-align: center;
+  border: 1px solid #CCC;
+  padding: 2px;
+  margin-left: 8px;
+  margin-right: 8px;
+  font-size: 10pt;
+}
+
+.btn-pedido .btn {
+  background-color: #E59C47; /* Green */
+  border: none;
+  color: white;
+  padding: 6px 22px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.pedido_image{
+  max-width: 100%;
+  width: 190px;
+  height: 150px;
+  text-align: center;
+  border-radius: 3px;
+  margin-top: 6px;
+  padding-bottom: 8px;
+}
+
+@media (max-width:991px){
+
+  .nav-menu-left{
+    margin-top: 0px;
+    margin-left: 0px;
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    opacity: 0.7;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .pedido{
+    position: relative;
+    width: 620px;
+    height: 150px;
+    background: #F9F5F1;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    padding-top: 25px;
+    padding-left: 35px;
+    margin-bottom: 20px;
+  }
+
+  .pedido-quant{
+    padding: 6px;
+    text-align: center;
+    border: 1px solid #CCC;
+    width: 105px;
+    margin-top: 15px;
+    margin-left: 40px;
+  }
+
+  .pedido-quant input{
+    text-align: center;
+    border: none;
+    padding: 3px;
+  }
+
+  .pedido-info{
+    height: 30px;
+    margin-left: 40px;
+    text-align: left;
+  }
+
+  .pedido-info .spi-1{
+    height: 13px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16pt;
+    color: #000000;
+    padding-bottom: 42px;
+
+  }
+
+  .pedido-info .spi-3{
+    background: red;
+    width: 70px;
+    height: 70px;
+    padding-top: 19px;
+    position: relative;
+    float: right;
+    top: -38px;
+    right: 50px;
+    background: #67523A;
+    color: #FFFFFF;
+    font-size: 14pt;
+    text-align: center;
+    border-radius: 50%!important;
+
+  }
+
+  .row>* {
+    width: 100%;
+    padding-right: var(--bs-gutter-y);
+    padding-left: var(--bs-gutter-y);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .header-pedido h1{
+    color: white;
+    font-size: 26pt;
+    font-family: Times New Roman;
+  }
+}
+
+@media(min-width:768px) and (max-width:991px){
+
+  .header-pedido h1{
+    text-align: center;
+    font-size: 36pt;
+    padding-bottom: 15px;
+  }
+
+}
+
+.cart-resp{
+  background-color: #67523A;
+  border-radius: 6px;
+  width: 75px;
+  height: 63px;
+  float: right;
+  margin-right: 105px;
+  margin-top: 45px;
+  padding: 5px;
+  padding-top: 10px;
+}
+

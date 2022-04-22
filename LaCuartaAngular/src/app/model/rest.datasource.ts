@@ -6,15 +6,18 @@ import { Cart } from "./cart.model";
 import { Order } from "./order.model";
 import { map } from "rxjs/operators";
 import { HttpHeaders } from '@angular/common/http';
+import {IDatasource} from "./interface.datasource";
+
 
 const PROTOCOL = "http";
 const PORT = 3500;
+
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class RestDataSource {
+export class RestDataSource implements IDatasource {
   baseUrl: string;
   auth_token?: string;
 

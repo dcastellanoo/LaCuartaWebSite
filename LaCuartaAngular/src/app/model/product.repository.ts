@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Product } from "./product.model";
 // import { StaticDataSource } from "./static.datasource";
 import { RestDataSource } from "./rest.datasource";
-import {Observable} from "rxjs";
+import {FirebaseDatasource} from "./firebase.datasource";
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class ProductRepository {
   //private categories: string[] = [];
   private categories: Map<string, Set<string>> = new Map<string, Set<string>>();
 
-  constructor(private dataSource: RestDataSource) {
+  constructor(private dataSource: FirebaseDatasource) {
     dataSource.getProducts().subscribe(data => {
       this.products = data;
 
@@ -54,7 +54,7 @@ export class ProductRepository {
       .filter(p => p.type == type);
   }
 
-  getProduct(id: number): Product {
+  getProduct(id: string): Product {
     return this.products.find(p => p.id == id) as Product;
   }
 
@@ -75,15 +75,8 @@ export class ProductRepository {
     }
   }
 
-  deleteProduct(id: number) {
-    this.dataSource.deleteProduct(id).subscribe(p => {
-      this.products.splice(this.products.
-      findIndex(p => p.id == id), 1);
-    })
-  }
-
   saveProduct(product: Product) {
-    if (product.id == null || product.id == 0) {
+    if ( product.id == null || product.id == "" ) {
       // Add new product
       this.dataSource.saveProduct(product)
         .subscribe(p => this.products.push(p));
@@ -95,6 +88,13 @@ export class ProductRepository {
           findIndex(p => p.id == product.id), 1, product);
         });
     }
+  }
+
+  deleteProduct(id: string) {
+    this.dataSource.deleteProduct(id).subscribe(p => {
+      this.products.splice(this.products.
+      findIndex(p => p.id == id), 1);
+    })
   }
 }
 

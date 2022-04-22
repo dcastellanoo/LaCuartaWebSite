@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { RestDataSource } from "./rest.datasource";
+import {FirebaseDatasource} from "./firebase.datasource";
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { RestDataSource } from "./rest.datasource";
 
 export class AuthService {
 
-  constructor(private datasource: RestDataSource) {}
+  constructor(private datasource: FirebaseDatasource) {}
 
   authenticate(username: string, password: string): Observable<boolean> {
     return this.datasource.authenticate(username, password);

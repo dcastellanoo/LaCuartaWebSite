@@ -1,7 +1,7 @@
 <div id="content">
 
     <div class="container-fluid">
-    
+
         <div class="row">
 
             <div class="col-lg-3">
@@ -12,7 +12,7 @@
 
                     <div class="row">
                         <div class="col-12">
-                            <div class="menu-left"> 
+                            <div class="menu-left">
                                 <ul class="menu-list">
                                     <li>
                                         <a href="carrito.html" class="btn d-lg-none d-xl-block d-xl-none cart-resp"><img src="./assets/images/icone-cart.png" width="40" height="40"></a>
@@ -24,10 +24,10 @@
                                 </ul>
                             </div>
                         </div>
-                        
+
                         <div class="col-12">
                             <div class="menu-btn d-none d-lg-block">
-                                <a href="carrito.html"><button>Tu pedido</button></a>    
+                                <a href="carrito.html"><button>Tu pedido</button></a>
                             </div>
                         </div>
                     </div>
@@ -35,17 +35,17 @@
                 </nav>
 
             </div>
-            
+
             <div class="col-lg-9">
-            
+
                 <div class="container">
 
                     <div class="row" [ngSwitch]="selection.value">
 
-                        <div class="row" *ngSwitchDefault> 
+                        <div class="row" *ngSwitchDefault>
                             <div class="col-12">
                                 <div class="header-pedido">
-                                    <h1>Entrantes</h1> 
+                                    <h1>Entrantes</h1>
                                 </div>
                             </div>
 
@@ -65,11 +65,11 @@
                                     </label>
                                     <label class="spi-3">10£</label>
                                 </div>
-                                
+
                                 <div class="pedido-quant">
                                     <img src="./assets/images/icone-minus.png" width="15" height="15">
                                     <input type="text" size="1" value="0">
-                                    <img src="./assets/images/icone-plus.png" width="15" height="15"> 
+                                    <img src="./assets/images/icone-plus.png" width="15" height="15">
                                 </div>
 
                                 <div class="btn-pedido d-none d-lg-block">
@@ -81,7 +81,7 @@
                         <div *ngSwitchCase="'principale'">
                             <div class="col-12">
                                 <div class="header-pedido">
-                                    <h1>Principales</h1> 
+                                    <h1>Principales</h1>
                                 </div>
                             </div>
                         </div>
@@ -89,20 +89,20 @@
                         <div *ngSwitchCase="'sugerencia'">
                             <div class="col-12">
                                 <div class="header-pedido">
-                                    <h1>Sugerencias</h1> 
+                                    <h1>Sugerencias</h1>
                                 </div>
-                            </div>                        
+                            </div>
                         </div>
                         <div *ngSwitchCase="'postre'">
                             <div class="col-12">
                                 <div class="header-pedido">
-                                    <h1>Postres</h1> 
+                                    <h1>Postres</h1>
                                 </div>
-                            </div>  
+                            </div>
                         </div>
                     </div>
 
-                </div> 
+                </div>
             </div>
 
         </div>
