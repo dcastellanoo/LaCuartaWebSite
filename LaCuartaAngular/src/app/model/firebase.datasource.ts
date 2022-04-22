@@ -1,56 +1,28 @@
 import { Injectable } from "@angular/core";
-import {BehaviorSubject, from, Observable, of} from "rxjs";
+import { from, Observable } from "rxjs";
 import { Product } from "./product.model";
 import { Cart } from "./cart.model";
-import { Order } from "./order.model";
-import { map } from "rxjs/operators";
+import {IOrder, Order} from "./order.model";
 import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/compat/firestore";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
-
-import { HttpClient } from "@angular/common/http";
-import { HttpHeaders } from '@angular/common/http';
-import {IDatasource} from "./interface.datasource";
-import {onAuthStateChanged} from "@angular/fire/auth";
-const PROTOCOL = "http";
-const PORT = 3500;
-
-
-const getObservable = (collection: AngularFirestoreCollection<Product>) => {
-  const subject = new BehaviorSubject<Product[]>([]);
-  collection.valueChanges({ idField: 'id' }).subscribe((val: Product[]) => {
-    subject.next(val);
-  });
-  return subject;
-};
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class FirebaseDatasource {
-  baseUrl: string;
   auth_token?: string;
   productsRef: AngularFirestoreCollection<Product>;
-  //productIdMap: Map<number, string>;
+  ordersRef: AngularFirestoreCollection<IOrder>;
 
-  constructor(private store: AngularFirestore, private http: HttpClient ) {
-
-    this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
-
+  constructor(private store: AngularFirestore ) {
     console.log("Firebase datasource created");
     this.productsRef = store.collection("menu");
-
-    /*
-    this.productIdMap = new Map<number, string>();
-    this.productsRef.valueChanges({idField: 'productId'}).subscribe((data) => {
-      data.forEach(p => {
-        this.productIdMap.set(p.id!, p.productId);
-      })
-    })   */
+    this.ordersRef = store.collection("orders");
   }
 
-  /** Products **/
+  /********************************** Products **********************************/
 
   saveProduct(product: Product): Observable<Product> {
     this.productsRef.add({...product});
@@ -65,7 +37,6 @@ export class FirebaseDatasource {
   updateProduct(product: Product): Observable<Product> {
     this.productsRef.doc(product.id!).update({...product});
     return this.productsRef.doc(product.id!).valueChanges() as Observable<Product>;
-
   }
 
   deleteProduct(id: string): Observable<Product> {
@@ -73,28 +44,34 @@ export class FirebaseDatasource {
     return this.productsRef.doc(id).valueChanges() as Observable<Product>;
   }
 
-  /** Orders **/
+  /********************************** Orders **********************************/
 
   saveOrder(order: Order): Observable<Order> {
-    console.log("Saving order to Rest datasource");
-    return this.http.post<Order>(this.baseUrl + "orders", order);
+    console.log("Saving order to Firebase datasource");
+    // TODO save order as nested object
+    this.ordersRef.add({...order});
+    return this.ordersRef.doc(order.id!).valueChanges() as Observable<Order>;
   }
 
   getOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>(this.baseUrl + "orders", this.getOptions());
+    return this.ordersRef.valueChanges({idField: "id"}) as Observable<Order[]>;
   }
 
   updateOrder(order: Order): Observable<Order> {
-    return this.http.put<Order>(`${this.baseUrl}orders/${order.id}`,
-      order, this.getOptions());
+    // TODO update order as nested object
+
+    this.ordersRef.doc(order.id!).update({...order});
+    return this.ordersRef.doc(order.id!).valueChanges() as Observable<Order>;
   }
 
-  deleteOrder(id: number): Observable<Order> {
-    return this.http.delete<Order>(`${this.baseUrl}orders/${id}`,
-      this.getOptions());
+  deleteOrder(id: string): Observable<Order> {
+    // TODO delete nested order object
+    this.ordersRef.doc(id).delete();
+    return this.ordersRef.doc(id).valueChanges() as Observable<Order>;
   }
 
-  // TODO move to separate file
+  /********************************** Authentication **********************************/
+  // TODO maybe move to separate file
   authenticate(email: string, password: string): Observable<boolean> {
     const auth = getAuth();
     let response = false;
@@ -123,8 +100,6 @@ export class FirebaseDatasource {
         return false;
       }));
 
-
-
   }
 
   /*
@@ -140,16 +115,4 @@ export class FirebaseDatasource {
   }
 
   */
-
-
-  private convertProductId(id: number) {
-   // return this.productIdMap.get(id);
-  }
-  private getOptions() {
-    return {
-      headers: new HttpHeaders({
-        "Authorization": `Bearer<${this.auth_token}>`
-      })
-    }
-  }
 }

@@ -3,6 +3,7 @@ import { Observable } from "rxjs";
 import { Order } from "./order.model";
 // import { StaticDataSource } from "./static.datasource";
 import {RestDataSource} from "./rest.datasource";
+import {FirebaseDatasource} from "./firebase.datasource";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class OrderRepository {
   private orders: Order[] = [];
   private loaded: boolean = false;
 
-  constructor(private dataSource: RestDataSource) {}
+  constructor(private dataSource: FirebaseDatasource) {}
 
   loadOrders() {
     this.loaded = true;
@@ -31,7 +32,7 @@ export class OrderRepository {
     return this.dataSource.saveOrder(order);
   }
 
-  deleteOrder(id: number) {
+  deleteOrder(id: string) {
     this.dataSource.deleteOrder(id).subscribe(order => {
       this.orders.splice(this.orders.findIndex(o => id == o.id), 1);
     });

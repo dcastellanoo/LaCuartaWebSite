@@ -21,7 +21,7 @@ export class OrderTableComponent {
     this.repository.updateOrder(order);
   }
 
-  delete(id: number) {
+  delete(id: string) {
     this.repository.deleteOrder(id);
   }
 }
