@@ -17,7 +17,7 @@ export class AppComponent {
   constructor(private store: AngularFirestore) {
     store.firestore.settings({ ignoreUndefinedProperties: true, merge: true });
 
-    console.log("New id:", this.store.createId());
+    //console.log("New id:", this.store.createId());
 
     /*
     let menuRef = this.store.collection("menu");

@@ -1,14 +1,17 @@
 import { Injectable } from "@angular/core";
-import {BehaviorSubject, from, Observable} from "rxjs";
+import {BehaviorSubject, from, Observable, of} from "rxjs";
 import { Product } from "./product.model";
 import { Cart } from "./cart.model";
 import { Order } from "./order.model";
 import { map } from "rxjs/operators";
 import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/compat/firestore";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
 
 import { HttpClient } from "@angular/common/http";
 import { HttpHeaders } from '@angular/common/http';
 import {IDatasource} from "./interface.datasource";
+import {onAuthStateChanged} from "@angular/fire/auth";
 const PROTOCOL = "http";
 const PORT = 3500;
 
@@ -91,6 +94,40 @@ export class FirebaseDatasource {
       this.getOptions());
   }
 
+  // TODO move to separate file
+  authenticate(email: string, password: string): Observable<boolean> {
+    const auth = getAuth();
+    let response = false;
+    return from(signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        console.log("Admin signed in with email: ", email);
+        const user = userCredential.user;
+        this.auth_token = user.uid;  // TODO
+
+
+        return true;
+
+        /* TODO
+        user.getIdToken().then((result) => {
+          console.log("Admin with auth token: ", result);
+          this.auth_token = result;
+        });
+        */
+
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log("Error authentication: ", errorMessage);
+        return false;
+      }));
+
+
+
+  }
+
+  /*
   authenticate(user: string, pass: string): Observable<boolean> {
 
 
@@ -101,6 +138,9 @@ export class FirebaseDatasource {
       return response.success;
     }));
   }
+
+  */
+
 
   private convertProductId(id: number) {
    // return this.productIdMap.get(id);

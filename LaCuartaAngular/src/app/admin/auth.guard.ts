@@ -11,6 +11,7 @@ export class AuthGuard {
 
   canActivate(route: ActivatedRouteSnapshot,
               state: RouterStateSnapshot): boolean {
+    // Not authenticated, redirect to login
     if (!this.auth.authenticated) {
       this.router.navigateByUrl("/admin/auth");
       return false;
