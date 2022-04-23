@@ -1,26 +1,28 @@
-/*
-var RESERVATION_PARAMS = {
-    num_adults: 2,
-    num_childs: 0,
-    time_lunch: false,
-    time_dinner: true,
-    reservation_date: new Date(),
-    dinning_hall: false,
-    terrace: true,
-    reservation_time: "",
-    comment: "",
-    conditions_accepted: false,
-    remember_user: false,
-};
- */
-
 import {User} from "./user.model";
+
+enum EDayPeriod {
+  Lunch,
+  Dinner,
+}
+
+enum EPlace {
+  DinningHall,
+  Terrace
+}
 
 export class Reservation {
   public id?: string;
   public numAdults: number = 2;
-  public numChilds: number = 2;
+  public numChilds: number = 0;
+  public period: EDayPeriod = EDayPeriod.Lunch;
+  public place: EPlace = EPlace.DinningHall;
+  public reservationDate?: Date;
+  public reservationTime?: Date;
+  public comment?: string;
 
+  // TODO maybe move to user?
+  public acceptedConditions: boolean = false;
+  public rememberUser: boolean = false;
 
 
   constructor(public user: User) {
