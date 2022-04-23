@@ -21,7 +21,6 @@ export class AuthComponent {
       // perform authentication
       this.auth.authenticate(this.username!, this.password!)
         .subscribe(response => {
-          console.log("auth response:", response);
           if (response) {
             this.router.navigateByUrl("/admin/main");
           }

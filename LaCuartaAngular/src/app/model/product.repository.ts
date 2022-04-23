@@ -27,9 +27,9 @@ export class ProductRepository {
         else
           this.categories.get(p.type!)!.add(p.category!);
       })
-      console.log("Extracted categories:", this.categories);
+      console.log("Found categories:", this.categories);
 
-      console.log(Array.from(this.categories.get("comida")!.values()));
+      //console.log(Array.from(this.categories.get("comida")!.values()));
     });
   }
 
@@ -79,7 +79,9 @@ export class ProductRepository {
     if ( product.id == null || product.id == "" ) {
       // Add new product
       this.dataSource.saveProduct(product)
-        .subscribe(p => this.products.push(p));
+        .subscribe(p => {
+          this.products.push(p)
+        });
     } else {
       // Remove old version of product and insert new one
       this.dataSource.updateProduct(product)

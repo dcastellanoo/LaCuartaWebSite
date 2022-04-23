@@ -1,16 +1,12 @@
 import { Injectable } from "@angular/core";
 import { Cart } from "./cart.model";
+import { User } from "./user.model";
 
 export interface IOrder {
   id?: string
-  name?: string
-  address?: string
-  city?: string
-  state?: string
-  zip?: string
-  country?: string
-  shipped: boolean
-  cart: Cart
+  user?: User
+  shipped?: boolean
+  cart?: Cart
 }
 
 @Injectable({
@@ -19,21 +15,14 @@ export interface IOrder {
 
 export class Order {
   public id?: string;
-  public name?: string;
-  public address?: string;
-  public city?: string;
-  public state?: string;
-  public zip?: string;
-  public country?: string;
   public shipped: boolean = false;
 
-  constructor(public cart: Cart) { }
+  constructor(public user: User, public cart: Cart) { }
 
 
   clear() {
     this.id = undefined;
-    this.name = this.address = this.city = undefined;
-    this.state = this.zip = this.country = undefined;
+    // TODO this.user.clear();
     this.shipped = false;
     this.cart.clear();
   }

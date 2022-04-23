@@ -1,10 +1,11 @@
 import { Injectable } from "@angular/core";
-import { from, Observable } from "rxjs";
+import {from, Observable} from "rxjs";
 import { Product } from "./product.model";
 import { Cart } from "./cart.model";
-import {IOrder, Order} from "./order.model";
+import { Order} from "./order.model";
 import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/compat/firestore";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {waitForAsync} from "@angular/core/testing";
 
 
 @Injectable({
@@ -14,7 +15,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 export class FirebaseDatasource {
   auth_token?: string;
   productsRef: AngularFirestoreCollection<Product>;
-  ordersRef: AngularFirestoreCollection<IOrder>;
+  ordersRef: AngularFirestoreCollection<Order>;
 
   constructor(private store: AngularFirestore ) {
     console.log("Firebase datasource created");
@@ -25,8 +26,14 @@ export class FirebaseDatasource {
   /********************************** Products **********************************/
 
   saveProduct(product: Product): Observable<Product> {
-    this.productsRef.add({...product});
-    return this.productsRef.doc(product.id!).valueChanges() as Observable<Product>;
+    let productId = this.store.createId()
+
+    this.productsRef.doc(productId).set({
+      ...product
+    });
+
+    return this.productsRef.doc(productId).valueChanges() as Observable<Product>;
+
   }
 
   getProducts(): Observable<Product[]> {
@@ -48,9 +55,11 @@ export class FirebaseDatasource {
 
   saveOrder(order: Order): Observable<Order> {
     console.log("Saving order to Firebase datasource");
-    // TODO save order as nested object
-    this.ordersRef.add({...order});
-    return this.ordersRef.doc(order.id!).valueChanges() as Observable<Order>;
+    let orderId = this.store.createId()
+
+    this.ordersRef.doc(orderId).set(JSON.parse(JSON.stringify(order)));
+
+    return this.ordersRef.doc(orderId).valueChanges() as Observable<Order>;
   }
 
   getOrders(): Observable<Order[]> {
@@ -58,14 +67,11 @@ export class FirebaseDatasource {
   }
 
   updateOrder(order: Order): Observable<Order> {
-    // TODO update order as nested object
-
-    this.ordersRef.doc(order.id!).update({...order});
+    this.ordersRef.doc(order.id!).update(JSON.parse(JSON.stringify(order)));
     return this.ordersRef.doc(order.id!).valueChanges() as Observable<Order>;
   }
 
   deleteOrder(id: string): Observable<Order> {
-    // TODO delete nested order object
     this.ordersRef.doc(id).delete();
     return this.ordersRef.doc(id).valueChanges() as Observable<Order>;
   }
