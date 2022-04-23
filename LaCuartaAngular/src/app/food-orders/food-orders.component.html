@@ -70,14 +70,14 @@
 
                 <div class="pedido-quant">
                   <img src="./assets/images/icone-minus.png" width="15" height="15">
-                  <input type="text" size="1" value="0">
+                  <input #pedido_quantity type="number" name="pedido_quantity" min="1" value="1">
                   <img src="./assets/images/icone-plus.png" width="15" height="15">
+
                 </div>
 
                 <div class="btn-pedido d-none d-lg-block">
-                  <!-- TODO get quantinty of products and pass to addProductToCart -->
                   <button class="btn"
-                          (click)="addProductToCart(product)">
+                          (click)="addProductToCart(product, parseInt(pedido_quantity.value))">
                     <img src=""> Compra</button>
                 </div>
               </div>
@@ -93,3 +93,5 @@
   </div>
 
 </div>
+
+

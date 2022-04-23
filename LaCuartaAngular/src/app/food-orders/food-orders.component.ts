@@ -55,4 +55,9 @@ export class FoodOrdersComponent {
     this.cart.addLine(product, quantity);
     this.router.navigateByUrl("/carrito");
   }
+
+  // Not ideal place to be
+  parseInt(str: string) {
+    return parseInt(str);
+  }
 }
