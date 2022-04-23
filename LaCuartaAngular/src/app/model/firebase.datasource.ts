@@ -1,11 +1,12 @@
 import { Injectable } from "@angular/core";
-import {from, Observable} from "rxjs";
+import {from, Observable, of} from "rxjs";
 import { Product } from "./product.model";
 import { Cart } from "./cart.model";
 import { Order} from "./order.model";
 import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/compat/firestore";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import {waitForAsync} from "@angular/core/testing";
+import {User} from "./user.model";
 
 
 @Injectable({
@@ -28,12 +29,12 @@ export class FirebaseDatasource {
   saveProduct(product: Product): Observable<Product> {
     let productId = this.store.createId()
 
+    product.id = productId;
     this.productsRef.doc(productId).set({
       ...product
     });
 
     return this.productsRef.doc(productId).valueChanges() as Observable<Product>;
-
   }
 
   getProducts(): Observable<Product[]> {
@@ -47,8 +48,14 @@ export class FirebaseDatasource {
   }
 
   deleteProduct(id: string): Observable<Product> {
+    let product: Product = new Product(id);
+    this.productsRef.doc(id).valueChanges().subscribe((p) => {
+      product = p!;
+      }
+    );
+
     this.productsRef.doc(id).delete();
-    return this.productsRef.doc(id).valueChanges() as Observable<Product>;
+    return of(product);
   }
 
   /********************************** Orders **********************************/
@@ -56,7 +63,7 @@ export class FirebaseDatasource {
   saveOrder(order: Order): Observable<Order> {
     console.log("Saving order to Firebase datasource");
     let orderId = this.store.createId()
-
+    order.id = orderId;
     this.ordersRef.doc(orderId).set(JSON.parse(JSON.stringify(order)));
 
     return this.ordersRef.doc(orderId).valueChanges() as Observable<Order>;
@@ -72,8 +79,14 @@ export class FirebaseDatasource {
   }
 
   deleteOrder(id: string): Observable<Order> {
-    this.ordersRef.doc(id).delete();
-    return this.ordersRef.doc(id).valueChanges() as Observable<Order>;
+    // Quick fix, dummy order with correct id
+    let order: Order = new Order(new User(), new Cart());
+    order.id = id;
+    this.ordersRef.doc(id).valueChanges().subscribe((o) => {
+        order = o!;
+      }
+    );
+    return of(order);
   }
 
   /********************************** Authentication **********************************/
@@ -81,6 +94,11 @@ export class FirebaseDatasource {
   authenticate(email: string, password: string): Observable<boolean> {
     const auth = getAuth();
     let response = false;
+
+    // TODO delete only for developing
+    this.auth_token = "ADMIN_DEVELOPER";
+    return of(true);
+
     return from(signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in

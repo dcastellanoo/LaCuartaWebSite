@@ -17,7 +17,7 @@
 
   <ng-template ngFor let-o [ngForOf]="getOrders()">
     <tr>
-      <td>{{o.user.name}}</td><td>{{o.user.zip}}</td>
+      <td>{{o.user.fullName}}</td><td>{{o.user.address!.zip}}</td>
       <th>Product</th><th>Quantity</th>
       <td>
         <button class="btn btn-warning m-1" (click)="markShipped(o)">
