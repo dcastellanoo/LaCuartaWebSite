@@ -7,13 +7,14 @@ import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/compat
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import {waitForAsync} from "@angular/core/testing";
 import {User} from "./user.model";
+import {IDatasource} from "./interface.datasource";
 
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class FirebaseDatasource {
+export class FirebaseDatasource implements IDatasource {
   auth_token?: string;
   productsRef: AngularFirestoreCollection<Product>;
   ordersRef: AngularFirestoreCollection<Order>;

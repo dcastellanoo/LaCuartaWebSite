@@ -55,7 +55,7 @@ export class RestDataSource implements IDatasource {
       product, this.getOptions());
   }
 
-  deleteProduct(id: number): Observable<Product> {
+  deleteProduct(id: string): Observable<Product> {
     return this.http.delete<Product>(`${this.baseUrl}products/${id}`,
       this.getOptions());
   }
@@ -64,7 +64,7 @@ export class RestDataSource implements IDatasource {
     return this.http.get<Order[]>(this.baseUrl + "orders", this.getOptions());
   }
 
-  deleteOrder(id: number): Observable<Order> {
+  deleteOrder(id: string): Observable<Order> {
     return this.http.delete<Order>(`${this.baseUrl}orders/${id}`,
       this.getOptions());
   }

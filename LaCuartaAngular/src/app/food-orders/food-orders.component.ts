@@ -17,7 +17,9 @@ export class FoodOrdersComponent {
 
   constructor(private repository: ProductRepository,
               private cart: Cart,
-              private router: Router ) { }
+              private router: Router ) {
+    this.selectedCategory = this.categories[0];
+  }
 
   get products(): Product[] {
     let pageIndex = (this.selectedPage - 1) * this.productsPerPage;

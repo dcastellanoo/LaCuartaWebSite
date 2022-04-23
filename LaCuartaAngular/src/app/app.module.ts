@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: 'sobre-nosotros', component: AboutUsComponent },
   { path: 'carta', component: FoodMenuComponent },
   { path: 'reservas', component: ReservationsComponent},
-  { path: 'pedidos', component: PedidosComponent },
+  //{ path: 'pedidos', component: PedidosComponent },
   { path: 'carta', component: FoodMenuComponent,
     children: [
       { path: 'bebidas', component: BebidasMenuComponent },
@@ -42,7 +42,7 @@ const routes: Routes = [
     ]
     },
   { path: 'reservas', component: ReservationsComponent },
-  { path: 'pedidos2',
+  { path: 'pedidos',
     component: FoodOrdersComponent,
     children: [
     ],
