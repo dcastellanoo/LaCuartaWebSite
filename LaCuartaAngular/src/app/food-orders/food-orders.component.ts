@@ -51,8 +51,8 @@ export class FoodOrdersComponent {
       .getProducts(this.selectedCategory, "comida").length / this.productsPerPage)
   }
 
-  addProductToCart(product: Product) {
-    this.cart.addLine(product);
+  addProductToCart(product: Product, quantity: number = 1 ) {
+    this.cart.addLine(product, quantity);
     this.router.navigateByUrl("/carrito");
   }
 }
