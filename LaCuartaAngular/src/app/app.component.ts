@@ -4,6 +4,8 @@ import {Observable} from "rxjs";
 import {Product} from "./model/product.model";
 import { collection, doc, setDoc } from "firebase/firestore";
 import {map} from "rxjs/operators";
+import { getStorage, ref, uploadBytes } from "firebase/storage";
+
 
 
 @Component({
@@ -17,7 +19,15 @@ export class AppComponent {
   constructor(private store: AngularFirestore) {
     store.firestore.settings({ ignoreUndefinedProperties: true, merge: true });
 
-    //console.log("New id:", this.store.createId());
+
+    const filePath = "/assets/images/background.jpg";
+    const storage = getStorage();
+    const storageRef = ref(storage, 'images/test-image');
+    let file = new Blob() ;
+
+    uploadBytes(storageRef, file).then((snapshot) => {
+      console.log('Uploaded a file to firebase!');
+    });    //console.log("New id:", this.store.createId());
 
     /*
     let menuRef = this.store.collection("menu");
