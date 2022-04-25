@@ -15,8 +15,8 @@ export class ReservationRepository {
 
   loadReservations() {
     this.loaded = true;
-    this.dataSource.getOrders()
-      .subscribe(orders => this.orders = orders);
+    this.dataSource.getReservations()
+      .subscribe(reservations => this.reservations = reservations);
   }
 
   getReservations(): Reservation[] {
@@ -27,19 +27,19 @@ export class ReservationRepository {
   }
 
   saveReservation(reservation: Reservation): Observable<Reservation> {
-    return this.dataSource.saveOrder(order);
+    return this.dataSource.saveReservation(reservation);
   }
 
-  updateReservation(order: Order) {
-    this.dataSource.updateOrder(order).subscribe(order => {
-      this.orders.splice(this.orders.
-      findIndex(o => o.id == order.id), 1, order);
+  updateReservation(reservation: Reservation) {
+    this.dataSource.updateReservation(reservation).subscribe(reservation => {
+      this.reservations.splice(this.reservations.
+      findIndex(r => r.id == reservation.id), 1, reservation);
     });
   }
 
   deleteReservation(id: string) {
-    this.dataSource.deleteOrder(id).subscribe(order => {
-      this.orders.splice(this.orders.findIndex(o => id == o.id), 1);
+    this.dataSource.deleteReservation(id).subscribe(r => {
+      this.reservations.splice(this.reservations.findIndex(r => id == r.id), 1);
     });
   }
 }

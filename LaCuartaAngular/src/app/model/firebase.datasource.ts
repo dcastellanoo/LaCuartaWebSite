@@ -8,6 +8,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import {waitForAsync} from "@angular/core/testing";
 import {User} from "./user.model";
 import {IDatasource} from "./interface.datasource";
+import {Reservation} from "./reservation.model";
 
 
 @Injectable({
@@ -18,11 +19,13 @@ export class FirebaseDatasource implements IDatasource {
   auth_token?: string;
   productsRef: AngularFirestoreCollection<Product>;
   ordersRef: AngularFirestoreCollection<Order>;
+  reservationRef: AngularFirestoreCollection<Reservation>;
 
   constructor(private store: AngularFirestore ) {
     console.log("Firebase datasource created");
     this.productsRef = store.collection("menu");
     this.ordersRef = store.collection("orders");
+    this.reservationRef = store.collection("reservations");
   }
 
   /********************************** Products **********************************/
@@ -88,6 +91,37 @@ export class FirebaseDatasource implements IDatasource {
       }
     );
     return of(order);
+  }
+
+  /********************************** Reservations **********************************/
+
+  saveReservation(reservation: Reservation): Observable<Reservation> {
+    console.log("Saving reservations to Firebase datasource");
+    let reservationId = this.store.createId()
+    reservation.id = reservationId;
+    this.reservationRef.doc(reservationId).set(JSON.parse(JSON.stringify(reservation)));
+
+    return this.reservationRef.doc(reservationId).valueChanges() as Observable<Reservation>;
+  }
+
+  getReservations(): Observable<Reservation[]> {
+    return this.reservationRef.valueChanges({idField: "id"}) as Observable<Reservation[]>;
+  }
+
+  updateReservation(reservation: Reservation): Observable<Reservation> {
+    this.reservationRef.doc(reservation.id!).update(JSON.parse(JSON.stringify(reservation)));
+    return this.reservationRef.doc(reservation.id!).valueChanges() as Observable<Reservation>;
+  }
+
+  deleteReservation(id: string): Observable<Reservation> {
+    // Quick fix, dummy reservation with correct id
+    let reservation: Reservation = new Reservation(new User());
+    reservation.id = id;
+    this.reservationRef.doc(id).valueChanges().subscribe((r) => {
+        reservation = r!;
+      }
+    );
+    return of(reservation);
   }
 
   /********************************** Authentication **********************************/
