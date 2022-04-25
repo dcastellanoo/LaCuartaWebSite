@@ -27,6 +27,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { FoodOrdersFirstGuard } from "./foodOrdersFirst.guard";
 import { BebidasMenuComponent } from './bebidas-menu/bebidas-menu.component';
 import { VinosMenuComponent } from './vinos-menu/vinos-menu.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 
 const routes: Routes = [
@@ -90,7 +92,10 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
