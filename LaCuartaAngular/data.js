@@ -27,14 +27,14 @@ module.exports = function () {
   }
 }          */
 
-const bebidas = require("../src/assets/json/bebidas.json");
-const vinos = require("../src/assets/json/vinos.json");
-const comidas = require("../src/assets/json/carta_comida.json");
+const bebidas = require("./src/assets/json/bebidas.json");
+const vinos = require("./src/assets/json/vinos.json");
+const comidas = require("./src/assets/json/carta_comida.json");
 module.exports = () => ({
   bebidas,
   vinos,
   comidas,
-  products: require("../src/assets/json/menu.json"),
+  products: require("./src/assets/json/menu.json"),
   orders: [],
 
 });
