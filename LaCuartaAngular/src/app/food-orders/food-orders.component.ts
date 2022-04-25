@@ -12,22 +12,22 @@ import {Router} from "@angular/router";
 
 export class FoodOrdersComponent {
   public selectedCategory?: string;
-  public productsPerPage = 4;
-  public selectedPage = 1;
+  //public productsPerPage = 4;
+  //public selectedPage = 1;
 
   constructor(private repository: ProductRepository,
               private cart: Cart,
               private router: Router ) {
     this.selectedCategory = this.categories[0];
-    this.repository.getProducts("Postres", "comida");
   }
 
   get products(): Product[] {
-    let pageIndex = (this.selectedPage - 1) * this.productsPerPage;
+    //let pageIndex = (this.selectedPage - 1) * this.productsPerPage;
 
     let food: Product[] = this.repository.getProducts(this.selectedCategory, "comida");
 
-    return food.slice(pageIndex, pageIndex + this.productsPerPage);
+    return food;
+    //return food.slice(pageIndex, pageIndex + this.productsPerPage);
   }
 
   get categories(): string[] {
@@ -38,6 +38,7 @@ export class FoodOrdersComponent {
     this.selectedCategory = newCategory;
   }
 
+  /*
   changePage(newPage: number) {
     this.selectedPage = newPage;
   }
@@ -50,7 +51,7 @@ export class FoodOrdersComponent {
   get pageCount(): number {
     return Math.ceil(this.repository
       .getProducts(this.selectedCategory, "comida").length / this.productsPerPage)
-  }
+  }      */
 
   addProductToCart(product: Product, quantity: number = 1 ) {
     this.cart.addLine(product, quantity);

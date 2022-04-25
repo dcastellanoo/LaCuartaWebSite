@@ -1,5 +1,4 @@
 {
-
   "restaurant-time-info": {
     "monday": [],
     "tuesday":[
@@ -38,7 +37,7 @@
       {
         "open":"20:15:00",
         "close":"24:00:00"
-      },
+      }
     ],
     "sunday":[
       {
