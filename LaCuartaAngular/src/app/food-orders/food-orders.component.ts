@@ -19,7 +19,6 @@ export class FoodOrdersComponent {
               private cart: Cart,
               private router: Router ) {
     this.selectedCategory = this.categories[0];
-    this.repository.getProducts("Postres", "comida");
   }
 
   get products(): Product[] {

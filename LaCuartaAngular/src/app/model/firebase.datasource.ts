@@ -15,6 +15,7 @@ import {Reservation} from "./reservation.model";
   providedIn: 'root'
 })
 
+// TODO save and load images from Firebase
 export class FirebaseDatasource implements IDatasource {
   auth_token?: string;
   productsRef: AngularFirestoreCollection<Product>;
