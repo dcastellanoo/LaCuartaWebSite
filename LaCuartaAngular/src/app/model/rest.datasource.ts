@@ -6,15 +6,18 @@ import { Cart } from "./cart.model";
 import { Order } from "./order.model";
 import { map } from "rxjs/operators";
 import { HttpHeaders } from '@angular/common/http';
+import {IDatasource} from "./interface.datasource";
+
 
 const PROTOCOL = "http";
 const PORT = 3500;
+
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class RestDataSource {
+export class RestDataSource implements IDatasource {
   baseUrl: string;
   auth_token?: string;
 
@@ -25,7 +28,7 @@ export class RestDataSource {
 
   getProducts(): Observable<Product[]> {
     console.log("Reading products from rest datasource");
-    return this.http.get<Product[]>(this.baseUrl + "products");
+    return this.http.get<Product[]>(this.baseUrl + "products");;
   }
 
   saveOrder(order: Order): Observable<Order> {
@@ -52,7 +55,7 @@ export class RestDataSource {
       product, this.getOptions());
   }
 
-  deleteProduct(id: number): Observable<Product> {
+  deleteProduct(id: string): Observable<Product> {
     return this.http.delete<Product>(`${this.baseUrl}products/${id}`,
       this.getOptions());
   }
@@ -61,7 +64,7 @@ export class RestDataSource {
     return this.http.get<Order[]>(this.baseUrl + "orders", this.getOptions());
   }
 
-  deleteOrder(id: number): Observable<Order> {
+  deleteOrder(id: string): Observable<Order> {
     return this.http.delete<Order>(`${this.baseUrl}orders/${id}`,
       this.getOptions());
   }

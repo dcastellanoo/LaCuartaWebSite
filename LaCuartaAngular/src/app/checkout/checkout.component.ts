@@ -18,6 +18,7 @@ export class CheckoutComponent {
     this.submitted = true;
     if (form.valid) {
       this.repository.saveOrder(this.order).subscribe(order => {
+        console.log("Saved order:", order);
         this.order.clear();
         this.orderSent = true;
         this.submitted = false;

@@ -1,3 +1,4 @@
+/*
 module.exports = function () {
   return {
     products: [
@@ -24,4 +25,16 @@ module.exports = function () {
     ],
     orders: []
   }
-}
+}          */
+
+const bebidas = require("./src/assets/json/bebidas.json");
+const vinos = require("./src/assets/json/vinos.json");
+const comidas = require("./src/assets/json/carta_comida.json");
+module.exports = () => ({
+  bebidas,
+  vinos,
+  comidas,
+  products: require("./src/assets/json/menu.json"),
+  orders: [],
+
+});

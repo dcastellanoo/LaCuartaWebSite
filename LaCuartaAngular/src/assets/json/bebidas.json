@@ -1,22 +1,26 @@
 [
   {
-    "type": "Refrescos",
+    "id": 1,
+    "category": "Refrescos",
     "name": "Fanta de naranja",
-    "price": "0.95 €"
+    "price": 0.95
   },
   {
-    "type": "Refrescos",
+    "id": 2,
+    "category": "Refrescos",
     "name": "Clipper de fresa",
-    "price": "0.95 €"
+    "price": 0.95
   },
   {
-    "type": "Cervezas",
+    "id": 3,
+    "category": "Cervezas",
     "name": "Tropical",
-    "price": "1.10 €"
+    "price": 1.10
   },
   {
-    "type": "Cervezas",
+    "id": 4,
+    "category": "Cervezas",
     "name": "Dorada Especial",
-    "price": "1.20 €"
+    "price": 1.20
   }
 ]

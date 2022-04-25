@@ -1,26 +1,26 @@
 [
   {
-    "type": "Vino Tinto",
+    "category": "Vino Tinto",
     "name": "El Marqués de Atrio",
-    "price": "22.50 €",
+    "price": 22.50,
     "origen": "Crianza de 2016 de la Denominación de Origen La Rioja"
   },
   {
-    "type": "Vino Tinto",
+    "category": "Vino Tinto",
     "name": "Pies Negros",
-    "price": "17.25 €",
+    "price": 17.25,
     "origen": "Crianza de 2016 de la Denominación de Origen La Rioja"
   },
   {
-    "type": "Vino Blanco",
+    "category": "Vino Blanco",
     "name": "Malvasía",
-    "price": "35.00 €",
+    "price": 35.00,
     "origen": "Vino blanco malvasía seco de una de las Bodegas más reputadas de Lanzarote"
   },
   {
-    "type": "Vino Blanco",
+    "category": "Vino Blanco",
     "name": "Yaiza",
-    "price": "25.00 €",
+    "price": 25.00,
     "origen": "Esencia de Yaiza es la expresión genuina de la viticultura artesanal de Lanzarote"
   }
 ]

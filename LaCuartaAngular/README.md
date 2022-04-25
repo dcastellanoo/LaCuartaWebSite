@@ -6,12 +6,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
+## La Cuarta Admin
+Navigate to `http://localhost:4200/admin`. Use name `admin@admin.es` and password `secret`.
+
 ## Run JSON server
 
 Run `npm run json` for a JSON server. Navigate to `http://localhost:3500/db`
-
-## La Cuarta Admin
-Navigate to `http://localhost:4200/admin`. Use name `admin` and password `secret`.
 
 ## Code scaffolding
 

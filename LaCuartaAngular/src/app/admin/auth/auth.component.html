@@ -8,7 +8,7 @@
 </div>
 
 <div class="p-2">
-  <form novalidate #form="ngForm" (ngSubmit)="authenticate(form)">
+  <form novalidate #form="ngForm" (ngSubmit)="login(form)">
     <div class="form-group">
       <label>Name</label>
       <input class="form-control" name="username"
@@ -21,7 +21,7 @@
              [(ngModel)]="password" required />
     </div>
     <div class="text-center">
-      <button class="btn btn-secondary m-1" routerLink="/">Go back</button>
+      <!-- <button class="btn btn-secondary m-1" routerLink="/">Go back</button> -->
       <button class="btn btn-primary m-1" type="submit">Log In</button>
     </div>
   </form>

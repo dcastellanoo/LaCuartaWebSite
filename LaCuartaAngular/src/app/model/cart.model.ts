@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Product } from "./product.model";
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -26,7 +27,7 @@ export class Cart {
     }
     this.recalculate();
   }
-  removeLine(id: number) {
+  removeLine(id: string) {
     let index = this.lines.findIndex(line => line.product.id == id);
     this.lines.splice(index, 1);
     this.recalculate();

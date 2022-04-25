@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from "@angular/common/http";
+import { environment } from "../environments/environment";
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 
 //Firebase configuration
 
@@ -39,6 +42,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
 import { FoodOrdersComponent } from './food-orders/food-orders.component';
 import { TodoPdfComponent } from './todo-pdf/todo-pdf.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
 import { FoodOrdersModule } from "./food-orders/food-orders.module";
 import { CartSummaryComponent } from "./cart-summary/cart-summary.component";
 import { CartDetailComponent } from './cart-detail/cart-detail.component';
@@ -51,6 +55,9 @@ import { VinosMenuComponent } from './vinos-menu/vinos-menu.component';
 const routes: Routes = [
   { path: '', component: HomePageComponent, pathMatch: 'full' },
   { path: 'sobre-nosotros', component: AboutUsComponent },
+  { path: 'carta', component: FoodMenuComponent },
+  { path: 'reservas', component: ReservationsComponent},
+  //{ path: 'pedidos', component: PedidosComponent },
   { path: 'carta', component: FoodMenuComponent,
     children: [
       { path: 'bebidas', component: BebidasMenuComponent },
@@ -95,6 +102,7 @@ const routes: Routes = [
     ContactComponent,
     FoodMenuComponent,
     TodoPdfComponent,
+    PedidosComponent,
     BebidasMenuComponent,
     VinosMenuComponent,
   ],
@@ -103,7 +111,9 @@ const routes: Routes = [
     AppRoutingModule,
     NgbModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
