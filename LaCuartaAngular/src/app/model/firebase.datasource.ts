@@ -131,10 +131,6 @@ export class FirebaseDatasource implements IDatasource {
     const auth = getAuth();
     let response = false;
 
-    // TODO delete only for developing
-    this.auth_token = "ADMIN_DEVELOPER";
-    return of(true);
-
     return from(signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
