@@ -1,11 +1,11 @@
 import {User} from "./user.model";
 
-enum EDayPeriod {
+export enum EDayPeriod {
   Lunch,
   Dinner,
 }
 
-enum EPlace {
+export enum EPlace {
   DinningHall,
   Terrace
 }
