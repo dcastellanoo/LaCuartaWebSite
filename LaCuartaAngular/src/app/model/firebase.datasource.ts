@@ -44,7 +44,7 @@ export class FirebaseDatasource implements IDatasource {
 
   getProducts(): Observable<Product[]> {
     console.log("Reading products from Firebase datasource");
-    return this.productsRef.valueChanges({idField: "id"}) as Observable<Product[]>;
+    return this.productsRef.valueChanges({idField: "id"});
   }
 
   updateProduct(product: Product): Observable<Product> {
