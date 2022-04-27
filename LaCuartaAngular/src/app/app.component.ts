@@ -18,17 +18,6 @@ export class AppComponent {
 
   constructor(private store: AngularFirestore) {
     store.firestore.settings({ ignoreUndefinedProperties: true, merge: true });
-
-
-    const filePath = "/assets/images/background.jpg";
-    const storage = getStorage();
-    const storageRef = ref(storage, 'images/test-image');
-    let file = new Blob() ;
-
-    uploadBytes(storageRef, file).then((snapshot) => {
-      console.log('Uploaded a file to firebase!');
-    });    //console.log("New id:", this.store.createId());
-
     /*
     let menuRef = this.store.collection("menu");
     let products: Product[];

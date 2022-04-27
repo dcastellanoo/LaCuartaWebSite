@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {ReservationRepository} from "../model/reservation.repository";
+import {Router, RouterLink} from "@angular/router";
+import {EDayPeriod, Reservation} from "../model/reservation.model";
+import {User} from "../model/user.model";
 
 @Component({
   selector: 'app-reservations',
@@ -11,15 +14,20 @@ export class ReservationsComponent implements OnInit {
   reservas1 = this.fb.group({
     num_adults : 2,
     num_children: 0,
-    datepicker: [''],
-    horario: [''],
+    datepicker: Date,
+    horario: EDayPeriod,
   });
   people = this.reservas1.get('num_adults')?.value + this.reservas1.get('num_children')?.value;
+  reserva: Reservation;
+  client: User;
 
   constructor(
     private fb: FormBuilder,
+    private router: Router,
     private repository: ReservationRepository,
   ) {
+    this.client = new User();
+    this.reserva = new Reservation(this.client);
   }
 
   ngOnInit(): void {
@@ -28,6 +36,10 @@ export class ReservationsComponent implements OnInit {
   onSubmitReservas1() {
     console.log(this.reservas1.value);
     console.log(this.people);
+    this.router.navigate(['/reservas2'])
+
+    this.reserva.numAdults = this.reservas1.get('num_adults')?.value;
+    this.reserva.numChilds = this.reservas1.get('num_children')?.value;
   }
 
   dec_num_adultos() {

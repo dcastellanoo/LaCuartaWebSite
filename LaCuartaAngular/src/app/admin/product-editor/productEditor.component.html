@@ -3,10 +3,10 @@
   <h5>{{editing ? "Edit" : "Create"}} Product</h5>
 </div>
 
-<form novalidate #form="ngForm" (ngSubmit)="save(form)">
+<form ngNativeValidate #form="ngForm" (ngSubmit)="save(form)">
   <div class="form-group">
     <label>Name</label>
-    <input class="form-control" name="name" [(ngModel)]="product.name" />
+    <input class="form-control" name="name" [(ngModel)]="product.name" required/>
   </div>
 
   <div class="form-group">
@@ -31,6 +31,20 @@
     <label>Price</label>
     <input class="form-control" name="price" [(ngModel)]="product.price" />
   </div>
+
+  <div class="form-group">
+    <label>Allergens</label>
+    <input class="form-control" name="allergens" [(ngModel)]="product.allergens" />
+  </div>
+
+  <div class="form-group">
+    <label>Image</label>
+    <span *ngIf="product.url!">
+      <img [src]="product.url" alt="Product image.">
+    </span>  <br>
+    <app-upload-form (newUploadEvent)="addImageToProduct($event)"></app-upload-form>
+  </div>
+
   <button type="submit" class="btn btn-primary m-1"
           [class.btn-warning]="editing">
     {{editing ? "Save" : "Create"}}
