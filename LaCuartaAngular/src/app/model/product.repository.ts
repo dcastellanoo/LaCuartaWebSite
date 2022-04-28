@@ -36,7 +36,7 @@ export class ProductRepository {
   /**
    * Get products by category or type
    * @param category
-   * @param type
+   * @param type 'comida'|'bebida'|'vino'
    */
   getProducts(category?: string, type?: string): Product[] {
     if ( category )

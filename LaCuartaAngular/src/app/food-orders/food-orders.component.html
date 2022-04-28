@@ -47,9 +47,9 @@
               </div>
             </div>
 
-            <div *ngFor="let product of products">
+            <div class="col-3 pedido" *ngFor="let product of products">
 
-              <div class="col-3 pedido">
+              <!-- <div class="col-3 pedido"> -->
                 <div class="d-none d-lg-block">
                   <img [src]="product.url" class="pedido_image">
                 </div>
@@ -78,9 +78,9 @@
                 <div class="btn-pedido d-none d-lg-block">
                   <button class="btn"
                           (click)="addProductToCart(product, parseInt(pedido_quantity.value))">
-                    <img src=""> Compra</button>
+                    <img src="/assets/images/icone-cart.png" width="15" height="15"> Compra</button>
                 </div>
-              </div>
+              <!-- </div> -->
             </div>
           </div>
 

@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { NgForm } from "@angular/forms";
 import { Product } from "../../model/product.model";
 import { ProductRepository } from "../../model/product.repository";
+import {FileUpload} from "../../model/file-upload.model";
 
 @Component({
   templateUrl: "productEditor.component.html"
@@ -23,7 +24,12 @@ export class ProductEditorComponent {
     }
   }
   save(form: NgForm) {
+    console.log("Before save:", this.product)
     this.repository.saveProduct(this.product);
     this.router.navigateByUrl("/admin/main/products");
+  }
+
+  addImageToProduct(imageUrl: string) {
+    this.product.url = imageUrl;
   }
 }

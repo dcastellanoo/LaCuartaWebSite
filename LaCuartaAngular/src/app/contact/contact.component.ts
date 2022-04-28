@@ -5,6 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
+
+// TODO load opening-hours from JSON
 export class ContactComponent implements OnInit {
 
   constructor() { }

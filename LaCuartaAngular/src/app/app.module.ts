@@ -5,6 +5,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { environment } from "../environments/environment";
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
+
 
 //Firebase configuration
 
@@ -50,7 +53,9 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { FoodOrdersFirstGuard } from "./foodOrdersFirst.guard";
 import { BebidasMenuComponent } from './bebidas-menu/bebidas-menu.component';
 import { VinosMenuComponent } from './vinos-menu/vinos-menu.component';
-
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { Reservations2Component } from './reservations2/reservations2.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent, pathMatch: 'full' },
@@ -64,7 +69,8 @@ const routes: Routes = [
       { path: 'vinos', component: VinosMenuComponent }
     ]
     },
-  { path: 'reservas', component: ReservationsComponent },
+  { path: 'reservas', component: ReservationsComponent},
+  { path: 'reservas2', component: Reservations2Component},
   { path: 'pedidos',
     component: FoodOrdersComponent,
     children: [
@@ -105,6 +111,7 @@ const routes: Routes = [
     PedidosComponent,
     BebidasMenuComponent,
     VinosMenuComponent,
+    Reservations2Component,
   ],
   imports: [
     BrowserModule,
@@ -113,7 +120,12 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

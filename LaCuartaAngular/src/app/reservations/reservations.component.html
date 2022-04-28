@@ -1,1 +1,60 @@
-<p>reservations works!</p>
+<article class="reservas container-fluid d-flex justify-content-center py-5">
+  <form [formGroup]="reservas1" (ngSubmit)="onSubmitReservas1()" class="text-center">
+    <div class="formTable">
+      <div class="row pt-5 py-md-4">
+        <div class="col-md-6">
+          <fieldset>
+            <legend>Adultos</legend>
+            <div class="counter">
+              <input type="button" class="buttonMinus" value="-" (click)="dec_num_adultos()"/>
+              <input type="number" class="text-center border-0 counterValue" value="2" min="1" formControlName="num_adults" readonly/>
+              <input type="button" class="buttonPlus" value="+" (click)="inc_num_adultos()"/>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="col-md-6">
+          <fieldset class="py-3 p-md-0">
+            <legend>Niños</legend>
+
+            <div class="counter">
+              <input type="button" class="buttonMinus" value="-" (click)="dec_num_children()"/>
+              <input type="number" class="text-center border-0 counterValue" value="0" formControlName="num_children" readonly />
+              <input type="button" class="buttonPlus" value="+" (click)="inc_num_children()"/>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
+      <div class="row d-inline-block py-5">
+        <fieldset class="">
+          <legend class="pb-2">Fecha</legend>
+
+
+          <ngb-datepicker formControlName="datepicker"></ngb-datepicker>
+
+        </fieldset>
+      </div>
+
+      <div class="row text-align:center py-4">
+        <fieldset class="">
+          <legend class="pb-2">Horario</legend>
+
+          <mat-button-toggle-group formControlName="horario" value="almuerzo">
+            <mat-button-toggle value="almuerzo" class="text-center p-1 d-inline-block me-md-3">
+              <strong>ALMUERZO</strong> <br>
+              13:00 - 16:30
+            </mat-button-toggle>
+            <mat-button-toggle value="cena" class="text-center p-1 d-inline-block me-md-3">
+              <strong>CENA</strong>  <br>
+              <p>20:15 - 24:00</p>
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+        </fieldset>
+      </div>
+      <div class="pb-4">
+        <input id="button_next" type="submit" class="button mt-5" value="Continuar">
+      </div>
+    </div>
+  </form>
+</article>

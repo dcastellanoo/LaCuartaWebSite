@@ -14,7 +14,10 @@ export class AuthComponent {
   public password?: string;
   public errorMessage?: string;
 
-  constructor(private router: Router, private auth: AuthService) {}
+  constructor(private router: Router, private auth: AuthService) {
+    this.username = "admin@admin.es";
+    this.password = "secret";
+  }
 
   login(form: NgForm) {
     if (form.valid) {
