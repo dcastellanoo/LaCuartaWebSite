@@ -39,7 +39,6 @@ export class FileUploadService {
       ref.limitToLast(numFiles)
     );                          */
     return this.uploadsRef.valueChanges({idField: "key"});
-
   }
 
   deleteFile(fileUpload: FileUpload): void {

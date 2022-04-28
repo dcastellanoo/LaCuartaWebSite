@@ -9,6 +9,28 @@
       <div class="text_contact">Contacto</div>
     </div>
 
+
+    <!--
+   <div class="col-lg-6 col-12 text-center text_hor">
+     <div class="row-sm-12">
+       <h1 class="text_title_hor">Horario</h1>
+     </div>
+
+
+     <div class="row text_body_hor" *ngFor="let item of this.opening_hours | keyvalue">
+       <div class="col">
+         <p>{{item.key}}</p>
+       </div>
+       <div class="col">
+         {{item.value}}
+         <p *ngFor="let timeSlot of item.value">
+           {{timeSlot}}
+         </p>
+       </div>
+     </div>
+   </div>
+   -->
+
     <div class="col-lg-6 col-12 text-center text_hor">
       <div class="row-sm-12">
         <h1 class="text_title_hor">Horario</h1>
@@ -94,7 +116,7 @@
         <figure class="col-2 margin_telephone">
           <img src="./assets/images/telephone.png" class="size_img_logo_telephone" alt="Telephone pic.">
         </figure>
-        <p class="col margin_number">(+34) 630 13 23 25</p>
+        <p class="col margin_number">{{this.phone}}</p>
       </div>
     </div>
 
@@ -103,7 +125,7 @@
         <figure class="col-2 margin_ubi">
           <img src="./assets/images/location.png" class="size_img_logo_ubi" alt="Location pic.">
         </figure>
-        <p class="col margin_dir">Pl. de Santiago, 9, Gáldar, Las Palmas</p>
+        <p class="col margin_dir">{{this.address}}</p>
       </div>
     </div>
   </div>

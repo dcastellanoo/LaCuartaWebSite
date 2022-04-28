@@ -9,6 +9,8 @@ import {waitForAsync} from "@angular/core/testing";
 import {User} from "./user.model";
 import {IDatasource} from "./interface.datasource";
 import {Reservation} from "./reservation.model";
+import {IFileUpload} from "./file-upload.model";
+import {map} from "rxjs/operators";
 
 
 @Injectable({
@@ -21,12 +23,16 @@ export class FirebaseDatasource implements IDatasource {
   productsRef: AngularFirestoreCollection<Product>;
   ordersRef: AngularFirestoreCollection<Order>;
   reservationRef: AngularFirestoreCollection<Reservation>;
+  uploadsRef: AngularFirestoreCollection<IFileUpload>;
+  restaurantRef: AngularFirestoreCollection<any>;
 
   constructor(private store: AngularFirestore ) {
     console.log("Firebase datasource created");
     this.productsRef = store.collection("menu");
     this.ordersRef = store.collection("orders");
     this.reservationRef = store.collection("reservations");
+    this.uploadsRef = store.collection("uploads");
+    this.restaurantRef = store.collection("restaurant");
   }
 
   /********************************** Products **********************************/
@@ -124,6 +130,29 @@ export class FirebaseDatasource implements IDatasource {
     );
     return of(reservation);
   }
+
+  /********************************** Firebase Storage **********************************/
+  restaurantJSON(): Observable<any>  {
+    /*
+    const collection = this.store.collection<IFileUpload>(
+      'uploads',
+        ref => ref.where('name', '==', "restaurant.json"))
+
+    const uploads = collection
+      .valueChanges()
+      .pipe(
+        map( upload => {
+          const restaurantDoc = upload[0];
+          return restaurantDoc;
+        })
+      );
+    return uploads;
+
+     */
+
+    return this.restaurantRef.valueChanges({idField: "key"})
+  }
+
 
   /********************************** Authentication **********************************/
   // TODO maybe move to separate file
