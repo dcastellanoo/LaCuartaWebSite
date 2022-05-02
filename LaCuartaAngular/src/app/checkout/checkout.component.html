@@ -1,10 +1,3 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col bg-dark text-white">
-      <a class="navbar-brand">La Cuarta</a>
-    </div>
-  </div>
-</div>
 
 <div *ngIf="orderSent" class="m-2 text-center">
   <h2>Thanks!</h2>
@@ -15,65 +8,123 @@
   </button>
 </div>
 
-<form *ngIf="!orderSent" #form="ngForm" novalidate
-      (ngSubmit)="submitOrder(form)" class="m-2">
+<div class="container">
+  <div class="row">
 
-  <div class="form-group">
-    <label>Name</label>
-    <input class="form-control" #name="ngModel" name="name"
-           [(ngModel)]="order.user.fullName" required />
-    <span *ngIf="submitted && name.invalid" class="text-danger">
-      Please enter your name
-    </span>
+    <div class="col-12 d-lg-none">
+      <div class="text-center" style="font-size: 40pt;margin-top: 20px;">
+        Procesar Pago
+      </div>
+    </div>
+
+    <form *ngIf="!orderSent" #form="ngForm" novalidate
+            (ngSubmit)="submitOrder(form)" class="m-2">
+
+      <div class="row orders-main mx-auto">
+
+        <div class="col-md-12">
+          <div class="form-group">
+            <input class="form-control" #name="ngModel" name="name"
+                   [(ngModel)]="order.user.fullName" required placeholder="Nombre" />
+            <span *ngIf="submitted && name.invalid" class="text-danger">
+              Por favor entra con su nombre
+            </span>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-group">
+            <input class="form-control" #email="ngModel" name="email"
+                   [(ngModel)]="order.user.email" required placeholder="Correo electrónico" />
+            <span *ngIf="submitted && email.invalid" class="text-danger">
+              Por favor entra con su coreo eletrónico
+            </span>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <img src="./assets/images/flag_spain.png"> &nbsp; +34
+              </span>
+            </div>
+            <input class="form-control" #phoneNumber="ngModel" name="phoneNumber"
+                   [(ngModel)]="order.user.phoneNumber" required placeholder="Número de teléfono" />
+            <div class="col-12"><span *ngIf="submitted && phoneNumber.invalid" class="text-danger">
+              Por favor entra con su número de teléfono
+            </span></div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-group">
+            <label class="lab">Número de tarjeta</label>
+            <input class="form-control" #numTarjeta="ngModel" name="numTarjeta" minlength="16" maxlength="16"
+                   [(ngModel)]="order.user.numTarjeta" required placeholder="Número de tarjeta" />
+            <span *ngIf="submitted && numTarjeta.invalid" class="text-danger">
+              Por favor entra con su número de tarjeta correcto
+            </span>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="form-group">
+            <label class="lab">Fecha de expiración</label>
+            <input class="form-control" #fechaExpiracion="ngModel" name="fechaExpiracion" minlength="5" maxlength="5" 
+                   [(ngModel)]="order.user.fechaExpiracion" required placeholder="MM / AA" />
+            <span *ngIf="submitted && fechaExpiracion.invalid" class="text-danger">
+              Por favor entra con la fecha expiracion
+            </span>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="form-group">
+            <label class="lab">CVC / CVV</label>
+            <input class="form-control" #cvv="ngModel" name="cvv" minlength="3" maxlength="3"
+                   [(ngModel)]="order.user.cvv" required placeholder="xxx" />
+            <span *ngIf="submitted && cvv.invalid" class="text-danger">
+              Por favor entra con el cvc/cvv
+            </span>
+          </div>
+        </div>
+          
+        <div class="col-12">
+          <div class="form-group">
+            <input class="form-control" #coment="ngModel" name="coment"
+                   [(ngModel)]="order.user.address!.country" placeholder="Comentarios acerca del pedido" />
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-group config">
+            <label class="lab">
+              <input type="checkbox" name="" class="form-check-input mt-0" required>&nbsp; Acepto las Condiciones de Uso y la Política de Privacidad
+            </label>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-group config">
+            <label class="lab">
+              <input type="checkbox" name="" class="form-check-input mt-0" required>&nbsp; Recordarme para la próxima reserva
+            </label>
+          </div>
+        </div>
+
+        
+        <div class="col-12">
+          <div class="float-start">
+            <button class="btn" routerLink="/carrito">Mi Pedido</button>
+          </div>
+          <div class="float-end">
+            <button class="btn" type="submit">Processar Pago</button>
+          </div>
+        </div>
+
+      </div>
+    </form>
   </div>
 
-  <div class="form-group">
-    <label>Address</label>
-    <input class="form-control" #address="ngModel" name="address"
-           [(ngModel)]="order.user.address!.address" required />
-    <span *ngIf="submitted && address.invalid" class="text-danger">
-      Please enter your address
-    </span>
-  </div>
-
-  <div class="form-group">
-    <label>City</label>
-    <input class="form-control" #city="ngModel" name="city"
-           [(ngModel)]="order.user.address!.city" required />
-    <span *ngIf="submitted && city.invalid" class="text-danger">
-      Please enter your city
-    </span>
-
-  </div>
-  <div class="form-group">
-    <label>State</label>
-    <input class="form-control" #state="ngModel" name="state"
-           [(ngModel)]="order.user.address!.state" required />
-    <span *ngIf="submitted && state.invalid" class="text-danger">
-      Please enter your state
-    </span>
-  </div>
-
-  <div class="form-group">
-    <label>Zip/Postal Code</label>
-    <input class="form-control" #zip="ngModel" name="zip"
-           [(ngModel)]="order.user.address!.zip" required />
-    <span *ngIf="submitted && zip.invalid" class="text-danger">
-      Please enter your zip/postal code
-    </span>
-  </div>
-
-  <div class="form-group">
-    <label>Country</label>
-    <input class="form-control" #country="ngModel" name="country"
-           [(ngModel)]="order.user.address!.country" required />
-    <span *ngIf="submitted && country.invalid" class="text-danger">
-      Please enter your country
-    </span>
-  </div>
-
-  <div class="text-center">
-    <button class="btn btn-secondary m-1" routerLink="/cart">Back</button>
-    <button class="btn btn-primary m-1" type="submit">Complete Order</button>
-  </div>
-</form>
+</div>
