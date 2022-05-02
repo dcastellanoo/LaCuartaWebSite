@@ -8,6 +8,9 @@ export class User {
   public address?: Address = new Address();
   public email?: string;
   public phoneNumber?: PhoneNumber;
+  public numTarjeta?: string;
+  public fechaExpiracion?: string;
+  public cvv?: string;
 
   constructor( ) { }
 }
