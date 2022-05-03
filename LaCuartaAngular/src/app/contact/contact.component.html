@@ -9,28 +9,38 @@
       <div class="text_contact">Contacto</div>
     </div>
 
+     <div class="col-lg-6 col-12 text-center text_hor">
+       <div class="row-sm-12">
+         <h1 class="text_title_hor">Horario</h1>
+       </div>
+
+
+       <div *ngFor='let day of this.week' class="row text_body_hor">
+         <div class="col">
+           <p>{{day[1]}}</p>
+         </div>
+
+         <div class="col">
+           <ng-container *ngIf="!!this.opening_hours && this.opening_hours[day[0]].length > 0; then openTemplate else closeTemplate"></ng-container>
+         </div>
+
+         <ng-template #openTemplate>
+           <div *ngFor="let timeSlot of this.opening_hours[day[0]]">
+             <p>
+               {{timeSlot["open"].split(":").slice(0, -1).join(":")}}
+               -
+               {{timeSlot["close"].split(":").slice(0, -1).join(":")}}
+             </p>
+           </div>
+         </ng-template>
+
+         <ng-template #closeTemplate>
+           <p>cerrado</p>
+         </ng-template>
+       </div>
+     </div>
 
     <!--
-   <div class="col-lg-6 col-12 text-center text_hor">
-     <div class="row-sm-12">
-       <h1 class="text_title_hor">Horario</h1>
-     </div>
-
-
-     <div class="row text_body_hor" *ngFor="let item of this.opening_hours | keyvalue">
-       <div class="col">
-         <p>{{item.key}}</p>
-       </div>
-       <div class="col">
-         {{item.value}}
-         <p *ngFor="let timeSlot of item.value">
-           {{timeSlot}}
-         </p>
-       </div>
-     </div>
-   </div>
-   -->
-
     <div class="col-lg-6 col-12 text-center text_hor">
       <div class="row-sm-12">
         <h1 class="text_title_hor">Horario</h1>
@@ -100,6 +110,8 @@
         </div>
       </div>
     </div>
+
+    -->
 
 
     <div class="col-lg-6 col-12 margin_img_ubi">
