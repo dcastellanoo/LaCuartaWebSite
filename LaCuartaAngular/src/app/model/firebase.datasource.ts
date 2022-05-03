@@ -122,7 +122,7 @@ export class FirebaseDatasource implements IDatasource {
 
   deleteReservation(id: string): Observable<Reservation> {
     // Quick fix, dummy reservation with correct id
-    let reservation: Reservation = new Reservation(new User());
+    let reservation: Reservation = new Reservation();
     reservation.id = id;
     this.reservationRef.doc(id).valueChanges().subscribe((r) => {
         reservation = r!;

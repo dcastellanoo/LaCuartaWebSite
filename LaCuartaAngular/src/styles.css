@@ -304,3 +304,6 @@ body {
     padding: 0.8rem 0.8rem;
   }
 }
+ngb-datepicker{
+  background-color: #FFFFFF;
+}

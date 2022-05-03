@@ -30,8 +30,7 @@
         <fieldset class="">
           <legend class="pb-2">Fecha</legend>
 
-
-          <ngb-datepicker formControlName="datepicker"></ngb-datepicker>
+          <ngb-datepicker navigation="arrows" [weekdays]="false" formControlName="datepicker"></ngb-datepicker>
 
         </fieldset>
       </div>
@@ -39,17 +38,14 @@
       <div class="row text-align:center py-4">
         <fieldset class="">
           <legend class="pb-2">Horario</legend>
-
-          <mat-button-toggle-group formControlName="horario" value="almuerzo">
-            <mat-button-toggle value="almuerzo" class="text-center p-1 d-inline-block me-md-3">
-              <strong>ALMUERZO</strong> <br>
-              13:00 - 16:30
-            </mat-button-toggle>
-            <mat-button-toggle value="cena" class="text-center p-1 d-inline-block me-md-3">
+          <div id="almuerzo" value="almuerzo" class="timeField selectedField text-center p-1 d-inline-block me-md-3" (click)="select_almuerzo()">
+            <strong>ALMUERZO</strong> <br>
+            13:00 - 16:30
+          </div>
+          <div id="cena" value="cena" class="timeField text-center p-1 d-inline-block" (click)="select_cena()">
               <strong>CENA</strong>  <br>
               <p>20:15 - 24:00</p>
-            </mat-button-toggle>
-          </mat-button-toggle-group>
+          </div>
         </fieldset>
       </div>
       <div class="pb-4">

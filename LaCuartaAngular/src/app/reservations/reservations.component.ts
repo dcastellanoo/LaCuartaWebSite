@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, Validators} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder} from "@angular/forms";
 import {ReservationRepository} from "../model/reservation.repository";
-import {Router, RouterLink} from "@angular/router";
+import {Router} from "@angular/router";
 import {EDayPeriod, Reservation} from "../model/reservation.model";
 import {User} from "../model/user.model";
+import {ReservationService} from "../services/reservation.service";
 
 @Component({
   selector: 'app-reservations',
@@ -15,31 +16,32 @@ export class ReservationsComponent implements OnInit {
     num_adults : 2,
     num_children: 0,
     datepicker: Date,
-    horario: EDayPeriod,
   });
   people = this.reservas1.get('num_adults')?.value + this.reservas1.get('num_children')?.value;
+  horario = EDayPeriod.Lunch;
   reserva: Reservation;
-  client: User;
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private repository: ReservationRepository,
+    private rs: ReservationService,
   ) {
-    this.client = new User();
-    this.reserva = new Reservation(this.client);
+    this.reserva = new Reservation();
   }
 
   ngOnInit(): void {
   }
 
   onSubmitReservas1() {
-    console.log(this.reservas1.value);
-    console.log(this.people);
+    this.reserva = {
+      numAdults: this.reservas1.get('num_adults')?.value,
+      numChilds: this.reservas1.get('num_children')?.value,
+      period: this.horario,
+      reservationDate: this.reservas1.get('datepicker')?.value
+    }
+    this.rs.setReservation(this.reserva);
     this.router.navigate(['/reservas2'])
-
-    this.reserva.numAdults = this.reservas1.get('num_adults')?.value;
-    this.reserva.numChilds = this.reservas1.get('num_children')?.value;
   }
 
   dec_num_adultos() {
@@ -48,7 +50,6 @@ export class ReservationsComponent implements OnInit {
           num_adults : this.reservas1.get('num_adults')?.value - 1,
           num_children : this.reservas1.get('num_children')?.value,
           datepicker: this.reservas1.get('datepicker')?.value,
-          horario: this.reservas1.get('horario')?.value,
         }
       )
       this.update_people();
@@ -61,7 +62,6 @@ export class ReservationsComponent implements OnInit {
           num_adults : this.reservas1.get('num_adults')?.value + 1,
           num_children : this.reservas1.get('num_children')?.value,
           datepicker: this.reservas1.get('datepicker')?.value,
-        horario: this.reservas1.get('horario')?.value,
         }
       )
       this.update_people();
@@ -74,7 +74,6 @@ export class ReservationsComponent implements OnInit {
           num_adults : this.reservas1.get('num_adults')?.value,
           num_children : this.reservas1.get('num_children')?.value - 1,
           datepicker: this.reservas1.get('datepicker')?.value,
-        horario: this.reservas1.get('horario')?.value,
         }
       )
       this.update_people();
@@ -87,7 +86,6 @@ export class ReservationsComponent implements OnInit {
           num_adults : this.reservas1.get('num_adults')?.value,
           num_children : this.reservas1.get('num_children')?.value + 1,
           datepicker: this.reservas1.get('datepicker')?.value,
-        horario: this.reservas1.get('horario')?.value,
         }
       )
       this.update_people();
@@ -96,5 +94,20 @@ export class ReservationsComponent implements OnInit {
 
   update_people(){
     this.people = this.reservas1.get('num_adults')?.value + this.reservas1.get('num_children')?.value;
+  }
+
+
+  select_almuerzo() {
+    this.horario = EDayPeriod.Lunch;
+
+    document.getElementById("almuerzo")?.classList.add("selectedField");
+    document.getElementById("cena")?.classList.remove("selectedField");
+  }
+
+  select_cena() {
+    this.horario = EDayPeriod.Dinner;
+
+    document.getElementById("almuerzo")?.classList.remove("selectedField");
+    document.getElementById("cena")?.classList.add("selectedField");
   }
 }
