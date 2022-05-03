@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RestaurantRepository} from "../model/restaurant.repository";
+import {OpeningSchedule} from "../model/opening-time.model";
 
 @Component({
   selector: 'app-contact',
@@ -7,8 +8,24 @@ import {RestaurantRepository} from "../model/restaurant.repository";
   styleUrls: ['./contact.component.css']
 })
 
-// TODO load opening-hours from JSON
 export class ContactComponent implements OnInit {
+  week = [
+    ["monday", "Lunes"],
+    ["tuesday", "Martes"],
+    ["wednesday", "Miércoles"],
+    ["thursday", "Jueves"],
+    ["friday", "Viernes"],
+    ["saturday", "Sábado"],
+    ["sunday", "Domingo"]
+  ]
+
+  private weekMap = {
+    "monday": "Lunes",
+    "tuesday": "Martes",
+    "wednesday": "Miércoles",
+    "thursday": "Jueves",
+    "friday": "Viernes"
+  }
 
   constructor(private repository: RestaurantRepository) {
   }
@@ -21,9 +38,9 @@ export class ContactComponent implements OnInit {
     return this.repository.restaurantPhone;
   }
 
-  get opening_hours(): {string: [{string: string}]} {
-    console.log(this.repository.restaurantHours)
-    return this.repository.restaurantHours;
+  get opening_hours(): OpeningSchedule {
+    let schedule: OpeningSchedule = this.repository.restaurantHours;
+    return schedule;
   }
 
 

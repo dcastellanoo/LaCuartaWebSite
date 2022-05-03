@@ -4,13 +4,12 @@ import { Product } from "./product.model";
 import { Cart } from "./cart.model";
 import { Order} from "./order.model";
 import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/compat/firestore";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import {waitForAsync} from "@angular/core/testing";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword} from "firebase/auth";
 import {User} from "./user.model";
 import {IDatasource} from "./interface.datasource";
 import {Reservation} from "./reservation.model";
 import {IFileUpload} from "./file-upload.model";
-import {map} from "rxjs/operators";
+
 
 
 @Injectable({
@@ -122,7 +121,7 @@ export class FirebaseDatasource implements IDatasource {
 
   deleteReservation(id: string): Observable<Reservation> {
     // Quick fix, dummy reservation with correct id
-    let reservation: Reservation = new Reservation(new User());
+    let reservation: Reservation = new Reservation();
     reservation.id = id;
     this.reservationRef.doc(id).valueChanges().subscribe((r) => {
         reservation = r!;
@@ -163,10 +162,15 @@ export class FirebaseDatasource implements IDatasource {
     return from(signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
-        console.log("Admin signed in with email: ", email);
         const user = userCredential.user;
-        this.auth_token = user.uid;  // TODO
 
+        // TODO check if it's admin account
+        if ( user.uid != "JHkGXbGH3IWQi0bUJJTwaa9r1j33" ) {
+          return false;
+        }
+
+        console.log("Admin signed in with email: ", email);
+        this.auth_token = user.uid;  // TODO
 
         return true;
 
@@ -185,6 +189,23 @@ export class FirebaseDatasource implements IDatasource {
         return false;
       }));
 
+  }
+
+  // TODO
+  createUserAccount(user: User) {
+    const auth = getAuth();
+
+    createUserWithEmailAndPassword(auth, user.email!, "test")
+      .then((userCredential) => {
+        // Signed in
+        let user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        console.log("Problem with registering new user ", user.email, ": ", error.message);
+      });
   }
 
   /*

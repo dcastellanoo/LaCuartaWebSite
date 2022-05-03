@@ -56,6 +56,7 @@ import { VinosMenuComponent } from './vinos-menu/vinos-menu.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { Reservations2Component } from './reservations2/reservations2.component';
+import {ReservationService} from "./services/reservation.service";
 
 const routes: Routes = [
   { path: '', component: HomePageComponent, pathMatch: 'full' },
@@ -127,7 +128,9 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatButtonToggleModule
   ],
-  providers: [],
+  providers: [
+    ReservationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
