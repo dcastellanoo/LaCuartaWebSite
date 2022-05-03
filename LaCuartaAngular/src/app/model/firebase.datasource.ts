@@ -11,6 +11,7 @@ import {IDatasource} from "./interface.datasource";
 import {Reservation} from "./reservation.model";
 import {IFileUpload} from "./file-upload.model";
 import {map} from "rxjs/operators";
+import {OpeningSchedule} from "./opening-time.model";
 
 
 @Injectable({
