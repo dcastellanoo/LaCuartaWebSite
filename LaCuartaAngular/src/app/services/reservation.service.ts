@@ -11,7 +11,7 @@ export class ReservationService {
 
   }
 
-  public getReservation(){
+  public getReservation() : Reservation{
     return this.reservation;
   }
 
