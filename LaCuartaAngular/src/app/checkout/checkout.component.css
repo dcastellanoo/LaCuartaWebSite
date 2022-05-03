@@ -1,2 +1,70 @@
+
+.orders-main{
+	max-width: 700px;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	padding: 30px 100px 90px 100px;
+	margin-bottom: 35px;
+	margin-top: 30px;
+}
+
+.form-group{
+     padding: 5px;
+}
+
+.form-group input{
+	color: #ABA7AF;
+	font-size: 13pt;
+
+}
+
+.lab{
+	color: #000000;
+	font-weight: bold;
+	font-size: 12.5pt;
+}
+
+.config label{
+	color: #737373;
+	padding-left: 5px;
+}
+
+.float-end,
+.float-start{
+	padding-top: 20px;
+}
+
+.btn{
+	background-color: #67523A; 
+	padding: 10px;
+	color: white;
+	font-weight: bold;
+}
+
+.text-danger{
+	font-size: 13pt;
+}
+
+
 input.ng-dirty.ng-invalid { border: 2px solid #ff0000 }
 input.ng-dirty.ng-valid { border: 2px solid #6bc502 }
+
+@media(max-width: 768px){
+	.orders-main{
+		padding: 30px 50px 90px 50px;
+	}
+
+	.form-group span,
+	.lab{
+		font-size: 11pt;
+	}
+}
+
+@media(max-width: 576px){
+     .form-group span,
+     .lab{
+		font-size: 9pt;
+	}
+} 
