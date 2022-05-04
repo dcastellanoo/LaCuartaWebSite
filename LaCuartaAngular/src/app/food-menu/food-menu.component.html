@@ -7,33 +7,33 @@
 
       <div class="subheader_text_carta col-4">
         <div class="row">
-          <button id="linkEntrantes" class="nav-link button_carta color_txt_subheader_carta py-0">
+          <a class="nav-link color_txt_subheader_carta link-carta py-0" routerLink="/carta" (click)="changeCategory(this.listOfCategories[0])">
             <b>Entrantes</b>
-          </button>
+          </a>
         </div>
         <div class="row">
-          <button id="linkPrincipales" class="nav-link button_carta color_txt_subheader_carta py-0">
+          <a class="nav-link color_txt_subheader_carta link-carta py-0" routerLink="/carta" (click)="changeCategory(this.listOfCategories[1])">
             <b>Principales</b>
-          </button>
+          </a>
         </div>
         <div class="row">
-          <button id="linkSugerencias" class="nav-link button_carta color_txt_subheader_carta py-0">
+          <a class="nav-link color_txt_subheader_carta link-carta py-0" routerLink="/carta" (click)="changeCategory(this.listOfCategories[2])">
             <b>Sugerencias</b>
-          </button>
+          </a>
         </div>
         <div class="row">
-          <button id="linkPostres" class="nav-link button_carta color_txt_subheader_carta py-0">
+          <a class="nav-link color_txt_subheader_carta link-carta py-0" routerLink="/carta" (click)="changeCategory(this.listOfCategories[3])">
             <b>Postres</b>
-          </button>
+          </a>
         </div>
 
         <div class="row">
-          <a class="nav-link color_txt_subheader_carta link-carta py-0" routerLink="bebidas">
+          <a class="nav-link color_txt_subheader_carta link-carta py-0" routerLink="/bebidas">
             <b>Bebidas</b>
           </a>
         </div>
         <div class="row">
-          <a class="nav-link color_txt_subheader_carta link-carta py-0" routerLink="vinos">
+          <a class="nav-link color_txt_subheader_carta link-carta py-0" routerLink="/vinos">
             <b>Carta de Vinos</b>
           </a>
         </div>
@@ -46,6 +46,40 @@
   </section>
 
   <section class="body_plato_carta">
+    <h1 class="align_opcion_plato_carta text_opcion_plato_carta">{{selectedCategory}}</h1>
+    <article class="background_plato_carta row" *ngFor="let product of products">
+      <div class="col-12 text-center text_title_plato_carta d-lg-none">
+        <b>{{product.name}}</b>
+      </div>
+
+      <div class="text_plato_carta col-6">
+        <div class="text_title_plato_carta row d-lg-block d-none">
+          {{product.name}}
+        </div>
+
+        <div class="descripcion_plato_carta row">
+          {{product.description}}
+        </div>
+        <div class="alergenos_plato_carta row">
+          {{product.allergens}}
+        </div>
+      </div>
+      <div class="col-lg-2 col-5 text-center align_money_plato_carta">
+        <figure>
+          <img [src]="product.url" class="size_photo_comida" alt="Plato Comida.">
+          <p class="text_money_plato_carta background_money d-lg-block d-none">
+            {{product.price | currency:"EUR":"symbol":"0.2-2" }}
+          </p>
+        </figure>
+      </div>
+
+      <div class="col-12 d-lg-none d-block text-center">
+        <p class="background_money text_money_plato_carta">
+          {{product.price | currency:"EUR":"symbol":"0.2-2" }}
+        </p>
+      </div>
+
+    </article>
 
   </section>
 

@@ -11,26 +11,6 @@ import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 
 //Firebase configuration
 
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyC1SQ9h7BfE2HwY4swj_LMGpJutNmHWkjE",
-  authDomain: "lacuartaweb-bce85.firebaseapp.com",
-  projectId: "lacuartaweb-bce85",
-  storageBucket: "lacuartaweb-bce85.appspot.com",
-  messagingSenderId: "434801223606",
-  appId: "1:434801223606:web:9512fef88e6e8ce99b4317",
-  measurementId: "G-2G2FRFGV8F"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -64,12 +44,9 @@ const routes: Routes = [
   { path: 'carta', component: FoodMenuComponent },
   { path: 'reservas', component: ReservationsComponent},
   //{ path: 'pedidos', component: PedidosComponent },
-  { path: 'carta', component: FoodMenuComponent,
-    children: [
-      { path: 'bebidas', component: BebidasMenuComponent },
-      { path: 'vinos', component: VinosMenuComponent }
-    ]
-    },
+  { path: 'bebidas', component: BebidasMenuComponent },
+  { path: 'vinos', component: VinosMenuComponent },
+  { path: 'carta', component: FoodMenuComponent },
   { path: 'reservas', component: ReservationsComponent},
   { path: 'reservas2', component: Reservations2Component},
   { path: 'pedidos',
