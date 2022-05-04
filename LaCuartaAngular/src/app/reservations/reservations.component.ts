@@ -5,6 +5,7 @@ import {Router} from "@angular/router";
 import {EDayPeriod, Reservation} from "../model/reservation.model";
 import {User} from "../model/user.model";
 import {ReservationService} from "../services/reservation.service";
+import {NgbDateStruct} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-reservations',
@@ -21,6 +22,9 @@ export class ReservationsComponent implements OnInit {
   horario = EDayPeriod.Lunch;
   reserva: Reservation;
 
+  currentDay;
+  lastDay;
+
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -28,9 +32,17 @@ export class ReservationsComponent implements OnInit {
     private rs: ReservationService,
   ) {
     this.reserva = new Reservation();
+    var date = new Date();
+    this.currentDay = { day: date.getUTCDay() + 1, month: date.getUTCMonth() + 1, year: date.getUTCFullYear()};
+    this.lastDay = {day: date.getUTCDay() + 1, month: date.getUTCMonth() + 3, year: date.getUTCFullYear()};
   }
 
   ngOnInit(): void {
+  }
+
+  isDisabled(date: NgbDateStruct) {
+    const d = new Date(date.year, date.month - 1, date.day);
+    return d.getDay() === 1;
   }
 
   onSubmitReservas1() {
@@ -38,7 +50,7 @@ export class ReservationsComponent implements OnInit {
       numAdults: this.reservas1.get('num_adults')?.value,
       numChilds: this.reservas1.get('num_children')?.value,
       period: this.horario,
-      reservationDate: this.reservas1.get('datepicker')?.value
+      reservationDate: new Date(this.reservas1.get('datepicker')?.value.year, this.reservas1.get('datepicker')?.value.month, this.reservas1.get('datepicker')?.value.day),
     }
     this.rs.setReservation(this.reserva);
     this.router.navigate(['/reservas2'])
@@ -109,5 +121,14 @@ export class ReservationsComponent implements OnInit {
 
     document.getElementById("almuerzo")?.classList.remove("selectedField");
     document.getElementById("cena")?.classList.add("selectedField");
+  }
+
+  isWeekend() {
+    const d = new Date(this.reservas1.get('datepicker')?.value.year, this.reservas1.get('datepicker')?.value.month - 1, this.reservas1.get('datepicker')?.value.day);
+    console.log(d);
+    if (d.getDay() == 5 || d.getDay() == 6){
+      return true;
+    }
+    return false;
   }
 }

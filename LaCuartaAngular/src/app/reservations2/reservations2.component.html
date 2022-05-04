@@ -4,7 +4,10 @@
       <div class="row pt-4 px-6 justify-content-center">
         <div class="row summaryTable py-3 justify-content-center">
           <div class="col-md-4">
-            <img class="imgReserva me-1" alt="Calendar." src="assets/images/Calendar.png"> <span id="reservation_date"></span>
+            <img class="imgReserva me-1" alt="Calendar." src="assets/images/Calendar.png">
+            <span id="reservation_date">
+                {{reservation.reservationDate.getDate() + "/" + reservation.reservationDate.getMonth() + "/" + reservation.reservationDate.getFullYear()}}
+            </span>
           </div>
           <div class="col-md-4">
             <img class="imgReserva me-1" alt="Watch." src="assets/images/Watch.png"> <span id="reservation_time">{{horario}}</span>
