@@ -25,3 +25,7 @@ export type OpeningHours = {
   [key: string]: string;
 }
 
+export type ReservationTimes = {
+  [key: string]: string[];
+}
+

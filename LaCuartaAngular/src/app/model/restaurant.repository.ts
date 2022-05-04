@@ -1,6 +1,6 @@
 import {FirebaseDatasource} from "./firebase.datasource";
 import {Injectable} from "@angular/core";
-import {OpeningSchedule} from "./opening-time.model";
+import {OpeningSchedule, ReservationTimes} from "./opening-time.model";
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +35,10 @@ export class RestaurantRepository {
 
   get restaurantHours(): OpeningSchedule {
     return this.data["restaurant-time-info"] as OpeningSchedule;
+  }
+
+  get reservationTimes(): ReservationTimes {
+    return this.data["reservation-times"] as ReservationTimes;
   }
 
 }
