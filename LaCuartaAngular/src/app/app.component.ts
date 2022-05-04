@@ -13,6 +13,9 @@ import { getStorage, ref, uploadBytes } from "firebase/storage";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+
+
 export class AppComponent {
   title = 'LaCuartaAngular';
 
@@ -43,3 +46,4 @@ export class AppComponent {
       */
   }
 }
+

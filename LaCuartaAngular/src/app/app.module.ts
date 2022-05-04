@@ -9,6 +9,9 @@ import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 
 
+//Firebase configuration
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,12 +44,9 @@ const routes: Routes = [
   { path: 'carta', component: FoodMenuComponent },
   { path: 'reservas', component: ReservationsComponent},
   //{ path: 'pedidos', component: PedidosComponent },
-  { path: 'carta', component: FoodMenuComponent,
-    children: [
-      { path: 'bebidas', component: BebidasMenuComponent },
-      { path: 'vinos', component: VinosMenuComponent }
-    ]
-    },
+  { path: 'bebidas', component: BebidasMenuComponent },
+  { path: 'vinos', component: VinosMenuComponent },
+  { path: 'carta', component: FoodMenuComponent },
   { path: 'reservas', component: ReservationsComponent},
   { path: 'reservas2', component: Reservations2Component},
   { path: 'pedidos',
