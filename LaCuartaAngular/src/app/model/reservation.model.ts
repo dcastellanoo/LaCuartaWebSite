@@ -17,9 +17,10 @@ export class Reservation {
   public period?: EDayPeriod;
   public place?: EPlace;
   public reservationDate: Date = new Date();
-  public reservationTime?: Date;
+  public reservationTime: string = '10:30';
   public reservationName?: string;
   public reservationEmail?: string;
+  public reservationPhone?: string;
   public comment?: string;
 
 

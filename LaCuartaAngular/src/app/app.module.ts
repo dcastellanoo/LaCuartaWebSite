@@ -37,6 +37,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { Reservations2Component } from './reservations2/reservations2.component';
 import {ReservationService} from "./services/reservation.service";
+import { Reservations3Component } from './reservations3/reservations3.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent, pathMatch: 'full' },
@@ -49,6 +50,7 @@ const routes: Routes = [
   { path: 'carta', component: FoodMenuComponent },
   { path: 'reservas', component: ReservationsComponent},
   { path: 'reservas2', component: Reservations2Component},
+  { path: 'reservas3', component: Reservations3Component},
   { path: 'pedidos',
     component: FoodOrdersComponent,
     children: [
@@ -90,6 +92,7 @@ const routes: Routes = [
     BebidasMenuComponent,
     VinosMenuComponent,
     Reservations2Component,
+    Reservations3Component,
   ],
   imports: [
     BrowserModule,

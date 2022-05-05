@@ -29,7 +29,7 @@ export class Reservations2Component implements OnInit {
     if (this.reservation.period == EDayPeriod.Lunch){
       this.horario = "Almuerzo";
     } else {
-      this.horario = "Cena";
+      this.horario = "Cena(" + this.reservation.reservationTime + ")";
     }
   }
 
@@ -39,6 +39,7 @@ export class Reservations2Component implements OnInit {
   }
 
   onSubmitReservas2() {
+    this.router.navigate(['/reservas3'])
   }
 
 

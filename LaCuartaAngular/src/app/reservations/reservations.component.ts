@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder} from "@angular/forms";
+import {FormBuilder, Validators} from "@angular/forms";
 import {ReservationRepository} from "../model/reservation.repository";
 import {Router} from "@angular/router";
 import {EDayPeriod, Reservation} from "../model/reservation.model";
@@ -16,11 +16,11 @@ export class ReservationsComponent implements OnInit {
   reservas1 = this.fb.group({
     num_adults : 2,
     num_children: 0,
-    datepicker: Date,
+    datepicker: [Date, [Validators.required]],
   });
   people = this.reservas1.get('num_adults')?.value + this.reservas1.get('num_children')?.value;
   horario = EDayPeriod.Lunch;
-  reserva: Reservation;
+  reservation: Reservation;
 
   currentDay;
   lastDay;
@@ -31,7 +31,7 @@ export class ReservationsComponent implements OnInit {
     private repository: ReservationRepository,
     private rs: ReservationService,
   ) {
-    this.reserva = new Reservation();
+    this.reservation = new Reservation();
     var date = new Date();
     this.currentDay = { day: date.getUTCDay() + 1, month: date.getUTCMonth() + 1, year: date.getUTCFullYear()};
     this.lastDay = {day: date.getUTCDay() + 1, month: date.getUTCMonth() + 3, year: date.getUTCFullYear()};
@@ -46,14 +46,15 @@ export class ReservationsComponent implements OnInit {
   }
 
   onSubmitReservas1() {
-    this.reserva = {
+    this.reservation = {
+      reservationTime: this.reservation.reservationTime,
       numAdults: this.reservas1.get('num_adults')?.value,
       numChilds: this.reservas1.get('num_children')?.value,
       period: this.horario,
-      reservationDate: new Date(this.reservas1.get('datepicker')?.value.year, this.reservas1.get('datepicker')?.value.month, this.reservas1.get('datepicker')?.value.day),
+      reservationDate: new Date(this.reservas1.get('datepicker')?.value.year, this.reservas1.get('datepicker')?.value.month, this.reservas1.get('datepicker')?.value.day)
     }
-    this.rs.setReservation(this.reserva);
-    this.router.navigate(['/reservas2'])
+    this.rs.setReservation(this.reservation);
+    this.router.navigate(['/reservas3'])
   }
 
   dec_num_adultos() {
@@ -125,7 +126,6 @@ export class ReservationsComponent implements OnInit {
 
   isWeekend() {
     const d = new Date(this.reservas1.get('datepicker')?.value.year, this.reservas1.get('datepicker')?.value.month - 1, this.reservas1.get('datepicker')?.value.day);
-    console.log(d);
     if (d.getDay() == 5 || d.getDay() == 6){
       return true;
     }
