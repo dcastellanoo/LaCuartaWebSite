@@ -54,7 +54,7 @@ export class ReservationsComponent implements OnInit {
       reservationDate: new Date(this.reservas1.get('datepicker')?.value.year, this.reservas1.get('datepicker')?.value.month, this.reservas1.get('datepicker')?.value.day)
     }
     this.rs.setReservation(this.reservation);
-    this.router.navigate(['/reservas3'])
+    this.router.navigate(['/reservas2'])
   }
 
   dec_num_adultos() {

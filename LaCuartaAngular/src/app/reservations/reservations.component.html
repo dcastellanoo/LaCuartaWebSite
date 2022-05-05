@@ -26,18 +26,19 @@
         </div>
       </div>
 
-      <div class="row d-inline-block py-5">
+      <div class="row d-inline-block py-4">
         <fieldset class="">
           <legend class="pb-2">Fecha</legend>
 
           <ngb-datepicker navigation="arrows" [weekdays]="false" outsideDays="hidden"
                           [minDate]="currentDay" [maxDate]="lastDay" [markDisabled]="isDisabled" formControlName="datepicker">
           </ngb-datepicker>
+          <p class="pt-1 selectFecha" *ngIf="!reservas1.get('datepicker')!.touched">*Seleccione un fecha</p>
 
         </fieldset>
       </div>
 
-      <div class="row text-align:center py-4">
+      <div class="row text-align:center pb-3">
         <fieldset class="">
           <legend class="pb-2">Horario</legend>
           <div id="almuerzo" value="almuerzo" class="timeField selectedField text-center p-1 d-inline-block" (click)="select_almuerzo()">
@@ -51,7 +52,7 @@
         </fieldset>
       </div>
       <div class="pb-4">
-        <input id="button_next" type="submit" class="button mt-5" value="Continuar">
+        <input id="button_next" type="submit" class="button mt-5" value="Continuar" [disabled]="!reservas1.get('datepicker')!.touched">
       </div>
     </div>
   </form>

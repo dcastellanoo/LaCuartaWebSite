@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import {Reservation} from "./reservation.model";
 import {FirebaseDatasource} from "./firebase.datasource";
+import {AngularFirestore} from "@angular/fire/compat/firestore";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,9 @@ export class ReservationRepository {
   private reservations: Reservation[] = [];
   private loaded: boolean = false;
 
-  constructor(private dataSource: FirebaseDatasource) {}
+  constructor(
+    private dataSource: FirebaseDatasource,
+  ) {}
 
   loadReservations() {
     this.loaded = true;
