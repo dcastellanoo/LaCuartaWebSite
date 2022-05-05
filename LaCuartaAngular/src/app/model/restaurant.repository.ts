@@ -40,5 +40,4 @@ export class RestaurantRepository {
   get reservationTimes(): ReservationTimes {
     return this.data["reservation-times"] as ReservationTimes;
   }
-
 }
