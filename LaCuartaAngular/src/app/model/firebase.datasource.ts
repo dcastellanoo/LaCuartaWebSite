@@ -9,6 +9,8 @@ import {User} from "./user.model";
 import {IDatasource} from "./interface.datasource";
 import {Reservation} from "./reservation.model";
 import {IFileUpload} from "./file-upload.model";
+import firebase from "firebase/compat";
+import UserCredential = firebase.auth.UserCredential;
 
 
 
@@ -231,20 +233,23 @@ export class FirebaseDatasource implements IDatasource {
   }
 
   // TODO
-  createUserAccount(user: User) {
+  createUserAccount(user: User): Observable<string> {
     const auth = getAuth();
+    const password = Math.random().toString(36).slice(-8);
 
-    createUserWithEmailAndPassword(auth, user.email!, "test")
+    return from(createUserWithEmailAndPassword(auth, user.email!, password)
       .then((userCredential) => {
         // Signed in
         let user = userCredential.user;
+        return userCredential.user.uid;
         // ...
       })
       .catch((error) => {
         let errorCode = error.code;
         let errorMessage = error.message;
         console.log("Problem with registering new user ", user.email, ": ", error.message);
-      });
+        return "";
+      }));
   }
 
   /*
