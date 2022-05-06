@@ -25,7 +25,6 @@ import { ContactComponent } from './contact/contact.component';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
 import { FoodOrdersComponent } from './food-orders/food-orders.component';
 import { TodoPdfComponent } from './todo-pdf/todo-pdf.component';
-import { PedidosComponent } from './pedidos/pedidos.component';
 import { FoodOrdersModule } from "./food-orders/food-orders.module";
 import { CartSummaryComponent } from "./cart-summary/cart-summary.component";
 import { CartDetailComponent } from './cart-detail/cart-detail.component';
@@ -89,7 +88,6 @@ const routes: Routes = [
     ContactComponent,
     FoodMenuComponent,
     TodoPdfComponent,
-    PedidosComponent,
     BebidasMenuComponent,
     VinosMenuComponent,
     Reservations2Component,
