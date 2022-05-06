@@ -4,6 +4,7 @@ import {Injectable} from "@angular/core";
   providedIn: 'root'
 })
 export class User {
+  public id?: string;
   public fullName?: string;
   public address?: Address = new Address();
   public email?: string;
@@ -11,6 +12,7 @@ export class User {
   public numTarjeta?: string;
   public fechaExpiracion?: string;
   public cvv?: string;
+  public rememberMe: boolean = false;
 
   constructor( ) { }
 }

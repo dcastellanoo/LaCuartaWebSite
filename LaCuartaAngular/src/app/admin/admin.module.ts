@@ -11,6 +11,8 @@ import { OrderTableComponent} from "./order-table/orderTable.component";
 import {UploadFormComponent} from "./upload-form/upload-form.component";
 import {UploadDetailsComponent} from "./upload-details/upload-details.component";
 import {UploadListComponent} from "./upload-list/upload-list.component";
+import {ReservationTableComponent} from "./reservation-table/reservationTable.component";
+import {UserTableComponent} from "./user-table/userTable.component";
 
 let routing = RouterModule.forChild([
   { path: "auth", component: AuthComponent },
@@ -20,7 +22,9 @@ let routing = RouterModule.forChild([
       { path: "products/:mode", component: ProductEditorComponent },
       { path: "products", component: ProductTableComponent },
       { path: "orders", component: OrderTableComponent },
-      { path: "uploads", component: UploadFormComponent },
+      { path: "reservations", component: ReservationTableComponent },
+      { path: "users", component: UserTableComponent },
+      { path: "uploads", component: UploadListComponent },
       { path: "**", redirectTo: "products" } ]
   },
   { path: "**", redirectTo: "auth" }
@@ -33,7 +37,8 @@ let routing = RouterModule.forChild([
     AuthComponent, AdminComponent,
     ProductTableComponent, ProductEditorComponent,
     OrderTableComponent,
-    UploadFormComponent, UploadDetailsComponent, UploadListComponent
+    UploadFormComponent, UploadDetailsComponent, UploadListComponent,
+    ReservationTableComponent, UserTableComponent
   ]
 })
 

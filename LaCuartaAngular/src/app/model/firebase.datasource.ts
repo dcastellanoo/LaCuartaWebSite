@@ -9,6 +9,8 @@ import {User} from "./user.model";
 import {IDatasource} from "./interface.datasource";
 import {Reservation} from "./reservation.model";
 import {IFileUpload} from "./file-upload.model";
+import firebase from "firebase/compat";
+import UserCredential = firebase.auth.UserCredential;
 
 
 
@@ -23,6 +25,7 @@ export class FirebaseDatasource implements IDatasource {
   ordersRef: AngularFirestoreCollection<Order>;
   reservationRef: AngularFirestoreCollection<Reservation>;
   uploadsRef: AngularFirestoreCollection<IFileUpload>;
+  usersRef: AngularFirestoreCollection<User>
   restaurantRef: AngularFirestoreCollection<any>;
 
   constructor(private store: AngularFirestore ) {
@@ -32,6 +35,7 @@ export class FirebaseDatasource implements IDatasource {
     this.reservationRef = store.collection("reservations");
     this.uploadsRef = store.collection("uploads");
     this.restaurantRef = store.collection("restaurant");
+    this.usersRef = store.collection("users");
   }
 
   /********************************** Products **********************************/
@@ -96,11 +100,13 @@ export class FirebaseDatasource implements IDatasource {
         order = o!;
       }
     );
+
+    this.ordersRef.doc(id).delete();
+
     return of(order);
   }
 
   /********************************** Reservations **********************************/
-
   saveReservation(reservation: Reservation): Observable<Reservation> {
     console.log("Saving reservations to Firebase datasource");
     let reservationId = this.store.createId()
@@ -127,7 +133,44 @@ export class FirebaseDatasource implements IDatasource {
         reservation = r!;
       }
     );
+
+    this.reservationRef.doc(id).delete();
+
     return of(reservation);
+  }
+
+  /********************************** Users **********************************/
+
+  // TODO save credit card info in secure way
+  saveUser(user: User, userId: string): Observable<User> {
+    console.log("Saving user to Firebase datasource");
+    user.id = userId;
+    this.usersRef.doc(userId).set(JSON.parse(JSON.stringify(user)));
+
+    return this.usersRef.doc(userId).valueChanges() as Observable<User>;
+  }
+
+  getUsers(): Observable<User[]> {
+    return this.usersRef.valueChanges({idField: "id"}) as Observable<User[]>;
+  }
+
+  updateUser(user: User): Observable<User> {
+    this.usersRef.doc(user.id!).update(JSON.parse(JSON.stringify(user)));
+    return this.usersRef.doc(user.id!).valueChanges() as Observable<User>;
+  }
+
+  deleteUser(id: string): Observable<User> {
+    // Quick fix, dummy reservation with correct id
+    let user: User = new User();
+    user.id = id;
+    this.usersRef.doc(id).valueChanges().subscribe((r) => {
+        user = r!;
+      }
+    );
+
+    this.usersRef.doc(id).delete();
+
+    return of(user);
   }
 
   /********************************** Firebase Storage **********************************/
@@ -192,20 +235,24 @@ export class FirebaseDatasource implements IDatasource {
   }
 
   // TODO
-  createUserAccount(user: User) {
+  registerUser(user: User): Observable<string> {
     const auth = getAuth();
+    const password = Math.random().toString(36).slice(-8);
 
-    createUserWithEmailAndPassword(auth, user.email!, "test")
+    return from(createUserWithEmailAndPassword(auth, user.email!, password)
       .then((userCredential) => {
         // Signed in
+        console.log("Create new account for user:", userCredential.user.email, " - ", userCredential.user.uid);
         let user = userCredential.user;
+        return userCredential.user.uid;
         // ...
       })
       .catch((error) => {
         let errorCode = error.code;
         let errorMessage = error.message;
         console.log("Problem with registering new user ", user.email, ": ", error.message);
-      });
+        return "";
+      }));
   }
 
   /*
