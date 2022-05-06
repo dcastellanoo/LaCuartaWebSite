@@ -11,12 +11,15 @@ export class UserRepository {
   private users: User[] = [];
   private loaded: boolean = false;
 
-  constructor(private dataSource: FirebaseDatasource) {}
+  constructor(private dataSource: FirebaseDatasource) {
+    this.loadUsers();
+  }
 
   loadUsers() {
     this.loaded = true;
-    this.dataSource.getUsers()
-      .subscribe(users => this.users = users);
+    this.dataSource.getUsers().subscribe(users => {
+      this.users = users
+    });
   }
 
   getUsers(): User[] {
@@ -24,6 +27,12 @@ export class UserRepository {
       this.loadUsers();
     }
     return this.users;
+  }
+
+  // TODO make a query to database to not load all the users
+  getUserByEmail(email: string): User | undefined {
+    this.getUsers();
+    return this.users.find(u => u.email == email);
   }
 
   saveUser(user: User): Observable<User> {

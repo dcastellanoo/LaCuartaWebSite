@@ -35,7 +35,7 @@
         <div class="col-12">
           <div class="form-group">
             <input class="form-control" #email="ngModel" name="email"
-                   [(ngModel)]="order.user.email" required placeholder="Correo electrónico" />
+                   [(ngModel)]="order.user.email" required placeholder="Correo electrónico"  (change)="emailCheck(email.value)" />
             <span *ngIf="submitted && email.invalid" class="text-danger">
               Por favor entra con su coreo eletrónico
             </span>
@@ -71,7 +71,7 @@
         <div class="col-6">
           <div class="form-group">
             <label class="lab">Fecha de expiración</label>
-            <input class="form-control" #fechaExpiracion="ngModel" name="fechaExpiracion" minlength="5" maxlength="5" 
+            <input class="form-control" #fechaExpiracion="ngModel" name="fechaExpiracion" minlength="5" maxlength="5"
                    [(ngModel)]="order.user.fechaExpiracion" required placeholder="MM / AA" />
             <span *ngIf="submitted && fechaExpiracion.invalid" class="text-danger">
               Por favor entra con la fecha expiracion
@@ -89,7 +89,7 @@
             </span>
           </div>
         </div>
-          
+
         <div class="col-12">
           <div class="form-group">
             <input class="form-control" #coment="ngModel" name="coment"
@@ -100,7 +100,7 @@
         <div class="col-12">
           <div class="form-group config">
             <label class="lab">
-              <input type="checkbox" name="" class="form-check-input mt-0" required>&nbsp; Acepto las Condiciones de Uso y la Política de Privacidad
+              <input type="checkbox" name="condiciones" ngModel required class="form-check-input mt-0" > Acepto las Condiciones de Uso y la Política de Privacidad
             </label>
           </div>
         </div>
@@ -108,12 +108,13 @@
         <div class="col-12">
           <div class="form-group config">
             <label class="lab">
-              <input type="checkbox" name="" class="form-check-input mt-0" required>&nbsp; Recordarme para la próxima reserva
+              <input type="checkbox" name="rememberMe" #rememberMe="ngModel"
+                     [(ngModel)]="order.user.rememberMe" class="form-check-input mt-0" required>&nbsp; Recordarme para la próxima reserva
             </label>
           </div>
         </div>
 
-        
+
         <div class="col-12">
           <div class="float-start">
             <button class="btn" routerLink="/carrito">Mi Pedido</button>

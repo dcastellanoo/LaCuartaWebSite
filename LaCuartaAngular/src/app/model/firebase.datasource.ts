@@ -140,10 +140,12 @@ export class FirebaseDatasource implements IDatasource {
   }
 
   /********************************** Users **********************************/
+
+  // TODO save credit card info in secure way
   saveUser(user: User, userId: string): Observable<User> {
     console.log("Saving user to Firebase datasource");
     user.id = userId;
-    this.usersRef.doc(userId).set(user);
+    this.usersRef.doc(userId).set(JSON.parse(JSON.stringify(user)));
 
     return this.usersRef.doc(userId).valueChanges() as Observable<User>;
   }
@@ -153,7 +155,7 @@ export class FirebaseDatasource implements IDatasource {
   }
 
   updateUser(user: User): Observable<User> {
-    this.usersRef.doc(user.id!).update(user);
+    this.usersRef.doc(user.id!).update(JSON.parse(JSON.stringify(user)));
     return this.usersRef.doc(user.id!).valueChanges() as Observable<User>;
   }
 
@@ -233,13 +235,14 @@ export class FirebaseDatasource implements IDatasource {
   }
 
   // TODO
-  createUserAccount(user: User): Observable<string> {
+  registerUser(user: User): Observable<string> {
     const auth = getAuth();
     const password = Math.random().toString(36).slice(-8);
 
     return from(createUserWithEmailAndPassword(auth, user.email!, password)
       .then((userCredential) => {
         // Signed in
+        console.log("Create new account for user:", userCredential.user.email, " - ", userCredential.user.uid);
         let user = userCredential.user;
         return userCredential.user.uid;
         // ...

@@ -12,6 +12,7 @@ export class User {
   public numTarjeta?: string;
   public fechaExpiracion?: string;
   public cvv?: string;
+  public rememberMe: boolean = false;
 
   constructor( ) { }
 }

@@ -29,6 +29,12 @@ export class OrderRepository {
   }
 
   saveOrder(order: Order): Observable<Order> {
+    if ( order.user.rememberMe ) {
+      this.dataSource.registerUser(order.user).subscribe((uid) => {
+        if ( uid != "" )
+          this.dataSource.saveUser(order.user, uid);
+      })
+    }
     return this.dataSource.saveOrder(order);
   }
 
