@@ -1,0 +1,24 @@
+<table class="table table-sm text-white">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let u of getUsers()">
+    <td>{{u.id}}</td>
+    <td>{{u.fullName}}</td>
+    <td>{{u.email}}</td>
+    <td>{{u.phoneNumber}}</td>
+    <td>
+      <button class="btn btn-sm btn-danger" (click)="deleteUser(u.id!)">
+        Delete
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
