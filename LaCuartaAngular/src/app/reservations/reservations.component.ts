@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {ReservationRepository} from "../model/reservation.repository";
 import {Router} from "@angular/router";
-import {EDayPeriod, Reservation} from "../model/reservation.model";
+import {Reservation} from "../model/reservation.model";
 import {User} from "../model/user.model";
 import {ReservationService} from "../services/reservation.service";
 import {NgbDateStruct} from "@ng-bootstrap/ng-bootstrap";
@@ -19,7 +19,7 @@ export class ReservationsComponent implements OnInit {
     datepicker: [Date, [Validators.required]],
   });
   people = this.reservas1.get('num_adults')?.value + this.reservas1.get('num_children')?.value;
-  horario = EDayPeriod.Lunch;
+  horario = '';
   reservation: Reservation;
 
   currentDay;
@@ -47,6 +47,7 @@ export class ReservationsComponent implements OnInit {
 
   onSubmitReservas1() {
     this.reservation = {
+      comment: "", place: "", reservationEmail: "", reservationName: "", reservationPhone: "",
       reservationTime: this.reservation.reservationTime,
       numAdults: this.reservas1.get('num_adults')?.value,
       numChilds: this.reservas1.get('num_children')?.value,
@@ -111,14 +112,14 @@ export class ReservationsComponent implements OnInit {
 
 
   select_almuerzo() {
-    this.horario = EDayPeriod.Lunch;
+    this.horario = "Almuerzo";
 
     document.getElementById("almuerzo")?.classList.add("selectedField");
     document.getElementById("cena")?.classList.remove("selectedField");
   }
 
   select_cena() {
-    this.horario = EDayPeriod.Dinner;
+    this.horario = "Cena";
 
     document.getElementById("almuerzo")?.classList.remove("selectedField");
     document.getElementById("cena")?.classList.add("selectedField");

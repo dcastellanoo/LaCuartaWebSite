@@ -1,5 +1,5 @@
 <article class="reservas container-fluid d-flex justify-content-center p-5">
-  <form (ngSubmit)="onSubmitReservas2()" class="text-center">
+  <form (ngSubmit)="onSubmitReservas2()" [formGroup]="reservas2" class="text-center">
     <div class="formTable">
       <div class="row pt-4 px-6 justify-content-center">
         <div class="row summaryTable py-3 justify-content-center">
@@ -10,34 +10,110 @@
             </span>
           </div>
           <div class="col-md-4">
-            <img class="imgReserva me-1" alt="Watch." src="assets/images/Watch.png"> <span id="reservation_time">{{horario}}</span>
+            <img class="imgReserva me-1" alt="Watch." src="assets/images/Watch.png"> <span id="reservation_time">{{reservation.period}}</span>
           </div>
           <div class="col-md-4">
             <img class="imgReserva me-1" alt="User." src="assets/images/User.png"> <span id="num_persons">{{people}}</span>
           </div>
         </div>
       </div>
-      <div id="timeSchedule" class= "row pt-4 px-6 justify-content-center">
-        <div>
-          <b style="font-family: 'Times New Roman'">TERRAZA</b>
+
+      <mat-button-toggle-group formControlName="hour" id="timeSchedule" class="row pt-4 justify-content-center">
+
+        <div *ngIf="reservation.period == 'Cena'">
+          <div>
+            <b style="font-family: 'Times New Roman'">TERRAZA</b>
+          </div>
+
+          <div id="terrazaGroupCena" class="pt-4 justify-content-between" >
+            <div class="hourRow1">
+              <div *ngFor="let time of this.getReservationTimes['dinner'] | slice:0:4;">
+                <mat-button-toggle class="hourField" [value]="'Terraza-'+time" (click)="onSubmitReservas2()">
+                  {{time}}
+                </mat-button-toggle>
+              </div>
+            </div>
+            <div class="hourRow2 pt-4">
+              <div *ngFor="let time of this.getReservationTimes['dinner'] | slice:4;">
+                <mat-button-toggle class="hourField" [value]="'Terraza-'+time" (click)="onSubmitReservas2()">
+                  {{time}}
+                </mat-button-toggle>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-5">
+            <b style="font-family: 'Times New Roman'">COMEDOR</b>
+          </div>
+
+          <div id="comedorGroupCena" class="justify-content-between pt-4">
+            <div class="hourRow1">
+              <div *ngFor="let time of this.getReservationTimes['dinner'] | slice:0:4;">
+                <mat-button-toggle class="hourField" [value]="'Comedor-'+time" (click)="onSubmitReservas2()">
+                  {{time}}
+                </mat-button-toggle>
+              </div>
+            </div>
+            <div class="hourRow2 pt-4">
+              <div *ngFor="let time of this.getReservationTimes['dinner'] | slice:4;">
+                <mat-button-toggle class="hourField" [value]="'Comedor-'+time" (click)="onSubmitReservas2()">
+                  {{time}}
+                </mat-button-toggle>
+              </div>
+            </div>
+          </div>
         </div>
-        <div id="terrazaContainer" class="justify-content-between">
 
+        <div *ngIf="reservation.period == 'Almuerzo'">
+          <div>
+            <b style="font-family: 'Times New Roman'">TERRAZA</b>
+          </div>
+
+          <div id="terrazaGroupAlmuerzo" class="pt-4 justify-content-between" >
+            <div class="hourRow1">
+              <div *ngFor="let time of this.getReservationTimes['lunch'] | slice:0:4;">
+                <mat-button-toggle class="hourField" [value]="'Terraza-'+time" (click)="onSubmitReservas2()">
+                  {{time}}
+                </mat-button-toggle>
+              </div>
+            </div>
+
+            <div class="hourRow2 pt-4">
+              <div *ngFor="let time of this.getReservationTimes['lunch'] | slice:4;">
+                <mat-button-toggle class="hourField" [value]="'Terraza-'+time" (click)="onSubmitReservas2()">
+                  {{time}}
+                </mat-button-toggle>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-5">
+            <b style="font-family: 'Times New Roman'">COMEDOR</b>
+          </div>
+
+          <div id="comedorGroupAlmuerzo" class="justify-content-between pt-4">
+            <div class="hourRow1">
+              <div *ngFor="let time of this.getReservationTimes['lunch'] | slice:0:4;">
+                <mat-button-toggle class="hourField" [value]="'Comedor-'+time" (click)="onSubmitReservas2()">
+                  {{time}}
+                </mat-button-toggle>
+              </div>
+            </div>
+            <div class="hourRow2 pt-4">
+              <div *ngFor="let time of this.getReservationTimes['lunch'] | slice:4;">
+                <mat-button-toggle class="hourField" [value]="'Comedor-'+time" (click)="onSubmitReservas2()">
+                  {{time}}
+                </mat-button-toggle>
+              </div>
+            </div>
+          </div>
         </div>
+      </mat-button-toggle-group>
 
-        <div class="pt-5">
-          <b style="font-family: 'Times New Roman'">COMEDOR</b>
-        </div>
 
-        <div id="comedorContainer" class="justify-content-between">
-
-        </div>
-
-        <div class="d-flex py-4 justify-content-between">
+        <div class="d-flex py-4 justify-content-center">
           <input type="button" class="button" value="Retroceder" (click)="this.router.navigate(['reservas'])">
-          <input type="submit" class="button" value="Continuar">
         </div>
-      </div>
     </div>
   </form>
 </article>

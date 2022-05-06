@@ -38,12 +38,12 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { Reservations2Component } from './reservations2/reservations2.component';
 import {ReservationService} from "./services/reservation.service";
 import { Reservations3Component } from './reservations3/reservations3.component';
+import { Reservations4Component } from './reservations4/reservations4.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent, pathMatch: 'full' },
   { path: 'sobre-nosotros', component: AboutUsComponent },
   { path: 'carta', component: FoodMenuComponent },
-  { path: 'reservas', component: ReservationsComponent},
   //{ path: 'pedidos', component: PedidosComponent },
   { path: 'bebidas', component: BebidasMenuComponent },
   { path: 'vinos', component: VinosMenuComponent },
@@ -51,6 +51,7 @@ const routes: Routes = [
   { path: 'reservas', component: ReservationsComponent},
   { path: 'reservas2', component: Reservations2Component},
   { path: 'reservas3', component: Reservations3Component},
+  { path: 'reservas4', component: Reservations4Component},
   { path: 'pedidos',
     component: FoodOrdersComponent,
     children: [
@@ -93,6 +94,7 @@ const routes: Routes = [
     VinosMenuComponent,
     Reservations2Component,
     Reservations3Component,
+    Reservations4Component,
   ],
   imports: [
     BrowserModule,

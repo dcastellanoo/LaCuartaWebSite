@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {ReservationService} from "../services/reservation.service";
-import {EDayPeriod, Reservation} from "../model/reservation.model";
+import {Reservation} from "../model/reservation.model";
 import {FormBuilder} from "@angular/forms";
-import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {RestaurantRepository} from "../model/restaurant.repository";
 import {ReservationTimes} from "../model/opening-time.model";
 
@@ -16,7 +15,9 @@ import {ReservationTimes} from "../model/opening-time.model";
 export class Reservations2Component implements OnInit {
   reservation: Reservation;
   people: number;
-  horario: string;
+  reservas2 = this.fb.group({
+    hour: '',
+  });
 
   constructor(
     private fb: FormBuilder,
@@ -26,25 +27,31 @@ export class Reservations2Component implements OnInit {
   ) {
     this.reservation = this.rs.getReservation();
     this.people = this.reservation.numAdults + this.reservation.numChilds;
-    if (this.reservation.period == EDayPeriod.Lunch){
-      this.horario = "Almuerzo";
-    } else {
-      this.horario = "Cena(" + this.reservation.reservationTime + ")";
-    }
   }
 
   ngOnInit(): void {
-    console.log(this.reservation);
-    console.log(this.lunch_times);
   }
 
   onSubmitReservas2() {
-    this.router.navigate(['/reservas3'])
+    this.reservation = {
+      comment: "", reservationEmail: "", reservationName: "", reservationPhone: "",
+      period: this.reservation.period,
+      numAdults: this.reservation.numAdults,
+        numChilds: this.reservation.numChilds,
+        reservationDate: this.reservation.reservationDate,
+        reservationTime: this.reservas2.get('hour')?.value.split("-")[1],
+        place: this.reservas2.get('hour')?.value.split("-")[0]
+    };
+
+    console.log(this.reservation);
+    this.rs.setReservation(this.reservation);
+    this.router.navigate(['/reservas3']);
   }
 
 
-  get lunch_times() : ReservationTimes {
-    return this.restaurant.reservationTimes;
+  get getReservationTimes() : ReservationTimes {
+    let reservation_times: ReservationTimes = this.restaurant.reservationTimes;
+    return reservation_times;
   }
 
   returnToReservas1() {

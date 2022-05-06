@@ -18,7 +18,6 @@ export class RestaurantRepository {
         this.data[this.data[idx].key] = this.data[idx].data;
       }
     })
-
   }
 
   get restaurantInfo() {

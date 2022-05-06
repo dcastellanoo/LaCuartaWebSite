@@ -6,11 +6,11 @@
           <div class="col-md-4">
             <img class="imgReserva" alt="Calendar." src="/assets/images/Calendar.png">
             <span id="reservation_date">
-                              {{reservation.reservationDate.getDate() + "/" + reservation.reservationDate.getMonth() + "/" + reservation.reservationDate.getFullYear()}}
+              {{reservation.reservationDate.getDate() + "/" + reservation.reservationDate.getMonth() + "/" + reservation.reservationDate.getFullYear()}}
             </span>
           </div>
           <div class="col-md-4">
-            <img class="imgReserva" alt="Watch." src="/assets/images/Watch.png"> <span id="reservation_time">{{horario}}</span>
+            <img class="imgReserva" alt="Watch." src="/assets/images/Watch.png"> <span id="reservation_time">{{reservation.reservationTime}}</span>
           </div>
           <div class="col-md-4">
             <img class="imgReserva" alt="User." src="/assets/images/User.png"> <span id="num_persons">{{people}}</span>
@@ -19,7 +19,7 @@
             ZONA
           </div>
           <b id="reservation_place" class="row justify-content-center pt-1 pb-3">
-            TERRAZA
+            {{reservation.place.toUpperCase()}}
           </b>
         </div>
       </div>

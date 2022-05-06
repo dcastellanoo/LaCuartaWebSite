@@ -3,9 +3,8 @@ import {FormBuilder, Validators, ReactiveFormsModule} from "@angular/forms";
 import {Router} from "@angular/router";
 import {ReservationRepository} from "../model/reservation.repository";
 import {ReservationService} from "../services/reservation.service";
-import {EDayPeriod, Reservation} from "../model/reservation.model";
+import {Reservation} from "../model/reservation.model";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
-import {doc, setDoc} from "firebase/firestore";
 
 @Component({
   selector: 'app-reservations3',
@@ -24,7 +23,6 @@ export class Reservations3Component implements OnInit {
   });
   reservation: Reservation;
   people: number;
-  horario: string;
 
   constructor(
     private fb: FormBuilder,
@@ -35,11 +33,6 @@ export class Reservations3Component implements OnInit {
   ) {
     this.reservation = this.rs.getReservation();
     this.people = this.reservation.numAdults + this.reservation.numChilds;
-    if (this.reservation.period == EDayPeriod.Lunch){
-      this.horario = this.reservation.reservationTime;
-    } else {
-      this.horario = this.reservation.reservationTime;
-    }
   }
 
   ngOnInit(): void {
@@ -47,6 +40,8 @@ export class Reservations3Component implements OnInit {
 
   async onSubmitReservas3() {
     this.reservation = {
+      period: this.reservation.period,
+      place: this.reservation.place,
       reservationTime: this.reservation.reservationTime,
       numAdults: this.reservation.numAdults,
       numChilds: this.reservation.numChilds,
@@ -56,11 +51,12 @@ export class Reservations3Component implements OnInit {
       reservationPhone: this.reservas3.get('country_code')?.value + " " + this.reservas3.get('phone_number')?.value,
       acceptedConditions: this.reservas3.get('conditions_check')?.value,
       rememberUser: this.reservas3.get('remember_check')?.value,
-      comment: this.reservas3.get('comment_input')?.value,
+      comment: this.reservas3.get('comment_input')?.value
     }
-    const collection = this.db.collection('reservations');
-    collection.doc(this.db.createId()).set(this.reservation);
-    console.log(this.reservation);
+
+    this.repository.saveReservation(this.reservation);
+    this.rs.setReservation(this.reservation);
+    this.router.navigate(['/reservas4']);
   }
 
   returnToReservas2() {
