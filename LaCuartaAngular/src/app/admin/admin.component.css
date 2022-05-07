@@ -1,0 +1,30 @@
+.cabecalho{
+   padding: 20px;
+   font-size: 26pt;
+   font-weight: bolder;
+   text-align: center;
+   color: white;
+}
+
+.menu{
+	background: silver;
+    margin-left: 10px;
+    height: 400px;
+    padding: 25px 0px 0px 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav {
+	font-size: 16pt;
+	font-weight: bolder;
+}
+
+.nav-item a{
+	color: black;
+}
+
+.nav-item a:active{
+	color: blue;
+}
+
+
