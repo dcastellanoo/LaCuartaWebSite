@@ -30,6 +30,7 @@ export class Reservations2Component implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.reservation);
   }
 
   onSubmitReservas2() {

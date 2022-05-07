@@ -19,7 +19,7 @@ export class ReservationsComponent implements OnInit {
     datepicker: [Date, [Validators.required]],
   });
   people = this.reservas1.get('num_adults')?.value + this.reservas1.get('num_children')?.value;
-  horario = '';
+  horario = 'Almuerzo';
   reservation: Reservation;
 
   currentDay;
@@ -52,7 +52,7 @@ export class ReservationsComponent implements OnInit {
       numAdults: this.reservas1.get('num_adults')?.value,
       numChilds: this.reservas1.get('num_children')?.value,
       period: this.horario,
-      reservationDate: new Date(this.reservas1.get('datepicker')?.value.year, this.reservas1.get('datepicker')?.value.month, this.reservas1.get('datepicker')?.value.day)
+      reservationDate: new Date(this.reservas1.get('datepicker')?.value.year, this.reservas1.get('datepicker')?.value.month - 1, this.reservas1.get('datepicker')?.value.day)
     }
     this.rs.setReservation(this.reservation);
     this.router.navigate(['/reservas2'])
