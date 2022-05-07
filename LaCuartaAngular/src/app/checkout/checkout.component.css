@@ -1,3 +1,10 @@
+.respuesta{
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px 80px 90px 80px;
+    color: #000;
+    font-weight: bold;
+    border-radius: 10px;
+}
 
 .orders-main{
 	max-width: 700px;
