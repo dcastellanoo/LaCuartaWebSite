@@ -35,9 +35,12 @@
         <div class="col-12">
           <div class="form-group">
             <input class="form-control" #email="ngModel" name="email"
-                   [(ngModel)]="order.user.email" required placeholder="Correo electrónico"  (change)="emailCheck(email.value)" />
+                   [(ngModel)]="order.user.email" required placeholder="Correo electrónico"  (change)="emailCheck(email.value)" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
             <span *ngIf="submitted && email.invalid" class="text-danger">
-              Por favor entra con su coreo eletrónico
+              Por favor entra con su coreo eletrónico<br>
+            </span>
+            <span *ngIf="email.errors?.['pattern']" class="text-danger">
+              Coreo eletrónico no es valido... ex: em123@exemplo.com
             </span>
           </div>
         </div>
@@ -46,14 +49,24 @@
           <div class="input-group form-group">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">
-                <img src="./assets/images/flag_spain.png"> &nbsp; +34
+                <img src="./assets/images/flag_spain.png" width="25" height="25">
+                <select name="codTelefono" class="form-select-sm" #codTelefono="ngModel" [(ngModel)]="order.user.codTelefono">
+                  <option [ngValue]="+34" selected>+34</option>
+                  <option [ngValue]="+43">+43</option>
+                  <option [ngValue]="+46">+46</option>
+                </select> 
               </span>
             </div>
-            <input class="form-control" #phoneNumber="ngModel" name="phoneNumber"
+            <input class="form-control" #phoneNumber="ngModel" name="phoneNumber" pattern="[0-9]+$"
                    [(ngModel)]="order.user.phoneNumber" required placeholder="Número de teléfono" />
-            <div class="col-12"><span *ngIf="submitted && phoneNumber.invalid" class="text-danger">
-              Por favor entra con su número de teléfono
-            </span></div>
+            <div class="col-12">
+              <span *ngIf="submitted && phoneNumber.invalid" class="text-danger">
+                Por favor entra con su número de teléfono<br>
+              </span>
+              <span *ngIf="phoneNumber.errors?.['pattern']" class="text-danger">
+                Debe contener solo números
+              </span>
+            </div>
           </div>
         </div>
 
@@ -61,9 +74,12 @@
           <div class="form-group">
             <label class="lab">Número de tarjeta</label>
             <input class="form-control" #numTarjeta="ngModel" name="numTarjeta" minlength="16" maxlength="16"
-                   [(ngModel)]="order.user.numTarjeta" required placeholder="Número de tarjeta" />
+                   [(ngModel)]="order.user.numTarjeta" required placeholder="Número de tarjeta" pattern="[0-9]+$"/>
             <span *ngIf="submitted && numTarjeta.invalid" class="text-danger">
-              Por favor entra con su número de tarjeta correcto
+              Por favor entra con su número de tarjeta correcto<br>
+            </span>
+            <span *ngIf="numTarjeta.errors?.['minlength'] || numTarjeta.errors?.['pattern']" class="text-danger">
+              Debe contener solo números (mínimo 16)
             </span>
           </div>
         </div>
@@ -72,9 +88,9 @@
           <div class="form-group">
             <label class="lab">Fecha de expiración</label>
             <input class="form-control" #fechaExpiracion="ngModel" name="fechaExpiracion" minlength="5" maxlength="5"
-                   [(ngModel)]="order.user.fechaExpiracion" required placeholder="MM / AA" />
+                   [(ngModel)]="order.user.fechaExpiracion" required placeholder="MM / AA" pattern="\d{1,2}/\d{1,2}"/>
             <span *ngIf="submitted && fechaExpiracion.invalid" class="text-danger">
-              Por favor entra con la fecha expiracion
+              Por favor entra con la fecha expiracion correcto
             </span>
           </div>
         </div>
