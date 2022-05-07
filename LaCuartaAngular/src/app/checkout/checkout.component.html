@@ -1,11 +1,15 @@
 
-<div *ngIf="orderSent" class="m-2 text-center">
-  <h2>Thanks!</h2>
-  <p>Thanks for placing your order.</p>
-  <p>We'll ship your goods as soon as possible.</p>
-  <button class="btn btn-primary" routerLink="/store">
-    Return to La Cuarta website
-  </button>
+<div *ngIf="orderSent" class="container m-2 text-center">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 respuesta">
+      <h2>Gracias!</h2>
+      <p>Gracias por hacer su pedido.</p>
+      <p>Enviaremos sus productos lo antes posible.</p>
+      <button class="btn btn-primary btn-lg" routerLink="/store">
+        Volver a la web de La Cuarta
+      </button>
+    </div>
+  </div>
 </div>
 
 <div class="container">
@@ -57,14 +61,14 @@
                 </select> 
               </span>
             </div>
-            <input class="form-control" #phoneNumber="ngModel" name="phoneNumber" pattern="[0-9]+$"
+            <input class="form-control" #phoneNumber="ngModel" name="phoneNumber" pattern="[0-9]+$" minlength="9" maxlength="9" 
                    [(ngModel)]="order.user.phoneNumber" required placeholder="Número de teléfono" />
             <div class="col-12">
               <span *ngIf="submitted && phoneNumber.invalid" class="text-danger">
                 Por favor entra con su número de teléfono<br>
               </span>
-              <span *ngIf="phoneNumber.errors?.['pattern']" class="text-danger">
-                Debe contener solo números
+              <span *ngIf="phoneNumber.errors?.['minlength'] || phoneNumber.errors?.['pattern']" class="text-danger">
+                Debe contener solo números (mínimo 9)
               </span>
             </div>
           </div>
