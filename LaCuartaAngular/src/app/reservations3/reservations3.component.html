@@ -4,16 +4,16 @@
       <div class="row pt-4 px-6 justify-content-center">
         <div class="row summaryTable pt-3">
           <div class="col-md-4">
-            <img class="imgReserva" alt="Calendar." src="/assets/images/Calendar.png">
+            <img class="imgReserva me-1" alt="Calendar." src="/assets/images/Calendar.png">
             <span id="reservation_date">
               {{reservation.reservationDate.getDate() + "/" + reservation.reservationDate.getMonth() + "/" + reservation.reservationDate.getFullYear()}}
             </span>
           </div>
           <div class="col-md-4">
-            <img class="imgReserva" alt="Watch." src="/assets/images/Watch.png"> <span id="reservation_time">{{reservation.reservationTime}}</span>
+            <img class="imgReserva me-1"  alt="Watch." src="/assets/images/Watch.png"> <span id="reservation_time">{{reservation.reservationTime}}</span>
           </div>
           <div class="col-md-4">
-            <img class="imgReserva" alt="User." src="/assets/images/User.png"> <span id="num_persons">{{people}}</span>
+            <img class="imgReserva me-1" alt="User." src="/assets/images/User.png"> <span id="num_persons">{{people}}</span>
           </div>
           <div class="row justify-content-center pt-3" style="font-size: 16px">
             ZONA
@@ -26,19 +26,20 @@
 
       <div class="row pt-4 px-6 justify-content-center">
         <div>
-          <input type="text" class="form-control" maxlength="40" placeholder="*Nombre completo"  formControlName="full_name" required autofocus>
-          <div class="error-message" *ngIf="reservas3.get('full_name')!.errors?.['required'] && reservas3.get('full_name')!.touched">
-            Este campo es obligatorio
-          </div>
-        </div>
-        <div class="pt-4">
-          <input type="email" class="form-control" formControlName="email_input" placeholder="*Correo electrónico"
-                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" maxlength="40" required autofocus>
+          <input type="email" class="form-control" formControlName="email_input" placeholder="*Correo electrónico" [(ngModel)]="reservation.user.email"
+                 (change)="emailCheck(reservas3.get('email_input')?.value)" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" maxlength="40" required autofocus>
           <div class="error-message" *ngIf="reservas3.get('email_input')!.errors?.['required'] && reservas3.get('email_input')!.touched">
             Este campo es obligatorio
           </div>
           <div class="error-message" *ngIf="reservas3.get('email_input')!.errors?.['email'] && reservas3.get('email_input')!.dirty">
             Introduzca una dirección de correo válida
+          </div>
+        </div>
+        <div  class="pt-4">
+          <input type="text" class="form-control" maxlength="40" placeholder="*Nombre completo" [(ngModel)]="reservation.user.fullName"
+                 formControlName="full_name" required autofocus>
+          <div class="error-message" *ngIf="reservas3.get('full_name')!.errors?.['required'] && reservas3.get('full_name')!.touched">
+            Este campo es obligatorio
           </div>
         </div>
         <div class="pt-4">
@@ -50,7 +51,7 @@
                 <option>+46</option>
               </select>
             </div>
-            <input type="tel" class="form-control" formControlName="phone_number"
+            <input type="tel" class="form-control" formControlName="phone_number" [(ngModel)]="reservation.user.phoneNumber"
                    placeholder="*Número de teléfono" maxlength="9" required>
           </div>
           <div class="error-message" *ngIf="reservas3.get('phone_number')!.errors?.['required'] && reservas3.get('phone_number')!.touched">
@@ -74,7 +75,7 @@
           </div>
         </div>
         <div class="form-check pt-4 ps-5 text-start">
-          <input type="checkbox" class="form-check-input" id="remember_check" formControlName="remember_check">
+          <input type="checkbox" class="form-check-input" id="remember_check" formControlName="remember_check" [(ngModel)]="reservation.user.rememberMeReservation">
           <label class="form-check-label checkFont" for="remember_check">
             Recordarme para la próxima reserva
           </label>

@@ -6,8 +6,8 @@ import { Order } from "./order.model";
 import { OrderRepository } from "./order.repository";
 import { RestDataSource } from "./rest.datasource";
 import { HttpClientModule } from "@angular/common/http";
-import { AuthService } from "./auth.service";
-import {FileUploadService} from "./file-upload.service";
+import { AuthService } from "../services/auth.service";
+import {FileUploadService} from "../services/file-upload.service";
 
 @NgModule({
   imports: [HttpClientModule],

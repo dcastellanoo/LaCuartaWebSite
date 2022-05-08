@@ -24,7 +24,6 @@ export class ProductEditorComponent {
     }
   }
   save(form: NgForm) {
-    console.log("Before save:", this.product)
     this.repository.saveProduct(this.product);
     this.router.navigateByUrl("/admin/main/products");
   }

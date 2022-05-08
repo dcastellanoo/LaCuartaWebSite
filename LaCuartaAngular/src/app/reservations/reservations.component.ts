@@ -33,8 +33,8 @@ export class ReservationsComponent implements OnInit {
   ) {
     this.reservation = new Reservation();
     var date = new Date();
-    this.currentDay = { day: date.getUTCDay() + 1, month: date.getUTCMonth() + 1, year: date.getUTCFullYear()};
-    this.lastDay = {day: date.getUTCDay() + 1, month: date.getUTCMonth() + 3, year: date.getUTCFullYear()};
+    this.currentDay = { day: date.getUTCDate(), month: date.getUTCMonth() + 1, year: date.getUTCFullYear()};
+    this.lastDay = {day: date.getUTCDate(), month: date.getUTCMonth() + 3, year: date.getUTCFullYear()};
   }
 
   ngOnInit(): void {
@@ -47,6 +47,7 @@ export class ReservationsComponent implements OnInit {
 
   onSubmitReservas1() {
     this.reservation = {
+      user: this.reservation.user,
       comment: "", place: "", reservationEmail: "", reservationName: "", reservationPhone: "",
       reservationTime: this.reservation.reservationTime,
       numAdults: this.reservas1.get('num_adults')?.value,

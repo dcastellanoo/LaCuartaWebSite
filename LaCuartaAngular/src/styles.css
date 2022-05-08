@@ -129,13 +129,6 @@ body {
   font-size: calc(14px + 0.4vw);
 }
 
-.reservas2 form .formTable .timeField {
-  width: 6rem;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 50px;
-}
-
 .reservas form .formTable .selectedField {
   color: #FFFFFF;
   background-color: #AAAAAA;
@@ -145,22 +138,12 @@ body {
   cursor: pointer;
 }
 
-.reservas form .formTable .hourRow1 {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 15%;
-  padding-right: 15%;
+.reservas form .formTable .hourToggle {
+  width: 70%;
 }
 
-.reservas form .formTable .hourRow2 {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 25%;
-  padding-right: 25%;
-}
-
-.reservas form .formTable .hourField {
-  padding: 1rem 1rem;
+.reservas form .formTable .hourFieldButton {
+  padding: 1rem 0rem;
   border: 1px solid #000000;
   border-radius: 4px;
   color: black;
@@ -230,7 +213,7 @@ body {
   .reservas form {
   }
 
-  .reservas form  .formTable {
+  .reservas form .formTable {
     width: 100% !important;
   }
 
@@ -253,17 +236,12 @@ body {
     padding-left: 3rem !important;
   }
 
-  .reservas form .formTable .hourRow1 {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  .reservas form .formTable .hourRow2 {
-    padding-left: 16%;
-    padding-right: 16%;
+  .reservas form .formTable .hourToggle {
+    width: 80%;
   }
 
-  .reservas form .formTable .hourField {
-    padding: 0.6rem 0.6rem;
+  .reservas form .formTable .hourFieldButton {
+    padding: 0.6rem 0rem;
   }
 
   .reservas form .formTable .hourFieldSelected {
@@ -272,28 +250,9 @@ body {
 
 }
 
-@media (max-width: 992px) {
-  .reservas{
-    color: black;
-  }
-
-  .reservas2 form .formTable .timeField {
-    border: 1px solid #000000;
-    box-sizing: border-box;
-  }
-}
 @media (min-width: 768px) and (max-width: 1200px) {
   .reservas form .formTable {
     width: 70vw;
-  }
-
-  .reservas form .formTable .hourRow1 {
-    padding-left: 10%;
-    padding-right: 10%;
-  }
-  .reservas form .formTable .hourRow2 {
-    padding-left: 20%;
-    padding-right: 20%;
   }
 
   .reservas form .formTable .hourField {

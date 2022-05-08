@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Product } from "./product.model";
 // import { StaticDataSource } from "./static.datasource";
 import { RestDataSource } from "./rest.datasource";
-import {FirebaseDatasource} from "./firebase.datasource";
+import {FirebaseDatasource} from "../services/firebase.datasource";
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +31,16 @@ export class ProductRepository {
 
       //console.log(Array.from(this.categories.get("comida")!.values()));
     });
+  }
+
+  getArrUnique(category?: string, type?: string): Product[] {
+    this.products = this.getProducts().filter((thing, index, self) =>
+        index === self.findIndex((t) => (
+          t.name === thing.name && t.type === thing.type && t.category === thing.category
+        ))
+    )
+
+    return this.products;
   }
 
   /**
@@ -78,11 +88,16 @@ export class ProductRepository {
   saveProduct(product: Product) {
     if ( product.id == null || product.id == "" ) {
       // Add new product
+      console.log("dentro1")
       this.dataSource.saveProduct(product)
         .subscribe(p => {
           this.products.push(p)
         });
+      for (var i=0; i < this.products.length; i++){
+        console.log(this.products[i].name);
+      }
     } else {
+      console.log("dentro2")
       // Remove old version of product and insert new one
       this.dataSource.updateProduct(product)
         .subscribe(p => {

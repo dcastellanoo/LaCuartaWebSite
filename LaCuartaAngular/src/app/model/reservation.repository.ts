@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import {Reservation} from "./reservation.model";
-import {FirebaseDatasource} from "./firebase.datasource";
+import {FirebaseDatasource} from "../services/firebase.datasource";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 
 @Injectable({
@@ -30,6 +30,12 @@ export class ReservationRepository {
   }
 
   saveReservation(reservation: Reservation): Observable<Reservation> {
+    if (reservation.rememberUser){
+      this.dataSource.registerUser(reservation.user).subscribe((uid) => {
+        if ( uid != "" )
+          this.dataSource.saveUser(reservation.user, uid);
+      })
+    }
     return this.dataSource.saveReservation(reservation);
   }
 

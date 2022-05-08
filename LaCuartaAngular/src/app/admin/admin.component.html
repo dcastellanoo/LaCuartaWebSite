@@ -5,70 +5,45 @@
     </div>
   </div>
   <div class="row mt-2">
-    <div class="col-2 menu">
+
+    <div class="col-sm-3 col-12 menu">
       <ul class="nav flex-column" id="menu">
         <li class="nav-item">
             <a class="nav-link active px-0" routerLink="/admin/main/products" routerLinkActive="active">
-                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Products</span>
+                <i class="fs-4 bi-house"></i> <span class="ms-1 d-sm-inline">Products</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link px-0" routerLink="/admin/main/orders" routerLinkActive="active">
-                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Orders</span> 
+                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-sm-inline">Orders</span> 
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link px-0" routerLink="/admin/main/reservations" routerLinkActive="active">
-                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Reservations</span> 
+                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-sm-inline">Reservations</span> 
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link px-0" routerLink="/admin/main/users" routerLinkActive="active">
-                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Users</span> 
+                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-sm-inline">Users</span> 
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link px-0" routerLink="/admin/main/uploads" routerLinkActive="active">
-                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Uploads</span> 
+                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-sm-inline">Uploads</span> 
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link px-0" (click)="logout()">
-                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Logout</span> 
+                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-sm-inline">Logout</span> 
             </a>
         </li>
       </ul>
 
-      <!-- <button class="btn btn-outline-info btn-block"
-              routerLink="/admin/main/orders"
-              routerLinkActive="active">
-        Orders
-      </button>
-
-      <button class="btn btn-outline-info btn-block"
-              routerLink="/admin/main/reservations"
-              routerLinkActive="active">
-        Reservations
-      </button>
-
-      <button class="btn btn-outline-info btn-block"
-              routerLink="/admin/main/users"
-              routerLinkActive="active">
-        Users
-      </button>
-
-      <button class="btn btn-outline-info btn-block"
-              routerLink="/admin/main/uploads"
-              routerLinkActive="active">
-        Uploads
-      </button>
-
-      <button class="btn btn-outline-danger btn-block" (click)="logout()">
-        Logout
-      </button> -->
     </div>
-    <div class="col-9">
+    <div class="col-sm-9 col-12">
       <router-outlet></router-outlet>
     </div>
   </div>
 </div>
+

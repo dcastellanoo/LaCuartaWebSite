@@ -3,7 +3,7 @@ import {ProductRepository} from "../model/product.repository";
 import {Router} from "@angular/router";
 import {Product} from "../model/product.model";
 import { Cart } from "../model/cart.model";
-import {SelectedCategoryService} from "../model/menu.service";
+import {SelectedCategoryService} from "../services/menu.service";
 
 
 @Component({

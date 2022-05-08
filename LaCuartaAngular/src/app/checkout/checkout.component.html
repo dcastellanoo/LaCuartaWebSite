@@ -1,11 +1,15 @@
 
-<div *ngIf="orderSent" class="m-2 text-center">
-  <h2>Thanks!</h2>
-  <p>Thanks for placing your order.</p>
-  <p>We'll ship your goods as soon as possible.</p>
-  <button class="btn btn-primary" routerLink="/store">
-    Return to La Cuarta website
-  </button>
+<div *ngIf="orderSent" class="container m-2 text-center">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 respuesta">
+      <h2>Gracias!</h2>
+      <p>Gracias por hacer su pedido.</p>
+      <p>Enviaremos sus productos lo antes posible.</p>
+      <button class="btn btn-primary btn-lg" routerLink="/store">
+        Volver a la web de La Cuarta
+      </button>
+    </div>
+  </div>
 </div>
 
 <div class="container">
@@ -46,25 +50,26 @@
         </div>
 
         <div class="col-12">
-          <div class="input-group form-group">
+          <label class="lab">Indicativo y número de teléfono</label>
+          <div class="input-group form-group">            
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">
                 <img src="./assets/images/flag_spain.png" width="25" height="25">
-                <select name="codTelefono" class="form-select-sm" #codTelefono="ngModel" [(ngModel)]="order.user.codTelefono">
-                  <option [ngValue]="+34" selected>+34</option>
-                  <option [ngValue]="+43">+43</option>
-                  <option [ngValue]="+46">+46</option>
+                <select name="codTelefono" class="form-select-sm" [(ngModel)]="order.user.codTelefono" #codTelefono="ngModel">
+                  <option value="+34">+34</option>
+                  <option value="+43">+43</option>
+                  <option value="+46">+46</option>
                 </select> 
               </span>
             </div>
-            <input class="form-control" #phoneNumber="ngModel" name="phoneNumber" pattern="[0-9]+$"
+            <input class="form-control" #phoneNumber="ngModel" name="phoneNumber" pattern="[0-9]+$" minlength="9" maxlength="9" 
                    [(ngModel)]="order.user.phoneNumber" required placeholder="Número de teléfono" />
             <div class="col-12">
               <span *ngIf="submitted && phoneNumber.invalid" class="text-danger">
-                Por favor entra con su número de teléfono<br>
+                Por favor entra con indicativo y su número de teléfono<br>
               </span>
-              <span *ngIf="phoneNumber.errors?.['pattern']" class="text-danger">
-                Debe contener solo números
+              <span *ngIf="phoneNumber.errors?.['minlength'] || phoneNumber.errors?.['pattern']" class="text-danger">
+                Debe contener solo números (mínimo 9)
               </span>
             </div>
           </div>
@@ -116,8 +121,11 @@
         <div class="col-12">
           <div class="form-group config">
             <label class="lab">
-              <input type="checkbox" name="condiciones" ngModel required class="form-check-input mt-0" > Acepto las Condiciones de Uso y la Política de Privacidad
+              <input type="checkbox" name="isAccepted" [ngModel]="order.user.isAccepted" #isAccepted="ngModel" required class="form-check-input mt-0" > Acepto las Condiciones de Uso y la Política de Privacidad
             </label>
+            <span *ngIf="submitted && isAccepted.invalid" class="text-danger">
+              <br>Aceptar las Condiciones para continuar
+            </span>
           </div>
         </div>
 

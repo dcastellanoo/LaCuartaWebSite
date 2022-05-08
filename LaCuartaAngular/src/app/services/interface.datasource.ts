@@ -1,6 +1,6 @@
 import {Observable} from "rxjs";
-import {Product} from "./product.model";
-import {Order} from "./order.model";
+import {Product} from "../model/product.model";
+import {Order} from "../model/order.model";
 
 export interface IDatasource {
   saveProduct: (product: Product) => Observable<Product>

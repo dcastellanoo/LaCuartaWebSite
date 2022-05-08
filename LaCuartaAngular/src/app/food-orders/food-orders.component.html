@@ -63,9 +63,11 @@
                     <img src="./assets/images/icone-star.png" width="14" height="14">
                     <img src="./assets/images/icone-star.png" width="14" height="14">
                   </label>
-                  <label class="spi-3">
-                    {{ product.price | currency:"EUR":"symbol":"0.2-2" }}
-                  </label>
+                  <a (click)="addProductToCart(product, parseInt(pedido_quantity.value))">
+                    <label class="spi-3">
+                      {{ product.price | currency:"EUR":"symbol":"0.2-2" }}
+                    </label>
+                  </a>
                 </div>
 
                 <div class="pedido-quant">

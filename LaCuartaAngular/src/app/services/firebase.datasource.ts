@@ -1,14 +1,14 @@
 import { Injectable } from "@angular/core";
 import {from, Observable, of} from "rxjs";
-import { Product } from "./product.model";
-import { Cart } from "./cart.model";
-import { Order} from "./order.model";
+import { Product } from "../model/product.model";
+import { Cart } from "../model/cart.model";
+import { Order} from "../model/order.model";
 import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/compat/firestore";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword} from "firebase/auth";
-import {User} from "./user.model";
+import {User} from "../model/user.model";
 import {IDatasource} from "./interface.datasource";
-import {Reservation} from "./reservation.model";
-import {IFileUpload} from "./file-upload.model";
+import {Reservation} from "../model/reservation.model";
+import {IFileUpload} from "../model/file-upload.model";
 import firebase from "firebase/compat";
 import UserCredential = firebase.auth.UserCredential;
 

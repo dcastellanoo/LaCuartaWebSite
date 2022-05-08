@@ -7,9 +7,10 @@ import { ProductRepository } from "../../model/product.repository";
 })
 
 export class ProductTableComponent {
-  constructor(private repository: ProductRepository) { }
+  constructor(private repository: ProductRepository) {
+  }
   getProducts(): Product[] {
-    return this.repository.getProducts();
+    return this.repository.getArrUnique();
   }
   deleteProduct(id: string) {
     this.repository.deleteProduct(id);

@@ -3,7 +3,7 @@ import { Observable } from "rxjs";
 import { Order } from "./order.model";
 // import { StaticDataSource } from "./static.datasource";
 import {RestDataSource} from "./rest.datasource";
-import {FirebaseDatasource} from "./firebase.datasource";
+import {FirebaseDatasource} from "../services/firebase.datasource";
 
 @Injectable({
   providedIn: 'root'
