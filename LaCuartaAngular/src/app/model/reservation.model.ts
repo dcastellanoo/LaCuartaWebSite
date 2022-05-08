@@ -13,6 +13,7 @@ export class Reservation {
   public reservationEmail: string = '';
   public reservationPhone: string = '';
   public comment: string = '';
+  public user: User = new User();
 
 
   // TODO maybe move to user?

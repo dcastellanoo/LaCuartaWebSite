@@ -1,5 +1,5 @@
 import {AngularFireStorage} from "@angular/fire/compat/storage";
-import {FileUpload, IFileUpload} from "./file-upload.model";
+import {FileUpload, IFileUpload} from "../model/file-upload.model";
 import {finalize, from, Observable, of} from "rxjs";
 import {Injectable} from "@angular/core";
 import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/compat/firestore";

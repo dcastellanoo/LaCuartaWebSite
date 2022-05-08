@@ -1,4 +1,4 @@
-import {FirebaseDatasource} from "./firebase.datasource";
+import {FirebaseDatasource} from "../services/firebase.datasource";
 import {Injectable} from "@angular/core";
 import {OpeningSchedule, ReservationTimes} from "./opening-time.model";
 

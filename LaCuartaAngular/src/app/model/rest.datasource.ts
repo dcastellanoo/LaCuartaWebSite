@@ -6,7 +6,7 @@ import { Cart } from "./cart.model";
 import { Order } from "./order.model";
 import { map } from "rxjs/operators";
 import { HttpHeaders } from '@angular/common/http';
-import {IDatasource} from "./interface.datasource";
+import {IDatasource} from "../services/interface.datasource";
 
 
 const PROTOCOL = "http";

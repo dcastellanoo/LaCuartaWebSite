@@ -5,6 +5,7 @@ import {ReservationRepository} from "../model/reservation.repository";
 import {ReservationService} from "../services/reservation.service";
 import {Reservation} from "../model/reservation.model";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
+import {UserRepository} from "../model/user.repository";
 
 @Component({
   selector: 'app-reservations3',
@@ -13,8 +14,8 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
 })
 export class Reservations3Component implements OnInit {
   reservas3 = this.fb.group({
-    full_name: ['', [Validators.required]],
     email_input: ['', [Validators.required, Validators.email]],
+    full_name: ['', [Validators.required]],
     country_code: '+34',
     phone_number: ['', [Validators.required, Validators.pattern("[0-9]{9}")]],
     comment_input: '',
@@ -29,7 +30,7 @@ export class Reservations3Component implements OnInit {
     private router: Router,
     private repository: ReservationRepository,
     private rs: ReservationService,
-    private db: AngularFirestore,
+    private ur: UserRepository,
   ) {
     this.reservation = this.rs.getReservation();
     this.people = this.reservation.numAdults + this.reservation.numChilds;
@@ -40,6 +41,7 @@ export class Reservations3Component implements OnInit {
 
   async onSubmitReservas3() {
     this.reservation = {
+      user: this.reservation.user,
       period: this.reservation.period,
       place: this.reservation.place,
       reservationTime: this.reservation.reservationTime,
@@ -61,5 +63,15 @@ export class Reservations3Component implements OnInit {
 
   returnToReservas2() {
     this.router.navigate(['reservas2'])
+  }
+
+  emailCheck(email: string) {
+    const user = this.ur.getUserByEmail(email);
+
+    if (user){
+      console.log("Found user:", user);
+
+      this.reservation.user = user;
+    }
   }
 }

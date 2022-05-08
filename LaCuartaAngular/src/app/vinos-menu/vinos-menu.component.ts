@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ProductRepository} from "../model/product.repository";
 import {Router} from "@angular/router";
 import {Product} from "../model/product.model";
-import {SelectedCategoryService} from "../model/menu.service";
+import {SelectedCategoryService} from "../services/menu.service";
 
 @Component({
   selector: 'app-vinos-menu',

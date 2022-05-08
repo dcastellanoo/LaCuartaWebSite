@@ -1,5 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-import {FileUploadService} from "../../model/file-upload.service";
+import {FileUploadService} from "../../services/file-upload.service";
 import {map} from "rxjs/operators";
 
 @Component({

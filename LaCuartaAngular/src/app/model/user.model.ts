@@ -13,6 +13,7 @@ export class User {
   public fechaExpiracion?: string;
   public cvv?: string;
   public rememberMe: boolean = false;
+  public rememberMeReservation: boolean = false;
   public codTelefono?: string;
 
   constructor( ) { }

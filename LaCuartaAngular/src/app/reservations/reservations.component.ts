@@ -47,6 +47,7 @@ export class ReservationsComponent implements OnInit {
 
   onSubmitReservas1() {
     this.reservation = {
+      user: this.reservation.user,
       comment: "", place: "", reservationEmail: "", reservationName: "", reservationPhone: "",
       reservationTime: this.reservation.reservationTime,
       numAdults: this.reservas1.get('num_adults')?.value,

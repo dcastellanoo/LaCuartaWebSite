@@ -35,6 +35,7 @@ export class Reservations2Component implements OnInit {
 
   onSubmitReservas2() {
     this.reservation = {
+      user: this.reservation.user,
       comment: "", reservationEmail: "", reservationName: "", reservationPhone: "",
       period: this.reservation.period,
       numAdults: this.reservation.numAdults,
