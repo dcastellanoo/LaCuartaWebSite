@@ -50,14 +50,15 @@
         </div>
 
         <div class="col-12">
-          <div class="input-group form-group">
+          <label class="lab">Indicativo y número de teléfono</label>
+          <div class="input-group form-group">            
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">
                 <img src="./assets/images/flag_spain.png" width="25" height="25">
-                <select name="codTelefono" class="form-select-sm" #codTelefono="ngModel" [(ngModel)]="order.user.codTelefono">
-                  <option [ngValue]="+34" selected>+34</option>
-                  <option [ngValue]="+43">+43</option>
-                  <option [ngValue]="+46">+46</option>
+                <select name="codTelefono" class="form-select-sm" [(ngModel)]="order.user.codTelefono" #codTelefono="ngModel">
+                  <option value="+34">+34</option>
+                  <option value="+43">+43</option>
+                  <option value="+46">+46</option>
                 </select> 
               </span>
             </div>
@@ -65,7 +66,7 @@
                    [(ngModel)]="order.user.phoneNumber" required placeholder="Número de teléfono" />
             <div class="col-12">
               <span *ngIf="submitted && phoneNumber.invalid" class="text-danger">
-                Por favor entra con su número de teléfono<br>
+                Por favor entra con indicativo y su número de teléfono<br>
               </span>
               <span *ngIf="phoneNumber.errors?.['minlength'] || phoneNumber.errors?.['pattern']" class="text-danger">
                 Debe contener solo números (mínimo 9)
@@ -120,8 +121,11 @@
         <div class="col-12">
           <div class="form-group config">
             <label class="lab">
-              <input type="checkbox" name="condiciones" ngModel required class="form-check-input mt-0" > Acepto las Condiciones de Uso y la Política de Privacidad
+              <input type="checkbox" name="isAccepted" [ngModel]="order.user.isAccepted" #isAccepted="ngModel" required class="form-check-input mt-0" > Acepto las Condiciones de Uso y la Política de Privacidad
             </label>
+            <span *ngIf="submitted && isAccepted.invalid" class="text-danger">
+              <br>Aceptar las Condiciones para continuar
+            </span>
           </div>
         </div>
 
