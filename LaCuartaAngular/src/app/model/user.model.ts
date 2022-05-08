@@ -15,6 +15,7 @@ export class User {
   public rememberMe: boolean = false;
   public rememberMeReservation: boolean = false;
   public codTelefono?: string;
+  public isAccepted: boolean = false;
 
   constructor( ) { }
 }
