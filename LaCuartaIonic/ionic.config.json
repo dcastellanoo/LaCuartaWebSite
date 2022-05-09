@@ -1,0 +1,7 @@
+{
+  "name": "LaCuartaIonic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
