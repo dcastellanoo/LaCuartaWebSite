@@ -1,0 +1,155 @@
+
+<div *ngIf="orderSent" class="container m-2 text-center">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 respuesta">
+      <h2>Gracias!</h2>
+      <p>Gracias por hacer su pedido.</p>
+      <p>Enviaremos sus productos lo antes posible.</p>
+      <button class="btn btn-primary btn-lg" routerLink="/store">
+        Volver a la web de La Cuarta
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-12 d-lg-none">
+      <div class="text-center" style="font-size: 40pt;margin-top: 20px;">
+        Procesar Pago
+      </div>
+    </div>
+
+    <form *ngIf="!orderSent" #form="ngForm" novalidate
+            (ngSubmit)="submitOrder(form)" class="m-2">
+
+      <div class="row orders-main mx-auto">
+
+        <div class="col-md-12">
+          <div class="form-group">
+            <input class="form-control" #name="ngModel" name="name"
+                   [(ngModel)]="order.user.fullName" required placeholder="Nombre" />
+            <span *ngIf="submitted && name.invalid" class="text-danger">
+              Por favor entra con su nombre
+            </span>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-group">
+            <input class="form-control" #email="ngModel" name="email"
+                   [(ngModel)]="order.user.email" required placeholder="Correo electrónico"  (change)="emailCheck(email.value)" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
+            <span *ngIf="submitted && email.invalid" class="text-danger">
+              Por favor entra con su coreo eletrónico<br>
+            </span>
+            <span *ngIf="email.errors?.['pattern']" class="text-danger">
+              Coreo eletrónico no es valido... ex: em123@exemplo.com
+            </span>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label class="lab">Indicativo y número de teléfono</label>
+          <div class="input-group form-group">            
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <img src="./assets/images/flag_spain.png" width="25" height="25">
+                <select name="codTelefono" class="form-select-sm" [(ngModel)]="order.user.codTelefono" #codTelefono="ngModel">
+                  <option value="+34">+34</option>
+                  <option value="+43">+43</option>
+                  <option value="+46">+46</option>
+                </select> 
+              </span>
+            </div>
+            <input class="form-control" #phoneNumber="ngModel" name="phoneNumber" pattern="[0-9]+$" minlength="9" maxlength="9" 
+                   [(ngModel)]="order.user.phoneNumber" required placeholder="Número de teléfono" />
+            <div class="col-12">
+              <span *ngIf="submitted && phoneNumber.invalid" class="text-danger">
+                Por favor entra con indicativo y su número de teléfono<br>
+              </span>
+              <span *ngIf="phoneNumber.errors?.['minlength'] || phoneNumber.errors?.['pattern']" class="text-danger">
+                Debe contener solo números (mínimo 9)
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-group">
+            <label class="lab">Número de tarjeta</label>
+            <input class="form-control" #numTarjeta="ngModel" name="numTarjeta" minlength="16" maxlength="16"
+                   [(ngModel)]="order.user.numTarjeta" required placeholder="Número de tarjeta" pattern="[0-9]+$"/>
+            <span *ngIf="submitted && numTarjeta.invalid" class="text-danger">
+              Por favor entra con su número de tarjeta correcto<br>
+            </span>
+            <span *ngIf="numTarjeta.errors?.['minlength'] || numTarjeta.errors?.['pattern']" class="text-danger">
+              Debe contener solo números (mínimo 16)
+            </span>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="form-group">
+            <label class="lab">Fecha de expiración</label>
+            <input class="form-control" #fechaExpiracion="ngModel" name="fechaExpiracion" minlength="5" maxlength="5"
+                   [(ngModel)]="order.user.fechaExpiracion" required placeholder="MM / AA" pattern="\d{1,2}/\d{1,2}"/>
+            <span *ngIf="submitted && fechaExpiracion.invalid" class="text-danger">
+              Por favor entra con la fecha expiracion correcto
+            </span>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="form-group">
+            <label class="lab">CVC / CVV</label>
+            <input class="form-control" #cvv="ngModel" name="cvv" minlength="3" maxlength="3"
+                   [(ngModel)]="order.user.cvv" required placeholder="xxx" />
+            <span *ngIf="submitted && cvv.invalid" class="text-danger">
+              Por favor entra con el cvc/cvv
+            </span>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-group">
+            <input class="form-control" #coment="ngModel" name="coment"
+                   [(ngModel)]="order.user.address!.country" placeholder="Comentarios acerca del pedido" />
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-group config">
+            <label class="lab">
+              <input type="checkbox" name="isAccepted" [ngModel]="order.user.isAccepted" #isAccepted="ngModel" required class="form-check-input mt-0" > Acepto las Condiciones de Uso y la Política de Privacidad
+            </label>
+            <span *ngIf="submitted && isAccepted.invalid" class="text-danger">
+              <br>Aceptar las Condiciones para continuar
+            </span>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-group config">
+            <label class="lab">
+              <input type="checkbox" name="rememberMe" #rememberMe="ngModel"
+                     [(ngModel)]="order.user.rememberMe" class="form-check-input mt-0" required>&nbsp; Recordarme para la próxima reserva
+            </label>
+          </div>
+        </div>
+
+
+        <div class="col-12">
+          <div class="float-start">
+            <button class="btn" routerLink="/carrito">Mi Pedido</button>
+          </div>
+          <div class="float-end">
+            <button class="btn" type="submit">Procesar Pago</button>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+</div>

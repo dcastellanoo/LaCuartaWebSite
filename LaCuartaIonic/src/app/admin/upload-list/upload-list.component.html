@@ -1,0 +1,22 @@
+<div class="container" style="margin-bottom: 40px;">
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card" style="background: rgba(255, 255, 255, 0.8);">
+
+        <div class="card-header" style="color: #000;font-weight: bolder;">
+          List of Files
+        </div>
+
+        <div class="card-body" style="padding-left: 45px;">
+          <ul class="list-group list-group-flush" *ngFor="let file of fileUploads" style="font-size:14pt;">
+            <li class="list-group-item" style="background: rgba(255, 255, 255, 0.1);">
+              <app-upload-details [fileUpload]='file'></app-upload-details>
+            </li>
+          </ul>
+        </div>
+              
+      </div>
+    </div>
+  </div>
+</div>

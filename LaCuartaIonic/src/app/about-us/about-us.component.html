@@ -1,0 +1,40 @@
+<article class="sobreNosotros container-fluid px-0 h-100">
+  <ngb-carousel *ngIf="carousel_images">
+    <ng-template ngbSlide *ngFor="let img of carousel_images; index as i">
+      <div class="picsum-img-wrapper">
+        <img [src]="carousel_images[i]" alt="TODO alt caption." class="d-block w-100" >
+      </div>
+    </ng-template>
+  </ngb-carousel>
+
+  <section class="aboutUs">
+    <div class="row py-md-5 px-5 p-2">
+      <div class="text col-lg-8 py-md-5">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate massa posuere, ornare ipsum ut,
+        cursus nulla. Proin egestas, nisl vel lacinia iaculis, ligula libero commodo lacus, vitae vehicula nunc
+        felis in quam. Mauris purus lorem, scelerisque ut lorem nec, tristique ornare est. Duis lacinia laoreet
+        odio at faucibus. Nulla facilisi. Nunc tempor diam augue, ac consectetur nunc ullamcorper sit amet.
+        Nulla facilisi.
+        Phasellus pretium ultrices urna id consequat. Etiam ac velit quis massa faucibus fringilla ac quis turpis.
+        Proin in tristique enim, in vestibulum neque.
+        Maecenas enim mauris, interdum quis lectus in, molestie molestie massa.
+        Pellentesque vestibulum magna in dui ullamcorper euismod. Pellentesque et nisi ac lorem aliquam condimentum.
+        Aliquam erat volutpat.
+        Duis erat urna, pharetra ullamcorper urna ut, gravida maximus dolor.
+      </div>
+      <div class="col-lg-4 d-block m-auto text-center px-md-5 py-2">
+        <img src="./assets/images/cheers.png" alt="Restaurante La Cuarta nosotros.">
+      </div>
+    </div>
+  </section>
+</article>
+
+
+<!-- TODO in typescript Circle thru carousel -->
+<script>
+  var myCarousel = document.querySelector('#carouselSobreNosotros')
+  var carousel = new bootstrap.Carousel(myCarousel, {
+    interval: 2000,
+    wrap: false
+  })
+</script>

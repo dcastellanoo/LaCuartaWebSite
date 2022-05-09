@@ -1,0 +1,82 @@
+<div class="container">
+
+  <div class="row">
+      <div class="col-12">
+        <div class="card" style="background: rgba(255, 255, 255, 0.8); color: #000;">
+
+            <div class="card-head text-center mt-5">
+              <div [class.bg-default]="editing"
+                   [class.text-dark]="editing" style="font-weight: bolder;">
+                <h5>{{editing ? "Edit" : "Create"}} Product</h5>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-10 offset-sm-1" style="font-size:14pt;">
+                    <form ngNativeValidate #form="ngForm" (ngSubmit)="save(form)">
+                      <div class="form-group mt-3">
+                        <label>Name</label>
+                        <input class="form-control" name="name" [(ngModel)]="product.name" required/>
+                      </div>
+
+                      <div class="form-group mt-3">
+                        <label>Type</label>
+                        <input class="form-control" name="type"
+                               [(ngModel)]="product.type" />
+                      </div>
+
+                      <div class="form-group mt-3">
+                        <label>Category</label>
+                        <input class="form-control" name="category"
+                               [(ngModel)]="product.category" />
+                      </div>
+
+                      <div class="form-group mt-3">
+                        <label>Description</label>
+                        <textarea class="form-control" name="description"
+                                  [(ngModel)]="product.description"></textarea>
+                      </div>
+
+                      <div class="form-group mt-3">
+                        <label>Price</label>
+                        <input class="form-control" name="price" [(ngModel)]="product.price" />
+                      </div>
+
+                      <div class="form-group mt-3">
+                        <label>Allergens</label>
+                        <input class="form-control" name="allergens" [(ngModel)]="product.allergens" />
+                      </div>
+
+                      <div class="form-group mt-3">
+                        <label>Image</label>
+                        <span *ngIf="product.url!">
+                          <img [src]="product.url" alt="Product image.">
+                        </span>  <br>
+                        <app-upload-form (newUploadEvent)="addImageToProduct($event)"></app-upload-form>
+                      </div>
+
+                      <div class="mt-5">
+                        <button type="submit" class="btn btn-primary m-1 float-start"
+                                [class.btn-warning]="editing">
+                          {{editing ? "Save" : "Create"}}
+                        </button>
+
+                        <button type="reset" class="btn btn-danger float-end"
+                                routerLink="/admin/main/products">
+                          Cancel
+                        </button>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

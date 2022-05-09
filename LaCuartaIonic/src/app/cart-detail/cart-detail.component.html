@@ -1,0 +1,87 @@
+<article class="reservas carrito container-fluid d-flex justify-content-center py-5">
+    <form class="text-center">
+        <div class="formTable ">
+            <div class="title d-inline-flex">
+                <figure class="d-md-none me-3">
+                    <img alt="Shopping cart." src="./assets/images/shopping_cart.png">
+                </figure>
+                <h3 class="text-bolder pt-2">TU PEDIDO</h3>
+            </div>
+
+
+            <div class="row pb-2 d-none d-md-flex">
+                <div class="col-md-3 ps-md-5 text-md-start">
+                    <h5 class="text-bolder">Producto</h5>
+                </div>
+
+                <div class="col-md-3">
+                    <h5 class="text-bolder">Precio</h5>
+                </div>
+
+                <div class="col-md-4 pe-md-5">
+                    <h5 class="text-bolder">Cantidad</h5>
+                </div>
+
+                <div class="col-md-2 pe-md-5">
+
+                </div>
+            </div>
+
+
+            <div *ngFor="let line of cart.lines" class="row my-3 pb-3 carrito_item">
+
+                <div class="col-12 col-md-3 text-start order-md-0 order-0 pt-3 pt-md-0 ps-md-5" style="padding: 10px; padding-right: 20px;">
+                    <img src="./assets/images/icone-remove.png" width="13" height="13" class="d-md-none" style="float: right;" (click)="cart.removeLine(line.product.id!)">
+
+                    {{line.product.name}}
+                </div>
+
+                <div class="col-6 col-md-3 order-md-1 order-2">
+                    <div class="d-none d-md-block">
+                        {{line.product.price | currency:"EUR":"symbol":"2.2-2"}}
+                    </div>
+                    <div class="d-md-none carrito_money_circle">
+                        {{line.product.price | currency:"EUR":"symbol":"2.2-2"}}
+                    </div>
+                </div>
+
+
+
+                <div class="col-6 col-md-4 text-start text-md-center order-md-2 order-1 pt-3 pt-md-0 pe-md-5">
+                    <div class="counter">
+                        <input type="button" class="buttonMinus" value="-" />
+                        <!-- <input type="number" class="text-center border-0 counterValue" value="1" min="0"/> -->
+
+                        <input type="number" class="text-center border-0 counterValue"
+                             [value]="line.quantity"
+                             (change)="cart.updateQuantity(line.product, $any($event.target).value)"/>
+                        <input type="button" class="buttonPlus" value="+" />
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-2 text-start text-md-center order-md-2 order-1 pt-3 pt-md-0 pe-md-5 d-none d-md-block">
+                   <button class="btn btn-sm" style="padding: 5px;"
+                      (click)="cart.removeLine(line.product.id!)">
+                      <img src="./assets/images/icone-remove.png" width="18" height="18">
+                  </button>
+                </div>
+
+            </div>
+
+            <div class="row mt-md-5 justify-content-end">
+                <div class="col-md-4 d-flex justify-content-center pe-md-5 align-self-end">
+                    <h3 class="text-bolder d-inline d-md-none mt-3 me-2">TOTAL:</h3>
+
+                    <div class="carrito_money_circle">
+                        {{cart.cartPrice | currency:"EUR":"symbol":"2.2-2"}}
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex pt-4 px-5 justify-content-between btt">
+                <input type="button" class="button" value="Seguir con el pedido" routerLink="/pedidos">
+                <input type="submit" class="button" value="Continuar" routerLink="/checkout"
+                [disabled]="cart.lines.length == 0">
+            </div>
+        </div>
+    </form>
+</article>

@@ -1,0 +1,67 @@
+<main class="carta">
+  <section class="subheader_carta">
+    <h1 class="subheader_title_carta">Carta</h1>
+    <article class="container_subheader_carta row">
+
+      <div class="subheader_text_carta col-4">
+        <div class="row">
+          <a class="nav-link color_txt_subheader_carta link-carta py-0" routerLink="/carta" (click)="changeCategory(this.listOfFood[0])">
+            <b>Entrantes</b>
+          </a>
+        </div>
+        <div class="row">
+          <a class="nav-link color_txt_subheader_carta link-carta py-0" routerLink="/carta" (click)="changeCategory(this.listOfFood[1])">
+            <b>Principales</b>
+          </a>
+        </div>
+        <div class="row">
+          <a class="nav-link color_txt_subheader_carta link-carta py-0" routerLink="/carta" (click)="changeCategory(this.listOfFood[2])">
+            <b>Sugerencias</b>
+          </a>
+        </div>
+        <div class="row">
+          <a class="nav-link color_txt_subheader_carta link-carta py-0" routerLink="/carta" (click)="changeCategory(this.listOfFood[3])">
+            <b>Postres</b>
+          </a>
+        </div>
+        <div class="row">
+          <a class="nav-link color_txt_subheader_carta link-carta py-0" routerLink="/bebidas">
+            <b>Bebidas</b>
+          </a>
+        </div>
+        <div class="row">
+          <a class="nav-link color_txt_subheader_carta link-carta py-0" routerLink="/vinos">
+            <b>Carta de Vinos</b>
+          </a>
+        </div>
+      </div>
+
+      <figure class="subheader_photo_carta col-4">
+        <img src="./assets/images/logo_carta.png" class="size_photo_header" alt="logo carta.">
+      </figure>
+    </article>
+  </section>
+
+  <section class="body_plato_carta">
+    <h1 class="align_opcion_plato_carta text_opcion_plato_carta">Bebidas</h1>
+    <article *ngFor="let cat of listOfCategories">
+      <div class="background_text_bebidas col">
+        <div class="text_title_bebidas margin_title_bebidas row">
+          <b>
+            {{cat}}
+          </b>
+        </div>
+        <div class="row margin_text_bebidas" *ngFor="let product of products(cat)">
+          <div class="text_nombre_bebidas margin_nombre_bebidas col me-auto">
+            {{product.name}}
+          </div>
+          <div class="text_money_bebidas col-md-2 col-auto margin_money_bebidas">
+            {{product.price | currency:"EUR":"symbol":"0.2-2" }}
+          </div>
+        </div>
+      </div>
+    </article>'
+  </section>
+
+
+</main>

@@ -1,0 +1,96 @@
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="col-lg-3">
+
+      <nav class="nav-menu-left">
+
+        <input type="hidden" #selection>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="menu-left">
+              <ul class="menu-list">
+                <li>
+                  <a routerLink="/carrito" class="btn d-lg-none d-xl-block d-xl-none cart-resp"><img src="./assets/images/icone-cart.png" width="40" height="40"></a>
+                </li>
+
+                <li *ngFor="let cat of categories">
+                  <a (click)="changeCategory(cat)">{{cat}}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="menu-btn d-none d-lg-block">
+              <a routerLink="/carrito"><button>Tu pedido</button></a>
+            </div>
+          </div>
+        </div>
+
+      </nav>
+
+    </div>
+
+    <div class="col-lg-9">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="row">
+            <div class="col-12">
+              <div class="header-pedido">
+                <h1>{{selectedCategory}}</h1>
+              </div>
+            </div>
+
+            <div class="col-3 pedido" *ngFor="let product of products">
+
+              <!-- <div class="col-3 pedido"> -->
+                <div class="d-none d-lg-block">
+                  <img [src]="product.url" class="pedido_image">
+                </div>
+
+                <div class="pedido-info">
+                  <label class="spi-1">{{product.name}}</label>
+                  <label class="spi-2">
+                    <img src="./assets/images/icone-star.png" width="14" height="14">
+                    <img src="./assets/images/icone-star.png" width="14" height="14">
+                    <img src="./assets/images/icone-star.png" width="14" height="14">
+                    <img src="./assets/images/icone-star.png" width="14" height="14">
+                    <img src="./assets/images/icone-star.png" width="14" height="14">
+                  </label>
+                  <a (click)="addProductToCart(product, parseInt(pedido_quantity.value))">
+                    <label class="spi-3">
+                      {{ product.price | currency:"EUR":"symbol":"0.2-2" }}
+                    </label>
+                  </a>
+                </div>
+
+                <div class="pedido-quant">
+                  <input #pedido_quantity type="number" name="pedido_quantity" min="1" value="1">
+                </div>
+
+                <div class="btn-pedido d-none d-lg-block">
+                  <button class="btn"
+                          (click)="addProductToCart(product, parseInt(pedido_quantity.value))">
+                    <img src="/assets/images/icone-cart.png" width="15" height="15"> Compra</button>
+                </div>
+              <!-- </div> -->
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+

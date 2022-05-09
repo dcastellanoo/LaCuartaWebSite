@@ -1,0 +1,149 @@
+<!-- TODO Load horario from Firebase -->
+
+<!-- Page content -->
+<main id="content-fluid">
+  <div class="row margin_body_top">
+
+    <div class="d-lg-none d-md-none container_contact_txt">
+      <img src="./assets/images/terraza-noche.png" class="size_terra-n" alt="Restaurante Google maps.">
+      <div class="text_contact">Contacto</div>
+    </div>
+
+     <div class="col-lg-6 col-12 text-center text_hor">
+       <div class="row-sm-12">
+         <h1 class="text_title_hor">Horario</h1>
+       </div>
+
+
+       <div *ngFor='let day of this.week' class="row text_body_hor">
+         <div class="col">
+           <p>{{day[1]}}</p>
+         </div>
+
+         <div class="col">
+           <ng-container *ngIf="!!this.opening_hours && this.opening_hours[day[0]].length > 0; then openTemplate else closeTemplate"></ng-container>
+         </div>
+
+         <ng-template #openTemplate>
+           <div *ngFor="let timeSlot of this.opening_hours[day[0]]">
+             <p>
+               {{timeSlot["open"].split(":").slice(0, -1).join(":")}}
+               -
+               {{timeSlot["close"].split(":").slice(0, -1).join(":")}}
+             </p>
+           </div>
+         </ng-template>
+
+         <ng-template #closeTemplate>
+           <p>cerrado</p>
+         </ng-template>
+       </div>
+     </div>
+
+    <!--
+    <div class="col-lg-6 col-12 text-center text_hor">
+      <div class="row-sm-12">
+        <h1 class="text_title_hor">Horario</h1>
+      </div>
+      <div class="row text_body_hor">
+        <div class="col">
+          <p>Lunes</p>
+        </div>
+        <div class="col">
+          <p>cerrado</p>
+        </div>
+      </div>
+
+      <div class="row text_body_hor">
+        <div class="col">
+          <p>Martes</p>
+        </div>
+        <div class="col">
+          <p>13:00 - 16:30</p>
+        </div>
+      </div>
+
+      <div class="row text_body_hor">
+        <div class="col">
+          <p>Miércoles</p>
+        </div>
+        <div class="col">
+          <p>13:00 - 16:30</p>
+        </div>
+      </div>
+
+      <div class="row text_body_hor">
+        <div class="col">
+          <p>Jueves</p>
+        </div>
+        <div class="col">
+          <p>13:00 - 16:30</p>
+        </div>
+      </div>
+
+      <div class="row text_body_hor">
+        <div class="col">
+          <p>Viernes</p>
+        </div>
+        <div class="col">
+          <p>13:00 - 16:30</p>
+          <p>20:15 - 24:00</p>
+        </div>
+      </div>
+
+      <div class="row text_body_hor">
+        <div class="col">
+          <p>Sábado</p>
+        </div>
+        <div class="col">
+          <p>13:00 - 16:30</p>
+          <p>20:15 - 24:00</p>
+        </div>
+      </div>
+
+      <div class="row text_body_hor">
+        <div class="col">
+          <p>Domingo</p>
+        </div>
+        <div class="col">
+          <p>13:00 - 16:30</p>
+        </div>
+      </div>
+    </div>
+
+    -->
+
+
+    <div class="col-lg-6 col-12 margin_img_ubi">
+      <div class="text-center">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14072.15266581942!2d-15.6552856!3d28.1453263!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3f8ebc45783dfa2d!2sBar%20La%20Cuarta!5e0!3m2!1scs!2ses!4v1649070972795!5m2!1scs!2ses"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="row margin_body_bottom margin_text_top text_info">
+    <div class="col-lg-6 col-sm-12 order-2 order-lg-1">
+      <div class="row text-center align-center-telephone">
+        <figure class="col-2 margin_telephone">
+          <img src="./assets/images/telephone.png" class="size_img_logo_telephone" alt="Telephone pic.">
+        </figure>
+        <p class="col margin_number">{{this.phone}}</p>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-sm-12 order-1 order-lg-2">
+      <div class="row text-center align-center-ubi">
+        <figure class="col-2 margin_ubi">
+          <img src="./assets/images/location.png" class="size_img_logo_ubi" alt="Location pic.">
+        </figure>
+        <p class="col margin_dir">{{this.address}}</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+
+
+

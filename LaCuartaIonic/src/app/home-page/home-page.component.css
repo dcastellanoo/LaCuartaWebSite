@@ -1,0 +1,16 @@
+.homePage {
+  min-height: 75vw;
+}
+
+.homePage h1 {
+}
+
+.homePage .mobileHomePage figure {
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+}
+
+.homePage .mobileHomePage .carousel-caption {
+  top: 30vw
+}
