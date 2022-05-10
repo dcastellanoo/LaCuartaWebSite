@@ -1,0 +1,147 @@
+[
+  {
+    "id": 1,
+    "type": "bebida",
+    "category": "Refrescos",
+    "name": "Fanta de naranja",
+    "price": 0.95
+  },
+  {
+    "id": 2,
+    "type": "bebida",
+    "category": "Refrescos",
+    "name": "Clipper de fresa",
+    "price": 0.95
+  },
+  {
+    "id": 3,
+    "type": "bebida",
+    "category": "Cervezas",
+    "name": "Tropical",
+    "price": 1.10
+  },
+  {
+    "id": 4,
+    "type": "bebida",
+    "category": "Cervezas",
+    "name": "Dorada Especial",
+    "price": 1.20
+  },
+  {
+    "id": 5,
+    "type": "vino",
+    "category": "Vino Tinto",
+    "name": "El Marqués de Atrio",
+    "price": 22.50,
+    "description": "Crianza de 2016 de la Denominación de Origen La Rioja"
+  },
+  {
+    "id": 6,
+    "type": "vino",
+    "category": "Vino Tinto",
+    "name": "Pies Negros",
+    "price": 17.25,
+    "description": "Crianza de 2016 de la Denominación de Origen La Rioja"
+  },
+  {
+    "id": 7,
+    "type": "vino",
+    "category": "Vino Blanco",
+    "name": "Malvasía",
+    "price": 35.00,
+    "description": "Vino blanco malvasía seco de una de las Bodegas más reputadas de Lanzarote"
+  },
+  {
+    "id": 8,
+    "type": "vino",
+    "category": "Vino Blanco",
+    "name": "Yaiza",
+    "price": 25.00,
+    "description": "Esencia de Yaiza es la expresión genuina de la viticultura artesanal de Lanzarote"
+  },
+  {
+    "id": 9,
+    "type": "comida",
+    "name": "Nachos con guacamole",
+    "category": "Entrantes",
+    "description":  "Una completa comida mexicana, ideal para invitados o cenas informales con amigos",
+    "allergens": "No apto para intolerantes a la lactosa",
+    "price": 5.00,
+    "url": "https://quecarta.com/uploads/2020/12/14/225013013268.256x256.jpg"
+  },
+  {
+    "id": 10,
+    "type": "comida",
+    "name": "Tequeños con queso",
+    "category": "Entrantes",
+    "description": "Este plato tan sencillo es una institución gastronómica en todas las fiestas y celebraciones venezolanas",
+    "allergens": "No apto para intolerantes a la lactosa",
+    "price": 4.50,
+    "url": "https://lapajara.coopcycle.org/media/cache/product_thumbnail/62/0d/620d5ccde9c37.jpeg"
+  },
+
+  {
+    "id": 11,
+    "type": "comida",
+    "name": "Espaguetis a la carbonara",
+    "category": "Principales",
+    "description": "Espaguetis a la carbonara receta italiana original con panceta, yema de huevo y parmesano",
+    "allergens": "No apto para intolerantes a la lactosa",
+    "price": 6.50,
+    "url": "https://i-ticketing.iwos.com/256x256-th/products/182/products_182_54.jpg"
+  },
+
+  {
+    "id": 12,
+    "type": "comida",
+    "name": "Calamares fritos",
+    "category": "Principales",
+    "description": "Calamares frescos acompañados de rodajas de limón, plato típico español",
+    "allergens": "Sin alérgenos",
+    "price": 8.50,
+    "url": "https://quecarta.com/uploads/2020/06/18/171232874879.256x256.jpg"
+  },
+
+  {
+    "id": 13,
+    "type": "comida",
+    "name": "Papas arrugadas con mojo",
+    "category": "Sugerencias",
+    "description": "Si hay un plato que representa a las Islas Canarias, son las papas arrugadas con mojo picón",
+    "allergens": "Sin alérgenos",
+    "price": 3.25,
+    "url": "https://quecarta.com/uploads/2020/05/25/095545851335.256x256.jpg"
+  },
+
+  {
+    "id": 14,
+    "type": "comida",
+    "name": "Queso frito con mermelada",
+    "category": "Sugerencias",
+    "description": "El queso Camembert frito con mermelada de tomate es una tapa y/o aperitivo ideal",
+    "allergens": "No apto para intolerantes a la lactosa",
+    "price": 3.25,
+    "url": "https://quecarta.com/uploads/2020/08/29/204854258850.256x256.jpg"
+  },
+
+  {
+    "id": 15,
+    "type": "comida",
+    "name": "Tiramisú",
+    "category": "Postres",
+    "description": "El tiramisú es uno de los postres más famosos y deliciosos de la cocina italiana",
+    "allergens": "No apto para intolerantes a la lactosa",
+    "price": 4.25,
+    "url": "https://photos.bigoven.com/recipe/hero/tiramisu-94.jpg?h=300&w=300"
+  },
+  {
+    "id": 16,
+    "type": "comida",
+    "name": "Polvito uruguayo",
+    "category": "Postres",
+    "description": "El polvito es un delicioso postre uruguayo que se ha popularizado sobre todo en Gran Canaria",
+    "allergens": "No apto para intolerantes a la lactosa",
+    "price": 4.75,
+    "url": "images/polvito.jpg"
+  }
+]
