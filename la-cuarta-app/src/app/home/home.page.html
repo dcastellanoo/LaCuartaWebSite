@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let product of products | async"
+              [routerLink]="'/product-details/' + product.id">
+      <ion-label>{{ product.name }} {{ product.category }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <p class="go-to-login">Already have an account?
+    <a (click)="goToLoginPage()">Try to Log In.</a>
+  </p>
+</ion-content>
