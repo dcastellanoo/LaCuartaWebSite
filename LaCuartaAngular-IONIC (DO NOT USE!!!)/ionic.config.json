@@ -1,7 +1,0 @@
-{
-  "name": "LaCuartaAngular-IONIC",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
-}
