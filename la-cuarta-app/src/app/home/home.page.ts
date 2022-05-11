@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FirebaseDataService} from '../services/firebase-data.service';
 import {Product} from '../models/product.model';
 import {NavController} from '@ionic/angular';
+import {ProductRepositoryService} from '../services/product-repository.service';
 
 @Component({
   selector: 'app-home',
@@ -9,16 +9,18 @@ import {NavController} from '@ionic/angular';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  products;
+  products: Product[];
 
-  // TODO user product repository
   constructor(
     private navCtrl: NavController,
-    database: FirebaseDataService) {
-    this.products = database.getProducts();
-  }
+    private repository: ProductRepositoryService
+  ) { }
 
   ngOnInit() {
+  }
+
+  getProducts(): Product[] {
+    return this.repository.getProducts();
   }
 
   goToLoginPage() {

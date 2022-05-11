@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{product.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="form-group mt-3">
+    <span *ngIf="product.url!">
+          <img [src]="product.url" alt="Product image.">
+        </span>
+  </div>
+
+  <br>
+
+  <div class="form-group mt-3">
+    <label>Type</label>
+    <p>{{product.type}}</p>
+  </div>
+
+  <div class="form-group mt-3">
+    <label>Category</label>
+    <p>{{product.category}}</p>
+  </div>
+
+  <div class="form-group mt-3">
+    <label>Description</label>
+    <p>{{product.description}}</p>
+  </div>
+
+  <div class="form-group mt-3">
+    <label>Allergens</label>
+    <p>{{product.allergens}}</p>
+  </div>
+
+  <div class="form-group mt-3">
+    <label>Price</label>
+    <p>{{product.price | currency:"EUR":"symbol":"0.2-2"}}</p>
+  </div>
+
+
+  TODO Add to favourites if logged in
+
+</ion-content>
