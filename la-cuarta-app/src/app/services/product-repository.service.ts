@@ -13,7 +13,7 @@ export class ProductRepositoryService {
     database.getProducts().subscribe((data) => {
       this.products = data;
 
-      console.log("Products:", this.products);
+      console.log('Products:', this.products);
 
       data.forEach((p) => {
         if ( this.categories.get(p.type) === undefined ) {
@@ -22,7 +22,7 @@ export class ProductRepositoryService {
           this.categories.get(p.type).add(p.category);
         }
       });
-      console.log("Found categories:", this.categories);
+      console.log('Found categories:', this.categories);
     });
   }
 
@@ -48,7 +48,7 @@ export class ProductRepositoryService {
   }
 
   getProduct(id: string): Product {
-    console.log("finding:", this.products.find(p => p.id === id));
+    console.log('finding:', this.products.find(p => p.id === id));
     return this.products.find(p => p.id === id) as Product;
   }
 
@@ -75,7 +75,7 @@ export class ProductRepositoryService {
         index === self.findIndex((t) => (
           t.name === thing.name && t.type === thing.type && t.category === thing.category
         ))
-    )
+    );
 
     return this.products;
   }

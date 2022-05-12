@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FavouritesRepositoryService} from '../services/favourites-repository.service';
+import {AuthenticationService} from '../services/authentication.service';
 
 @Component({
   selector: 'app-favourites-table',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavouritesTablePage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private favouritesRepo: FavouritesRepositoryService,
+    private authService: AuthenticationService,
+  ) { }
 
   ngOnInit() {
   }

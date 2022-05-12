@@ -7,13 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { FavouritesTablePageRoutingModule } from './favourites-table-routing.module';
 
 import { FavouritesTablePage } from './favourites-table.page';
+import {SqlCrudService} from '../services/sql-crud.service';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FavouritesTablePageRoutingModule
+    FavouritesTablePageRoutingModule,
   ],
   declarations: [FavouritesTablePage]
 })

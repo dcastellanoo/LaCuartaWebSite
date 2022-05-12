@@ -1,9 +1,9 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>favourites-table</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+<ion-list>
+  <ion-list-header>
+    Favourite products list
+  </ion-list-header>
+  <ion-item *ngFor="let product of this.favouritesRepo.getAllFavourites(this.authService.userDetails().uid) | async"
+            [routerLink]="['/product-details', product.id]">
+    <ion-label>{{ product.name }} - {{ product.category }}</ion-label>
+  </ion-item>
+</ion-list>
