@@ -1,31 +1,46 @@
 <ion-header>
 
   <ion-toolbar>
-    <ion-title>Dashboard</ion-title>
+    <ion-title>Welcome user -- {{user.email}}</ion-title>
   </ion-toolbar>
 
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-grid>
-    <ion-row>
-      <ion-col text-center>
-        Welcome to La Cuarta Application!
-      </ion-col>
-    </ion-row>
 
-    <ion-row>
-      <ion-col text-center>
-        Your Registered EmailID : {{userEmail}}
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content>
+<form ngNativeValidate #form="ngForm" (ngSubmit)="save(form)">
+  <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-input class="form-control" name="name" [(ngModel)]="user.fullName" required></ion-input>
+  </ion-item>
 
-<ion-footer (click)="logout()">
+  <ion-item>
+    <ion-label>Phone Number</ion-label>
+    <ion-input class="form-control" name="type"
+               [(ngModel)]="user.phoneNumber"></ion-input>
+  </ion-item>
 
-  <ion-toolbar color="secondary">
-    <ion-title>Log out</ion-title>
-  </ion-toolbar>
+  <ion-item>
+    <ion-label>Profile Pic</ion-label>
+    <span *ngIf="user.imageUrl!">
+      <img [src]="user.imageUrl" alt="User image.">
+    </span>
 
-</ion-footer>
+    <br>
+
+    <app-upload-form (newUploadEvent)="addImageToUser($event)"></app-upload-form>
+  </ion-item>
+
+  <div class="mt-5">
+    <ion-button type="submit">
+      Save
+    </ion-button>
+
+    <ion-button type="reset" class="btn btn-danger float-end"
+            [routerLink]="['/home']">
+      Home
+    </ion-button>
+  </div>
+
+</form>
+
+

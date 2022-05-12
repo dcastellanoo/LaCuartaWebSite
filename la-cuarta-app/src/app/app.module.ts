@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {AngularFireAuthModule} from '@angular/fire/compat/auth';
 import {AngularFireModule} from '@angular/fire/compat';
 import {environment} from '../environments/environment';
+import {AuthenticationService} from './services/authentication.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import {environment} from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [
+    AuthenticationService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

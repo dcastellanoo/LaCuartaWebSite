@@ -1,8 +1,9 @@
-import {AngularFireStorage} from "@angular/fire/compat/storage";
-import {FileUpload, IFileUpload} from "../model/file-upload.model";
-import {finalize, from, Observable, of} from "rxjs";
+import {AngularFireStorage} from '@angular/fire/compat/storage';
 import {Injectable} from "@angular/core";
 import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/compat/firestore";
+import {Observable} from 'rxjs';
+import {finalize} from 'rxjs/operators';
+import {FileUpload, IFileUpload} from '../models/file-upload.model';
 
 @Injectable({
   providedIn: 'root'
@@ -42,16 +43,16 @@ export class FileUploadService {
   }
 
   deleteFile(fileUpload: FileUpload): void {
-    this.deleteFileDatabase(fileUpload.key!)
+    this.deleteFileDatabase(fileUpload.key)
       .then(() => {
-        this.deleteFileStorage(fileUpload.name!);
+        this.deleteFileStorage(fileUpload.name);
       })
       .catch(error => console.log(error));
   }
 
   private saveFileData(fileUpload: FileUpload): void {
     //this.db.list(this.basePath).push(fileUpload);
-    let uploadKey = this.firestore.createId();
+    const uploadKey = this.firestore.createId();
 
     this.uploadsRef.doc(uploadKey).set({
       "name": fileUpload.name,

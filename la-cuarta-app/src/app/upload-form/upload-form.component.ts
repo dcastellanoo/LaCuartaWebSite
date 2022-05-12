@@ -1,8 +1,6 @@
 import {Component, EventEmitter, Output} from "@angular/core";
-
-import {FileUpload} from "../../model/file-upload.model";
-import {FileUploadService} from "../../services/file-upload.service";
-import {delay, Observable, of} from "rxjs";
+import {FileUpload} from '../models/file-upload.model';
+import {FileUploadService} from '../services/file-upload.service';
 
 @Component({
   selector: 'app-upload-form',
@@ -10,10 +8,11 @@ import {delay, Observable, of} from "rxjs";
 })
 
 export class UploadFormComponent {
+  @Output() newUploadEvent = new EventEmitter<string>();
+
   selectedFiles?: FileList;
   currentFileUpload?: FileUpload;
   percentage = 0;
-  @Output() newUploadEvent = new EventEmitter<string>();
 
 
   constructor(private uploadService: FileUploadService) { }
@@ -40,8 +39,8 @@ export class UploadFormComponent {
 
         // TODO not ideal
         setTimeout(() => {
-          this.newUploadEvent.emit(this.currentFileUpload!.url);
-        }, 1000);
+          this.newUploadEvent.emit(this.currentFileUpload.url);
+        }, 2500);
       }
     }
   }

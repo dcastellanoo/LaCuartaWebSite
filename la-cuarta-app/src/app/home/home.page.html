@@ -2,10 +2,43 @@
   <ion-toolbar>
     <ion-title>home</ion-title>
 
-    <ion-tab-button (click)="goToLoginPage()">
-      Log In
-    </ion-tab-button>
+    <span>
+      <div *ngIf="this.authService.isLoggedIn(); else showLogin">
+        <ion-button (click)="this.authService.logout()">
+          LOG OUT
+        </ion-button>
+      </div>
+
+      <ng-template #showLogin>
+        <ion-button [routerLink]="['/login']">
+          LOG IN
+        </ion-button>
+      </ng-template>
+
+    </span>
+
+    <ion-button [routerLink]="['/user-details']">
+      User zone
+    </ion-button>
+
+    <!--
+    <ion-toolbar>
+      <span>
+      <div class="account-container" *ngIf="currentUser; else showLogin">
+        <span>{{currentUser.fullName}}</span>
+        <button igxButton="raised" igxRipple (click)="this.afAuth.logoutUser()">Logout</button>
+      </div>
+      <ng-template #showLogin>
+        <div>
+          <button igxButton="raised" igxRipple [routerLink]="['/login']">Login</button>
+        </div>
+      </ng-template>
+    </span>
+    </ion-toolbar>
+    -->
   </ion-toolbar>
+
+
 </ion-header>
 
 <ion-content>

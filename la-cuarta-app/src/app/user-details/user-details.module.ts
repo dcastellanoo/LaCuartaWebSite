@@ -4,9 +4,10 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DashboardPageRoutingModule } from './dashboard-routing.module';
+import { DashboardPageRoutingModule } from './user-details-routing.module';
 
-import { DashboardPage } from './dashboard.page';
+import { UserDetailsPage } from './user-details.page';
+import {UploadFormComponent} from '../upload-form/upload-form.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,8 @@ import { DashboardPage } from './dashboard.page';
     IonicModule,
     DashboardPageRoutingModule
   ],
-  declarations: [DashboardPage]
+  declarations: [
+    UserDetailsPage,
+    UploadFormComponent]
 })
 export class DashboardPageModule {}

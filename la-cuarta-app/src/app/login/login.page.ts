@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {NavController} from '@ionic/angular';
 import {AuthenticationService} from '../services/authentication.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -11,21 +11,21 @@ import {AuthenticationService} from '../services/authentication.service';
 })
 export class LoginPage implements OnInit {
   validations_form: FormGroup;
-  errorMessage: string = '';
+  errorMessage = '';
 
   validation_messages = {
-    'email': [
+    email: [
       { type: 'required', message: 'Email is required.' },
       { type: 'pattern', message: 'Please enter a valid email.' }
     ],
-    'password': [
+    password: [
       { type: 'required', message: 'Password is required.' },
       { type: 'minlength', message: 'Password must be at least 5 characters long.' }
     ]
   };
 
   constructor(
-    private navCtrl: NavController,
+    private router: Router,
     private authService: AuthenticationService,
     private formBuilder: FormBuilder) { }
 
@@ -40,20 +40,18 @@ export class LoginPage implements OnInit {
         Validators.required
       ])),
     });
+    this.validations_form.get('email').setValue('test@test.es');
+    this.validations_form.get('password').setValue('secret');
+
   }
 
   loginUser(value) {
-    this.authService.loginUser(value)
+    this.authService.login(value.email, value.password)
       .then(res => {
-        console.log(res);
-        this.errorMessage = "";
-        this.navCtrl.navigateForward('/dashboard');
+        this.errorMessage = '';
+        this.router.navigate(['user-details']);
       }, err => {
         this.errorMessage = err.message;
-      })
-  }
-
-  goToRegisterPage() {
-    this.navCtrl.navigateForward('/register');
+      });
   }
 }

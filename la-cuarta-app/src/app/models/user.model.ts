@@ -16,6 +16,9 @@ export class User {
   public rememberMeReservation: boolean = false;
   public codTelefono?: string;
   public isAccepted: boolean = false;
+  // Not sure about this
+  public imageUrl?: string = 'https://firebasestorage.googleapis.com/v0/b/lacuartaweb-bce85.appspot.com/o/uploads%2Fuser.png?alt=media&token=7defe2ff-9b61-408c-acc5-4cdf6623940e';
+
 
   constructor( ) { }
 }

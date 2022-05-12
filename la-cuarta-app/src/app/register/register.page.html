@@ -42,6 +42,22 @@
       </ng-container>
     </div>
 
+    <ion-item>
+      <ion-label position="floating" color="primary">Full name</ion-label>
+      <ion-input type="text" formControlName="fullName"></ion-input>
+    </ion-item>
+
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.fullName">
+        <div class="error-message"
+             *ngIf="validations_form.get('fullName').hasError(validation.type)
+                    && (validations_form.get('fullName').dirty
+                    || validations_form.get('fullName').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
     <ion-button class="submit-btn" type="submit"
                 [disabled]="!validations_form.valid">Register</ion-button>
     <label class="error-message">{{errorMessage}}</label>
@@ -50,7 +66,7 @@
   </form>
 
   <p class="go-to-login">Already have an account?
-    <a (click)="goLoginPage()">Try to Log In.</a>
+    <a [routerLink]="['/login']">Try to Log In.</a>
   </p>
 
 </ion-content>
