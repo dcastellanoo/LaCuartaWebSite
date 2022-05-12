@@ -42,7 +42,21 @@
     <p>{{product.price | currency:"EUR":"symbol":"0.2-2"}}</p>
   </div>
 
+  <div *nfIf="true;">
+    <span>
+      <div *ngIf="false; else showAddButton">
+        <ion-button>
+          Remove from favourites
+        </ion-button>
+      </div>
 
-  TODO Add to favourites if logged in
+      <ng-template #showAddButton>
+        <ion-button>
+          Add to favourites
+        </ion-button>
+      </ng-template>
+    </span>
+  </div>
+
 
 </ion-content>

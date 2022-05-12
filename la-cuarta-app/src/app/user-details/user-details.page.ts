@@ -23,35 +23,7 @@ export class UserDetailsPage implements OnInit {
   }
 
   ngOnInit() {
-
-    /*
-    this.authService.userDetails().subscribe(res => {
-      console.log('res', res);
-      if (res !== null) {
-        this.userEmail = res.email;
-        //this.user = new User();
-      } else {
-        this.navCtrl.navigateBack('');
-      }
-    }, err => {
-      console.log('err', err);
-    })
-    */
-
   }
-
-  /*
-  logout() {
-    this.authService.logout()
-      .then(res => {
-        console.log(res);
-        this.navCtrl.navigateBack('');
-      })
-      .catch(error => {
-        console.log(error);
-      })
-  }
-  */
 
 
   save(form: NgForm) {

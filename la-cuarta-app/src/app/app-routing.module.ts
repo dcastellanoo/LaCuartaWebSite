@@ -5,8 +5,12 @@ import {AuthGuardService} from './services/auth-guard.service';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: '/',
     pathMatch: 'full'
+  },
+  {
+    path: '',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'login',
@@ -23,14 +27,16 @@ const routes: Routes = [
     loadChildren: () =>
       import('./user-details/user-details.module').then(m => m.DashboardPageModule)
   },
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
+
   {
     path: 'product-details/:id',
     loadChildren: () => import('./product-details/product-details.module').then( m => m.ProductDetailsPageModule)
   },
+  {
+    path: 'favourite-products', canActivate: [AuthGuardService],
+    loadChildren: () => import('./favourites-table/favourites-table.module').then( m => m.FavouritesTablePageModule)
+  },
+  { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({
@@ -39,4 +45,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

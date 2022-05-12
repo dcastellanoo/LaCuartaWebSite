@@ -10,9 +10,13 @@ import {AngularFireAuthModule} from '@angular/fire/compat/auth';
 import {AngularFireModule} from '@angular/fire/compat';
 import {environment} from '../environments/environment';
 import {AuthenticationService} from './services/authentication.service';
+import {HeaderComponent} from './header/header.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent
+  ],
   entryComponents: [],
   imports: [
     BrowserModule,

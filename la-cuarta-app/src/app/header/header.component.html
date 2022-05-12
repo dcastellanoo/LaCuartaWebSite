@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">La Cuarta App</ion-title>
+
+    <ion-button [routerLink]="['/']">
+      Home
+    </ion-button>
+
+    <ion-button [routerLink]="['/user-details']">
+      User zone
+    </ion-button>
+
+    <span>
+      <div *ngIf="this.authService.isLoggedIn(); else showLogin">
+        <ion-button (click)="this.authService.logout()">
+          LOG OUT
+        </ion-button>
+
+        <ion-button [routerLink]="['/favourite-products']">
+          Favourites
+        </ion-button>
+      </div>
+
+      <ng-template #showLogin>
+        <ion-button [routerLink]="['/login']">
+          LOG IN
+        </ion-button>
+      </ng-template>
+    </span>
+
+
+
+    <!--
+    <ion-toolbar>
+      <span>
+      <div class="account-container" *ngIf="currentUser; else showLogin">
+        <span>{{currentUser.fullName}}</span>
+        <button igxButton="raised" igxRipple (click)="this.afAuth.logoutUser()">Logout</button>
+      </div>
+      <ng-template #showLogin>
+        <div>
+          <button igxButton="raised" igxRipple [routerLink]="['/login']">Login</button>
+        </div>
+      </ng-template>
+    </span>
+    </ion-toolbar>
+    -->
+  </ion-toolbar>
+
+
+</ion-header>
