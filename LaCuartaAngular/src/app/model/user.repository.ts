@@ -47,7 +47,7 @@ export class UserRepository {
   }
 
   deleteUser(id: string) {
-    this.dataSource.deleteOrder(id).subscribe(user => {
+    this.dataSource.deleteUser(id).subscribe(user => {
       this.users.splice(this.users.findIndex(u => id == u.id), 1);
     });
   }
