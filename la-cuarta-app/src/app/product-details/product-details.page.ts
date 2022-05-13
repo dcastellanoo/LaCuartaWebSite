@@ -45,7 +45,7 @@ export class ProductDetailsPage implements OnInit {
   deleteFromFavourites() {
     this.sqlCrud.deleteFavourite(this.favourite.favourite_id);
     this.reloadFavourites();
-    this.favourite = undefined;
+    //this.favourite = undefined;
   }
 
   private reloadFavourites() {
@@ -53,7 +53,7 @@ export class ProductDetailsPage implements OnInit {
     console.log('Favourite list:', this.sqlCrud.favourites);
     setTimeout(() => {
       this.favourite = this.sqlCrud.favourites.find(fav => fav.product_id === this.product.id);
-    }, 100)
+    }, 100);
     console.log('This favourite:', this.favourite);
   }
 
