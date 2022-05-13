@@ -2,8 +2,13 @@
   <ion-list-header>
     Favourite products list
   </ion-list-header>
-  <ion-item *ngFor="let product of this.favouritesRepo.getAllFavourites(this.authService.userDetails().uid) | async"
+
+  <ion-item *ngFor="let favouriteItem of this.sqlCrud.favourites;">
+    <div *ngFor="let product of [this.productRepo.getProduct(favouriteItem.product_id)];"
             [routerLink]="['/product-details', product.id]">
-    <ion-label>{{ product.name }} - {{ product.category }}</ion-label>
+      <h2><strong>{{ product.name }}</strong></h2>
+      <p>{{ product.category }}</p>
+    </div>
   </ion-item>
+
 </ion-list>

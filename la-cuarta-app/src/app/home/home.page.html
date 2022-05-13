@@ -2,7 +2,20 @@
 
   <ion-list>
     <ion-list-header>
-      Product list
+      <span>
+        <div *ngIf="!!this.selectedCategory; else defaultSubHeader">
+          <h1>{{selectedCategory}}</h1>
+        </div>
+        <ng-template #defaultSubHeader>
+          <h1>Todo</h1>
+        </ng-template>
+      </span>
+
+      <ul>
+        <li *ngFor="let cat of categories">
+          <a (click)="changeCategory(cat)">{{cat}}</a>
+        </li>
+      </ul>
     </ion-list-header>
     <ion-item *ngFor="let product of getProducts()"
               [routerLink]="['/product-details', product.id]">

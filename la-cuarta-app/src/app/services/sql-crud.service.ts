@@ -22,18 +22,19 @@ export class SqlCrudService {
     this.databaseConn();
   }
 
-  // Create new product
-  addProduct(productId, userId) {
+  // Create new favourite
+  addFavourite(productId, userId) {
+    console.log('Trying to add new favourite:', productId, 'for user', userId);
     // validation
     if ( !productId || !userId ) {
-      alert('Provide valid product and user.');
+      console.log('Provide valid product and user.');
       return;
     }
 
     this.dbInstance.executeSql(`
 INSERT INTO ${this.dbTable} (product_id, user_id) VALUES ('${productId}', '${userId}')`, [])
       .then(() => {
-        alert('Success');
+        console.log('Success');
         this.getAllFavourites();
       }, (e) => { alert(JSON.stringify(e.err)); });
   }
@@ -54,23 +55,19 @@ SELECT * FROM ${this.dbTable}`, []).then((res) => {
   }
 
   // Get all favourites for selected user
-  getAllFavouritesForUser(userId): Promise<any> {
+  getAllFavouritesForUser(userId) {
     return this.dbInstance.executeSql(`
-SELECT * FROM ${this.dbTable} WHERE user_id = ?`, [userId])
-      .then((res) => {
-          // TODO return all rows
-          let listFavourites: Array<any>;
-
-          for ( let i = 0; i < res.rows.length; ++i ) {
-            listFavourites.push({
-              favouriteId: res.rows.item(i).favouriteId,
-              productId: res.rows.item(i).productId,
-              userId: res.rows.item(i).userId
-            });
-          }
-          return listFavourites;
+SELECT * FROM ${this.dbTable} WHERE user_id = ?`, [userId]).then((res) => {
+      this.favourites = [];
+      if (res.rows.length > 0) {
+        for (let i = 0; i < res.rows.length; i++) {
+          this.favourites.push(res.rows.item(i));
         }
-      );
+        return this.favourites;
+      }
+    },(e) => {
+      alert(JSON.stringify(e));
+    });
   }
 
   /*
@@ -82,12 +79,12 @@ SET name = ?, email = ? WHERE user_id = ${id}`, data);
   }
   */
 
-  // Delete seleted favourite product
-  deleteFavourite(productId) {
+  // Delete selected favourite product
+  deleteFavourite(favouriteId) {
     this.dbInstance.executeSql(`
-DELETE FROM ${this.dbTable} WHERE productId = ${productId}`, [])
+DELETE FROM ${this.dbTable} WHERE favourite_id = ${favouriteId}`, [])
       .then(() => {
-        alert('Product deleted!');
+        console.log('Favourite deleted!');
         this.getAllFavourites();
       })
       .catch(e => {
@@ -106,7 +103,7 @@ DELETE FROM ${this.dbTable} WHERE productId = ${productId}`, [])
 CREATE TABLE IF NOT EXISTS ${this.dbTable} (
 favourite_id INTEGER PRIMARY KEY,
 product_id varchar(255), user_id varchar(255))`, [] )
-            .then((res) => { alert(JSON.stringify(res)); } )
+            .then((res) => { console.log(JSON.stringify(res)); } )
             .catch((error) => alert(JSON.stringify(error)));
         })
         .catch((error) => alert(JSON.stringify(error)));
