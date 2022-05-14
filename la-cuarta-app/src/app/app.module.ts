@@ -33,3 +33,10 @@ import { SQLite } from '@ionic-native/sqlite/ngx';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+
+// Run Android:
+/*
+ionic cordova build android
+ionic cordova run android -l
+ */
