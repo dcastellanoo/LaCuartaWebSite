@@ -28,6 +28,7 @@ export class UserDetailsPage implements OnInit {
 
   save(form: NgForm) {
     this.userRepo.updateUser(this.user);
+    alert('Changes saved');
   }
 
   addImageToUser(imageUrl: string) {

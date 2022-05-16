@@ -22,7 +22,7 @@
   <ion-item>
     <ion-label>Profile Pic</ion-label>
     <span *ngIf="user.imageUrl!">
-      <img [src]="user.imageUrl" alt="User image.">
+      <img style="max-height:450px; max-width:450px; overflow: hidden" [src]="user.imageUrl" alt="User image.">
     </span>
 
     <br>

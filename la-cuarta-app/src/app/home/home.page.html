@@ -12,6 +12,9 @@
       </span>
 
       <ul>
+        <li>
+          <a (click)="changeCategory(undefined)">Todo</a>
+        </li>
         <li *ngFor="let cat of categories">
           <a (click)="changeCategory(cat)">{{cat}}</a>
         </li>

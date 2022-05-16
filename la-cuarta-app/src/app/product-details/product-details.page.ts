@@ -53,7 +53,7 @@ export class ProductDetailsPage implements OnInit {
     console.log('Favourite list:', this.sqlCrud.favourites);
     setTimeout(() => {
       this.favourite = this.sqlCrud.favourites.find(fav => fav.product_id === this.product.id);
-    }, 100);
+    }, 250);
     console.log('This favourite:', this.favourite);
   }
 
