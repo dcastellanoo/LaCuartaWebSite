@@ -25,5 +25,15 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+ion-content {
+    --background: #998469;
+}
 
+.ion-header-color {
+    --background: #67523A; 
+}
 
+.margin {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}

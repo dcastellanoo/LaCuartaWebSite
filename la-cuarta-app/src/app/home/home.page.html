@@ -1,6 +1,5 @@
 <ion-content>
-
-  <ion-list>
+  <ion-list class="ion-header-color">
     <ion-list-header>
       <span>
         <div *ngIf="!!this.selectedCategory; else defaultSubHeader">
@@ -20,7 +19,7 @@
         </li>
       </ul>
     </ion-list-header>
-    <ion-item *ngFor="let product of getProducts()"
+    <ion-item class="margin" *ngFor="let product of getProducts()"
               [routerLink]="['/product-details', product.id]">
       <ion-label>{{ product.name }} - {{ product.category }}</ion-label>
     </ion-item>

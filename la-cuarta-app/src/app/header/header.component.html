@@ -1,9 +1,28 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header class="ion-header-color">
+  <!--<ion-menu side="start" type="push">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item [routerLink]="['/']">Carta</ion-item>
+        
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-title class="ion-text-center">
+    <img src="../../assets/images/Logo_blanco.png" alt="" style="width: 10rem;">
+  </ion-title>-->
+
+  <ion-toolbar class="ion-header-color">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">La Cuarta App</ion-title>
+    <ion-title class="ion-text-center">
+      <img src="../../assets/images/Logo_blanco.png" alt="" style="width: 10rem;">
+    </ion-title>
 
     <ion-button [routerLink]="['/']">
       Home
@@ -31,8 +50,6 @@
       </ng-template>
     </span>
 
-
-
     <!--
     <ion-toolbar>
       <span>
@@ -48,7 +65,7 @@
     </span>
     </ion-toolbar>
     -->
-  </ion-toolbar>
+ </ion-toolbar>
 
 
 </ion-header>

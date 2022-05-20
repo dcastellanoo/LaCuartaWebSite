@@ -1,8 +1,8 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{product.name}}</ion-title>
+     <ion-title class="ion-text-center" size="large">{{product.name}}</ion-title>
 
-    <ion-buttons slot="start">
+     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
@@ -11,7 +11,7 @@
 <ion-content>
   <div class="form-group mt-3">
     <span *ngIf="product.url!">
-          <img [src]="product.url" alt="Product image.">
+          <img style="width: 50rem;" [src]="product.url" alt="Product image.">
         </span>
   </div>
 
