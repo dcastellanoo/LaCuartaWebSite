@@ -1,0 +1,67 @@
+.item{
+	padding-bottom: 2px;
+}
+
+.label{
+	font-size: 12pt;
+    font-weight: bolder;
+    color: #000;
+}
+
+.submit-btn{
+	margin-top: 15px;
+	background: #67523A;
+	color: #FFF;
+	border-radius: var(--border-radius);
+	--border-color: #67523A;
+}
+
+.submit-btn:after{
+	background: #67523A;
+	--border-color: #67523A;
+}
+
+#_titulo{
+	text-align: center;
+	padding: 10px;
+	padding-bottom: 15px;
+}
+
+.titulo {
+    color: #67523A;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    font-size: 15pt;
+    font-weight: bolder;
+}
+
+#_user{
+	text-align: center;
+	padding-top: 30px;
+}
+
+ion-icon {
+    font-size: 100px;
+    text-align: center;
+    color: #67523A;
+}
+
+ion-input{
+	color: #999;
+}
+
+.go-to-login{
+	margin-top: 40px;
+	text-align: center;
+	font-size: 11pt;
+}
+
+.button{
+	margin-top: 15px;
+}
+
+.validation-errors{
+	font-size: 9pt;
+	color: red;
+	text-align: center;
+}

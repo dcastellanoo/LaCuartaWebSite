@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-     <ion-title class="ion-text-center" size="large">{{product.name}}</ion-title>
+     <ion-title>{{product.category}}</ion-title>
 
      <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
@@ -9,55 +9,39 @@
 </ion-header>
 
 <ion-content>
-  <div class="form-group mt-3">
-    <span *ngIf="product.url!">
-          <img style="width: 50rem;" [src]="product.url" alt="Product image.">
-        </span>
-  </div>
-
-  <br>
-
-  <div *ngIf="this.authService.isLoggedIn();">
-    <span>
-      FAVOURITES BUTTONS <br>
-      <div *ngIf="this.isInFavourites(); else showAddButton">
-        <ion-button (click)="deleteFromFavourites()">
-          Remove from favourites
-        </ion-button>
+  <div class="productDetailsContainer">
+    <div class="form-group">
+      <span *ngIf="product.url!">
+            <img [src]="product.url" alt="Product image.">
+      </span>
+    </div>
+    <div class="d-flex flex-column" style="width: 100%;">
+      <h2 class="text-center text-uppercase">{{product.name}}</h2>
+      <div class="form-group mx-2">
+        <p>{{product.description}}</p>
       </div>
-
-      <ng-template #showAddButton>
-        <ion-button (click)="addToFavourites()">
-          Add to favourites
-        </ion-button>
-      </ng-template>
-    </span>
-  </div>
-
-  <div class="form-group mt-3">
-    <label>Type</label>
-    <p>{{product.type}}</p>
-  </div>
-
-  <div class="form-group mt-3">
-    <label>Category</label>
-    <p>{{product.category}}</p>
-  </div>
-
-  <div class="form-group mt-3">
-    <label>Description</label>
-    <p>{{product.description}}</p>
-  </div>
-
-  <div class="form-group mt-3">
-    <label>Allergens</label>
-    <p>{{product.allergens}}</p>
-  </div>
-
-  <div class="form-group mt-3">
-    <label>Price</label>
-    <p>{{product.price | currency:"EUR":"symbol":"0.2-2"}}</p>
-  </div>
-
-
+      <div class="form-group mx-2">
+        <p><b>Alérgenos: </b>{{product.allergens}}</p>
+      </div>
+      <div class="form-group text-center mt-2">
+        <b class=" background_money">{{product.price | currency:"EUR":"symbol":"0.2-2"}}</b>
+      </div>
+      <div *ngIf="this.authService.isLoggedIn();">
+        <span>
+          FAVOURITES BUTTONS <br>
+          <div *ngIf="this.isInFavourites(); else showAddButton">
+            <ion-button (click)="deleteFromFavourites()">
+              Remove from favourites
+            </ion-button>
+          </div>
+    
+          <ng-template #showAddButton>
+            <ion-button (click)="addToFavourites()">
+              Add to favourites
+            </ion-button>
+          </ng-template>
+        </span>
+      </div>
+    </div>
+    </div>
 </ion-content>

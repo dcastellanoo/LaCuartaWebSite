@@ -1,17 +1,26 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar color="primary">
     <ion-title>Login</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding cont">
+
+   <div id="_user">
+      <ion-icon name="people-circle-outline" class="user"></ion-icon>
+   </div>
+
+   <div id="_titulo">
+      <ion-label class="titulo">LA CUARTA</ion-label>
+   </div>
+
   <form class="form" [formGroup]="validations_form"
         (ngSubmit)="loginUser(validations_form.value)">
-    <ion-item>
-      <ion-label position="floating" color="primary">Email</ion-label>
+
+    <ion-item class="item">
+      <ion-label position="floating" class="label">Correo electrónico</ion-label>
       <ion-input type="text" formControlName="email"></ion-input>
     </ion-item>
-
     <div class="validation-errors">
       <ng-container *ngFor="let validation of validation_messages.email">
         <div class="error-message"
@@ -23,8 +32,8 @@
       </ng-container>
     </div>
 
-    <ion-item>
-      <ion-label position="floating" color="primary">Password</ion-label>
+    <ion-item class="item">
+      <ion-label position="floating" class="label">Contraseña</ion-label>
       <ion-input type="password" formControlName="password"
                  class="form-control" required></ion-input>
     </ion-item>
@@ -38,14 +47,18 @@
         </div>
       </ng-container>
     </div>
+      
+     <div class="button">
+         <ion-button class="submit-btn" type="submit" expand="block" fill="outline"
+                [disabled]="!validations_form.valid">Inicia sesión</ion-button>
+      </div>
 
-    <ion-button class="submit-btn" type="submit"
-                [disabled]="!validations_form.valid">Log In</ion-button>
     <label class="error-message">{{errorMessage}}</label>
+
   </form>
 
   <p class="go-to-register">
-    No account yet? <a [routerLink]="['/register']">Create an account</a>
+    ¿Aún no tienes cuenta? <a [routerLink]="['/register']">Crear una cuenta</a>
   </p>
 
 </ion-content>
