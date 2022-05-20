@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "la-cuarta-app",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
