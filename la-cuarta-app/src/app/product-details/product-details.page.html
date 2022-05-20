@@ -17,27 +17,26 @@
     </div>
     <div class="d-flex flex-column" style="width: 100%;">
       <h2 class="text-center text-uppercase">{{product.name}}</h2>
-      <div class="form-group mx-2">
+      <div class="form-group mx-3">
         <p>{{product.description}}</p>
       </div>
-      <div class="form-group mx-2">
+      <div class="form-group mx-3">
         <p><b>Alérgenos: </b>{{product.allergens}}</p>
       </div>
       <div class="form-group text-center mt-2">
-        <b class=" background_money">{{product.price | currency:"EUR":"symbol":"0.2-2"}}</b>
+        <b class="background_money">{{product.price | currency:"EUR":"symbol":"0.2-2"}}</b>
       </div>
-      <div *ngIf="this.authService.isLoggedIn();">
+      <div class="mx-3 my-3 text-center" *ngIf="this.authService.isLoggedIn();">
         <span>
-          FAVOURITES BUTTONS <br>
           <div *ngIf="this.isInFavourites(); else showAddButton">
-            <ion-button (click)="deleteFromFavourites()">
-              Remove from favourites
+            <ion-button class="removeButton" (click)="deleteFromFavourites()">
+              Eliminar de favoritos
             </ion-button>
           </div>
     
           <ng-template #showAddButton>
-            <ion-button (click)="addToFavourites()">
-              Add to favourites
+            <ion-button class="addButton" (click)="addToFavourites()">
+              Añadir a favoritos
             </ion-button>
           </ng-template>
         </span>
