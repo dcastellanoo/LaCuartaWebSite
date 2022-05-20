@@ -1,7 +1,19 @@
 <ion-content>
   
     <ion-list>
-        <ion-list-header>
+        <ion-list-header class="background_subheader">
+          <div class="subheader_text_carta">
+            <div>
+              <a (click)="changeCategory(undefined)">Todo</a>
+            </div>
+            <div *ngFor="let cat of categories">
+              <a (click)="changeCategory(cat)">{{cat}}</a>
+            </div>
+          </div>
+          
+        </ion-list-header>
+
+        <div class="text_title_category">
           <span>
             <div *ngIf="!!this.selectedCategory; else defaultSubHeader">
               <h1>{{selectedCategory}}</h1>
@@ -10,19 +22,16 @@
               <h1>Todo</h1>
             </ng-template>
           </span>
-    
-          <ul>
-            <li>
-              <a (click)="changeCategory(undefined)">Todo</a>
-            </li>
-            <li *ngFor="let cat of categories">
-              <a (click)="changeCategory(cat)">{{cat}}</a>
-            </li>
-          </ul>
-        </ion-list-header>
-        <ion-item class="margin" *ngFor="let product of getProducts()"
+        </div>
+
+        <ion-item class="margin container_product" *ngFor="let product of getProducts()"
                   [routerLink]="['/product-details', product.id]">
-          <ion-label>{{ product.name }}</ion-label>
+
+            <ion-label class="text_title_plato_carta">{{ product.name }}</ion-label>
+
+            <img class="size_image" [src]="product.url" alt="Product image.">
+          
+            <ion-label class="background_money">{{ product.price | currency:"EUR":"symbol":"0.2-2" }}</ion-label>
         </ion-item>
     </ion-list>
 </ion-content>
