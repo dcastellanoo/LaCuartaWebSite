@@ -25,25 +25,26 @@
     </ion-title>
     <div class="container_buttons">
       <ion-button [routerLink]="['/']">
-        Home
+        Carta
       </ion-button>
   
-      <ion-button [routerLink]="['/user-details']">
-        User zone
-      </ion-button>
-      <div *ngIf="this.authService.isLoggedIn(); else showLogin">
-        <ion-button (click)="this.authService.logout()">
-          LOG OUT
+      <div style="justify-content: space-around;" *ngIf="this.authService.isLoggedIn(); else showLogin">
+        <ion-button [routerLink]="['/user-details']">
+          Perfil
         </ion-button>
 
         <ion-button [routerLink]="['/favourite-products']">
-          Favourites
+          Favoritos
+        </ion-button>
+
+        <ion-button (click)="this.authService.logout()">
+          Log Out
         </ion-button>
       </div>
 
       <ng-template #showLogin>
         <ion-button [routerLink]="['/login']">
-          LOG IN
+          Log in
         </ion-button>
       </ng-template>
     </div>

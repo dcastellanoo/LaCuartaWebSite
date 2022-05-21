@@ -6,7 +6,9 @@ ion-button{
 }
 
 .container_buttons{
+    padding-right: 1%;
     padding-top: 1%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
