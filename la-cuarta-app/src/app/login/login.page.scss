@@ -1,5 +1,16 @@
-.item{
-	padding-bottom: 15px;
+ion-card{
+    box-shadow: rgb(0 0 0 / 0%) 0px 3px 1px -2px, rgb(0 0 0 / 0%) 0px 2px 2px 0px, rgb(0 0 0 / 0%) 0px 1px 5px 0px;
+    padding-bottom: 40px;
+    background: rgba(255, 255, 255, 0.8);
+    margin-inline: 0px;
+}
+
+.divItem{
+	background-color: white;
+    padding: 10px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    margin: 5px;
 }
 
 .label{
@@ -64,5 +75,13 @@ ion-input{
 	font-size: 9pt;
 	color: red;
 	text-align: center;
+}
+
+.form{
+	margin: 0;
+    font: inherit;
+    color: inherit;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
