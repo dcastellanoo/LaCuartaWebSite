@@ -23,16 +23,14 @@
     <ion-title class="ion-text-center">
       <img src="../../assets/images/Logo_blanco.png" alt="" style="width: 10rem;">
     </ion-title>
-
-    <ion-button [routerLink]="['/']">
-      Home
-    </ion-button>
-
-    <ion-button [routerLink]="['/user-details']">
-      User zone
-    </ion-button>
-
-    <span>
+    <div class="container_buttons">
+      <ion-button [routerLink]="['/']">
+        Home
+      </ion-button>
+  
+      <ion-button [routerLink]="['/user-details']">
+        User zone
+      </ion-button>
       <div *ngIf="this.authService.isLoggedIn(); else showLogin">
         <ion-button (click)="this.authService.logout()">
           LOG OUT
@@ -48,7 +46,7 @@
           LOG IN
         </ion-button>
       </ng-template>
-    </span>
+    </div>
 
     <!--
     <ion-toolbar>
