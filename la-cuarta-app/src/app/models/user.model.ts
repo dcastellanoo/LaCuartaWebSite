@@ -6,16 +6,8 @@ import {Injectable} from "@angular/core";
 export class User {
   public id?: string;
   public fullName?: string;
-  public address?: Address = new Address();
   public email?: string;
   public phoneNumber?: PhoneNumber;
-  public numTarjeta?: string;
-  public fechaExpiracion?: string;
-  public cvv?: string;
-  public rememberMe: boolean = false;
-  public rememberMeReservation: boolean = false;
-  public codTelefono?: string;
-  public isAccepted: boolean = false;
   // Not sure about this
   public imageUrl?: string = 'https://firebasestorage.googleapis.com/v0/b/lacuartaweb-bce85.appspot.com/o/uploads%2Fuser.png?alt=media&token=7defe2ff-9b61-408c-acc5-4cdf6623940e';
 

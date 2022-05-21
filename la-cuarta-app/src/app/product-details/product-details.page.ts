@@ -18,7 +18,7 @@ export class ProductDetailsPage implements OnInit {
   constructor(private router: Router,
               activeRoute: ActivatedRoute,
               private productRepo: ProductRepositoryService,
-              private authService: AuthenticationService,
+              public authService: AuthenticationService,
               private sqlCrud: SqlCrudService) {
     console.log('ID:', activeRoute.snapshot.params.id);
 

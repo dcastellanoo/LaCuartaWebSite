@@ -24,7 +24,7 @@ export class RegisterPage implements OnInit {
     ],
     'password': [
       { type: 'required', message: 'Password is required.' },
-      { type: 'minlength', message: 'Password must be at least 5 characters long.' }
+      { type: 'minlength', message: 'Password must be at least 6 characters long.' }
     ],
     'fullName': [
       { type: 'required', message: 'Full name is required.' },
@@ -33,7 +33,7 @@ export class RegisterPage implements OnInit {
 
   constructor(
     private router: Router,
-    private authService: AuthenticationService,
+    protected authService: AuthenticationService,
     private formBuilder: FormBuilder,
     private repository: UserRepositoryService ) {
   }
@@ -44,10 +44,10 @@ export class RegisterPage implements OnInit {
     this.validations_form = this.formBuilder.group({
       email: new FormControl('', Validators.compose([
         Validators.required,
-        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+        Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')
       ])),
       password: new FormControl('', Validators.compose([
-        Validators.minLength(5),
+        Validators.minLength(6),
         Validators.required
       ])),
       fullName: new FormControl(this.name, Validators.compose([
@@ -66,9 +66,7 @@ export class RegisterPage implements OnInit {
         console.log(res);
         this.user.id = res.user.uid;
         this.repository.saveUser(this.user);
-        this.errorMessage = "";
-        this.successMessage = 'Your account has been created. Please log in.';
-        //this.router.navigate(['user-details']);
+        this.router.navigate(['user-details']);
       }, err => {
         console.log(err);
         this.errorMessage = err.message;
