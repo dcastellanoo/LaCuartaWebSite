@@ -1,48 +1,79 @@
-<ion-header>
 
-  <ion-toolbar>
-    <ion-title>Welcome user -- {{user.email}}</ion-title>
-  </ion-toolbar>
+<ion-content class="">
 
-</ion-header>
+   <ion-card>
 
+      <ion-title>Perfil</ion-title>
 
-<form ngNativeValidate #form="ngForm" (ngSubmit)="save(form)">
-  <ion-item>
-    <ion-label>Name</ion-label>
-    <ion-input class="form-control" name="name" [(ngModel)]="user.fullName" required></ion-input>
-  </ion-item>
+      <ion-card-header>
+         <ion-grid>
+            <ion-row>
+               <ion-col size="2"></ion-col>
+               <ion-col size="8">
+                  <div *ngIf="user.imageUrl!" class="rounded">
+                     <img [src]="user.imageUrl" alt="User image.">
+                  </div>
+                  <div class="name_glob">
+                     {{user.fullName}}
+                  </div>
+               </ion-col>
+              <ion-col size="2"></ion-col> 
+            </ion-row>
+         </ion-grid>
+      </ion-card-header>
 
-  <ion-item>
-    <ion-label>Phone Number</ion-label>
-    <ion-input class="form-control" name="type"
-               [(ngModel)]="user.phoneNumber"></ion-input>
-  </ion-item>
+      <ion-card-content>
+         <form ngNativeValidate #form="ngForm" (ngSubmit)="save(form)">
 
-  <ion-item>
-    <ion-label>Profile Pic</ion-label>
-    <span *ngIf="user.imageUrl!">
-      <img style="max-height:450px; max-width:450px; overflow: hidden" [src]="user.imageUrl" alt="User image.">
-    </span>
+            <div class="divItem">
+               <ion-item>
+                 <ion-label position="floating">Nombre</ion-label>
+                 <ion-input name="name" [(ngModel)]="user.fullName" required></ion-input>
+               </ion-item>
 
-    <br>
+               <ion-item>
+                 <ion-label position="floating">Correo electrónico</ion-label>
+                 <ion-input name="email" [(ngModel)]="user.email" value="Disabled" disabled></ion-input>
+               </ion-item>
 
-    <app-upload-form (newUploadEvent)="addImageToUser($event)"></app-upload-form>
-  </ion-item>
+               <ion-item>
+                 <ion-label position="floating">Número de teléfono</ion-label>
+                 <ion-input name="type"
+                            [(ngModel)]="user.phoneNumber"></ion-input>
+               </ion-item>
 
-  <div class="mt-5">
-    <ion-button type="submit">
-      Save
-    </ion-button>
+               <ion-item>
+                 <ion-label position="floating">Foto de perfil</ion-label>
+                 <span *ngIf="user.imageUrl!">
+                   <img class="image_" [src]="user.imageUrl" alt="User image.">
+                 </span>
+               </ion-item>
 
-    <!--
-    <ion-button type="reset" class="btn btn-danger float-end"
-            [routerLink]="['/']">
-      Home
-    </ion-button>
-    -->
-  </div>
+               <ion-item>
+                  <app-upload-form (newUploadEvent)="addImageToUser($event)"></app-upload-form>
+               </ion-item>
 
-</form>
+            </div>
+
+             <div class="mt-4">
+               <ion-button type="submit" class="submit-btn" expand="block" fill="outline">
+                 Salvar 
+               </ion-button>
+
+               <!--
+               <ion-button type="reset" class="btn btn-danger float-end"
+                       [routerLink]="['/']">
+                 Home
+               </ion-button>
+               -->
+             </div>
+
+         </form>
+
+      </ion-card-content>
+
+   </ion-card>
+
+</ion-content>
 
 
