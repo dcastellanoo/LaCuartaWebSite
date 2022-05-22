@@ -33,7 +33,6 @@ export class ProductDetailsPage implements OnInit {
   }
 
   isInFavourites(): boolean {
-    console.log('Is favourite?', !!this.favourite);
     return !!this.favourite;
   }
 
@@ -45,7 +44,6 @@ export class ProductDetailsPage implements OnInit {
   deleteFromFavourites() {
     this.sqlCrud.deleteFavourite(this.favourite.favourite_id);
     this.reloadFavourites();
-    //this.favourite = undefined;
   }
 
   private reloadFavourites() {
@@ -56,5 +54,4 @@ export class ProductDetailsPage implements OnInit {
     }, 250);
     console.log('This favourite:', this.favourite);
   }
-
 }
