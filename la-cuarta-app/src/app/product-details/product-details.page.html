@@ -23,10 +23,10 @@
       <div class="form-group mx-3">
         <p><b>Alérgenos: </b>{{product.allergens}}</p>
       </div>
-      <div class="form-group text-center mt-2">
+      <div class="form-group text-center mt-2 mb-3">
         <b class="background_money">{{product.price | currency:"EUR":"symbol":"0.2-2"}}</b>
       </div>
-      <div class="mx-3 my-3 text-center" *ngIf="this.authService.isLoggedIn();">
+      <div class="mx-3 mb-3 text-center" *ngIf="this.authService.isLoggedIn();">
         <span>
           <div *ngIf="this.isInFavourites(); else showAddButton">
             <ion-button class="removeButton" (click)="deleteFromFavourites()">

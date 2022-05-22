@@ -1,22 +1,22 @@
-<ion-list>
-  <ion-list-header class="ion-text-center">
-    Favourite products list
-  </ion-list-header>
-
-  <div class="margin container_product">
-    <ion-item *ngFor="let favouriteItem of this.sqlCrud.favourites;">
-      <div *ngFor="let product of [this.productRepo.getProduct(favouriteItem.product_id)];"
-              [routerLink]="['/product-details', product.id]">
+<ion-content>
+  <ion-list>
+    <ion-list-header class="text_subheader">
+      <ion-label class="ion-text-center">favoritos</ion-label> 
+    </ion-list-header>
+  
+    <div class="margin container_product" *ngFor="let favouriteItem of this.sqlCrud.favourites;">
+      <ion-item *ngFor="let product of [this.productRepo.getProduct(favouriteItem.product_id)];"
+      [routerLink]="['/product-details', product.id]">
   
         <img class="size_image" [src]="product.url" alt="Product image.">
-  
+    
         <ion-label class="text_title_plato_carta">{{ product.name }}</ion-label>
-  
+    
         <p>{{ product.category }}</p>
-      </div>
-    </ion-item>
-    <ion-button class="removeButton" (click)="deleteFromFavourites(favouriteItem.favourite_id)">
-      Eliminar de favoritos
-    </ion-button>
-  </div>
-</ion-list>
+      </ion-item>
+      <ion-button class="removeButton" (click)="deleteFromFavourites(favouriteItem.favourite_id)">
+        Eliminar de favoritos
+      </ion-button>
+    </div>
+  </ion-list>  
+</ion-content>
