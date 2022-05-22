@@ -21,7 +21,15 @@ export class FavouritesTablePage implements OnInit {
 
   ionViewDidEnter() {
     this.sqlCrud.getAllFavouritesForUser(this.authService.userDetails().uid);
-    console.log('Favourite list:', this.sqlCrud.favourites);
   }
 
+  deleteFromFavourites(product_id: string) {
+    console.log(product_id);
+    this.sqlCrud.deleteFavourite(product_id);
+    this.reloadFavourites();
+  }
+
+  private reloadFavourites() {
+    this.sqlCrud.getAllFavouritesForUser(this.authService.userDetails().uid);
+  }
 }
